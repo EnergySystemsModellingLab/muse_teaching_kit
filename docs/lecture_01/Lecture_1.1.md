@@ -1,19 +1,16 @@
 ---
 title: Mini-Lecture 1.1 - Introduction to the course
 keywords:
--   Infrastructure systems
--   Sustainable development
--   Climate adaptation and resilience
+-   Energy systems modelling
+-   Agent-based models
+-   Climate adaptation
 authors:
--   Amelie Paszkowski
+-   Alexander Kell
 ---
 
 # Short description
 
-This mini-lecture will provide an overview of how the course is
-structured and summarises the main content. Our course is being
-delivered in three modules, which are each described within this
-mini-lecture.
+This mini-lecture will provide an overview of how the course is structured. The course is structured into 
 
 # Learning objectives
 
