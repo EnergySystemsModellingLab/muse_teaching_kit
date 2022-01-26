@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Water infrastructure" />
+  <title>Mini-Lecture 9.3 - Modelling of water infrastructure networks and service delivery</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 9.3 - Modelling of water infrastructure networks and service delivery</h1>
+</header>
+<p>This mini-lecture provides an overview of what constitutes a water infrastructure network, how water infrastructure is distinct from other infrastructure networks and the different kinds of disruption that affect water supplies. The type of causes of water supply disruption, from asset-related failures to source-related failures, are discussed in turn.</p>
+<h1 id="learning-objectives">Learning objectives</h1>
+<ul>
+<li>Be able to identify the components of water infrastructure systems</li>
+<li>To recognise the characteristics that make water infrastructure stand-out compared to other infrastructure systems</li>
+<li>To be able to explain the full range of water infrastructure disruptions and how they can be modelled.</li>
+</ul>
+<h1 id="introduction">Introduction</h1>
+<p>Water infrastructure systems are made up of the assets that abstract (intakes), treat (water treatment plants), pump (pumping stations), convey (pipes) and store water (reservoirs/storage tanks) to supply municipal and sometimes commercial/industrial demand. Wastewater infrastructure systems are made up of the assets that transport (sewer), treat (wastewater treatment plant) and discharge wastewater back to the natural environment.</p>
+<p>Figure 9.3.1 shows locations of water infrastructure along a section of the Thames, UK. As evident, intakes are assets that abstract water from the natural network of water resources, i.e. from rivers, lakes and groundwater.</p>
+<ul>
+<li><p>Raw water may be stored in reservoirs or dams before being treated at a treatment plant</p></li>
+<li><p>Treated water may be stored in tanks before or after being pumped to communities via a network of pipes</p></li>
+<li><p>Wastewater is then transported from communities via a sewer network to be treated by wastewater treatment plants, before being returned to the rivers and the natural system.</p></li>
+</ul>
+<p>Given that the treatment and pumping of water relies on a reliable supply of electricity, the electricity supply nodes which serve water assets are also an important element of the water infrastructure system to consider.</p>
+<p><img src="assets/Figure_9.3.1.jpg" style="width:100.0%" /></p>
+<p><strong>Figure 9.3.1:</strong> Locations of water infrastructure asset along a section of the river Thames <span class="citation" data-cites="Mortazavi-Naeini2019">(Mortazavi-Naeini et al. 2019)</span></p>
+<p>Of course, the configuration of water infrastructure varies significantly depending on the local context. Different countries have different standards and protocols for water management, for example, for the level of treatment, the capacity and form of storage, and the kind of connection to consumers (e.g. household-level, versus standpipes).</p>
+<h1 id="global-datasets-on-water">Global datasets on water</h1>
+<p>Although water infrastructure datasets on treatment plants, intakes and pumping stations are hard to come by even at national scales, there is a global database of reservoirs and dams. This can be used for quantifying the volume of storage capacity and, hence, the resilience of a country’s water supplies to extreme water supply variations <span class="citation" data-cites="Gaupp2015 Hall2014">(Gaupp, Hall, and Dadson 2015; Hall et al. 2014)</span>. There are various global river network and catchment datasets, HydroSHEDS is one of the most commonly used among these.</p>
+<p>Global hydrological models that provide data on runoff and river flows are also available. For example, the ISIMIP data depository provides a range of publicly available global hydrological datasets <span class="citation" data-cites="Davie2013">(Davie et al. 2013)</span>.</p>
+<p>Further, the Joint Monitoring Programme is responsible for monitoring the progress of countries towards the UN Sustainable Development Goals. They provide a database on national-level connections to piped water supply and sewer networks. This can be used to understand the coverage of water infrastructure within a country.</p>
+<p>The UN Food and Agricultural Organization publishes a database called AQUASTAT which provides national level water use data for different demands, for example, agricultural, domestic and industrial, as well as the volume of wastewater generated. This has been widely applied for quantifying water stress at a global scale (e.g. <span class="citation" data-cites="Doeffinger2020">Doeffinger et al. (2020)</span>).</p>
+<p>Table 9.3.1 below provides an overview of some of the global data sources available on water infrastructure:</p>
+<p><strong>Table 9.3.1:</strong> Overview of some examples of global data sources for water infrastructure</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Datasets</strong></th>
+<th style="text-align: left;"><strong>Source</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Reservoirs and dams</td>
+<td style="text-align: left;"><a href="http://globaldamwatch.org/">Global Dam Watch</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rivers</td>
+<td style="text-align: left;"><a href="https://www.hydrosheds.org/">HydroSHEDS</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Runoff</td>
+<td style="text-align: left;"><a href="https://esg.pik-potsdam.de/search/isimip/">ISI-MIP</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Connections to piped water supply and sewer systems</td>
+<td style="text-align: left;"><a href="https://washdata.org/data">Joint Monitoring Programme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Water use</td>
+<td style="text-align: left;"><a href="http://www.fao.org/aquastat/">FAO, AquaSTAT</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="hazard-interactions-with-water-infrastructure">Hazard interactions with water infrastructure</h1>
+<p>All infrastructure is vulnerable to a range of climate extremes, with floods, earthquakes and hurricanes imposing a heavy financial burden in infrastructure damages. Water infrastructure systems stand-out compared to other infrastructure because both water resources and assets are vulnerable to climate and hydrological extremes.</p>
+<ol type="1">
+<li>Flood inundation poses a climate-related risk to <strong>water assets</strong>. In the event that critical water infrastructures or electricity supply assets fail due to flooding, they would have to be taken out of operation, causing further disruptions in the network.</li>
+<li>Hydrological droughts are among the most widely studied climate-related risks to <strong>water resources</strong>. Depending on the capacity of water storage infrastructure, the system may be able to buffer against droughts, protecting dependent populations from water shortages.</li>
+</ol>
+<p>Thus, multiple hazards disrupt water infrastructure in different ways, which are summarised in Table 9.3.2 below:</p>
+<p><strong>Table 9.3.2:</strong> Summary of the ways in which hazards disrupt water infrastructure</p>
+<table style="width:97%;">
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Sub-s ector</strong></th>
+<th><strong> Asset</strong></th>
+<th><p><strong> Flood</strong></p>
+<p><strong>(plu vial/</strong></p>
+<strong>ri ver/coa stal)</strong></th>
+<th><strong>Land slide</strong></th>
+<th><strong>Hurr icane</strong></th>
+<th><strong>Earth quake</strong></th>
+<th><strong>Dr ought</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>Sources (s prings, wells, rivers)</td>
+<td><strong>N</strong></td>
+<td><strong>N</strong></td>
+<td><strong>N</strong></td>
+<td><strong>N</strong></td>
+<td><strong>Y</strong></td>
+</tr>
+<tr class="even">
+<td><strong> Water</strong></td>
+<td>Dams and re servoir</td>
+<td><strong>N</strong></td>
+<td><strong>N</strong></td>
+<td><strong>N</strong></td>
+<td><strong>Y</strong></td>
+<td><strong>Y</strong></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Water tr eatment plants</td>
+<td><strong>Y</strong></td>
+<td><strong>Y</strong></td>
+<td><strong>N</strong></td>
+<td><strong>Y</strong></td>
+<td><strong>Y</strong></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Pumping s tations</td>
+<td><strong>Y</strong></td>
+<td><strong>Y</strong></td>
+<td><strong>N</strong></td>
+<td><strong>Y</strong></td>
+<td><strong>N</strong></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Potable storage tanks</td>
+<td><strong>N</strong></td>
+<td><strong>N</strong></td>
+<td><strong>N</strong></td>
+<td><strong>N</strong></td>
+<td><strong>Y</strong></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Pi pelines</td>
+<td><strong>N</strong></td>
+<td><strong>Y</strong></td>
+<td><strong>N</strong></td>
+<td><strong>N</strong></td>
+<td><strong>N</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>Waste water</strong></td>
+<td>Was tewater tr eatment plants</td>
+<td><strong>Y</strong></td>
+<td><strong>Y</strong></td>
+<td><strong>N</strong></td>
+<td><strong>Y</strong></td>
+<td><strong>N</strong></td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Sewers</td>
+<td><strong>N</strong></td>
+<td><strong>Y</strong></td>
+<td><strong>N</strong></td>
+<td><strong>Y</strong></td>
+<td><strong>N</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The following sections explore the modelling approaches employed to analyse the risk that flood and drought hazards pose to water infrastructure systems.</p>
+<h1 id="risks-to-water-network-infrastructure">Risks to water network infrastructure</h1>
+<p>Water supply disruptions can be caused by flood damage to water infrastructure assets or dependent electricity supply infrastructure. Figure 9.3.2 illustrates a network model of water infrastructure, comprising water infrastructure assets, such as water treatment plants and network connections to demand centres, in England and Wales.</p>
+<p><img src="assets/Figure_9.3.2.jpg" style="width:100.0%" /></p>
+<p><strong>Figure 9.3.2:</strong> Network model of water infrastructure, comprising water infrastructure assets, such as water treatment plants and network connections to demand centres, in England and Wales <span class="citation" data-cites="Dobson2020">(Dobson et al. 2020)</span></p>
+<p>These network models can be used to understand which demand centres could be disrupted by the failure of certain assets. The likelihood of certain assets being disrupted by climate extremes, such as flooding, can be determined by overlaying flood return period maps. This is put into practice during Hands-on 6.</p>
+<p>The intersection between probability and consequence provides an indication of risk. For example, combining the likelihood of flood inundation at water infrastructure assets, or the electricity substations that supply water assets, with the population dependent on each asset can be used to quantify the risk of flood-induced water supply disruptions. If the likelihood of asset failure is unknown, asset failures and associated network disruptions can be randomly simulated to identify hotspots of critical assets or worst-case failure scenarios in water networks.</p>
+<h1 id="risks-to-water-resources">Risks to water resources</h1>
+<p>Water resources variations - such as water shortages and harmful water quality events - also pose a major risk to water supplies. Water shortages are often measured according to deviations in the volume of water stored in reservoirs. This aligns with the operating rules imposed on utility networks by managers: during droughts that result in the volume of stored water dropping to, say, 50% of their normal levels, utilities will put measures in place to ensure that water supplies will be able to outlast the drought. These measures might be fairly minor, such as a ban on the use of sprinklers for lawn irrigation, or they could be incredibly restrictive, such as being requested not to flush the toilet after urination, which happened during the Cape Town drought of 2019.</p>
+<p>Thus, the risk of water shortages can be determined by analysing the probability of water shortages of varying severity or untreatable water quality and associated consequences for dependent populations. For example, assess the vulnerability of water resources systems to extreme droughts <span class="citation" data-cites="Borgomeo2014">(Borgomeo et al. 2014)</span>. Level of Service is used as a risk metric, shown in Figure 9.3.3, quantifying the probability of exceeding planned frequencies of water shortages of varying severity.</p>
+<p><img src="assets/Figure_9.3.3.jpg" style="width:100.0%" /></p>
+<p><strong>Figure 9.3.3:</strong> Thresholds of reservoir storage over a given year that are associated with water use restrictions of different levels of severity in the Thames catchment, UK <span class="citation" data-cites="Borgomeo2014">(Borgomeo et al. 2014)</span></p>
+<p>The kinds of risk analysis discussed in this lecture are widely applied to guiding water infrastructure planning decisions, which will be discussed in future sections.</p>
+<h1 id="summary">Summary</h1>
+<p>This mini-lecture provides an overview of the components of water infrastructure systems, how systems are affected by hazards and how the risks of different kinds of disruption can be analysed. You should now be able to identify the range of assets that make up systems of water infrastructure, recognise what distinguishes water infrastructure from other types of infrastructure, and be able to explain the different types of disruptions and hazards that affect water infrastructure.</p>
+<h1 class="unnumbered" id="bibliography">Bibliography</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Borgomeo2014" class="csl-entry" role="doc-biblioentry">
+Borgomeo, Edoardo, Jim W. Hall, Fai Fung, Glenn Watts, Keith Colquhoun, and Chris Lambert. 2014. <span>“<span class="nocase">Risk-based water resources planning: Incorporating probabilistic nonstationary climate uncertainties</span>.”</span> <em>Water Resources Research</em>. <a href="https://doi.org/10.1002/2014WR015558">https://doi.org/10.1002/2014WR015558</a>.
+</div>
+<div id="ref-Davie2013" class="csl-entry" role="doc-biblioentry">
+Davie, J. C. S., P. D. Falloon, R. Kahana, R. Dankers, R. Betts, F. T. Portmann, D. Wisser, et al. 2013. <span>“<span class="nocase">Comparing projections of future changes in runoff from hydrological and biome models in ISI-MIP</span>.”</span> <em>Earth System Dynamics</em>. <a href="https://doi.org/10.5194/esd-4-359-2013">https://doi.org/10.5194/esd-4-359-2013</a>.
+</div>
+<div id="ref-Dobson2020" class="csl-entry" role="doc-biblioentry">
+Dobson, Barnaby, Gemma Coxon, Jim Freer, Helen Gavin, Mohammad Mortazavi-Naeini, and Jim W. Hall. 2020. <span>“<span class="nocase">The Spatial Dynamics of Droughts and Water Scarcity in England and Wales</span>.”</span> <em>Water Resources Research</em>. <a href="https://doi.org/10.1029/2020WR027187">https://doi.org/10.1029/2020WR027187</a>.
+</div>
+<div id="ref-Doeffinger2020" class="csl-entry" role="doc-biblioentry">
+Doeffinger, Tess, Edoardo Borgomeo, William J. Young, Claudia Sadoff, and Jim W. Hall. 2020. <span>“<span class="nocase">A diagnostic dashboard to evaluate country water security</span>.”</span> <em>Water Policy</em>. <a href="https://doi.org/10.2166/wp.2020.235">https://doi.org/10.2166/wp.2020.235</a>.
+</div>
+<div id="ref-Gaupp2015" class="csl-entry" role="doc-biblioentry">
+Gaupp, Franziska, Jim Hall, and Simon Dadson. 2015. <span>“<span class="nocase">The role of storage capacity in coping with intra- and inter-annual water variability in large river basins</span>.”</span> <em>Environmental Research Letters</em>. <a href="https://doi.org/10.1088/1748-9326/10/12/125001">https://doi.org/10.1088/1748-9326/10/12/125001</a>.
+</div>
+<div id="ref-Hall2014" class="csl-entry" role="doc-biblioentry">
+Hall, Jim W., D. Grey, D. Garrick, F. Fung, C. Brown, S. J. Dadson, and C. W. Sadoff. 2014. <span>“<span class="nocase">Coping with the curse of freshwater variability</span>.”</span> <em>Science</em>. <a href="https://doi.org/10.1126/science.1257890">https://doi.org/10.1126/science.1257890</a>.
+</div>
+<div id="ref-Mortazavi-Naeini2019" class="csl-entry" role="doc-biblioentry">
+Mortazavi-Naeini, Mohammad, Gianbattista Bussi, J. Alex Elliott, Jim W. Hall, and Paul G. Whitehead. 2019. <span>“<span class="nocase">Assessment of Risks to Public Water Supply From Low Flows and Harmful Water Quality in a Changing Climate</span>.”</span> <em>Water Resources Research</em>. <a href="https://doi.org/10.1029/2018WR022865">https://doi.org/10.1029/2018WR022865</a>.
+</div>
+</div>
+</body>
+</html>

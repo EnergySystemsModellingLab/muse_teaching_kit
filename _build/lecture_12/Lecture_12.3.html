@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Future hazards, Infrastructure exposure, Model uncertainty" />
+  <title>Mini-Lecture 12.3 - Projecting future hazards</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 12.3 - Projecting future hazards</h1>
+</header>
+<p>In this lecture we will discuss how climate model outputs can be used to predict future changes in hazards that can impact infrastructure. We will distinguish between short-term extreme events (flooding, hurricanes, storm surges, landslides) and more long-term chronic changes (temperature rise, sea-level rise).</p>
+<h1 id="learning-objectives">Learning objectives</h1>
+<ul>
+<li>Understand how climate change might change the occurrence of hazards</li>
+<li>Summarise how infrastructure exposure can change in the future</li>
+<li>Evaluate what the different uncertainties are when predicting future hazards.</li>
+</ul>
+<h1 id="introduction">Introduction</h1>
+<p>In mini-lecture 12.2, we identified that climate change might alter the occurrence of hazards in the future. When evaluating changes in future hazards we often distinguish between changes in the frequency and the magnitude of events. This can be illustrated using the example of changes in the occurrence of coastal flooding due to sea-level rise, as shown in in Figure 12.3.1 <span class="citation" data-cites="Vitousek2017">(Vitousek et al. 2017)</span>.</p>
+<p>Some key concepts to define include:</p>
+<ul>
+<li><p><strong>Frequency:</strong> Frequency changes describe the increase or decrease of the occurrence of an event with a certain magnitude (horizontal line in Figure 12.3.1). In this example, a 100-year event becomes a 25-year event, meaning that the frequency increases by a factor four.</p></li>
+<li><p><strong>Magnitude:</strong> Magnitude changes describe the increase or decrease of the severity of an event with a certain frequency (vertical line in Figure 12.3.1). In this example, the magnitude of a 100-year event changes from 5m to 6m (increases by 20%).</p></li>
+</ul>
+<p>In addition, we often differentiate between changes in the occurrence of short-term extreme events and more long-term chronic changes. For instance, climate change might affect the frequency of extreme rainfall, leading to more intense flooding. On the other hand, a rise in mean sea levels will slowly increase the salinity levels in tidal areas.</p>
+<p>Therefore, the way we account for climate change in our modelling framework depends on the hazard under consideration. Before starting infrastructure design, it is important to identify what hazards are affecting your infrastructure system and how the underlying drivers might change in the future.</p>
+<p><img src="assets/Figure_12.3.1.png" style="width:100.0%" /></p>
+<p><strong>Figure 12.3.1:</strong> The change in frequency (horizontal line) and magnitude (vertical line) of different return periods of coastal flooding <span class="citation" data-cites="Vitousek2017">(Vitousek et al. 2017)</span></p>
+<h1 id="hazard-sensitivity-to-climate-change">Hazard sensitivity to climate change</h1>
+<p>Some hazards are more sensitive to climate change than others. This reflects the differences in the underlying physical processes that drive the hazard, and to what extent an increase in the global mean temperature can change these processes.</p>
+<p>Heatwaves and wildfires are directly influenced by changes in global mean surface temperature, and hence scale almost linearly with an increase in the temperature.</p>
+<p>On the other hand, floods and droughts are mainly driven by changes in precipitation patterns. In general, wet places are expected to get wetter, and dry places are expected to get drier. Total precipitation values are, however, unevenly distributed, with a few very wet days contributing to most precipitation. Climate projections show that precipitation may become even more uneven in the future. For instance, one fifth of the projected increase in rainfalls occurs during the two wettest days of the year <span class="citation" data-cites="Pendergrass2018">(Pendergrass and Knutti 2018)</span>, thereby changing patterns of floods and droughts.</p>
+<p>How climate change may alter the occurrence of tropical cyclones is harder to predict, given the complexity of physical processes at play. These processes cannot be resolved in the current climate models. Rising temperatures will increase the moisture content available to fuel tropical cyclones, making it likely that they will be more intense <span class="citation" data-cites="Knutson2020">(Knutson et al. 2020)</span>.</p>
+<p>Storm surges from tropical cyclones are likely to increase because of the increase in sea-levels. At the moment, global mean sea-level rise is estimated at around 3mm per year <span class="citation" data-cites="Nerem2018">(Nerem et al. 2018)</span>.</p>
+<p>Earthquakes are unaffected by climate and will not change in the future because of climate change.</p>
+<h1 id="expected-changes-in-hazard-occurrence">Expected changes in hazard occurrence</h1>
+<p>We will discuss some of the mean trends identified in the literature on expected changes in extreme hazards. These estimates are derived by using the output from climate models and including them in a hazard model.</p>
+<ul>
+<li><p>Hirabayashi et al. analysed changes in frequency of flooding for the 21<sup>st</sup> century (see Figure 12.3.2) by comparing the changes in 100-year return period. A larger increase in flood hazard (lower return period) is found for Asia, Africa and South America, while parts of Europe will experience less frequent floods <span class="citation" data-cites="Hirabayashi2021">(Hirabayashi et al. 2021)</span>.</p></li>
+<li><p>Sea-level rise will make coastal flooding more likely. In most areas a doubling of flood frequency is expected, while in some areas (e.g. Tropics) a doubling of flooding is already expected in 2050 <span class="citation" data-cites="Vitousek2017">(Vitousek et al. 2017)</span>.</p></li>
+<li><p>Changes in tropical cyclones are harder to predict. Currently, it is expected that the global frequency of occurrence of tropical cyclones will either decrease or remain unchanged, while wind speed and precipitation rates are expected to increase <span class="citation" data-cites="Knutson2020">(Knutson et al. 2020)</span>.</p></li>
+<li><p>How droughts might change depends on the definition of a drought adopted. An increasing frequency of drought is expected over large land areas resulting from either decreased and/or increased evaporation <span class="citation" data-cites="Dai2013">(Dai 2013)</span>.</p></li>
+<li><p>Landslides might also become more frequent due to the increase in intense precipitation events. For instance, a recent study showed that landslide activity in China and Nepal could see a 30 to 70% increase in the future <span class="citation" data-cites="NASA2020">(NASA 2020)</span>.</p></li>
+</ul>
+<p><img src="assets/Figure_12.3.2.png" style="width:100.0%" /></p>
+<p><strong>Figure 12.3.2:</strong> The multi-modal mean change in the global 100-year flood return period over the 21<sup>st</sup> century for Representative Concentration Pathway (RCP) 8.5 <span class="citation" data-cites="Hirabayashi2021">(Hirabayashi et al. 2021)</span></p>
+<h1 id="future-infrastructure-exposure">Future infrastructure exposure</h1>
+<p>Using the modelled hazard output, we can project the increase in the exposure and risk of people and infrastructure in the future due to climate change alone. These numbers assume that the current population and amount, value and use of infrastructure remains unchanged.</p>
+<p>The number of people exposed to future river flooding may increase 7-14 times over the 21<sup>st</sup> century <span class="citation" data-cites="Hirabayashi2013">(Hirabayashi et al. 2013)</span>, while the number of people exposed to coastal flooding is projected to increase 2.5 times by 2100 <span class="citation" data-cites="Kulp2019">(Kulp and Strauss 2019)</span>.</p>
+<p>Infrastructure exposure will also increase dramatically. For instance, sea-level rise will threaten cargo flows in ports in Europe and put 900 million tonnes of goods at risk <span class="citation" data-cites="Christodoulou2018">(Christodoulou, Christidis, and Demirel 2019)</span>, while also increasing the risk of disruptions to global airline ports by a factor of 17-69 by 2100 due to the inundation of major low-lying airports <span class="citation" data-cites="Yesudian2021">(Yesudian and Dawson 2021)</span>.</p>
+<p>What hazard will cause the largest rise in risk depends on the type of infrastructure and the location. In Europe (see Figure 12.3.3), for example, it is found that the damage to critical infrastructure (energy, transport, industry, and social) will likely increase 10-fold by the end of the century, leading to EUR3.4 billion damages per year <span class="citation" data-cites="Forzieri2018">(Forzieri et al. 2018)</span>. Drought and heatwaves are the largest drivers in south Europe, while coastal flooding is the strongest driver overall. The damages from river flooding, wind storms and wildfires also increase, but are more region-specific. Figure 12.3.3. shows the evolution of expected annual damages over time and the geographical distribution of infrastructure damages.</p>
+<p><img src="assets/Figure_12.3.3.png" style="width:100.0%" /></p>
+<p><strong>Figure 12.3.3:</strong> The expected annual damages to infrastructure assets for multiple hazards. The figures show the baseline scenario and the change in risk for 2020, 2050 and 2080 <span class="citation" data-cites="Forzieri2018">(Forzieri et al. 2018)</span></p>
+<h1 id="future-hazard-uncertainties">Future hazard uncertainties</h1>
+<p>As discussed, the way in which climate change affects hazard occurrence can be projected using climate scenarios that feed into climate models. The climate model outputs can then be incorporated into a hazard-specific model to predict future hazard frequency and magnitude.</p>
+<p>Uncertainties accumulate throughout this process. We can distinguish between three sources of uncertainty:</p>
+<ol type="1">
+<li><p><strong>Scenario uncertainty:</strong> Differences between the RCP scenarios over time</p></li>
+<li><p><strong>Climate model uncertainty:</strong> Differences between the climate model results</p></li>
+<li><p><strong>Knowledge uncertainty:</strong> Additional uncertain factors that are not yet properly accounted for in climate scenarios and models.</p></li>
+</ol>
+<p>Below is an example showing the importance of these three sources of uncertainty for future hazard prediction <span class="citation" data-cites="Wong2017">(Wong, Bakker, and Keller 2017)</span>.</p>
+<p>Figure 12.3.4 shows future sea-level rise + surge values (2065 relative to 1986-2005) that are used for upgrading a coastal defence structure in Louisiana, United States. Looking at the thick lines, there is a large scenario uncertainty; the peak of RCP2.6 is around 0.5m whereas for RCP8.5 it is 1.3m. Second, the spread of the distribution function (representing the model uncertainty) determines the shape of the tail, which is in the end what we are interested in. Thirdly, the potential increased rise from rapid Antarctic mass loss (‘fast dynamics,’ FD) was tested, and shows a shift in the distribution curves (dashed lines). For RCP2.6, no change is visible, whereas for RCP8.5 the peak of the distribution shifts to the right. The example highlights the sources and magnitude of climate change uncertainties that need to be considered for infrastructure design. In Lecture 14 we will come back to this.</p>
+<p><img src="assets/Figure_12.3.4.png" style="width:100.0%" /></p>
+<p><strong>Figure 12.3.4:</strong> The probability density functions (left) and survival functions (right) of the expected sea-level rise in 2065 in Louisiana (United States). The different curves reflect the different climate scenarios, the model spread and additional uncertainties surrounding the rapid disintegration of the Antarctic ice sheet (FD) <span class="citation" data-cites="Wong2017">(Wong, Bakker, and Keller 2017)</span></p>
+<h1 id="summary">Summary</h1>
+<p>In this lecture we have discussed how to use the climate scenarios and climate models to predict the future occurrence of hazards and the resulting exposure of infrastructure. Moreover, we have summarised the three main sources of future hazard uncertainty.</p>
+<h1 class="unnumbered" id="bibliography">Bibliography</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Christodoulou2018" class="csl-entry" role="doc-biblioentry">
+Christodoulou, Aris, Panayotis Christidis, and Hande Demirel. 2019. <span>“<span class="nocase">Sea-level rise in ports: a wider focus on impacts</span>.”</span> <em>Maritime Economics <span>&amp;</span> Logistics</em> 21 (4): 482–96. <a href="https://doi.org/10.1057/s41278-018-0114-z">https://doi.org/10.1057/s41278-018-0114-z</a>.
+</div>
+<div id="ref-Dai2013" class="csl-entry" role="doc-biblioentry">
+Dai, Aiguo. 2013. <span>“<span class="nocase">Increasing drought under global warming in observations and models</span>.”</span> <em>Nature Climate Change</em> 3 (1): 52–58. <a href="https://doi.org/10.1038/nclimate1633">https://doi.org/10.1038/nclimate1633</a>.
+</div>
+<div id="ref-Forzieri2018" class="csl-entry" role="doc-biblioentry">
+Forzieri, Giovanni, Alessandra Bianchi, Filipe Batista e. Silva, Mario A. Marin Herrera, Antoine Leblois, Carlo Lavalle, Jeroen C. J. H. Aerts, and Luc Feyen. 2018. <span>“<span class="nocase">Escalating impacts of climate extremes on critical infrastructures in Europe</span>.”</span> <em>Global Environmental Change</em> 48 (April 2017): 97–107. <a href="https://doi.org/10.1016/j.gloenvcha.2017.11.007">https://doi.org/10.1016/j.gloenvcha.2017.11.007</a>.
+</div>
+<div id="ref-Hirabayashi2013" class="csl-entry" role="doc-biblioentry">
+Hirabayashi, Yukiko, Roobavannan Mahendran, Sujan Koirala, Lisako Konoshima, Dai Yamazaki, Satoshi Watanabe, Hyungjun Kim, and Shinjiro Kanae. 2013. <span>“<span class="nocase">Global flood risk under climate change</span>.”</span> <em>Nature Climate Change</em> 3 (9): 816–21. <a href="https://doi.org/10.1038/nclimate1911">https://doi.org/10.1038/nclimate1911</a>.
+</div>
+<div id="ref-Hirabayashi2021" class="csl-entry" role="doc-biblioentry">
+Hirabayashi, Yukiko, Masahiro Tanoue, Orie Sasaki, Xudong Zhou, and Dai Yamazaki. 2021. <span>“<span class="nocase">Global exposure to flooding from the new CMIP6 climate model projections</span>.”</span> <em>Scientific Reports</em> 11 (1): 1–7. <a href="https://doi.org/10.1038/s41598-021-83279-w">https://doi.org/10.1038/s41598-021-83279-w</a>.
+</div>
+<div id="ref-Knutson2020" class="csl-entry" role="doc-biblioentry">
+Knutson, Thomas, Suzana J. Camargo, Johnny C. L. Chan, Kerry Emanuel, Chang Hoi Ho, James Kossin, Mrutyunjay Mohapatra, et al. 2020. <span>“<span class="nocase">Tropical cyclones and climate change assessment part II: Projected response to anthropogenic warming</span>.”</span> <em>Bulletin of the American Meteorological Society</em> 101 (3): E303–22. <a href="https://doi.org/10.1175/BAMS-D-18-0194.1">https://doi.org/10.1175/BAMS-D-18-0194.1</a>.
+</div>
+<div id="ref-Kulp2019" class="csl-entry" role="doc-biblioentry">
+Kulp, Scott A., and Benjamin H. Strauss. 2019. <span>“<span class="nocase">New elevation data triple estimates of global vulnerability to sea-level rise and coastal flooding</span>.”</span> <em>Nature Communications</em> 10 (1). <a href="https://doi.org/10.1038/s41467-019-12808-z">https://doi.org/10.1038/s41467-019-12808-z</a>.
+</div>
+<div id="ref-NASA2020" class="csl-entry" role="doc-biblioentry">
+NASA. 2020. <span>“<span class="nocase">Climate Change Could Trigger More Landslides in High Mountain Asia</span>.”</span> <a href="https://www.nasa.gov/feature/goddard/2020/climate-change-could-trigger-more-landslides-in-high-mountain-asia">https://www.nasa.gov/feature/goddard/2020/climate-change-could-trigger-more-landslides-in-high-mountain-asia</a>.
+</div>
+<div id="ref-Nerem2018" class="csl-entry" role="doc-biblioentry">
+Nerem, R S, B D Beckley, J T Fasullo, B D Hamlington, D Masters, and G T Mitchum. 2018. <span>“<span class="nocase">Climate-change–driven accelerated sea-level rise detected in the altimeter era</span>.”</span> <em>Proceedings of the National Academy of Sciences</em> 115 (9): 2022–25. <a href="https://doi.org/10.1073/pnas.1717312115">https://doi.org/10.1073/pnas.1717312115</a>.
+</div>
+<div id="ref-Pendergrass2018" class="csl-entry" role="doc-biblioentry">
+Pendergrass, Angeline G., and Reto Knutti. 2018. <span>“<span class="nocase">The Uneven Nature of Daily Precipitation and Its Change</span>.”</span> <em>Geophysical Research Letters</em> 45 (21): 11, 980–11, 988. <a href="https://doi.org/10.1029/2018GL080298">https://doi.org/10.1029/2018GL080298</a>.
+</div>
+<div id="ref-Vitousek2017" class="csl-entry" role="doc-biblioentry">
+Vitousek, S, P L Barnard, C H Fletcher, N Frazer, L Erikson, and C D Storlazzi. 2017. <span>“<span class="nocase">Doubling of coastal flooding frequency within decades due to sea-level rise</span>.”</span> <em>Scientific Reports</em> 7 (1399): 1–9.
+</div>
+<div id="ref-Wong2017" class="csl-entry" role="doc-biblioentry">
+Wong, Tony E, Alexander M R Bakker, and Klaus Keller. 2017. <span>“<span class="nocase">Impacts of Antarctic fast dynamics on sea-level projections and coastal flood defense</span>.”</span> <em>Climatic Change</em> 144 (2): 347–64. <a href="https://doi.org/10.1007/s10584-017-2039-4">https://doi.org/10.1007/s10584-017-2039-4</a>.
+</div>
+<div id="ref-Yesudian2021" class="csl-entry" role="doc-biblioentry">
+Yesudian, Aaron N., and Richard J. Dawson. 2021. <span>“<span class="nocase">Global analysis of sea level rise risk to airports</span>.”</span> <em>Climate Risk Management</em> 31 (November 2020): 100266. <a href="https://doi.org/10.1016/j.crm.2020.100266">https://doi.org/10.1016/j.crm.2020.100266</a>.
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Flaw of Averages, Robustness, Flexibility" />
+  <title>Mini-Lecture 7.2 – Principles of decision analysis under uncertainty</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 7.2 – Principles of decision analysis under uncertainty</h1>
+</header>
+<p>In this mini-lecture we will introduce some key concepts of decision analysis focused mainly on uncertainty. We will introduce multi-criteria decision analysis (MCDA) as a classic method for making decisions and the concepts of robustness and flexibility.</p>
+<h1 id="learning-objectives">Learning objectives</h1>
+<ul>
+<li>Describe the types of uncertainty and when deep uncertainty arises</li>
+<li>Describe some approaches of MCDA</li>
+<li>Explain the difference between robust and adaptive plans</li>
+</ul>
+<h1 id="overview-on-decision-analysis">Overview on decision analysis</h1>
+<p>One of the bases of decision theory is the concept of expected utility as formulated by <span class="citation" data-cites="Savage1954">(Savage 1954)</span>. In this theory, one can formulate a personal utility function, which is a function about how one values different aspects, and is by nature, subjective. One can also formulate a probability distribution of the potential outcomes of a certain decision. In this way, one can optimise the expected value of the utility function under the probability distribution of outcomes and obtain the best decision. While this approach is considered rational for normal decisions, sometimes it’s not applicable to infrastructure decision-making. First of all, given the variety of stakeholders and objectives, it’s not easy to compute a single expected utility function. Secondly, infrastructure decisions don’t only focus on optimising benefits, but also on reducing losses from worst-case scenarios. An infrastructure that performs well on average but loses functionality for an entire year is normally not considered acceptable. This is commonly known as the “Flaw of Averages” and occurs when the analysis is carried out for a “most likely” scenario or using a “best prediction” instead of using a deeper uncertainty evaluation.</p>
+<p>The concepts elaborated in this mini-lecture will therefore tackle the challenges of making decisions under uncertainty using a participatory and adaptive approach.</p>
+<h1 id="types-of-risk-and-uncertainty">Types of risk and uncertainty</h1>
+<p>Long-term planning is particularly difficult due to the inherent uncertainty about the future. Figure 7.2.1 shows the range of uncertainty types that can be present in a problem. The left side describes the classical predict-then-act approach, starting with determinism, in which all the factors involved are known; and the statistical risk, in which the imprecision could be quantified by probabilities. However, long-term strategies, due to unpredictable new technologies, changing trends in demography and societal behaviours, and climate change effects, usually fall under the right side, characterised by deep uncertainty.</p>
+<p><img src="assets/Figure_7.2.1.jpg" style="width:100.0%" /></p>
+<p><strong>Figure 7.2.1:</strong> Different types of uncertainty <span class="citation" data-cites="Buurman2016">(Buurman and Babovic 2016)</span></p>
+<p>When we face uncertainty, the premise that we should decide to follow our best predictions, as in the statistical approach, has been questioned for a while <span class="citation" data-cites="Gardenfors1982">(Gärdenfors and Sahlin 1982)</span>. Usually, our problems face deep uncertainty which stems from cases where knowledge is diffuse, the experts do not agree, or the number of assumptions made through the estimation process makes the results doubtful. This issue has produced important literature on Decision Making under Deep Uncertainty (DMDU) methods and applications, as will be seen in mini-lecture 7.3.</p>
+<h1 id="multi-criteria-decision-analysis">Multi-criteria decision analysis</h1>
+<p>A decision-making process evaluates a set of alternatives by using different criteria, including attributes and objectives. Attributes are the measurable properties of the model such as the cost, capacity and emissions of specific infrastructure options or strategies, as well as related or dependent characteristics such as the location or lifetime. Objectives are understood as statements about the desired state of the system <span class="citation" data-cites="Malczewski2015">(Malczewski and Rinner 2015)</span> or defined as visions or goals, as outlined in Lecture 5.</p>
+<p>For the decision-making process, an “a priori” approach uses a set of relative weights to build an objective function for optimisation <span class="citation" data-cites="Drobne2009">(Drobne and Lisec 2009)</span>. For instance, a decision-maker can say that reducing emissions has a 50% importance (weight), while cost and reliability have 30% and 20% importance, respectively. In contrast, an “a posteriori” approach does not need to provide relative weights beforehand, it tries to explore the whole set of alternatives and evaluate the trade-offs between different and conflicting objectives <span class="citation" data-cites="Malczewski1999">(Malczewski 1999)</span>. For instance, an energy plan can have low cost and high emissions by continuing to use fossil fuels, or high cost and low emissions by changing to renewables. With an “a posteriori” approach, the decision-maker does not need to decide how much they prefer to reduce emissions or costs by, instead they can look at the whole set of options, evaluate the trade-offs and potentially make a compromised decision. The set of optimal solutions is commonly referred to as a Pareto Frontier <span class="citation" data-cites="Cohon1978">(Cohon 1978)</span>.</p>
+<p>There are several methods used in the industry that use MCDA approaches, such as the Analytic Hierarchy Process (AHP) ELECTRE or PROMETHEE.</p>
+<h1 id="robustness-in-decision-making">Robustness in decision making</h1>
+<p>Robustness is the concept of making decisions in the present that will also achieve objectives in the future. In this sense, decision-makers do not try to generate the maximum value by looking at the most likely projection of the future. Instead, they try to explore a broad range of future scenarios and select the strategy that performs best in most of them. There are several possible performance indicators to look at. The two most commonly used are: (1) robustness, or selecting the strategy that performs best in most futures, or (2) regrets, minimising the potential losses under all potential futures.</p>
+<p>Figure 7.2.2 shows different projections of precipitation and temperature changes for a hydropower project from different climate models. The range of values evident is between +20% to -30%, resulting in a huge challenge for the project design. Given the non-flexible nature of a hydropower dam, in this case, a robust decision that minimises possible regrets is critical.</p>
+<p><img src="assets/Figure_7.2.2.jpg" style="width:100.0%" /></p>
+<p><strong>Figure 7.2.2:</strong> Projected mean changes in annual temperature (°C) and precipitation (%) for a hydropower project <span class="citation" data-cites="Taner2017">(Taner, Ray, and Brown 2017)</span></p>
+<h1 id="flexibility-and-adaptation-in-decision-making">Flexibility and adaptation in decision making</h1>
+<p>In contrast with the concept of robustness, flexibility takes a sequential decision-making approach. This means, flexibility does not try to make only the best decisions in the present, but intends to also provide options so the system can adapt through time. Adaptive management was originally developed for the management of natural resources under uncertainty as <em>“an integrated, multidisciplinary and systematic approach to improving management and accommodating change by learning from the outcomes”</em> <span class="citation" data-cites="Holling1978">(Holling 1978)</span>. Hence, the value of flexibility – the capability to adapt over time – is a well-known concept developed in recent techniques for making decisions under uncertainty.</p>
+<p>Flexibility is an important advantage for two main reasons:</p>
+<ol type="1">
+<li>Adaptive strategies do not usually require a large capital investment and are more attractive because they postpone investments</li>
+<li>Postponing decisions into the future has the advantage that in the future there may be much more information and less uncertainty than in the present.</li>
+</ol>
+<p>Figure 7.2.3 shows an analysis in which the decision to expand or not to expand a reservoir dam depends on a variable threshold through time. If the threshold is likely to be reached, the decision-maker may consider the expansion of the reservoir dam to accommodate for future demands and, therefore, design it with flexibility. If expanding the dam is difficult, another option might be to prepare small desalination or treatment plants where needed, increasing the flexibility of the water supply system.</p>
+<p><img src="assets/Figure_7.2.3.jpg" style="width:100.0%" /></p>
+<p><strong>Figure 7.2.3:</strong> Drawdown threshold for the decision to expand or not in a reservoir dam <span class="citation" data-cites="Fletcher2019">(Fletcher et al. 2019)</span></p>
+<h1 id="summary">Summary</h1>
+<p>In this mini-lecture we introduced the Flaw of Averages to illustrate the mistake of making decisions based on average performance. Then we explored the types of uncertainty that exist in different problems and some concepts of multi-criteria decision analysis (MCDA). Finally, we described the concepts of robustness and flexibility and their importance for infrastructure planning.</p>
+<h1 class="unnumbered" id="bibliography">Bibliography</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Buurman2016" class="csl-entry" role="doc-biblioentry">
+Buurman, Joost, and Vladan Babovic. 2016. <span>“Adaptation Pathways and Real Options Analysis: An Approach to Deep Uncertainty in Climate Change Adaptation Policies.”</span> <em>Policy and Society</em> 35 (January): 137–50. <a href="https://doi.org/10.1016/j.polsoc.2016.05.002">https://doi.org/10.1016/j.polsoc.2016.05.002</a>.
+</div>
+<div id="ref-Cohon1978" class="csl-entry" role="doc-biblioentry">
+Cohon, J. L. 1978. <em>Multiobjective Programming and Planning</em>. Academic Press. <a href="https://www.elsevier.com/books/multiobjective-programming-and-planning/cohon/978-0-12-178350-1">https://www.elsevier.com/books/multiobjective-programming-and-planning/cohon/978-0-12-178350-1</a>.
+</div>
+<div id="ref-Drobne2009" class="csl-entry" role="doc-biblioentry">
+Drobne, Samo, and Anka Lisec. 2009. <span>“Multi-Attribute Decision Analysis in GIS: Weighted Linear Combination and Ordered Weighted Averaging.”</span> <em>Informatica</em> 33: 459. <a href="http://www.informatica.si/index.php/informatica/article/view/263">http://www.informatica.si/index.php/informatica/article/view/263</a>.
+</div>
+<div id="ref-Fletcher2019" class="csl-entry" role="doc-biblioentry">
+Fletcher, Sarah, Kenneth Strzepek, Adnan Alsaati, and Olivier De Weck. 2019. <span>“Learning and Flexibility for Water Supply Infrastructure Planning Under Groundwater Resource Uncertainty.”</span> <em>Environmental Research Letters</em> 14 (November): 114022. <a href="https://doi.org/10.1088/1748-9326/ab4664">https://doi.org/10.1088/1748-9326/ab4664</a>.
+</div>
+<div id="ref-Gardenfors1982" class="csl-entry" role="doc-biblioentry">
+Gärdenfors, Peter, and Nils Eric Sahlin. 1982. <span>“Unreliable Probabilities, Risk Taking, and Decision Making.”</span> <em>Synthese</em> 53 (December): 361–86. <a href="https://doi.org/10.1007/BF00486156">https://doi.org/10.1007/BF00486156</a>.
+</div>
+<div id="ref-Holling1978" class="csl-entry" role="doc-biblioentry">
+Holling, C. S. 1978. <em>Adaptive Environmental Assessment and Management</em>. John Wiley &amp; Sons. <a href="http://pure.iiasa.ac.at/id/eprint/823/">http://pure.iiasa.ac.at/id/eprint/823/</a>.
+</div>
+<div id="ref-Malczewski1999" class="csl-entry" role="doc-biblioentry">
+Malczewski, Jacek. 1999. <em>GIS and Multicriteria Decision Analysis</em>. Wiley. <a href="https://www.wiley.com/en-us/GIS+and+Multicriteria+Decision+Analysis-p-9780471329442">https://www.wiley.com/en-us/GIS+and+Multicriteria+Decision+Analysis-p-9780471329442</a>.
+</div>
+<div id="ref-Malczewski2015" class="csl-entry" role="doc-biblioentry">
+Malczewski, Jacek, and Claus Rinner. 2015. <em>Multicriteria Decision Analysis in Geographic Information Science</em>. Springer Berlin Heidelberg. <a href="https://doi.org/10.1007/978-3-540-74757-4">https://doi.org/10.1007/978-3-540-74757-4</a>.
+</div>
+<div id="ref-Savage1954" class="csl-entry" role="doc-biblioentry">
+Savage, L. J. 1954. <em>The Foundations of Statistics</em>. John Wiley &amp; Sons. <a href="https://psycnet.apa.org/record/1955-00117-000">https://psycnet.apa.org/record/1955-00117-000</a>.
+</div>
+<div id="ref-Taner2017" class="csl-entry" role="doc-biblioentry">
+Taner, Mehmet Ümit, Patrick Ray, and Casey Brown. 2017. <span>“Robustness-Based Evaluation of Hydropower Infrastructure Design Under Climate Change.”</span> <em>Climate Risk Management</em> 18 (January): 34–50. <a href="https://doi.org/10.1016/j.crm.2017.08.002">https://doi.org/10.1016/j.crm.2017.08.002</a>.
+</div>
+</div>
+</body>
+</html>

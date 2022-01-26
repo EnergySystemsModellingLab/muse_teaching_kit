@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Infrastructure Systems, Carbon Emissions" />
+  <title>Mini-Lecture 3.3 – Estimating infrastructure carbon emissions</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 3.3 – Estimating infrastructure carbon emissions</h1>
+</header>
+<h2 id="short-description">Short description</h2>
+<p>Following mini-lecture 3.2, this mini-lecture provides an insight into estimating infrastructure carbon emissions. Ideally, carbon emissions data can be sourced from relevant country stakeholders. However, in many cases the data is not available or insufficient and infrastructure emissions need to be estimated. This mini-lecture outlines a methodology for calculating these emissions.</p>
+<h2 id="learning-objectives">Learning objectives</h2>
+<ul>
+<li>Estimate gross carbon emissions of infrastructure systems.</li>
+</ul>
+<h1 id="lecture-content">Lecture content</h1>
+<h2 id="gross-carbon-emissions-calculation-method">Gross carbon emissions calculation method</h2>
+<p>Mini-lecture 3.3 presents the method for estimating gross emissions utilised by <span class="citation" data-cites="Adshead2018b">Adshead et al. (2018)</span>. This simplified method to estimate the gross carbon emissions of infrastructure systems includes the following steps:</p>
+<p><strong><u>Step 1:</u></strong> Identify the carbon emissions per unit for each type of infrastructure asset. The carbon emissions per unit is known as the capacity factor. For example, the capacity factor of a hydropower system would be measured in tCO<sub>2</sub>eq/kWh (tonnes of carbon dioxide equivalent per kilo watt hour).</p>
+<p><strong><u>Step 2:</u></strong> Identify the capacity of the infrastructure assets.</p>
+<p><strong><u>Step 3:</u></strong> Conduct any unit conversion needed. Following on from the previous example, if the given capacity factor of a hydropower plant is reported to be 25 gCO<sub>2</sub>eq/kWh (grams of carbon dioxide equivalent per kilo watt hour) and its capacity is 10 GWh (giga watt hour), unit conversion needs to take place to ensure correct calculation. The conversion would be as follows:</p>
+<p>1g = 0.000001 tonnes</p>
+<p>Therefore: 25 gCO<sub>2</sub>eq/kWh= 0.000025 tCO<sub>2</sub>eq/kWh</p>
+<p>1 GWh= 1,000,000 kWh</p>
+<p>Therefore: 10 GWh= 10,000,000 kWh</p>
+<p><strong><u>Step 4:</u></strong> Multiply the capacity factor by the capacity of an infrastructure asset to determine its gross emissions as shown in the equation below.</p>
+<p><span class="math inline">\(Gross\ Carbon\ Emissions\ (\text{tCO}_{2}eq) = Capacity\ Factor\  \times Capacity\)</span></p>
+<p>For instance, the hydropower plant:</p>
+<p>Gross Carbon Emissions= 0.000025 x 10,000,000 = 250 tCO<sub>2</sub>eq annually.</p>
+<h2 id="identifying-capacity-factors">Identifying capacity factors</h2>
+<p>Emissions capacity factors can be sourced from a variety of academic and institutional research. One such source, <span class="citation" data-cites="Schlomer2014">Intergovernmental Panel on Climate Change (2014)</span>, provides a summary assessment of capacity factors for various sectors as well as more detailed methodologies for determining carbon emissions. They note that the availability and quality of carbon emission data vary significantly across sectors. Further details of their process of collating research from various sources can be found in the report.</p>
+<p>The following sections present the available capacity factors for the energy, transportation, wastewater and waste infrastructure systems. Where minimum, median, and/or maximum factors are given, estimates can be made using the median or average value.</p>
+<h2 id="energy">Energy</h2>
+<p>The capacity factors for the energy system are described as the lifecycle emissions and are measured in gCO<sub>2</sub>eq/kWh as shown in Figure 3.3.1 below.</p>
+<p><img src="assets/Figure_3.3.1.png" style="width:100.0%" /></p>
+<p><strong>Figure 3.3.1:</strong> Emissions of electricity supply technologies <span class="citation" data-cites="Schlomer2014">(Intergovernmental Panel on Climate Change 2014)</span></p>
+<h2 id="transport">Transport</h2>
+<p>The capacity factor for the transportation system is noted as gCO<sub>2</sub>eq/p-km (grams of carbon dioxide equivalent per passenger kilometre). The capacity would therefore be the number of kilometres traversed by passengers using a particular transportation mode. <span class="citation" data-cites="Schlomer2014">Intergovernmental Panel on Climate Change (2014)</span> specified data for commercially available technologies, depicted in Figure 3.3.2 below, and expected future passenger and freight transportation.</p>
+<p><img src="assets/Figure_3.3.2.png" style="width:100.0%" /></p>
+<p><strong>Figure 3.3.2:</strong> Passenger transport emissions factors for commercially available technologies <span class="citation" data-cites="Schlomer2014">(Intergovernmental Panel on Climate Change 2014)</span></p>
+<h2 id="waste-and-wastewater">Waste and wastewater</h2>
+<p><span class="citation" data-cites="Schlomer2014">Intergovernmental Panel on Climate Change (2014)</span> notes several capacity factors for Municipal Solid Waste (MSW) given the two common greenhouse gases emitted from landfills:</p>
+<ul>
+<li><p><strong>Methane emissions:</strong> Measured in gCH<sub>4</sub>/kg MSW (grams of methane per kilogram of Municipal Solid Waste)</p></li>
+<li><p><strong>Nitrous oxide emissions</strong>: Measured in gN<sub>2</sub>O/kg MSW (grams of nitrous oxide per kilogram of Municipal Solid Waste)</p></li>
+</ul>
+<p>These values are then combined and converted to tCO<sub>2</sub>eq/t MSW (tonne of carbon dioxide equivalent per tonne of Municipal Solid Waste) (see Figure 3.3.3). This factor would be used to calculate gross carbon emissions.</p>
+<p><img src="assets/Figure_3.3.3.png" style="width:100.0%" /></p>
+<p><strong>Figure 3.3.3:</strong> Depiction of the capacity factors for waste treatment technologies <span class="citation" data-cites="Schlomer2014">(Intergovernmental Panel on Climate Change 2014)</span></p>
+<h2 id="section"></h2>
+<p>The capacity factor for wastewater is stated in tCO<sub>2</sub>eq/tBOD<sub>5</sub> (tonnes of carbon dioxide equivalent per tonne of biological oxygen demand) as seen in Figure 3.3.4 below.</p>
+<p><img src="assets/Figure_3.3.4.png" style="width:100.0%" /></p>
+<p><strong>Figure 3.3.4:</strong> Wastewater capacity factor <span class="citation" data-cites="Schlomer2014">(Intergovernmental Panel on Climate Change 2014)</span>.</p>
+<h2 id="summary">Summary</h2>
+<p>Mini-lecture 3.3 illustrated a simple method for estimating the carbon emissions of infrastructure systems in lieu of detailed in-country data. The mini-lecture further pointed towards a good source of carbon emission capacity factors: <span class="citation" data-cites="Schlomer2014">Intergovernmental Panel on Climate Change (2014)</span>.</p>
+<h1 class="unnumbered" id="bibliography">Bibliography</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Adshead2018b" class="csl-entry" role="doc-biblioentry">
+Adshead, D., O. Roman, S. Thacker, F. Felix, L. Fuldauer, and A. J. Hickford. 2018. <span>“<span class="nocase">Long-term strategic infrastructure planning model for Saint Lucia: Version 1.0</span>.”</span> University of Oxford; United Nations Office for Project Services.
+</div>
+<div id="ref-Schlomer2014" class="csl-entry" role="doc-biblioentry">
+Intergovernmental Panel on Climate Change. 2014. <span>“<span class="nocase">Technology-specific Cost and Performance Parameters</span>.”</span> <em>Climate Change 2014 Mitigation of Climate Change</em>, 1329–56. <a href="https://doi.org/10.1017/cbo9781107415416.025">https://doi.org/10.1017/cbo9781107415416.025</a>.
+</div>
+</div>
+</body>
+</html>

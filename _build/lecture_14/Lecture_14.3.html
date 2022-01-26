@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Uncertainty, Robustness, Multi-objective planning" />
+  <title>Mini-Lecture 14.3 – Decision-making under uncertainty</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 14.3 – Decision-making under uncertainty</h1>
+</header>
+<p>This lecture introduces decision theory under conditions of imperfect or incomplete information. We will cover how to define and categorise uncertainties relevant to specific decision problems. After introducing the basic components of frameworks within decision theory under uncertainty, we will run through an illustrative example.</p>
+<h1 id="learning-objectives">Learning objectives</h1>
+<ul>
+<li>Be able to define and categorise uncertainties</li>
+<li>Understand the tenets of frameworks within decision theory under uncertainty</li>
+<li>Recognise the importance of robustness within decision-making frameworks.</li>
+</ul>
+<h1 id="uncertainty-and-decision-making">Uncertainty and decision-making</h1>
+<p>Making decisions about infrastructure and environmental systems necessitates a process to anticipate and manage change. Nowadays this process is becoming increasingly complicated. Populations are changing rapidly, technological development is accelerating at an unprecedented pace, and climate change is a serious operational risk to be managed. For instance, think of how energy sector managers need to ensure reliable future supplies of electricity for a growing population whilst decarbonising supply sources, as well as managing the impacts from climate change and rapidly changing regulation. Such complexities extend to all infrastructure systems.</p>
+<p>These issues are defined by <u>uncertainty</u>. We can simply define uncertainty as a situation involving imperfect or unknown information about the past, present, or future events. For a decision-maker, uncertainty represents the gap between the best information available to them and the knowledge they would need in order to make the best choice <span class="citation" data-cites="Marchau2019">(Marchau et al. 2019)</span>. Decision-making under uncertainty (DMUU) is a rich and developed field that is concerned with making the best possible choices based on imperfect or incomplete information. It has come to be recognised as an important aspect in planning and managing infrastructure systems.</p>
+<h1 id="types-of-uncertainty">Types of uncertainty</h1>
+<p>In order for us to manage uncertainty when making decisions, it is important to first identify the types of uncertainties that we are dealing with. We can define two extremes of uncertainty: complete determinism and total ignorance, within which four levels of uncertainties exist <span class="citation" data-cites="Walker2003">(Walker et al. 2003)</span>.</p>
+<p><img src="assets/Figure_14.3.1.png" style="width:100.0%" /></p>
+<p><strong>Figure 14.3.1:</strong> Levels of uncertainty <span class="citation" data-cites="Marchau2019">(Marchau et al. 2019)</span></p>
+<p>Figure 14.3.1 summarises these categorises of uncertainties. Complete determinism refers to a state of total uncertainty and is almost unattainable. Level 1 uncertainty relates to those conditions in which historical data can be reasonably assumed as predictors for the future. Examples of this might include operational conditions (e.g. number of scheduled maintenance days) and asset parameters (e.g. power plant efficiency). Meanwhile, Level 2 uncertainties are those that can be defined adequately through probabilistic models describing the system. The total solar irradiance over a solar energy farm is an example of a Level 2 uncertainty. Level 3 uncertainties cannot be described in a probabilistic sense nor can they be safely assumed as identical to historical observations. However, they can be defined to fall within a range of plausible futures and hence can be treated with <em>scenario analysis</em>. For example, rate at which population changes in a given region is a Level 3 uncertainty. Level 4 uncertainties are the deeply uncertain factors that can only be captured with a vast range of plausible assumptions (4a), such as electricity prices, or those that have no known future (4b), such as a global financial crisis.</p>
+<p>In any case, the first step in dealing with uncertainties is to list and categorise each uncertainty relevant to a decision problem. This allows us to define the best approach to handle the given uncertainty.</p>
+<h1 id="dealing-with-uncertainty">Dealing with uncertainty</h1>
+<p>Recent times have witnessed a proliferation in the number of methodologies developed for decision-making under uncertainty. The most common examples include robust decision-making (RDM) <span class="citation" data-cites="Lempert2010">(Lempert, Popper, and Bankes 2010)</span>, decision scaling <span class="citation" data-cites="Brown2012">(Brown et al. 2012)</span>, real options analysis <span class="citation" data-cites="De2006">(De Neufville, Scholtes, and Wang 2006)</span>, dynamic adaptive policy pathways <span class="citation" data-cites="Haasnoot2013">(Haasnoot et al. 2013)</span>, and info-gap analysis <span class="citation" data-cites="Ben2006">(Ben-Haim 2006)</span>. Whilst each of these methodologies have their own nuances and jargon, they all share a common set of tenets <span class="citation" data-cites="Hall2020">(Hall et al. 2020)</span>, in that they all:</p>
+<ul>
+<li><p>Extensively test a broad range of uncertainties to which a system might be exposed</p></li>
+<li><p>Emphasise the use of multiple objectives in the planning problem</p></li>
+<li><p>Identify solutions that are <strong>robust</strong> to uncertainties.</p></li>
+</ul>
+<p>In other words, investment plans are rigorously stress-tested to the range of uncertainties defined in the problem formulation stages, as detailed in the previous section. The results from these stress tests are evaluated against multiple performance criteria (see mini-lecture 14.2). Finally, analysis and decision-makers identify strategies that are robust, in that they perform adequately well in relation to multiple objectives across a range of scenarios and uncertainties—referred to as <em>satisficing</em> <em>solutions</em>. The emphasis on robustness is a distinguishing feature of decision theory under uncertainty. There is a widespread recognition that no ‘best’ or ‘optimal’ option exists. Rather, it is argued that decision-makers ought to go beyond this frame of thinking to identify robust solutions, which can perform acceptably under numerous possible states of the world.</p>
+<h1 id="robust-decision-making-an-example-part-i">Robust decision-making: An example (part I)</h1>
+<p>Let us illustrate decision theory under uncertain conditions through an example. Building on the contents of mini-lecture 14.2, consider a planning problem in which we wish to ensure safe and reliable water supplies over the next three decades. Using a generic for decision-making under uncertainty, our methodology could be partitioned into the four steps outlined by Figure 14.3.2. First, we need to formulate the decision problem, where the crucial first step is to identify and label uncertainties. For our specific problem, the following uncertainties can be identified:</p>
+<ol type="1">
+<li><p>Water demands (Level 3)</p></li>
+<li><p>Hydrological variability (Level 2)</p></li>
+<li><p>Electricity prices (Level 4a)</p></li>
+<li><p>Groundwater abstraction licences (Level 1)</p></li>
+<li><p>Water system operational parameters (Level 1).</p></li>
+</ol>
+<p>Of course, stakeholders might identify additional uncertainties but the above will suffice for this illustrative example.</p>
+<p><img src="assets/Figure_14.3.2.png" style="width:100.0%" /></p>
+<p><strong>Figure 14.3.2:</strong> Levels of uncertainty <span class="citation" data-cites="Borgomeo2018">(Borgomeo et al. 2018)</span></p>
+<p>The next stage of problem formulation is to create a computer model representation of the water system. Here, it is common for decision-makers to deploy simulation models, which are a digital representation of a real-world system. A simulation model is a handy instrument in the planner’s toolbox as it allows us to conduct thousands of simulations of alternative strategies over a vast range of scenarios. Hence, we can exhaustively stress-test each strategy to see <em>what</em> happens (severity) and for <em>how long</em> (duration).</p>
+<p>Figure 14.3.3 shows an example simulation model of a water system in the Thames basin, England, using the WATHNET modelling software. The use of such models is widespread in infrastructure planning and management.</p>
+<p><img src="assets/Figure_14.3.3.png" style="width:100.0%" /></p>
+<p><strong>Figure 14.3.3</strong>: An example simulation model constructed for the Thames basin, England, using the WATHNET platform</p>
+<h1 id="robust-decision-making-an-example-part-ii">Robust decision-making: An example (part II)</h1>
+<p>Once we have constructed a system model and formulated a set of uncertainties and options, we can begin conducting vast number of simulations in an iterative fashion. This yields a large results database containing a set of robust strategies and their associated trade-offs.</p>
+<p>In our example, by processing the results we could produce a curve similar to that presented in Figure 14.3.4. In this curve, we are visualising the trade-offs between three objectives: cost (x-axis), water shortage risks (y-axis), and plan robustness (colour bar; increasing scale represents decreasing robustness).</p>
+<p>This curve—known as the Pareto frontier—shows a set of solutions that are equally efficient in that the performance of one objective cannot be improved without harming the performance of another objective. Each point on the Pareto frontier represents a unique water investment plan. For example, the point on the far-right of the x-axis represents an investment plan with all options selected, and hence it is the most expensive option from a cost perspective. Generally, Figure 14.3.4 shows that increasing the total investment in strategies will decrease water security and enhance robustness.</p>
+<p><img src="assets/Figure_14.3.4.png" style="width:100.0%" /></p>
+<p><strong>Figure 14.3.4:</strong> Trade-off curve between cost, water security, and robustness <span class="citation" data-cites="Borgomeo2018">(Borgomeo et al. 2018)</span></p>
+<p>As previously discussed, decision-making under uncertainty does not seek to find any elusive ‘optimal’ solution. Rather, our objective is to find a set of solutions that are efficient in relation to the defined uncertainties, which are shown by the Pareto frontier.</p>
+<p>Decision-makers can evaluate the frontier and pick solutions for further investigation that meet their risk thresholds with regards to the three objectives. In this example, the solutions circled in yellow and red were analysed further.</p>
+<h1 id="summary">Summary</h1>
+<p>Making decisions under uncertainty is an inherent part of infrastructure planning. Whilst it is nearly impossible for us to gain perfect information, it is possible for us to manage uncertainties when making decisions. This lecture introduced fundamental concepts within decision theory in conditions of imperfect or partial information. We highlighted the concept of robustness, which seeks to identify options that perform adequately across a range of uncertain conditions.</p>
+<h1 class="unnumbered" id="bibliography">Bibliography</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-Ben2006" class="csl-entry" role="doc-biblioentry">
+Ben-Haim, Yakov. 2006. <em>Info-Gap Decision Theory: Decisions Under Severe Uncertainty</em>. Elsevier.
+</div>
+<div id="ref-Borgomeo2018" class="csl-entry" role="doc-biblioentry">
+Borgomeo, Edoardo, Mohammad Mortazavi-Naeini, Jim W Hall, and Benoit P Guillod. 2018. <span>“Risk, Robustness and Water Resources Planning Under Uncertainty.”</span> <em>Earth’s Future</em> 6 (3): 468–87.
+</div>
+<div id="ref-Brown2012" class="csl-entry" role="doc-biblioentry">
+Brown, Casey, Yonas Ghile, Mikaela Laverty, and Ke Li. 2012. <span>“<span class="nocase">Decision scaling: Linking bottom-up vulnerability analysis with climate projections in the water sector</span>.”</span> <em>Water Resources Research</em> 48 (9): 1–12. <a href="https://doi.org/10.1029/2011WR011212">https://doi.org/10.1029/2011WR011212</a>.
+</div>
+<div id="ref-De2006" class="csl-entry" role="doc-biblioentry">
+De Neufville, Richard, Stefan Scholtes, and Tao Wang. 2006. <span>“Real Options by Spreadsheet: Parking Garage Case Example.”</span> <em>Journal of Infrastructure Systems</em> 12 (2): 107–11.
+</div>
+<div id="ref-Haasnoot2013" class="csl-entry" role="doc-biblioentry">
+Haasnoot, Marjolijn, Jan H Kwakkel, Warren E Walker, and Judith ter Maat. 2013. <span>“<span class="nocase">Dynamic adaptive policy pathways: A method for crafting robust decisions for a deeply uncertain world</span>.”</span> <em>Global Environmental Change</em> 23 (2): 485–98. <a href="https://doi.org/10.1016/j.gloenvcha.2012.12.006">https://doi.org/10.1016/j.gloenvcha.2012.12.006</a>.
+</div>
+<div id="ref-Hall2020" class="csl-entry" role="doc-biblioentry">
+Hall, Jim W, Mohammad Mortazavi-Naeini, Edoardo Borgomeo, Bill Baker, Helen Gavin, Meyrick Gough, Julien J Harou, et al. 2020. <span>“Risk-Based Water Resources Planning in Practice: A Blueprint for the Water Industry in England.”</span> <em>Water and Environment Journal</em> 34 (3): 441–54.
+</div>
+<div id="ref-Lempert2010" class="csl-entry" role="doc-biblioentry">
+Lempert, Robert J, Steven W Popper, and Steven C Bankes. 2010. <span>“Robust Decision Making: Coping with Uncertainty.”</span> <em>The Futurist</em> 44 (1): 47.
+</div>
+<div id="ref-Marchau2019" class="csl-entry" role="doc-biblioentry">
+Marchau, Vincent AWJ, Warren E Walker, Pieter JTM Bloemen, and Steven W Popper. 2019. <em>Decision Making Under Deep Uncertainty: From Theory to Practice</em>. Springer Nature.
+</div>
+<div id="ref-Walker2003" class="csl-entry" role="doc-biblioentry">
+Walker, Warren E, Poul Harremoës, Jan Rotmans, Jeroen P Van Der Sluijs, Marjolein BA Van Asselt, Peter Janssen, and Martin P Krayer von Krauss. 2003. <span>“Defining Uncertainty: A Conceptual Basis for Uncertainty Management in Model-Based Decision Support.”</span> <em>Integrated Assessment</em> 4 (1): 5–17.
+</div>
+</div>
+</body>
+</html>
