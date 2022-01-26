@@ -35,9 +35,14 @@ The sustainable development goals (SDGs) are a set of universal goals for every 
 
 In this lecture we will explore these links, global progress on the SDGs and how to factor these goals into national planning and modelling efforts.
 
-## Sustainable development and the SDGs
+## Sustainable Development Goal 7
 
-Test
+The Sustainable Development Goal 7 (SDG7) specifically focuses on the energy sector. The first ta
+
+![](assets/Fig_1.2.2.png){width=100%}
+
+**Figure 1.2.1:** Sustainable Development Goal 7
+[@UnitedNations2015]
 
 ## Summary
 
