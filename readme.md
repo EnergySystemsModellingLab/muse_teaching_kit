@@ -1,17 +1,17 @@
-# NISMOD: Teaching Kit
+# MUSE: Teaching Kit
 
-This repository contains the teaching material developed by University of Oxford
-for the course "Infrastructure and Climate Resilience" developed under the
+This repository contains the teaching material developed by Imperial College London
+for the course "MUSE: Agent-based energy systems modelling" developed under the
 Climate Compatible Growth project.
 
-The course is published on [Open Learn Create](https://www.open.edu/openlearncreate/course/view.php?id=7243)
+The course is published on [Open Learn Create](fill-here)
 and is free to learners.
 
 The course material is licensed under a [Creative Commons BY 4.0 License](https://creativecommons.org/licenses/by/4.0).
 This license allows you to use, remix and publish the course material as long as you give correct
 attribution.  Please use the following citation:
 
-    Amelie Paszkowski, Daniel Adshead, Sapphire Vital, Orlando Roman, Lena Fuldauer, Prof Jim W Hall, Raghav Pant, Sarah Gall, Olivia Becher, Aman Majid, Jasper Verschuur, Robyn Haggis, Yu Mo, & Nicholas Chow. (2021, August 6). ClimateCompatibleGrowth/nismod_teaching_kit: Initial release of lecture blocks. Zenodo. https://doi.org/10.5281/zenodo.5166742
+    Alexander J. M. Kell, Sara Giarola, Adam Hawkes. (2022, August 6). ClimateCompatibleGrowth/muse_teaching_kit: Initial release of lecture blocks. Zenodo. https://doi.org/10.5281/zenodo.5166742
 
 ## Creating the teaching material
 
