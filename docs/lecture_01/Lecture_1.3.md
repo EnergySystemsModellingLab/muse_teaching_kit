@@ -9,7 +9,7 @@ authors:
 
 ## Short description
 
-
+In this mini-lecture we will exlpore the benefits of energy planning and why energy modelling is needed. We will explore how different countries require different solutions and how a continuous, iterative process is required to perform analyses. 
 
 ## Learning objectives
 

@@ -6,7 +6,7 @@ keywords:
 -   Infrastructure vision
 -   Infrastructure systems modelling
 authors:
--   Daniel Adshead
+-   Alexander J. M. Kell
 ---
 
 ## Short description
