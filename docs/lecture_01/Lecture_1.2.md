@@ -19,6 +19,8 @@ the global agendas of the Sustainable Development Goals (SDGs) and will introduc
     the major global development agendas
 -   Identify the general principles of the Sustainable Development Goals
 
+# Lecture content
+
 ## Introduction
 
 The sustainable development goals (SDGs) are a set of universal goals for every country. The SDGs are focused on ending poverty, improving quality of life and protecting the environment. These goals were agreed on in 2015, with 2030 set as a target year for achieving them. The sustainable development goals aim to tackle multiple issues. Some of the goals are based around poverty, environmental protection, climate action, justice and more. The SDGs can be seen in Figure 1.2.1. These goals are designed to be thought of together, rather than in isolation. There are, therefore, many links between different goals. 
