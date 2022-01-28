@@ -1,210 +1,47 @@
 ---
-title: Mini-Lecture 2.1 - Infrastructure systems and greenhouse gas
-  emissions
+title: Mini-Lecture 2.1 - MUSE (ModUlar energy system Simulation Environment)
 keywords:
--   Infrastructure
--   Greenhouse gas emissions
--   Emissions gap
+-   MUSE
+-   Agent-based model
+-   Energy planning
 authors:
--   Sapphire Vital
+-   Alexander J. M. Kell
 ---
 
-This mini-lecture outlines global infrastructure systems' contribution
-to greenhouse gas emissions. It provides an overview of the emissions
-reduction commitments made through the Paris Agreement and subsequent
-Nationally Determined Contributions (NDC). Against this backdrop, the
-lecture highlights key reduction activities within critical
-infrastructure systems.
+# Short description
+
+In this mini-lecture we will give an introduction into the energy systems model MUSE (ModUlar energy system Simulation Environment). We will cover the differences between MUSE and intertemporal optimisation models. We will also address the advantages and disadvantages of using MUSE. 
 
 # Learning objectives
 
--   Indicate infrastructure systems' contribution to greenhouse gas
-    emissions
--   Describe projected global emissions gap based on NDC commitments
--   Identify effective emissions reduction solutions for infrastructure
-    systems.
+- Learn the difference between MUSE and intertemporal optimisation models
+- Explore the pros and cons of using the energy systems model MUSE
 
-# Introduction
+# Introduction to MUSE
 
-Based on the most recent data, global greenhouse gas emissions reached
-approximately 59.1 GtCO~2~e (gigatonnes of carbon dioxide equivalent) in
-2019. Over the last decade, greenhouse gas emissions have grown annually
-at an average rate of 1.4% with no significant or sustained decline.
-Throughout 2020 and 2021, a decline has been observed due to the
-COVID-19 pandemic. However, unless COVID-19 recovery plans inculcate
-green strategies, emissions are expected to rise and continue rising in
-the aftermath of the pandemic. Our current emissions pathway is leading
-us to more than 3^o^C warming by the end of the century
-[@UnitedNations2020].
+We will first classify MUSE as per the classifications defined in the previous lectures. MUSE falls into the following categories:
 
-Being aware of emissions' origin enables effective planning of emissions
-reduction measures. Global emissions originate from a variety of
-sectors. The major contributors over the past decade have been the
-energy, industry, transportation, and agricultural sectors. Within the
-energy infrastructure system, electricity and heat generation was the
-top emitter from 2010-2019, accounting for 24% of total greenhouse gas
-emissions. Together with the other infrastructure systems, such as
-transportation and buildings, the infrastructure sector produced more
-than half of global greenhouse gas emissions within this period.
+- Long-term
+- Global and national
+- Bottom-up
+- Simulation model
 
-The sector therefore stands as a crucial focal point for climate change
-mitigation efforts. Further, given the global presence of aging
-infrastructure, infrastructure systems offer us an ideal opportunity to
-alter our carbon intensive trajectory.
+Therefore, MUSE is mainly designed to understand how long-term energy markets may evolve on both a national and global scale. MUSE explicitly models technoeconomic data on various technologies and therefore is a bottom-up model. Finally, MUSE is a simulation model, and can model various competing objectives to display what could happen under certain scenarios.
 
-# Greenhouse gas emissions from the infrastructure sector
+## What are MUSE's unique features?
 
-Taking a more in-depth look, the infrastructure system of systems
-generates approximately three quarters of global greenhouse gas
-emissions. In descending order of contribution, the energy,
-transportation, buildings, water, waste, and digital communication
-infrastructure systems produced approximately 75% of 2018 global
-emissions. The breakdown devised from a variety of data sources is
-detailed in Figure 2.1.1 below.
+MUSE is a generalisable agent-based modelling environment that simulates energy transitions from the point of view of the investor and consumer agents [@Sachs2019a]. This means that users can define their own agents based upon their needs and data. This means that each of these agents can have different objectives. For instance, a proportion of the population may have higher disposable incomes which allows them to spend more on heating and cooling rather than cost minimisation. Another proportion may prefer to spend less on heating and cooling whilst still having high disposable incomes. This features differs from the optimisation based appraoches which can, for instance, minimise costs or maximise welfare from a central perspective.
 
-![](assets/Figure_2.1.1.png){width=100%}
+Another aspect that differs from optimisation models is the ability to model imperfect information and limited foresight. Optimisation models require full knowledge of the system at the beginning of the simulation. For example, by knowing what the demand will be in 2050 at the beginning of the simulation in 2020. MUSE does not give this information to the investing agents at the beginning of the simulation, and therefore they must makes their investments under uncertainty. This adds a level of realism to MUSE and is a unique feature of agent-based models when compared to intertemporal optimisation models. 
 
-**Figure 2.1.1:** Global greenhouse gas emissions sector breakdown
-[@Olivier2020; @Malmodin2018; @Wakeel2016; @Deemer2016]
+## Benefits and disadvantages of MUSE
 
-As shown in Figure 2.1.1, each infrastructure system produces varying
-proportions of greenhouse gas emissions due to varying emission
-generating processes.
+MUSE comes with a number of advantages and disadvantages when compared to other models. The benefits include, as discussed, the ability to model heterogeneous agents as well as to model limited foresight and imperfect information. Another one of the benefits of MUSE is its flexibility in designing a case study. Users can model anything from a single region to the global scale with trade occuring between regions. In addition, MUSE is able to model a single sector (such as the transport sector) to a whole energy systems approach. This flexibility allows for many different applications to be devised for interesting research and applications.
 
-For instance, the energy sector generates 44% of global greenhouse gas
-emissions via coal, oil, and natural gas production and consumption
-[@Olivier2020]. The transportation sector produces 14% of emissions
-through oil production and use [@Olivier2020]. The building sector
-accounts for 9% of greenhouse gas emissions via cement production and
-energy consumption in commercial and residential buildings
-[@Olivier2020]. The water sector's 5% of global emissions originates
-from reservoir decomposition [@Deemer2016] and energy consumed in the
-abstraction, treatment, and distribution of water and wastewater
-[@Wakeel2016]. Notably, emissions from organic decomposition in water
-bodies such as lakes and dams have been difficult to estimate and are
-uncertain. The waste sector contributes 2% of global emissions via
-decomposition from landfills [@Olivier2020]. Lastly, the digital
-communication sector generates 1% of global greenhouse gas emissions via
-energy consumption in the lifecycle of Information and Communication
-Technology [@Malmodin2018]; energy is consumed in the manufacture and
-operation of user equipment, access networks, and service providers.
+However, this flexibility and simulation approach comes with a number of disadvantages when compared to other models. The first disadvantage is the complexity of the model. Whilst building a case study is similar to the process for other models, the inner workings of MUSE can be complicated. This is due to its simulation based method which relies on rule based behaviours, as opposed to optimisation. Another disadvantage is that the computation time of MUSE can increase with the complexity of the case study. Therefore, it becomes important to make decisions based on the sectors, timeslicing and other characteristics that are modelled. For instance, it may not be feasible to model every single sector in an energy system, but a subset of relevant sectors. 
 
-# Nationally Determined Contributions' emissions gap
-
-The Paris Agreement requires its signatories to commit to emissions
-reduction through non-binding Nationally Determined Contributions
-(NDCs). NDCs are a medium to communicate countries' climate actions
-based on their national priorities and capabilities. Given that
-developed countries have historically contributed the majority of
-greenhouse gas emissions, they are expected to lead mitigation action
-and provide financial, technical, and capacity-building support to
-developing countries. All parties are to submit conditional or
-unconditional NDC commitments every five years, ideally with increased
-ambition.
-
-Current NDC commitments for 2030 are not enough to meet the Paris
-Agreement of 2^o^C or 1.5^o^C goals (See Figure 2.1.2). There is a 12-19
-GtCO~2~e and 29-36 GtCO~2~e emissions gap between global annual
-emissions and current NDC commitments for the 2^o^C and 1.5^o^C goals,
-respectively. These emission gaps translate to a projected temperature
-rise of at least 3^o^C by the end of the century
-[@UnitedNations2020].
-
-Further, the developed countries that contribute 78% of global
-greenhouse gas emissions, are not in line to accomplish their current
-NDC commitments. Although many of these countries have recently made
-ambitious net-zero emissions pledges, these have not translated into
-action plans or updated NDCs [@UnitedNations2020].
-
-Climate change mitigation action needs to be urgently ramped up if we
-are to meet the Paris Agreement's targets. According to the 2020 UN
-Emissions Gap Report, countries direly need to develop and implement
-long-term strategies that are in line with the Paris Agreement.
-Countries need to simultaneously update their NDCs to reflect these
-plans and other related goals [@UnitedNations2020].
-
-![](assets/Figure_2.1.2.png){width=100%}
-
-**Figure 2.1.2**: 2030 emissions gap based on current policies
-[@UnitedNations2020]
-
-# Key emission reduction actions
-
-What actions can we take to bridge the emissions gap? Mitigation action
-involves the two broad areas of greenhouse gas emissions reduction and
-the enhancement of carbon sinks through nature-based solutions (see
-Lectures 15-18). The application of these two groups of initiatives can
-take a variety of forms within the infrastructure system. Some examples
-are shown in Table 2.1.1 below. Notably, nature-based solutions are
-particularly applicable to the water sector via ecosystem enhancement to
-safeguard water reserves.
-
-**Table 2.1.1:** Possible grey and green infrastructure mitigation
-actions
-
-+----------------------------------+----------------------------------+
-| **Greenhouse Gas Emissions       |                                  |
-| Reduction with Grey and Green    |                                  |
-| Infrastructure Actions**         |                                  |
-+==================================+==================================+
-| **Infrastructure Options**       | **Nature-Based solutions (see    |
-|                                  | Lectures 15-18)**                |
-+----------------------------------+----------------------------------+
-| -   Renewable energy generation: | -   Restoration of degraded      |
-|     solar, wind, hydropower,     |     ecosystems (e.g. mangrove    |
-|     biomass, ocean technologies, |     restoration, grassland       |
-|     geothermal                   |     restoration, restoration of  |
-|                                  |     beach and dune systems,      |
-|                                  |     wetland restoration)         |
-+----------------------------------+----------------------------------+
-| -   Energy efficiency            | -   Protection of existing       |
-|                                  |     ecosystems (e.g. protection  |
-|                                  |     of salt marshes, coral       |
-|                                  |     reefs, oyster reefs,         |
-|                                  |     protection of grasslands and |
-|                                  |     intact forests)              |
-+----------------------------------+----------------------------------+
-| -   Low-carbon transport:        | -   Improved management          |
-|     electric vehicles,           |     practices (e.g. agricultural |
-|     low-carbon fuel, efficiency  |     management practices such as |
-|     improvements                 |     agroforestry, improved       |
-|                                  |     grazing land management)     |
-+----------------------------------+----------------------------------+
-| -   Zero-energy buildings:       | -   Creation of new ecosystems   |
-|     energy efficient appliances  |     (e.g. urban green spaces,    |
-|     and lighting, low-carbon     |     green roofs on buildings,    |
-|     fuel                         |     constructed treatment        |
-|                                  |     wetlands)                    |
-+----------------------------------+----------------------------------+
-| -   Low-carbon industry:         |                                  |
-|     efficiency improvements,     |                                  |
-|     low-carbon fuel              |                                  |
-+----------------------------------+----------------------------------+
-| -   Reduction of fossil fuel     |                                  |
-|     subsidies                    |                                  |
-+----------------------------------+----------------------------------+
-
-Some initiatives are considered to be low hanging fruit given their
-combined low cost and cross-sectoral sustainable development benefits.
-The report by IPCC [@IPCC2018] highlights that mitigation action to
-reduce energy demand, decreased material consumption, and lower
-carbon-intensive food consumption have the highest potential sustainable
-development impact. Within those key areas, energy demand reduction sits
-most within infrastructure systems' remit.
-
-The COVID-19 pandemic and the economic challenges triggered may increase
-or decrease mitigation impetus. Ideally, COVID-19 recovery plans should
-be utilised to accelerate low-carbon growth. Fiscal rescue and recovery
-measures that maintain fossil fuel generation and other carbon intensive
-activities should not be supported. Rather, emissions reduction
-initiatives should be advanced through top-down measures to redesign
-infrastructure systems and bottom-up lifestyle changes.
 
 # Summary
 
-The current picture of global emissions is bleak as greenhouse gas
-emissions continue to rise. Infrastructure systems are major
-contributors to global emissions and therefore should be one of the main
-targets for increased climate change mitigation action. Transitioning to
-low carbon infrastructure systems is a critical element of bridging the
-current emissions gap and achieving the Paris Agreement's targets.
+In this mini-lecure we were introduced to the energy systems model, MUSE. We learnt of its unique features, such as heterogeneous agent behaviour, limited foresight and imperfect information. We also discovered the advantages and disadvantages of MUSE. For example its flexible nature which allows many different types of case-studies can also make the model increasingly complex. 
+
