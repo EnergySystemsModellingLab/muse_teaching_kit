@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="keywords" content="Service demands, Technologies, Market clearing algorithm" />
-  <title>Mini-Lecture 2.2 – Key components of MUSE</title>
+  <title>Mini-Lecture 2.2 – How MUSE works</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -22,10 +22,10 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Mini-Lecture 2.2 – Key components of MUSE</h1>
+<h1 class="title">Mini-Lecture 2.2 – How MUSE works</h1>
 </header>
 <h1 id="short-description">Short description</h1>
-<p>In this mini-lecture we will give you an overview of how MUSE works.</p>
+<p>In this mini-lecture we will give you an overview of how MUSE works. This will include the different sectors that make up MUSE, including primary supply sectors, conversion sectors and demand sectors. We will discover how these sectors are interlinked through a market clearing algorithm, which ultimately decides the prices of energy commodities and the final energy system, according to MUSE.</p>
 <h1 id="learning-objectives">Learning objectives</h1>
 <ul>
 <li>Identify the key components which make up MUSE</li>
@@ -53,13 +53,12 @@
 </ul></li>
 <li><p>The decisions made by the agents in the demand sectors then leads to a certain level of demand for energy commodities, such as electricity, gas and oil, as a whole. This demand is then passed to the MCA. The MCA then sends these demands to the sectors that supply these energy commodities (supply or conversion sectors).</p></li>
 <li><p>The supply and conversion sectors are solved: agents in these sectors use the same approach (i.e. search space, objectives, decision rules) to decide which technologies to investment in to serve the energy commodity demand. For example, agents in the power sector may decide to invest in solar photovoltaics, wind turbines and gas power plants to service the electricity demand.</p></li>
-<li><p>As a result of these decisions in supply and conversion sectors, a price for each energy commodity is formed. This price is formed based on the levelized cost of energy of the marginal technology. That, the technology which produces the marginal quantity. This price is then passed to the MCA.</p></li>
+<li><p>As a result of these decisions in supply and conversion sectors, a price for each energy commodity is formed. This price is formed based on the levelized cost of energy of the marginal technology. That is the technology which produces the marginal quantity. This price is then passed to the MCA.</p></li>
 <li><p>The MCA then sends these prices back to the demand sectors, which are solved again as above.</p></li>
 <li><p>This process repeats itself until commodity supply and demand converges for each energy commodity for each region. Once these converge, the model has found a “partial equilibrium” on the energy system and it moves forward to the next time period.</p></li>
 </ul>
-<!-- Effectively, the primary supply sectors produce commodities that can be used to generate energy. These include gas production and coal and oil mining, nuclear power from enriched uranium and renewable energy such as solar and wind. This becomes particularly interesting when modelling supply curves such as gas or coal curves. It is possible within MUSE to model increasing costs associated with higher demands from different sources.  -->
 <h1 id="summary">Summary</h1>
-<p>This mini-lecture provided key information to understand the requirements of NDCs and thus develop mitigation targets within them. The approach proposed to develop mitigation targets in the infrastructure sector considers the Paris Agreement’s stipulations and the NDC’s varying responsibilities, all which inform the types of targets that countries may pursue. Steps 1 to 4 of the approach involve collecting information which countries should already possess. Steps 5 and 6 critically assess co-benefits across these areas and determine targeted action. Steps 7 and 8 devise and output mitigation targets. The next mini-lecture presents further insight into Steps 5 and 6 by detailing a methodology to evaluate cross sectoral co-benefits.</p>
+<p>This mini-lecture provided key information to understand the underlying mechanics of MUSE. We learnt how MUSE is made up of different sectors, which are linked by a market clearing algorithm to simulate how prices are calculated. This mechanism closely models the real-life global electricity market through a partial equilibrium mechanism.</p>
 <h1 id="bibliography">Bibliography</h1>
 </body>
 </html>

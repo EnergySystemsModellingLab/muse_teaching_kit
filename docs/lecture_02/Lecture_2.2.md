@@ -55,4 +55,4 @@ The MCA then sends these demands to the sectors that supply these energy commodi
 
 # Summary
 
-This mini-lecture provided key information to understand the underlying mechanics of MUSE. We learnt how MUSE is made up of different sectors, which are linked by a market clearing algorithm to simulate how prices are calculated. This mechanism closely models the real-life global electricity market through a partial equilibrium mechanism. 
+This mini-lecture provided key information to understand the underlying mechanics of MUSE. We learnt how MUSE is made up of different sectors, which are linked by a market clearing algorithm to simulate how prices are calculated. This mechanism closely models the real-life global electricity market. 
