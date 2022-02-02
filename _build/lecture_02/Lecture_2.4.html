@@ -24,16 +24,56 @@
 <header id="title-block-header">
 <h1 class="title">Mini-Lecture 2.4 - Key MUSE components</h1>
 </header>
-<p>In this mini-lecture</p>
+<p>In this mini-lecture we will explore the key components which make up MUSE. These key components include the service demand, technoogies, agents and sectors. We will now explore what these components do and how they interact.</p>
 <h1 id="learning-objectives">Learning objectives</h1>
 <ul>
-<li>Describe Saint Lucia’s national priorities, greenhouse gas emissions, implementation capacity, mitigation co-benefits, and Nationally Determined Contribution (NDC) targets</li>
-<li>Synthesise the material covered in Lecture block 2 mini-lectures</li>
-<li>Apply the approach to developing infrastructure targets within NDCs to a desired country context.</li>
+<li>Understand what the key components of MUSE are</li>
+<li>Understand what these terms mean in the context of MUSE</li>
+<li>Understand how these components interact within MUSE</li>
 </ul>
-<h1 id="step-1-assess-national-infrastructure-development-priorities-and-identify-key-infrastructure-systems">Step 1: Assess national infrastructure development priorities and identify key infrastructure systems</h1>
+<h2 id="service-demand">Service Demand</h2>
+<p>The energy service demand is a user input which defines the demand that an end-use sector has. An example of this is the service demand commodity of heat or cooling that the residential sector requires. End-use in this case, refers to the energy which is utilised at the very final stage, after both extraction and conversion.</p>
+<p>The estimate of the energy service is the first step. This estimate can be an exogenous input derived from the user, or correlations of GDP and population which reflect the socio-economic development of a region or country.</p>
+<h2 id="technologies">Technologies</h2>
+<p>Users are able to define any technology they wish for each of the energy sectors. Examples include power generators such as coal power plants, buses in the transport sector or lighting in the residential sector.</p>
+<p>Each of the technologies are placed in their regions of interest, such as the USA or India. They are then defined by the following, but not limited to, technoeconomic variables:</p>
+<ul>
+<li>Capital costs</li>
+<li>Fixed costs</li>
+<li>Maximum capacity limit</li>
+<li>Maximum capacity growth</li>
+<li>Lifetime of the technology</li>
+<li>Utilization factor</li>
+<li>Interest rate</li>
+</ul>
+<p>Technologies, and their parameters are defined in a specific file called the Technodata file.</p>
+<h2 id="sectors">Sectors</h2>
+<p>Sectors typically group areas of economic activity together, such as the residential sector, which might include all energy conusming activies of households. Possible examples of sectors are:</p>
+<ul>
+<li>Gas sector</li>
+<li>Power sector</li>
+<li>Residential sector</li>
+<li>Industrial sector</li>
+</ul>
+<p>Each of these sectors contain their respective technologies which consume energy commodities. For example, the residential sector may consume electricity, gas or oil for a variety of different energy demands such as lighting, cooking and heating.</p>
+<p>Each of the technologies, which consume a commodity, also output a different commodity or service. For example, a gas boiler consumes gas, but outputs heat and hot water.</p>
+<h2 id="agents">Agents</h2>
+<p>Agents represent the investment decision makers in an energy system, for example consumers or companies. They invest in technologies that meet service demands, like heating, or produce other needed energy commodities, like electricity. These agents can be heterogenous, meaning that their investment priorities have the ability to differ.</p>
+<p>As an example, a generation company could compare potential power generators based on their levelized cost of electricity, their net present value, by minimising the total capital cost, a mixture of these and/or any user-defined approach. This approach more closely matches the behaviour of real-life agents in the energy market, where companies, or people, have different priorities and constraints.</p>
+<h2 id="market-clearing-algorithm">Market Clearing Algorithm</h2>
+<p>The market clearing algorithm (MCA) is the central component between the different supplies and demands of the energy system in question. The MCA iterates between the demand and supply of each of these sectors. Its role is to govern the endogenous price of commodities over the course of a simulation. In other words, it calculates the prices based on supply and demand of the various technologies and regions.</p>
+<p>For a hypothetical example, the price of electricity is set in a first iteration to $70/MWh. However, at this price, the majority of residential agents prefer to heat their homes using gas. As a result of this, residential agents consume less electricity and more gas. This reduction in demand reduces the electricity price to $50/MWh in the second iteration. However, at this lower electricity price, some agents decide to invest in electric heating as opposed to gas. Eventually, the price converges on $60/MWh, where supply and demand for both electricity and gas are equal.</p>
+<p>This is the principle of the MCA. It finds an equilibrium by iterating through each of the different sectors until an overall equilibrium is reached for each of the commodities. It is possible to run the MCA in a carbon budget mode, as well as exogenous mode. The carbon budget mode ensures that an endogenous carbon price is calculated to limit the emissions of the energy system to be below a user-defined value. Whereas, the exogenous mode allows the carbon price to be set by the user.</p>
 <h1 id="summary">Summary</h1>
-<p>This mini-lecture walked through the basic information required to develop NDCs using Saint Lucia as a case study. The mini-lecture sought to synthesise the material covered in Lecture block 2 on infrastructure systems’ greenhouse gas emissions, mitigation targets, and sustainable development impact.</p>
+<p>In this mini-lecture we have explored the different components which make up MUSE. We have explored the:</p>
+<ul>
+<li>Service Demand</li>
+<li>Technologies</li>
+<li>Sectors</li>
+<li>Agents</li>
+<li>Market Clearing Algortihm</li>
+</ul>
+<p>All of these components interact, for example the agents in a particular sector invests in technologies to meet a certain service demand. Finally, the market clearing algorithm brings these different components together to find an ultimate price on all the different factors of the particular case-study.</p>
 <h1 id="bibliography">Bibliography</h1>
 </body>
 </html>

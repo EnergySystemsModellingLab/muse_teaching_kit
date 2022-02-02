@@ -45,7 +45,7 @@ Therefore, investment decisions are required to alleviate these different issues
 
 ## What is energy planning?
 
-Energy planning is the act of assessing the ability of a regoinal ssytem to provide dependable energy services under constantly changing conditions. For example, variables such as the cost of materials and fuels, investment costs in technologies, demand levels and disrtribution may all change.
+Energy planning is the act of assessing the ability of a regoinal system to provide dependable energy services under constantly changing conditions. For example, variables such as the cost of materials and fuels, investment costs in technologies, demand levels and disrtribution may all change.
 
 Drawing on the field of operations research, electricity planning applies advanced analytical methods and tools to make better decisions when faced with complex decisions. This process, however, must be done iteratively due to the fast transformations that can take place over a very limited time period. 
 

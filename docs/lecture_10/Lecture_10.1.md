@@ -1,171 +1,145 @@
 ---
-title: Mini-Lecture 10.1 - Assessing infrastructure asset vulnerability
+title: "Hands On Exercise 1: Evaluating Current Infrastructure Performance"
 keywords:
--   Asset vulnerability
--   Climate hazards
+-   Infrastructure Modelling
+-   Infrastructure Systems
+-   Saint Lucia
 authors:
--   Olivia Becher
+-   Sapphire Vital
 ---
 
-Estimating climate risks to infrastructure systems entails assessing the
-performance of infrastructure assets, individually and in combination.
-This mini-lecture explores the quantification of climate risks to
-infrastructure assets in more detail. We look at the performance of the
-assets when confronted with an extreme load.
+## Short description
 
-# Learning objectives
+This hands-on exercise will allow you to install MUSE on your computer. We will then take you though an example to run and visualise a default MUSE example.
 
--   To be able to explain the concept of asset vulnerability
--   To be aware of the different definitions of vulnerability
--   To recognise the difference between the sensitivity and fragility
-    approaches to vulnerability assessments.
+## Learning objectives
 
-# Introduction
+-   Install MUSE
+-   Run an example
+-   Visualise the results of the example
 
-As outlined in mini-Lecture 8.2, infrastructure risk is a combination of
-hazards, exposure and vulnerability. This lecture deals with the
-vulnerability element of risk assessments.
+# Exercise content
 
-This mini-lecture introduces the concept of infrastructure
-vulnerability, exploring different definitions and applications. The
-following section dives into the concept and formalisation of fragility
-curves. In mini-lecture 10.3 this is expanded beyond the asset level to
-provide an overview of the implications of the spatial footprint of
-extreme events for infrastructure risk assessments, which will be
-further explored in mini-lecture 10.4.
+### For Windows users only
 
-# Defining vulnerability
+Windows users and developers may need to install `Windows Build Tools`__. These tools include C/C++ compilers which are needed to build some python dependencies.
 
-Definitions of vulnerability in the climate change-related literature
-tend to fall into two categories: (1) biophysical vulnerability, or (2)
-social vulnerability, viewing vulnerability either:
+MacOS includes compilers by default, hence no action is needed for Mac users.
 
--   In terms of the amount of (potential) damage caused to a system by a
-    particular climate-related event or hazard [@Jones2003], or
+Linux users may need to install a C compiler, whether GNU gcc or Clang, as well python development packages, depending on their distribution.
 
--   As a state that exists within a system before it encounters a hazard
-    event [@Allen2003].
+If you have MacOS or Linux you can skip this section and head to the next section below here.
 
-Biophysical vulnerability is concerned with the ultimate impacts of a
-hazard event and is often viewed in terms of the amount of damage
-experienced by a system as a result of an encounter with a hazard. Thus,
-it is measured as an indicator of the outcomes of a hazard, rather than
-indicators of the state of a system prior to the occurrence of a hazard
-event.
+1. Install Visual Studio from the following link: https://visualstudio.microsoft.com/downloads/
 
-Conversely, the view of social vulnerability as a function of the
-internal state of a system --independent of external hazards - has
-arisen from studies of the structural factors that make systems
-susceptible to damage from external hazards [@Allen2003].
+2. Select your preferred edition. Although, the "Community" version is free and contains what is required.
 
-For our purposes, we adopt the biophysical definition of vulnerability,
-which is also the definition of vulnerability that is adopted by the
-Intergovernmental Panel on Climate Change (IPCC) Third Assessment
-Report: *"Vulnerability refers to the propensity of exposed elements
-such as human beings, their livelihoods, and assets to suffer adverse
-effects when impacted by hazard events"* [@McCarthy2001].
+3. Install Visual Studio by selecting the default options.
 
-# Vulnerability functions as sensitivity
+4.   Download the Microsoft Visual C++ Build Tools from the following link by downloading Visual Studio 2019: https://visualstudio.microsoft.com/downloads/   
 
-Vulnerability can be conceptualised as asset-level sensitivity, or the
-level of asset deterioration associated with a given load. Note that, in
-the context of climate risks to infrastructure, the term "load"
-represents the severity of a given hazard or hazard variable, such as
-flood inundation depth.
+5. Select your preferred edition. The "Community" is free and contains what is required.
 
-This vulnerability estimation approach measures direct damages to assets
-by correlating the Mean Damage Ratio (MDR) and its variance with a
-hazard intensity parameter. The MDR is usually expressed in economic
-terms, as the ratio of the expected total repair cost to the total
-replacement cost of an infrastructure asset. Such a function is
-illustrated in Figure 10.1.1, where the variance distribution deals with
-the uncertainty associated with the function.
+6.   Run the installer
 
-![](assets/Figure_10.1.1.png){width=100%}
+7.   Select: Workloads → Desktop development with C++.
 
-**Figure 10.1.1:** A sensitivity curve which formalises the relationship
-between hazard intensity (e.g. flood inundation depth) versus the mean
-damage ratio, which is the damage caused by the hazard as a fraction of
-the total cost of rebuilding the asset [@GPSS2019]
+8. Install options: select only the “Windows 10 SDK” (assuming the computer is Windows 10)]. This will come up on the right hand side of the screen.
 
-Note that here we are referring only to direct economic damages, as
-opposed to considering indirect damages. The differences between direct
-and indirect damages are discussed in mini-lecture 11.1.
+The installation screen should look similar to the following:
 
-# Fragility curves for measuring vulnerability
+![](assets/Figure_1.1.png){width=100%}
 
-Vulnerability can alternatively be conceptualised in terms of asset
-fragility*.* The fragility of an asset describes the conditional
-probability of asset failure with respect to loading. This information
-is conveyed via a fragility curve. This is illustrated for multiple
-modes of failure, or damage states, in Figure 10.1.2. Uncertainty in
-this formalisation is communicated by the probability distribution
-function of each damage state of the fragility functions.
+**Figure 1.1:** Visual Studio Installer window
 
-![](assets/Figure_10.1.2.png){width=100%}
 
-**Figure 10.1.2:** Range of potential different states of asset failure
-that can be used to derive a probability of failure conditional on
-hazard loading [@GPSS2019]
+For further information, see this link: https://www.scivision.dev/python-windows-visual-c-14-required
 
-The formalisation and applications of fragility curves for different
-kinds of assets are explored further in the following mini-lecture 10.2.
 
-# Process of calculating vulnerability using fragility curves
+## Installing MUSE
 
-Thus, the steps that must be taken to formalise the vulnerability of an
-asset via a sensitivity or fragility curve are as follows:
+MUSE is developed using python, an open-source programming language, which means that there are two steps to the installation process. First, python should be installed. Then so should MUSE.
 
-1.  Assemble information on the different damage states of the assets
-    with respect to different hazard loading conditions. For example, if
-    we wanted to create a road vs wind damage state definition then we
-    might consider different damage states for different wind speeds.
+The simplest method to install python is by downloading the Anaconda distribution. Make sure to choose the appropriate operating system (e.g. windows), python version 3.8, and the 64 bit installer. Once this has been done follow the steps for the anaconda installer, as prompted.
 
-2.  Assemble information on the damage ratio curves, which are derived
-    from analysis of damages to asset types based on stress testing or
-    for observed data on damages.
+After python is installed we can install MUSE. MUSE can be installed via the Anaconda Prompt (or any terminal on Mac and Linux). This is a command-line interface to python and the python eco-system. In the anaconda prompt, run:
 
-3.  Intersect the hazard and asset to create an inventory of hazard
-    exposures to the assets.
+```
+python -m pip install --user git+https://github.com/SGIModel/StarMuse
+```
 
-4.  Estimate the vulnerability via either sensitivity or fragility
-    curves.
+It should now be possible to run muse. Again, this can be done in the anaconda prompt as follows:
 
-5.  The next step would be to combine this information with the load to
-    which an asset is subject during an extreme event. This would allow
-    either the probability of asset failure or the economic damage
-    incurred to be quantified for fragility and sensitivity,
-    respectively.
+```
+python -m muse --help
+```
 
-For example, a fragility curve for a flood defence structure can be
-developed by assigning, each defence section $d_{i}$, a conditional
-probability of failure event, $D_{i}$, for a given set of loads, $x$
-[@Hall2003].
+## Running your first example
 
-$$P(D_{i}|x)$$
+In this section we run an example simulation of MUSE, in the next section we will visualise the results.
 
-Fragility curves can be combined with the loading distribution to
-generate an actual probability of defense failure, $P(D_{i})$
-[@Hall2003].
+First we need to download the MUSE source code. To do that navigate to the MUSE GitHub repository:
+https://github.com/SGIModel/StarMuse
 
-P(Di)= ∫∞0p(x) P(Di\|x) dx*PDi= ∫0∞px PDix dx*
+Click on the green `Code` button in the top right hand corner and then click on `Download ZIP`. Figure 2.1 shows how to do this, once you are on the relevant page.
 
-This function is what is described by a fragility curve, such as in
-Figure 10.1.3, whereby the probability of failure, $P(D_{i}|x)$, can be
-extracted for a given loading scenario, $x$.
+![](assets/Figure_1.2.png){width=100%}
 
-![](assets/Figure_10.1.3.png){width=100%}
+**Figure 2.1:** How to download MUSE
 
-**Figure 10.1.3:** Overtopping fragility curve used in national flood
-risk assessment (fluvial and sea defence). Note that Uncertainty is
-reflected through the use of upper and lower bounds on the conditional
-failure for fluvial and coastal flooding [@Hall2003]
+Once you have downloaded the source code, unzip the folder and move it to a location that is convenient for you.
 
-# Summary
+We will place ours on the desktop for simplicity, but feel free to make a folder in your documents or otherwise. 
 
-This mini-lecture introduced the concept of infrastructure vulnerability
-which is a key element of risk assessments. You should now be able to
-explain the concept of asset vulnerability and be aware of the different
-definitions of vulnerability. You should also be able to recognise the
-difference between the sensitivity and fragility approaches to
-vulnerability assessments.
+To run MUSE, we must open anaconda prompt for Windows machines or terminal if on MacOS or Linux. Then we must navigate to the directory using the prompt or terminal to find the MUSE examples. Ours is in Desktop, so we will run the following command:
+
+```
+cd ~/Desktop/StarMuse/run/example/default/
+```
+
+But yours could be in another location, so fill in the {MUSE_download_location} with your path (This could be `/Users/{my_name}/Documents` for instance):
+
+```
+cd {MUSE_download_location}/StarMuse/run/example/default/
+```
+
+Once we have navigated to the directory containing the example settings settings.toml we can run the simulation using the following command in the anaconda prompt or terminal:
+
+```
+python -m muse settings.toml
+```
+
+If running correctly, your prompt should output text similar to the following:
+```
+-- 2020-11-03 15:58:29 - muse.sectors.register - INFO
+Sector legacy registered.
+
+-- 2020-11-03 15:58:29 - muse.sectors.register - INFO
+Sector preset registered, with alias presets.
+
+-- 2020-11-03 15:58:29 - muse.sectors.register - INFO
+Sector default registered.
+
+-- 2020-11-03 15:58:29 - muse.readers.toml - INFO
+Reading MUSE settings
+
+-- 2020-11-03 15:58:29 - muse.readers.toml - INFO
+ Default input values used: carbon_budget_control.commodities, carbon_budget_control.method, carbon_budget_control.debug, carbon_budget_control.control_undershoot, carbon_budget_control.control_overshoot, carbon_budget_control.method_options
+```
+
+## Results
+
+If the default MUSE example has run successfully, you should now have a folder called `Results` in the same directory as `settings.toml`.
+
+This directory should contain results for each sector (Gas,Power and Residential) as well as results for the entire simulation in the form of `MCACapacity.csv` and `MCAPrices.csv`.
+
+`MCACapacity.csv` contains information about the capacity each agent has per technology per benchmark year. Each benchmark year is the modelled year in the `settings.toml` file. In our example, this is 2020, 2025, …, 2050.
+`MCAPrices.csv` has the converged price of each commodity per benchmark year and timeslice. eg. the cost of electricity at night for electricity in 2020.
+Within each of the sector result folders, there is an output for Capacity for each commodity in each year. The years into the future, which the simulation has not run to, refers to the capacity as it retires. Within the Residential folder there is also a folder for Supply within each year. This refers to how much end-use commodity was output.
+
+
+
+## Summary
+
+
+

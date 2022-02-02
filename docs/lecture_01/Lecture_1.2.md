@@ -64,7 +64,7 @@ The power sector has observed the most progress. This is largely due to the grow
 [@UnitedNations2015]
 
 
-For energy efficiency, global reductions in primary energy intensity have slowed in recent years. This is despite progress still being greater than in the period before 2010. The SDG7 Tracking Report anlysis shows that the rtransport sector has seen an increase in energy intensity improvement since 2010, while other sectors have seen a decrease. Differences between regions are observed, with Sub-Saharan Africa having the highest energy intensity, while Latin America and the Caribbean have the lowest. 
+For energy efficiency, global reductions in primary energy intensity have slowed in recent years. This is despite progress still being greater than in the period before 2010. The SDG7 Tracking Report anlysis shows that the transport sector has seen an increase in energy intensity improvement since 2010, while other sectors have seen a decrease. Differences between regions are observed, with Sub-Saharan Africa having the highest energy intensity, while Latin America and the Caribbean have the lowest. 
 
 If the SDG7 target of doubling the rate of global improvement in energy efficiency by 2030 is to be met, energy efficiency measures must be prioritised in policy making and investment planning. 
 
