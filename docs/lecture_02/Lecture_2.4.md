@@ -1,18 +1,14 @@
 ---
-title: Mini-Lecture 2.4 - Saint Lucia Case Study
+title: Mini-Lecture 2.4 - Key MUSE components
 keywords:
--   Case Study
--   Saint Lucia
--   Nationally Determined Contributions (NDCs)
+-   Service demand
+-   Agent-based modelling
+-   Market clearing algorithm
 authors:
--   Sapphire Vital
+-   Alexander J. M. Kell
 ---
 
-This mini-lecture, the last in Lecture block 2, brings all the
-information from the previous mini-lectures together via a case study on
-the small island developing state of Saint Lucia. To do this, the case
-study applies the approach to developing infrastructure targets within
-NDCs presented in mini-lecture 2.2 step by step.
+In this mini-lecture 
 
 # Learning objectives
 

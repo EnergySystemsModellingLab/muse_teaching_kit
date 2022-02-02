@@ -12,8 +12,8 @@ Mini-lecture 2.3 provides an overview of the benefits of using an agent-based mo
 
 # Learning objectives
 
-- Understand the concepts of limited foresight and imperfect information
-- Understand how these concepts can effect modelling results
+- Understand the concept of limited foresight 
+- Understand the concept of imperfect information
 
 # Introduction
 
@@ -21,7 +21,7 @@ As previously discussed, different modelling approaches have different advantage
 
 ## Imperfect information
 
-Imperfect information is an economic term which differs from perfect information. With perfect information in a market, all consumers and producers have perfect and instantaneous knowledge of all market prices, their own utility and cost functions. However, in real-world energy markets, this is not the case. Some information is hidden or unknown, such as other player's cost functions and future market prices. 
+Imperfect information is an economic term which is the opposite of perfect information. With perfect information in a market, all consumers and producers have perfect and instantaneous knowledge of all market prices, their own utility and cost functions. However, in real-world energy markets, this is not the case. Some information is hidden or unknown, such as other player's cost functions.
 
 With some models it is necessary to make this assumption of perfect information. For example the bids of all the players in the market are known at all times. This is a significant assumption and can influence the final outcome of the model. By using the agent-based simulation methodology, we can avoid making this assumption and allow information to be hidden between players, as happens in decentralised energy markets.
 
@@ -39,7 +39,7 @@ MUSE makes a simplified assumption about the future prices expected by investors
 
 This whole process repeats itself at every timestep until the specified number of milestone years have run.
 
-![](assets/Fig_2.2.2.pdf){width=100%}
+![](assets/Fig_2.2.2.png){width=100%}
 
 **Figure 2.2.2:** MUSE iteration process
 
@@ -47,4 +47,4 @@ This whole process repeats itself at every timestep until the specified number o
 
 # Summary  
 
-This mini-lecture provided 
+This mini-lecture provided an introduction to the terms limited foresight and imperfect information. We learnt how these assumptions have been integrated into the MUSE model and what this means for the modelling process. In the next mini-lecture we will explore the key components that make up MUSE.
