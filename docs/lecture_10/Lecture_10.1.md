@@ -134,12 +134,64 @@ If the default MUSE example has run successfully, you should now have a folder c
 This directory should contain results for each sector (Gas,Power and Residential) as well as results for the entire simulation in the form of `MCACapacity.csv` and `MCAPrices.csv`.
 
 `MCACapacity.csv` contains information about the capacity each agent has per technology per benchmark year. Each benchmark year is the modelled year in the `settings.toml` file. In our example, this is 2020, 2025, …, 2050.
+
 `MCAPrices.csv` has the converged price of each commodity per benchmark year and timeslice. eg. the cost of electricity at night for electricity in 2020.
+
 Within each of the sector result folders, there is an output for Capacity for each commodity in each year. The years into the future, which the simulation has not run to, refers to the capacity as it retires. Within the Residential folder there is also a folder for Supply within each year. This refers to how much end-use commodity was output.
 
+## Visualisation
 
+There are many different ways to visualise the results of MUSE. For example, you could use a programming language such as python or R. In this course, however, we will use Excel for simplicity. 
+
+There are also many different variables and combinations of data that we can plot. In this course we will primarily explore the capacity installed over the time horizon (2020-2050). Through this, we can see which of the technologies are invested in and understand the competition between technologies.
+
+To start the visualisation process of the default example, navigate to the folder where you run the `default` example. For instance:
+
+```
+cd {MUSE_download_location}/StarMuse/run/example/default/
+```
+
+Go into the folder called `/Results/` and right click on the file called `MCACapacity.csv` and open it with Microsoft Excel. Once you've opened the file with Excel, we can begin the data visualisation process.
+
+First, select the PivotChart button under the insert menu. You should then see a box open up such as that shown in Figure 1.3, below:
+
+![](assets/Figure_1.3.png){width=50%}
+
+**Figure 1.3:** Insert Create PivotChart
+
+Ensure that the "Select a table or range" highlights all of the data, and the "Choose where you want the PivotChart to be placed" is selected to "Existing worksheet" like in the figure above. Then within the "Table/Range" box, click the cell where you woud like the figure to be placed.
+
+You should then see the boxes appear shown below in Figure 1.4 in Excel:
+
+![](assets/Figure_1.4.png){width=100%}
+
+**Figure 1.4:** Inserted PivotChart
+
+Next we want to view how the capacity changes per technology over the technology horizon for the power sector.
+
+To do this, we must drag the relevant Fields from the PivotTable to the `Filters`, `Columns`, `Rows` and `Values` boxes.
+
+First, we will drag the `capacity` field to the `Values` boxes. These are the values that we want to plot. Then we will drag the `year` field to the `Axis (Categories)` box. This will start to populate a table and a graph. Finally, we want to filter for the residential sector. To do that we will drag the `sector` field to the `Filters` box. 
+
+We should then end up with the chart, table and PivotTable fields shown in Figure 1.5.
+
+![](assets/Figure_1.5.png){width=80%}
+
+**Figure 1.5:** Default visualisation example. 
+
+However, this is displaying all sectors currently, so to filter for solely the residential sector, we must click the dropdown arrow next to the "sector, (All)" cells.
+
+This can be shown in Figure 1.6, below:
+
+![](assets/Figure_1.6.png){width=60%}
+
+**Figure 1.6:** Residential sector visualisation for default example. 
+
+We have unchecked all sectors apart from the residential sector to generate the results shown in Figure 1.6.
+
+We can see that gas boilers are the main technology in 2020, but this reduces to zero by 2040. Heatpumps take over between 2020 and 2050, increasing significantly as demand increases.
 
 ## Summary
 
-
+In this hands-on we have installed MUSE, learnt how to run a demo example and visualised the results of this demo example. In the next lectures and hands-on we will learn in detail the fundamentals of MUSE and how to edit the demo example for a case study of our choice.
 
