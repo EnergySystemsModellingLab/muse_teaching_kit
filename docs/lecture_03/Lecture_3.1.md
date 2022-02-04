@@ -7,11 +7,12 @@ authors:
 -   Alexander J. M. Kell
 ---
 
-To begin Lecture Block 3, this mini-lecture provides an overview of  
+To begin Lecture Block 3, this mini-lecture provides an overview of energy demands within an energy system. We will cover differences in energy demands by sector, time and population classes. We will also begin to explore why these differences are important within energy models.
 
 # Learning objectives
 
--   Fill here
+- Learn what energy demands are in an energy modelling context
+- Understand how demands can change based on different variables
 
 # Introduction
 
@@ -91,3 +92,4 @@ You may notice that the red line is higher than the green line at all points. Th
 
 # Summary
 
+In this mini-lecture we covered the differences between energy demands in different population classes, sectors and over time. We learnt why it's important to model these differences in demand in energy systems models. We also explored how energy systems models can be used to meet a changing demand profile in the future. 
