@@ -34,6 +34,16 @@ In the previous section we learnt about the exogenous service demand. That is, w
 
 To accommodate such a scenario, MUSE enables us to choose a regression function that estimates service demands from GDP and population projections, which may be more certain in your case.
 
+## Sources for energy demand data
+
+We can get energy balance data and/or demand projections from the following sources:
+
+- International Energy Agency
+- International Renewable Energy Agency
+- United Nations Statistics
+- Asia-Pacific Economic Cooperation
+
+Energy balances tell us the amount that each commodity is used by a country or region in a given year. This is usually broken down by sector. Several organisations produce energy balance data that is publicly available, such as the International Energy Agency.
 
 
 ## Summary
@@ -41,5 +51,7 @@ To accommodate such a scenario, MUSE enables us to choose a regression function 
 In this mini-lecture we introduced service demands, and the way we can input these into MUSE. The two ways we can input service demands are:
 - Exogenous service demand
 - Service demand by correlation
+
+We also learned where we can get energy data from for various countries.
 
 In the hands-on we will see how we can actually do this within MUSE.
