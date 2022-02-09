@@ -1,5 +1,5 @@
 ---
-title: "Hands On Exercise 1: Modifying a service demand"
+title: "Hands On Exercise 2: Modifying a service demand"
 keywords:
 -   Preset sector
 -   Demand by correlation
