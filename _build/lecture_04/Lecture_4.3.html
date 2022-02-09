@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="keywords" content="Population growth, Per capita consumption, Seasonal Effects" />
-  <title>Mini-Lecture 4.3 - Determining main infrastructure drivers</title>
+  <meta name="keywords" content="Energy demands, Timeslice, Energy modelling" />
+  <title>Mini-Lecture 4.3 - Different energy demands by timeslice</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -13,25 +13,6 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-    }
-    .hanging div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }
   </style>
   <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
   <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
@@ -41,67 +22,25 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Mini-Lecture 4.3 - Determining main infrastructure drivers</h1>
+<h1 class="title">Mini-Lecture 4.3 - Different energy demands by timeslice</h1>
 </header>
-<p>This mini-lecture will continue exploring the main infrastructure drivers and their specific features. It will also serve as a guide to select different drivers according to different case study applications.</p>
+<p>This mini-lecture will continue exploring the importance of timeslices in energy modelling, however it will have a particular focus on energy demands, and how these can change by timeslice and over the years.</p>
+<p>In the previous lecture we explored energy demands and timeslices. In this lecture we will have a brief recap of this, and explore how energy demand can be represented within MUSE.</p>
 <h1 id="learning-objectives">Learning objectives</h1>
 <ul>
-<li>List different infrastructure drivers that might be considered for demand forecasting</li>
-<li>Describe how different contexts might require a different set of demand drivers.</li>
+<li>Understand how energy demand can change by timeslice</li>
+<li>Learn how energy demand is represented in MUSE</li>
 </ul>
-<h1 id="key-considerations">Key considerations</h1>
-<p>This mini-lecture will continue exploring the main infrastructure drivers and some of their specific features. It is important to note that different cases and applications will need different considerations of drivers, narratives and factors. Complementary to future scenarios, a detailed approach to the construction of infrastructure strategies will be shown in Lecture 6.</p>
-<p>As we have seen with the example of Shared Socio-economic Pathways (SSPs), the nature of the future narratives we want to explore are crucial in the development of forecasts. In its simplest form, we can assume that current consumption patterns will remain unchanged in the future and infrastructure demand will be driven only by population growth. The complexity of the estimation increases when we assume long-term trends on economic development, urbanisation and demographics. This entails not only an interdependent analysis of infrastructure and the economy, but potentially an explicit spatial analysis for the urban development driver.</p>
-<p>The considered time span is also of importance, given that the more distant the future, the higher the uncertainty. For instance, a projection of a couple of decades in the future might hold some assumptions of current technologies and patterns. However, a forecast toward the end of the century might need assumptions about disruptive technological and socio-economic changes that can fundamentally restructure our relationship with infrastructure services.</p>
-<h1 id="population-trends">Population trends</h1>
-<p>As we have seen in previous mini-lectures, population is one of the main drivers of future infrastructure demand <span class="citation" data-cites="Thoung2016">(Thoung et al. 2016)</span>. Population forecasts can be typically found in national or regional statistics authorities with different levels of detail and features. Here, we will provide a detailed review on one high-quality worldwide forecast by the United Nations that can be used for the development of policies and planning.</p>
-<p>The United Nations regularly publishes World Population Prospects <span class="citation" data-cites="UNDESA2019">(United Nations Department of Economic and Social Affairs 2019)</span>, with detailed population estimations. The document provides estimations for 235 countries by using two demographic trends: population growth and population ageing. One of the main features of this publication is that it brings several Population Scenarios including low, medium and high variants, and different narratives such as “constant fertility,” “instant replacement,” “zero migration,” “constant mortality” and “no change.” In this way, it provides a broad range of options for selecting the scenarios based on fertility, mortality and migration considerations. Figure 4.2.1 shows this broad range of scenarios for the population of Ghana by 2050.</p>
-<p><img src="assets/Figure_4.3.1.jpg" style="width:100.0%" /></p>
-<p><strong>Figure 4.3.1:</strong> Population Forecasting for Ghana under different scenarios (based on data from <span class="citation" data-cites="UNDESA2019">United Nations Department of Economic and Social Affairs (2019)</span>)</p>
-<p>Furthermore, the World Population Prospects provides probabilistic estimations including prediction intervals that can help with uncertainty quantification and detailed analysis for infrastructure planning.</p>
-<h1 id="per-capita-consumption-rates-and-seasonal-effects">Per capita consumption rates and seasonal effects</h1>
-<p>Based on the analysis of population trends, the next step is to estimate the infrastructure services that will be needed, which is normally done on a per capita basis. Per capita consumption rates can be found in the literature, policy documents and utilities´ reports, or can be discussed with policy makers according to their visions and expectations to the future. Some useful per capita consumption rates can be found, for example, in the World Bank Development indicators <span class="citation" data-cites="WorldBank2021">(World Bank 2021)</span> for different countries and regions about energy and water consumption. These consumption rates, however, might change with the socio-economic development of the region <span class="citation" data-cites="Thoung2016">(Thoung et al. 2016)</span>.</p>
-<p>One simple way of forecasting infrastructure demand is by doing annual aggregates and looking at year-over-year changes. However, our needs, and consequently infrastructure demand, is not uniform throughout the four seasons of a calendar year. For instance, in Europe, heating needs increase over the northern-hemisphere winter, putting pressure on the energy system. While our infrastructure should provide services over the whole year, it is particularly important to provide a reliable service when it’s needed the most. Other examples are seasonal tourism, which is an important demand factor in small islands, and the equilibrium between water demand and supply that can be under stress throughout the dry season.</p>
-<p>Figure 4.3.2 shows the seasonal changes of energy demand for the UK compared with the mean demand along the year. This seasonal pattern persists in the projections of the future.</p>
-<p><img src="assets/Figure_4.3.2.jpg" style="width:100.0%" /></p>
-<p><strong>Figure 4.3.2:</strong> Seasonal energy demand in the UK <span class="citation" data-cites="Staffell2018">(Staffell and Pfenninger 2018)</span></p>
-<h1 id="spatially-distributed-demand">Spatially distributed demand</h1>
-<p>Another simplification in infrastructure forecasting is to develop national aggregates for central planning purposes. However, the spatial distribution of infrastructure needs might be crucial for several applications. This is clearer with the development of mega urban centres in which infrastructure demand is high. On the other hand, when looking into the future, the potential rural-urban migration, or the development of satellite urban settlements, play a role in how we perform our infrastructure planning. Scenario narratives might also influence the spatial distribution of demand. For instance, one explored scenario might be the expansion of current urban centres while a different scenario might assume a redistribution of development along semi-urban and rural areas. Figure 4.3.3 shows how different regions bring different changes in population by 2040 in the Nordic countries. These different spatial changes will also bring different challenges for the coverage that our distribution networks need to reach. While an expansion on the national electricity transmission network is not a major issue, other more regional-dependent infrastructures such as water and waste will need a more granular analysis of the future local and regional needs.</p>
-<p><img src="assets/Figure_4.3.3.jpg" style="width:100.0%" /></p>
-<p><strong>Figure 4.3.3:</strong> Spatial population change in Nordic municipalities by 2040 <span class="citation" data-cites="Gassen2019">(Gassen and Heleniak 2019)</span></p>
-<h1 id="other-chronic-effects-and-climate-change">Other chronic effects and climate change</h1>
-<p>Planning methods under uncertainty have developed extensively during the last decades, mainly due to the critical importance of climate change for our future <span class="citation" data-cites="Lempert2010 Haasnoot2013">(Lempert and Groves 2010; Haasnoot et al. 2013)</span>. Alongside the importance of adaptation and mitigation, climate change might have an impact on our ability to meet infrastructure demand. Firstly, climate change can modify our consumption patterns in terms of heating, cooling and demand for services <span class="citation" data-cites="Clarke2018">(Clarke et al. 2018)</span>. It will certainly increase the seasonal variability of demand and have major impacts on our supply systems. For instance, changes in temperature, wind and rainfall patterns will affect the functioning of renewable energy (solar and wind) and water supplies <span class="citation" data-cites="Urich2014">(Urich and Rauch 2014)</span> (as seen in mini-lecture 4.2). Another chronic effect that might be important for infrastructure planning is the inevitable ageing of infrastructure assets, or the slow deterioration of our systems, which can be mitigated by good maintenance programmes. Also, strong demographic changes (increasing elderly population and variation in gender profiles) can play a role in modified consumption patterns into the future. In summary, different contexts might require a different set of drivers.</p>
+<h1 id="energy-demand">Energy demand</h1>
+<p>Energy demand can come in various forms. For instance, the demand we model can be for heating or cooling in the residential sector. It is the case that these demands have different characteristics. For instance they may have different magnitudes, different technologies which serve these demands as well as different time varying capabilities.</p>
+<p>Within MUSE, similarly to the supply sectors, we can model this time varying capability with timeslices. For instance, if we have 4 representative days which refer to the different seasons, we can model the high heating demand in winter and cooling demand in summer. On top of this we can vary these demands by time of day.</p>
+<p>To do this, we must edit the demand in the <code>preset/Residential2050Consumption.csv</code> sector. An example of which is shown in Figure</p>
+<p><img src="assets/Figure_4.1.1.png" style="width:100.0%" /></p>
+<p><strong>Figure 4.1.1:</strong> Example input for the preset sector.</p>
+<p>In this small example we see that there is only a demand for <code>heat</code> in the residential sector. However, this demand changes per timeslice. For instance, there is low demand for heat in timeslice 0 and a high demand for heat in timeslice 5. These timeslices refer to a single representative day, and therefore timeslice 5 has the highest demand for heat as it is in the late-evening. When people come home from work and turn on their radiators.</p>
+<p>In your models you can use datasets to disaggregate the demand into different types, or you can aggregate demand to include all gas or electricity utilised in the residential sector. This is largely dependent on the data available and the complexity of the model you would like.</p>
 <h1 id="summary">Summary</h1>
-<p>In this mini-lecture we explored in more detail some infrastructure demand drivers such as population growth and per capita consumption rates. We also comment on seasonal effects and spatially distributed demand as important features to take into account in different contexts.</p>
-<h1 class="unnumbered" id="bibliography">Bibliography</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Clarke2018" class="csl-entry" role="doc-biblioentry">
-Clarke, Leon, Jiyong Eom, Elke Hodson Marten, Russell Horowitz, Page Kyle, Robert Link, Bryan K. Mignone, Anupriya Mundra, and Yuyu Zhou. 2018. <span>“Effects of Long-Term Climate Change on Global Building Energy Expenditures.”</span> <em>Energy Economics</em> 72 (May): 667–77.
-</div>
-<div id="ref-Gassen2019" class="csl-entry" role="doc-biblioentry">
-Gassen, Nora Sánchez, and Timothy Heleniak. 2019. <span>“THE NORDIC POPULATION IN 2040-Analysis of Past and Future Demographic Trends.”</span>
-</div>
-<div id="ref-Haasnoot2013" class="csl-entry" role="doc-biblioentry">
-Haasnoot, Marjolijn, Jan H. Kwakkel, Warren E. Walker, and Judith ter Maat. 2013. <span>“Dynamic Adaptive Policy Pathways: A Method for Crafting Robust Decisions for a Deeply Uncertain World.”</span> <em>Global Environmental Change</em> 23 (April): 485–98.
-</div>
-<div id="ref-Lempert2010" class="csl-entry" role="doc-biblioentry">
-Lempert, Robert J., and David G. Groves. 2010. <span>“Identifying and Evaluating Robust Adaptive Policy Responses to Climate Change for Water Management Agencies in the American West.”</span> <em>Technological Forecasting and Social Change</em> 77 (July): 960–74.
-</div>
-<div id="ref-Staffell2018" class="csl-entry" role="doc-biblioentry">
-Staffell, Iain, and Stefan Pfenninger. 2018. <span>“The Increasing Impact of Weather on Electricity Supply and Demand.”</span> <em>Energy</em> 145 (February): 65–78.
-</div>
-<div id="ref-Thoung2016" class="csl-entry" role="doc-biblioentry">
-Thoung, Chris, Rachel Beaven, Chengchao Zuo, Mark Birkin, Peter Tyler, Douglas Crawford-Brown, Edward J. Oughton, and Scott Kelly. 2016. <span>“Future Demand for Infrastructure Services.”</span> <em>The Future of National Infrastructure: A System-of-Systems Approach</em>. Cambridge University Press.
-</div>
-<div id="ref-UNDESA2019" class="csl-entry" role="doc-biblioentry">
-United Nations Department of Economic and Social Affairs. 2019. <span>“World Population Prospects - Population Division - United Nations.”</span>
-</div>
-<div id="ref-Urich2014" class="csl-entry" role="doc-biblioentry">
-Urich, Christian, and Wolfgang Rauch. 2014. <span>“Exploring Critical Pathways for Urban Water Management to Identify Robust Strategies Under Deep Uncertainties.”</span> <em>Water Research</em> 66 (December): 374–89.
-</div>
-<div id="ref-WorldBank2021" class="csl-entry" role="doc-biblioentry">
-World Bank. 2021. <span>“World Development Indicators | DataBank.”</span>
-</div>
-</div>
+<p>In this mini-lecture we explored the importance of timeslicing for modelling demand in energy models. We also covered how this can be done within MUSE using the preset sector.</p>
+<h1 id="bibliography">Bibliography</h1>
 </body>
 </html>

@@ -1,127 +1,35 @@
 ---
-title: Mini-Lecture 4.2 - Infrastructure demand across sectors
+title: Mini-Lecture 4.2 - Technologies by timeslice
 keywords:
--   Energy and transportation demand
--   Water demand
--   Waste management demand
+- Energy technologies
+- Energy modelling
+- Timeslices
 authors:
--   Orlando Roman
+-   Alexander J. M. Kell
 ---
 
-In this mini-lecture we describe important features of future demand for
-four main infrastructure sectors: energy, transportation, water and
-solid waste.
+In this mini-lecture we describe how different technologies can have different characteristics by timeslices.
 
 # Learning objectives
 
--   Recognise the current state of infrastructure demand across
-    different sectors
--   Explain the main trends and challenges in future infrastructure
-    demand across different sectors.
+- Understand the different characteristics of technologies by timeslice
+- Understand how to characterise technologies by timeslice
 
-# Energy demand
+# Introduction
 
-Now, we will take a first look at demand challenges across different infrastructure sectors. Energy is an input in almost all goods and services we need, starting with the production of food, through heating, cooking, lighting, communications and transportation [@Baruah2016]. Our current energy system is also one of the main factors of climate change; therefore, the future challenges of meeting the energy demand sustainably are huge and considered in the Sustainable Development Goal (SDG) 7 “Affordable and Clean Energy”.
-The growing level of industrialisation, technological advancement and population growth will increase demand and challenge the global energy systems. This increase will be more notorious in developing economies throughout the first stages of industrialisation. For instance, some energy forecasts predicted that energy consumption in non-OECD (Organisation for Economic Co-operation and Development) countries will increase by 41% between 2015 and 2040, in contrast to a 9% increase in OECD countries [@EIA2017]. Figure 4.2.1 shows the disaggregated demand of non-OECD consumption, with Asia being the region with the highest increase.
-
-![](assets/Figure_4.2.1.jpg){width=100%}
-
-**Figure 4.2.1** Forecasted Non-OECD energy consumption [@EIA2017]
-
-Looking to the near future, the electrification of transport is expected to restructure the global energy demand, reducing fossil fuel consumption and pushing electricity demand even further. On the other hand, environmental consciousness can potentially reduce our energy consumption through the selection of more efficient appliances or renewable energy sources. In this respect, there are a variety of demand interventions and regulations that can be used, which will be reviewed in Lecture 6.
-
-# Transportation demand
-
-Transportation systems can comprise roads, railways, airports, ports, and all related infrastructure. The vehicles that transit on these networks are not part of the infrastructure system, but they are crucial elements impacting on its performance. For example, carbon emissions of the system depend on vehicles’ fuel type and consumption [@Blainey2016].
-Some transportation networks are usually congested at peak hours due to commuting travel within a city, and between the city and other suburban settlements. To reduce this congestion, transportation managers try to improve the efficiency of the system by using better scheduling of public transport or policies such as road pricing. However, more often than not, expansion of the transportation infrastructure is required to serve the increasing demand. One of the features of transportation systems is the so-called phenomenon of induced demand, which is the auto-generated demand produced by the capacity expansion [@Cervero2002].
-Transportation demand is expected to increase due to population growth and the need for more interconnected urban centres. Some trends can challenge and modify this demand, such as the potential use of automated vehicles or an increase in working from home. On the other hand, the demand for different transportation modes might change towards more sustainable mobility (e.g. bikes) or public transport if the adequate incentives are given in the planning process. Figure 4.2.2 shows a forecast of different types of transportation towards 2050. It can be seen that most of the increase will be in non-OECD countries.
-
-![](assets/Figure_4.2.2.jpg){width=100%}
-
-**Figure 4.2.2** Demand for passenger transport by type [@ITF2019]
-
-# Water demand
-
-Water use has been increasing worldwide at a rate of 1% annually since
-the 1980s, driven by population growth, socio-economic development and
-consumption patterns [@UNESCO2019]. This global demand is expected to
-grow by 20% to 30% until 2050 in comparison with current water use
-[@Burek2016].
-
-Future trends will challenge our ability to provide safe water,
-particularly considering that we haven't even been able to meet current
-water demand. Approximately four billion people experience severe water
-scarcity at least one month of the year [@Mekonnen2012], two billion
-do not have access to safely-managed drinking water and 785 million lack
-basic services [@WHO2019].
-
-Future options to meet water demand in the developing world include
-making the system more efficient, for example, by reducing water losses,
-increasing the reuse, and recycling wastewater. Developing countries
-have estimated water losses of about 40% to 50%, mainly due to physical
-deterioration and unauthorised connections [@Kingdom2006]. On the
-other hand, developed countries are increasingly using tertiary
-treatment of wastewater, reducing pollution and producing a new form of
-water supply.
-
-The supply side of water will also be challenged by climate change.
-Figure 4.2.3 shows the expected change in net precipitation by 2050.
-While an increment in precipitation will increase the risk of flooding
-and erosion, a decrease will reduce our ability to supply water.
-
-![](assets/Figure_4.2.3.jpg){width=100%}
+In the previous lecture we discovered the importance of timeslices. In this mini-lecture we will learn about how different technologies have different characteristics when it comes to timeslices, and how this can be modelled within MUSE. 
 
 
-**Figure 4.2.3** Change in net precipitation, 2010--2050 [@UNESCO2019]
+# Technologies by timeslices
 
-# Solid waste demand
+Different technologies have different characteristics when it comes to timeslices. For instance, solar photovoltaics do not produce any energy when it is dark (for instance, at night) and produce less in the winter. Wind, on the other hand, has a completely different profile and is largely dependent on geography. Therefore, it would make sense to provide a maximum output of the technologies at different times. For instance, limiting solar output at night time in the form of a maximum utilization factor. 
 
-We produce solid waste from our daily activities and a poor waste management can contaminate our environment and oceans and can cause respiratory problems and spread diseases. Solid waste management is typically provided at the municipality level, and consists of collection, transfer stations, processing facilities, landfills and incinerators [@Watson2016]. Current waste management policies prioritise a more circular economy approach by reusing, recycling and recovering waste based on the widespread waste hierarchy which was included in SDG 12 “Responsible Consumption and Production” [@Pires2019]. Figure 4.2.4 shows this waste hierarchy in which different waste management options are prioritised according to their degree of sustainability. Prevention is considered the most preferred option while disposal is the least preferred.
+However, it can be very difficult to turn off some technologies, such as a nuclear power plant. Nuclear power plants are expensive to turn on and can be unsafe if constantly varying their power. Also, their marginal cost, or cost to produce 1MWh of electricity excluding capital costs, is usually much lower than other power plants such as gas or coal plants. It, therefore, makes sense that we place a minimum service factor on nuclear, to ensure their output does not fall below a certain level.
 
-![](assets/Figure_4.2.4.jpg){width=100%}
+Other technologies, however, such as gas power plants, can be turned on and off readily, therefore we can simply leave an average utilization factor for all the timeslices. 
 
-**Figure 4.2.4** Waste Hierarchy [@Bugge2019]
-
-However, our waste management systems still depend on landfills, given
-the huge amount of waste disposed in previous decades and the challenge
-of reusing, recycling and recovering most of our waste stream. This is
-more profound in low-income countries in which 93% of waste is dumped
-[@Kaza2018] given that they lack waste treatment processes and good
-segregation systems. Current technologies are recovering resources and
-energy (methane) from landfills, helping to reduce the need for raw
-materials.
-
-Waste generation is correlated with economic development, as shown in
-Figure 4.2.5, therefore it's not surprising that waste generation in low
-and middle-income countries is expected to increase by 40% by 2050
-[@Kaza2018]. On the other hand, future waste management demand will
-probably entail more electronic and chemical waste, which needs to be
-managed carefully by using proper treatment and hazardous disposal
-facilities.
-
-![](assets/Figure_4.2.5.jpg){width=100%}
-
-**Figure 4.2.5:** Waste Generation per capita (kg) [@Kaza2018]
+All of these features exist in MUSE, and during this lecture's hands-on, we will show you how to do this within MUSE.
 
 # Summary
 
-In this mini-lecture we have explored the differences between four of
-the main important infrastructure sectors in terms of their future
-demand. We also reviewed current states of demand and highlighted how
-current challenges can persist or increase into the future. It is
-important to note that these four infrastructure sectors will not
-necessarily be the most important in every location, for instance,
-digital communications are now a critical sector for international
-development.
-
-Other contexts might consider irrigation (e.g. agriculture-based
-economies) or ports (e.g. islands) as vital infrastructure systems that
-need special attention. Furthermore, some countries are including health
-and educational services in their infrastructure plans, which imply
-further differing challenges and approaches.
-
-It's important to note that different sectors have different demand
-trends so different strategies might apply. On the other hand, most of
-the sectors have interdependencies between them, so collaborative plans
-and system-of-systems thinking will provide great value for
-infrastructure planners.
+In this mini-lecture we have explored the importance of characterising technologies not just by their economic data, but also by their physical characteristics. We discovered that different technologies have different outputs at different times, such as solar and wind. We also found out that nuclear power, for instance, must output a certain level to remain within a safety range.

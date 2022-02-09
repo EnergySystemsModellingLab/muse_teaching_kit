@@ -1,16 +1,19 @@
 ---
-title: "Hands On Exercise 1: Evaluating Current Infrastructure Performance"
+title: "Hands On Exercise 1: Installing MUSE"
 keywords:
--   Infrastructure Modelling
--   Infrastructure Systems
--   Saint Lucia
+- MUSE
+- Python
 authors:
--   Sapphire Vital
+-   Alexander J. M. Kell
 ---
 
 ## Short description
 
 This hands-on exercise will allow you to install MUSE on your computer. We will then take you though an example to run and visualise a default MUSE example.
+
+If at any point you get stuck with these hands-on, feel free to post a question in the purpose made MUSE google group if your question hasn't already been answered there!:
+
+https://groups.google.com/g/muse-model
 
 ## Learning objectives
 
