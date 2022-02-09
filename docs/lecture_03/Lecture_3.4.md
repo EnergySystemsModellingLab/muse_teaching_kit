@@ -8,11 +8,7 @@ authors:
 
 # Short description
 
-Mini-lecture 3.4 presents a case study on collecting infrastructure data
-for performance evaluation using the island of Curaçao. The mini-lecture
-outlines the data collection method utilised in Curaçao's most recent
-infrastructure development assessment and provides examples of the
-infrastructure data inputted.
+Mini-lecture 3.4 explains how we can use timeslices to approximate the real-world demand profile. We will look into the difference between power and energy. Finally, we'll learn how to convert units to ensure we are consistent within MUSE. 
 
 # Learning objectives
 

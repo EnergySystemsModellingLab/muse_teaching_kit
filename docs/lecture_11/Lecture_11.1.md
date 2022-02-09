@@ -1,185 +1,149 @@
 ---
-title: Mini-Lecture 11.1 - Introduction to calculating damage and disruption
+title: Mini-Lecture 11.1 - Modifying a service demand
 keywords:
--   Direct and indirect damages
--   Infrastructure service disruptions
+-   Preset sector
+-   Demand by correlation
 authors:
--   Olivia Becher
+-   Alexander J. M. Kell
 ---
 
-This mini-lecture provides an overview of the full range of impacts of
-infrastructure disruptions. First, the difference between direct and
-indirect consequences of infrastructure disruption is discussed,
-followed by the potential impacts of infrastructure disruptions to
-people and the economy.
+This hands-on will allow users to define their own service demand for an exogenous sector or by correlation.
+
 
 # Learning objectives
 
--   To recognise that infrastructure failures may propagate to affect
-    other infrastructure assets, dependent populations and the economy
--   To recognise the importance of considering the indirect impacts of
-    infrastructure failures, as well as disruptions to people and the
-    economy, for risk analysis.
+- Define own service demand for an exogenous sector
+- Define own service demand by correlation
 
-# Introduction
+# Adding an exogenous service demand
 
-Infrastructure is vulnerable to climate hazards such as flooding.
-Depending on the severity of the hazard and the vulnerability of an
-asset, infrastructure assets may fail and cause a range of disruptions.
-So far, only direct damages to infrastructure have been discussed in
-depth, in Lecture 10.
+As a quick example, in the residential sector a service demand could be cooking. Houses require energy to cook food and a technology to service this demand, such as an electric stove. 
 
-This lecture will explore the full range of disruptions, including a
-recap on direct damage assessment in the following sub-section (*Direct
-damages - recap*), followed by an overview of cascading impacts to other
-infrastructure systems (*Indirect damages*), dependent populations
-(*Disruptions to people*) and economic activities (*Disruptions to the
-economy*).
+We will start by looking at the `default` example. This can be found in your MUSE download at `/src/muse/data/example/default/example`, or you can download it at the following link:
 
-Figure 11.1.1 provides an overview of the multiple potential impacts of
-flood-induced infrastructure failure. Boxes are affected by flooding in
-various different ways, either directly due to flood inundation,
-indirectly due to power supply cuts as a result of electricity
-substations being inundated, or due to supply chain disruptions from
-dependencies with other entities affected by flooding.
+https://zenodo.org/record/6022713#.YgOYyS-l1pQ
 
-The difference between the two panels shows how the problem can be
-approached differently, with different outcomes. On the left, the
-entities that are indirectly affected by electricity disruptions are not
-considered, whereas on the right, this is accounted for. The affected
-service area, represented in grey shading, is much greater when
-accounting for the indirect impacts of electricity supply disruptions,
-demonstrating the importance of accounting for the full range of
-consequences of asset failure when quantifying impacts to populations
-and businesses.
+Next, download this and place it in a convenient location on your computer. We will now start by adding a cooking demand to this example. The default example currently only has a service demand of `heat`, so we will need to do some editing. 
 
-![](assets/Figure_11.1.1.png){width=100%}
+To achieve this, we will need to edit the `Residential2020Consumption.csv` and `Residential2050Consumption.csv`files found within the `technodata/preset/` directory. The `Residential2020Consumption.csv` file allows us to specify the demand in 2020 for each region and technology per timeslice. The `Residential2050Consumption.csv` file does the same but for the year 2050. The datapoints between these are interpolated.
 
-**Figure 11.1.1:** Illustration of the range of types of impact of flood
-damages, including direct impacts and indirect impacts to assets that
-are dependent on affected business facilities or infrastructure services
-[@Koks2019b]
+Firstly, we must add the new service demand `cook` as a column in these two files. Next, we add the demand. We can do this in Excel, or an editor of your choice. This is how it may look like for you when you open the `Residential2020Consumption.csv` file:
 
-The following sections will introduce the key concepts that are
-important for understanding the full range of disruptions caused by
-infrastructure failures.
+![](assets/Figure_2.1.png){width=100%}
 
-# Direct damages - recap
+**Figure 2.1:** Residential2020Consumption file opened in Excel.
 
-Direct damage to infrastructure is defined as the physical stock damaged
-during an extreme event, such as flooding. Different infrastructures
-have 1) different vulnerabilities to failure for a given severity of
-hazard and 2) different economic costs associated with failure.
+We will add a new column called `cook` and enter some values for each timeslice. This can be seen through the addition of a positive number in the `cook` column.
 
-Asset vulnerability can be formalised through fragility curves, which
-were discussed in Lecture block 10. This can be used to understand the
-economic burden of natural hazards on infrastructure by assigning a
-monetary value to the level of damage associated with a given shock
-event. This economic damage is a function of an asset's reconstruction
-costs.
+![](assets/Figure_2.2.png){width=100%}
 
-Figure 11.1.2 below shows the relationship between load (e.g., flood
-depth) and economic damages [@Lamb2010].
+**Figure 2.2:** Modified Residential2020Consumption file opened in Excel.
 
-![](assets/Figure_11.1.2.jpg){width=100%}
+The process is very similar for the `Residential2050Consumption.csv` file, however, for this example, we often placed larger numbers to indicate higher demand in 2050.
 
-**Figure 11.1.2:** Schematic showing the relationship between a given
-load and economic damages, a distribution of potential economic damages
-associated with a given load can be used to incorporate uncertainty into
-the analysis [@Lamb2010]. Note that that in the figure, the x axis
-describes a "load" which describes the severity of a particular hazard.
-For example, in the case of flooding, the "load" may be the depth of
-flood inundation.
+Next, we must edit the files within the `input` folder. For this, we must add the cook service demand to each of these files.
 
-This is a commonly applied method by engineers and other stakeholders to
-form a basis for decision-making. However, this calculation does not
-account for the indirect impacts of infrastructure assets on other
-infrastructure systems.
+First, we will amend the `BaseYearExport.csv` and `BaseYearImport.csv` files. For this, we say that there is no import or export of the cook service demand. A brief example is outlined below for `BaseYearExport.csv`:
 
-# Indirect damages
+![](assets/Figure_2.3.png){width=100%}
 
-Infrastructure systems are interconnected, and can thus be
-conceptualised as a system of interconnected systems, or a
-system-of-systems.
+**Figure 2.3:** Modified BaseYearImport file opened in Excel.
 
-A characteristic of this complex, interwoven infrastructure
-system-of-systems is that asset failures in one system may have
-cascading impacts on other systems.
+The same is true for the `BaseYearImport.csv` file:
 
-For example, water infrastructure assets that abstract, pump and treat
-water, are strongly dependent on having a reliable and consistent
-electricity supply. Therefore, when the electricity substation that
-supplies a water asset is disrupted, the impacts of that will not only
-be felt at the electricity substation, but also at the dependent water
-supply infrastructure.
+![](assets/Figure_2.4.png){width=100%}
 
-These second-order impacts of infrastructure failures on the operations
-of other infrastructure systems are known as *indirect* damages in order
-to distinguish from the previously discussed *direct* damages.
+**Figure 2.4:** Modified BaseYearExport file opened in Excel.
 
-Indirect damages may significantly contribute to the overall damages
-incurred during an extreme event, and may even outweigh the direct
-damages incurred. This will be discussed further in mini-lecture 11.2.
+Next, we must edit the `GlobalCommodities.csv` file. This is where we define the new commodity cook. It tells MUSE the commodity type, name, emissions factor of CO2 and heat rate, amongst other things.
 
-# Disruptions to people
+The default version used for this tutorial is below:
 
-Society is dependent on the basic services provided by infrastructure
-systems such as electricity, water and transport. The criticality of
-different infrastructure assets is a function of the population they
-serve, with more critical assets serving a greater number of people.
-This metric of criticality is important for decision-makers who wish to
-efficiently allocate funds to the assets that serve large populations
-who are, therefore, exposed to asset-level disruptions.
+![](assets/Figure_2.5.png){width=100%}
 
-It is important to consider both direct and indirect effects when
-calculating the level of disruption caused by infrastructure failure.
-For example, consider two electricity substations that are equally
-exposed to flooding. Both assets supply 1,000 households but one also
-supplies a water treatment facility which, in turn, supplies a further
-1,000 people. The most efficient allocation of available funds for flood
-protection works would be towards the substation that indirectly serves
-the further 1,000 people served by the water treatment facility.
+**Figure 2.5:** Non-edited GlobalCommodities file opened in Excel.
 
-Figure 11.1.3 shows how the disruption cascades from (1) source nodes --
-which generate resources, (2) intermediate nodes -- which transmit
-resources from the source nodes to further nodes, and (3) sink nodes --
-which are connected directly to the customers to deliver the resources
-generated at the source nodes. Quantifying the extent of infrastructure
-disruptions to people will be discussed in depth in mini-lecture 11.3.
+We then add a new line at the bottom to include the cook commodity:
 
-![](assets/Figure_11.1.3.jpg){width=100%}
+![](assets/Figure_2.6.png){width=100%}
 
-**Figure 11.1.3:** Illustration of how a hazard goes on to affect
-dependent populations and how the complex relationship between
-infrastructure assets will determine the extent of a disruption
-[@Pant2018]
+**Figure 2.6:** Edited GlobalCommodities file opened in Excel.
 
-# Disruptions to the economy
+Finally, the `Projections.csv` file must be changed. This is a large file which details the expected cost of the technology in the first benchmark year of the simulation. We have highlighted in **bold** the changed column for this example.
 
-Various economic activities are also affected by disruptions to
-infrastructure services.
+![](assets/Figure_2.7.png){width=100%}
 
-One example of this is the impact of disruptions to port infrastructure
-e.g. caused by hurricanes - on supply chains. Such supply chain
-disruptions could go on to have cascading repercussions on manufacturing
-operations, which may impact other dependent economic activities and/or
-end-users.
+**Figure 2.7:** Edited Projections file opened in Excel.
 
-Manufacturing operations are not only dependent on transport
-infrastructure, but also electricity and water. Therefore, if the
-electricity or water assets that supply a factory is disrupted, this may
-in turn disrupt operations at the factory.
+## Addition of a cooking technology
 
-The wider economic impacts of infrastructure disruptions are important
-to understand for decision-making. This will be discussed in
-mini-lecture 11.4.
+Next, we must add a technology to service this new demand. During this process we must be careful to specify the end-use of the technology as cook.
 
-# Summary
+For this example, we will add two competing technologies to service the cooking demand: `electric_stove` and `gas_stove` to the `Technodata.csv` file in `/technodata/residential/Technodata.csv`.
 
-The mini-lecture provided an overview of the multiple outcomes of
-infrastructure failures on other infrastructure assets, to dependent
-populations and various forms of economic activity. You should now be
-able to recognise that infrastructure failures may propagate to affect
-other infrastructure assets, dependent populations and the economy, as
-well as the importance of considering these multiple outcomes of failure
-for risk analysis.
+For this, we copy the `gasboiler` row for `R1` and paste it for the new `electric_stove`. For `gas_stove` we copy and paste the data for `heatpump` from region R1. In the figure below we show this, but only show the first few columns for the interest of space. We will also relax the growth constraints, to ensure that the growth in technologies can meet demand.
+
+![](assets/Figure_2.8.png){width=100%}
+
+**Figure 2.8:** Edited technodata file opened in Excel.
+
+As can be seen we have added two technologies with different cap_par costs. We specified their respective fuels, and the enduse for both is cook. 
+
+We must also add the data for these new technologies to the following files:
+
+- CommIn.csv
+- CommOut.csv
+- ExistingCapacity.csv
+
+The `CommIn.csv` file details the input commodities for each technology. In this case, the inputs are gas and electricity. The `CommOut` file details the outputs of the technology, which will be the `cook` commodity.
+
+We must add the input to each of the technologies (gas and electricity for `gas_stove` and `electric_stove` respectively), outputs of `cook` for both and the existing capacity for each technology.
+
+![](assets/Figure_2.9.png){width=100%}
+
+**Figure 2.9:** Edited CommIn file opened in Excel.
+
+Notice in Figure 2.9 that we had to add a column for the new `cook`. We must also do the same for the CommOut file, below:
+
+![](assets/Figure_2.10.png){width=100%}
+
+**Figure 2.10:** Edited CommOut file opened in Excel.
+
+We must do this for the `gas` and `power` sector as well.
+
+Next, we must edit the `ExistingCapacity.csv` file to detail how much existing capacity there is in the base year and beyond.
+
+![](assets/Figure_2.11.png){width=100%}
+
+**Figure 2.11:** Edited ExistingCapacity file opened in Excel.
+
+Due to the additional demand for gas and electricity brought on by the new cook demand, it is necessary to relax the growth constraints for `gassupply1` in the `technodata/gas/technodata.csv` file. For this example, we set this file as follows:
+
+![](assets/Figure_2.12.png){width=100%}
+
+**Figure 2.12:** Edited gas/technodata file opened in Excel.
+
+We must also ensure there are no `0` in the `ExistingCapacity.csv` for any of the sectors. Therefore, go through the `gas/ExistingCapacity.csv` and `power/ExistingCapacity.csv` and replace them with a non-zero value, such as `0.01`. Below is an example for the `gas` sector:
+
+![](assets/Figure_2.13.png){width=100%}
+
+**Figure 2.13:** Edited gas/ExistingCapacity.csv file opened in Excel.
+
+Next, we must run the simulation with our modified input files using the following command in the relevant directory:
+
+```
+python -m pip muse settings.toml
+```
+
+The figure below shows the results for this new demand in the residential sector:
+
+![](assets/Figure_2.14.png){width=100%}
+
+**Figure 2.14:** Capacity results for the residential sector.
+
+We can see that `electric_stove` takes over completely. This is because of the lower `cap_par` value when compared to `gas_stove`.
+
+For the final example input data showed in this tutorial and results spreadsheet, please refer to the link below:
+
+https://zenodo.org/record/6022713#.YgOYyS-l1pQ
+
