@@ -62,6 +62,8 @@ There are a number of different important technology characteristics that should
 - MUSE can consider the limits on production by technology and capacity constraints. For example, there may only be a certain amount of hydro resources in a particular country, based on the number of rivers etc. It is important that MUSE takes this into account to ensure that the results are aligned to the reality in a region or country.
 - Finally, the emissions associated with technologies can be captured. For example, we may want to reduce the carbon dioxide emissions of an entire system. This would allow us to compare scenarios and enable us to understand how we can reduce these emissions to reduce the impact of climate change. MUSE is also able to impose a limit on emissions.
 
+
 # Summary
 
+In this mini-lecture we have learned the importance of technologies within MUSE. We learnt that a technology can refer to a single power plant, to all coal power plants, for example. This is largely based on the requirements of individual case studies. We also learnt that technologies can also be processes, such as the extraction of natural gas. All of these different technologies come together to build an entire energy system, which MUSE is able to model.
 

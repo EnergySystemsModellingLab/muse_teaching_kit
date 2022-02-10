@@ -30,14 +30,13 @@
 <li>Learn how to add min/max production constraints in MUSE</li>
 </ul>
 <h1 id="minimum-timeslice">Minimum timeslice</h1>
-<p>In this tutorial we will be amending the default example, which you can find in the following zenodo link:</p>
+<p>In this tutorial we will be amending the default example, which you can find in the following zenodo link: https://zenodo.org/record/6026087#.YgPuHS-l1pQ</p>
 <p>Firstly, we will be imposing a minimium service factor for gasCCGT in the power sector. This is the minimum that a technology can output per timeslice.</p>
 <p>To do this, we will need to create a new csv file that specifies the minimum service factor per timeslice.</p>
 <p>An example of the file can be seen below and in the zenodo link.</p>
 <p><img src="assets/Figure_3.1.png" style="width:100.0%" /></p>
 <p><strong>Figure 3.1:</strong> TechnodataTimeslices.csv file for the power sector.</p>
 <p>Notice that we have to specify the following columns: <code>ProcessName</code>, <code>RegionName</code>, <code>Time</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>UtilizationFactor</code>, <code>MinimumServiceFactor</code>.</p>
-<p>The majority of these columns are self explanatory, and correspond to the columns in other csv files - for instance, <code>ProcessName</code>, <code>RegionName</code> and <code>Time</code>. The timeslice based columns, however, are dynamic and will match the levels as defined in the toml file.</p>
 <p>The majority of these columns are self explanatory, and correspond to the columns in other csv files - for instance, <code>ProcessName</code>, <code>RegionName</code> and <code>Time</code>. The timeslice based columns, however, are dynamic and will match the levels as defined in the toml file.</p>
 <p>The majority of these columns are self explanatory, and correspond to the columns in other csv files - for instance, ProcessName, RegionName and Time. The timeslice based columns, however, are dynamic and will match the levels as defined in the <code>settings.toml</code> file in the main <code>default</code> folder.</p>
 <pre><code>[sectors.power]
