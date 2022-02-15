@@ -40,7 +40,7 @@ Let's say that we want to update the capital costs for heat pumps in 2040, but d
 
 **Figure 5.4.1:** Updated technodata for residential sector
 
-Notice that we need seperate rows for both `heatpump` and `gasboiler` even though we are only making a change in the `heatpumnp` capital cost. If we don't do this we will encounter an error. In between 2020 and 2040 we will get interpolation.
+Notice that we need seperate rows for both `heatpump` and `gasboiler` even though we are only making a change in the `heatpump` capital cost. If we don't do this we will encounter an error. In between 2020 and 2040 we will get interpolation.
 
 
 # Summary

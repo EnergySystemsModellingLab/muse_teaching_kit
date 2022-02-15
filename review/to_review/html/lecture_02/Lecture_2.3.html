@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Imperfect foresight, Limited information, Agent-based modelling" />
+  <title>Mini-Lecture 2.3 - Benefits of an Agent-Based Approach</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 2.3 - Benefits of an Agent-Based Approach</h1>
+</header>
+<p>Mini-lecture 2.3 provides an overview of the benefits of using an agent-based modelling and simulation when applied to energy systems analysis. We will learn how we can more closely model real-life by relaxing some of the assumptions necessary in other energy systems models.</p>
+<h1 id="learning-objectives">Learning objectives</h1>
+<ul>
+<li>Understand the concept of limited foresight</li>
+<li>Understand the concept of imperfect information</li>
+</ul>
+<h1 id="introduction">Introduction</h1>
+<p>As previously discussed, different modelling approaches have different advantages and disadvantages. One of the main differences that MUSE has, which it is able to model through its agent-based simulation approach, is its ability to model both limited foresight and imperfect information. These are significant relaxations when compared to optimisation based models. In this mini-lecture we will explore these concepts in more detail and discover how these relate to MUSE and energy systems specifically.</p>
+<h2 id="imperfect-information">Imperfect information</h2>
+<p>Imperfect information is an economic term which is the opposite of perfect information. With perfect information in a market, all consumers and producers have perfect and instantaneous knowledge of all market prices, their own utility and cost functions. However, in real-world energy markets, this is not the case. Some information is hidden or unknown, such as other player’s cost functions.</p>
+<p>With some models it is necessary to make this assumption of perfect information. For example the bids of all the players in the market are known at all times. This is a significant assumption and can influence the final outcome of the model. By using the agent-based simulation methodology, we can avoid making this assumption and allow information to be hidden between players, as happens in decentralised energy markets.</p>
+<h2 id="limited-foresight">Limited foresight</h2>
+<p>Limited foresight specifies how players within a game understand how the future may evolve. In the real-world, prediction and forecasting are difficult problems to solve, particularly within the uncertainty of energy markets. This become even more challenging when trying to make long-term predictions.</p>
+<p>Within MUSE long-term predictions must be made by investors. For example, if a company wanted to invest in a power plant, they would need to predict the amount of money they can sell their electricity for over the lifetime of the power plant, or in other words the market price for electricity. In some cases power plants operate for 30 years or more and so electricity prices 30 years into the future are required!</p>
+<p>MUSE makes a simplified assumption about the future prices expected by investors: they know what the price will be in the next five years. However, they assume a flat forward extension of the prices from this period. Or in other words, the energy prices over the entire lifetime of the plant are the same as the known price in the next five years. However, this assumption that the investors make will more than likely not be correct, leading to errors in their predictions, just like in the real-world.</p>
+<p>In contrast to perfect foresight, where variables such as prices, demand and technology costs in all the future time periods are known from the beginning of the simulation, using the limited foresight period, agents make investments under expectations of the market, which might be wrong.</p>
+<p>Figure 2.2.2, below, details how MUSE runs. Firstly, the initial capacity, price trajectory and demand trajectory are known and set by the user, exogenous to the model. These are used to initialize the MCA convergence algorithm. The MCA convergence algorithm finds a suitable set of investments which equilibrate supply and demand. Once equilibrium has been reached, the technologies are decided and the commodity prices are set. These commodity prices reflect the technology marginal costs, or the costs required to generate or create 1 unit of commodity, excluding capital costs. The investments balance asset retirements and the increase in demand, ensuring that supply meets demand.</p>
+<p>This whole process repeats itself at every timestep until the specified number of milestone years have run.</p>
+<p><img src="assets/Fig_2.2.2.png" style="width:100.0%" /></p>
+<p><strong>Figure 2.2.2:</strong> MUSE iteration process</p>
+<h1 id="summary">Summary</h1>
+<p>This mini-lecture provided an introduction to the terms limited foresight and imperfect information. We learnt how these assumptions have been integrated into the MUSE model and what this means for the modelling process. In the next mini-lecture we will explore the key components that make up MUSE.</p>
+<h1 id="bibliography">Bibliography</h1>
+</body>
+</html>

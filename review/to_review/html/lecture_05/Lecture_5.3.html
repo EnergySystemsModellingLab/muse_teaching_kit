@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Technology efficiency, CommIn, CommOut" />
+  <title>Mini-Lecture 5.3 - Input and output commodities</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 5.3 - Input and output commodities</h1>
+</header>
+<p>In this mini-lecture we will learn about the input and output commodities within MUSE. Specifically we will learn what the <code>CommIn.csv</code> and <code>CommOut.csv</code> files do and how these relate to the energy system.</p>
+<h1 id="learning-objectives">Learning objectives</h1>
+<ul>
+<li>To learn the importance of input and output commodities</li>
+<li>To learn how we can modify these commodities in MUSE</li>
+</ul>
+<h1 id="introducing-commodities">Introducing commodities</h1>
+<p>Input commodities are the commodities consumed by each technology. This could be coal for a coal power plant, uranium for a nuclear power plant or electricity for an electric heater. This is dependent on the technology, and some technologies can have multiple inputs.</p>
+<p>Output commodities are similar, but are the outputs of technologies. For example the output of any power plant will be electricity, or heat for heaters. Again, this is dependent on the technology, and some technologies can have multiple outputs such as combined heat and power plants.</p>
+<p>The ratio between these two parameters are very important in MUSE and in energy modelling in general. This is because it defines the efficiency of the technology. For instance, if a coal power plant requires 1 PJ of energy stored in coal to output 0.8 PJ of electricity, the coal power plant has an efficiency of 0.8. The higher the efficiency the more economical the power plant is and the more competitive it will be when compared to different technologies.</p>
+<h2 id="editing-the-commin-and-commout-files">Editing the CommIn and CommOut files</h2>
+<p>Within MUSE there are two files which one should change to edit these parameters: the <code>CommIn.csv</code> and <code>CommOut.csv</code> files. These files are found within the sector folders of the case study. For instance, at the <code>power/CommIn.csv</code> or <code>gas/CommOut.csv</code> directories.</p>
+<p>In this example we will look at the residential sectors <code>CommIn.csv</code> and <code>CommOut.csv</code> files. An example <code>CommIn.csv</code> file can be seen in the figure below:</p>
+<p><img src="assets/Figure_5.3.1.png" style="width:100.0%" /></p>
+<p><strong>Figure 5.3.1:</strong> CommIn file for the residential sector</p>
+<p>Here we see two technologies: <code>gasboiler</code> and <code>heatpump</code>. They are both in region R1 and we are specfiying the characteristics for the year 2020. The <code>gasboiler</code> only requires gas, but requires 1.16 PJ, whereas the <code>heatpump</code> requires only 0.4 PJ to produce some energy.</p>
+<p>However, it is important to note that these figures are meaningless without the <code>CommOut.csv</code> file. This is because, how much energy does the 1.16 PJ of energy produce in the <code>gasboiler</code>? As can be seen in the figure below, it is convention to select an output of 1. That way we only have to vary the <code>CommIn.csv</code> to change the efficiencies consistently.</p>
+<p><img src="assets/Figure_5.3.2.png" style="width:100.0%" /></p>
+<p><strong>Figure 5.3.1:</strong> CommOut file for the residential sector</p>
+<p>Therefore, we can now conclude that the <code>heatpump</code> is much more efficient than the <code>gasboiler</code> as only 0.4 PJ are required to output 1 PJ of heat. If we divide 1 by 0.4, we get the efficiency of the <code>heatpump</code>, where 1/0.4= 2.5. Notice that the <code>gasboiler</code> also outputs carbon dioxide. It is important to take this emissions into account to have a complete understanding of the energy system.</p>
+<h1 id="summary">Summary</h1>
+<p>This mini-lecture has explored the input and output commodities in MUSE. We have learnt that the <code>CommIn.csv</code> and <code>CommOut.csv</code> files relate to efficiencies when brought together in a ratio. # Bibliography</p>
+</body>
+</html>

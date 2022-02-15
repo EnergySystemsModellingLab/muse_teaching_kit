@@ -23,7 +23,7 @@ A technology in MUSE represents a process, or a group of processes that:
 
 - Converts energy from one form into another. For example, the conversion of crude oil to oil products, oil products to electricity or electricity to heat.
 - Transfers, transmits or distributes a form of energy, for example electricity transmission technologies
-- Supplies or produces a form of energgy, for example oil imports or extraction, or a hydropower plant generating electricity.
+- Supplies or produces a form of energy, for example oil imports or extraction, or a hydropower plant generating electricity.
 
 ## Technology examples
 
@@ -33,9 +33,9 @@ Within the energy system there exists natural gas for the generation of electric
 
 A coal power plant, on the other hand, has an input of coal and an output commodity of electricity. This technology is an energy conversion technology and converts the energy in coal to electricity. 
 
-Similarly, an oil power plant converts the enrgy in oil to electricity. It therefore has an input fuel of oil and an output commodity of electricity. 
+Similarly, an oil power plant converts the energy in oil to electricity. It therefore has an input fuel of oil and an output commodity of electricity. 
 
-It must be noted that some technologies can have more than one input or output fuel, such as a refiniery with oil as the input fuel, producing both gasoline and heavy fuel oil as output fuels.
+It must be noted that some technologies can have more than one input or output fuel, such as a refinery with oil as the input fuel, producing both gasoline and heavy fuel oil as output fuels.
 
 ## Parameters that define technologies
 

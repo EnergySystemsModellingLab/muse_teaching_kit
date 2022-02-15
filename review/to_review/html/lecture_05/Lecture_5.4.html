@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Interpolation, Energy technologies" />
+  <title>Mini-Lecture 5.4 - Interpolation and future years</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 5.4 - Interpolation and future years</h1>
+</header>
+<p>MUSE is flexible in its approach. It requires inputs for at least the base year, but doesn’t necessarily need more than that to project forward. In this mini-lecture we will cover how MUSE deals with missing data and how to model future years</p>
+<h1 id="learning-objectives">Learning objectives</h1>
+<ul>
+<li>Learn how to model costs in multiple years</li>
+<li>Understand how MUSE deals with missing data</li>
+<li>Understand interpolation</li>
+</ul>
+<h1 id="introduction">Introduction</h1>
+<p>Within the input sheets you may have noticed the <code>Time</code> column. In the default example this is set to 2020. However, what happens beyond these years if we do not specify a cost, for example? Also, what happens in 2030 if we only specify a cost in 2020 and 2040?</p>
+<p>Within MUSE, we make some assumptions. We assume that if there are no costs input into a model beyond a certain year, that the costs remain the same. This is known as a flat-forward extension. If, for example, we input costs in 2020 and 2040, we will interpolate the values in between these years linearly.</p>
+<p>An example of this is, say that the capital costs for a gas boiler is set to be 4 for a gas boiler in 2020 and 2 in 2040. We haven’t explicitly defined 2025, 2030 or 2035. Based on linear interpolation, MUSE will assume a value of 2.5 for 2025, 3 for 2030 (halfway between the year 2020 and 2040) and 3.5 for 2035.</p>
+<p>It must be noted, however, that MUSE does not allow a user to just update a single technology. For instance, if we want to specify the technology costs in 2035 for a coal power plant, we must also define the technology costs for every other technology in 2035. We do not need to define every year, however as interpolation and a flat-forward extension can still be used.</p>
+<h2 id="practical-example">Practical example</h2>
+<p>The figure below shows a snippet of the technodata file for the residential sector. We can see that we have data paramtetrising the technologies in 2020.</p>
+<p><img src="assets/Figure_5.4.1.png" style="width:100.0%" /></p>
+<p><strong>Figure 5.4.1:</strong> Technodata for residential sector</p>
+<p>Let’s say that we want to update the capital costs for heat pumps in 2040, but don’t want to update the prices for gasboilers. This is how we do it:</p>
+<p><img src="assets/Figure_5.4.2.png" style="width:100.0%" /></p>
+<p><strong>Figure 5.4.1:</strong> Updated technodata for residential sector</p>
+<p>Notice that we need seperate rows for both <code>heatpump</code> and <code>gasboiler</code> even though we are only making a change in the <code>heatpumnp</code> capital cost. If we don’t do this we will encounter an error. In between 2020 and 2040 we will get interpolation.</p>
+<h1 id="summary">Summary</h1>
+<p>In this mini-lecture we learned how to update costs in the time domain, and the assumptions MUSE makes if we do not give costs for every year. Namely, flat-forward extension and interpolation. We also learnt how to practically input these values in MUSE with the <code>Technodata.csv</code> file.</p>
+<h1 id="bibliography">Bibliography</h1>
+</body>
+</html>

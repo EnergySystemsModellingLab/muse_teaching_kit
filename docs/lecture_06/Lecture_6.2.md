@@ -1,170 +1,54 @@
 ---
-title: Mini-Lecture 6.2 -- Methods to develop infrastructure strategies
+title: Mini-Lecture 6.2 -- The transport sector in MUSE
 keywords:
--   Infrastructure strategy development
--   Participatory methods
--   Content analysis
+-   Transport sector
+-   Energy modelling
 authors:
--   Lena Fuldauer
+-   Alexander J. M. Kell
 ---
 
-This mini-lecture introduces different methods to develop infrastructure
-strategies and outlines each method in more detail. These include:
-
--   Participatory methods and co-creating infrastructure strategies
-    together with stakeholders
--   Content analysis which involves reviewing published documents on
-    confirmed, proposed or potential options
--   Hybrid methods.
+This mini-lecture introduces the transport sector and we can model it within MUSE. We will explore the different demands and technologies within the transport sector and how we can model them within MUSE.
 
 # Learning objectives
 
--   Provide examples of different methods to develop infrastructure
-    strategies
--   Describe the differences between foresight, backcasting methods and
-    content analyses.
+- The main characteristics of the transport sector
+- How these can be modelled within MUSE
 
-# An overview of methods to develop infrastructure strategies
+# Overview of the transport sector and its demands
 
-A traditional means by which to assess and plan for the future is
-scenario planning.
+The transport sector is vital in the modern age. In the last few decades, the use of transport has increased significantly. This is as more people gain access to vehicles and develop lifestyles which rely on transport.
 
-Scenario planning typically aims to develop overall visions of future
-systems states, with various future conditions and policy assumptions
-and pathways towards each version, thereby embracing the concept of
-multiple possible futures [@Bradfield2005].
+Figure 6.2.1 shows the main modes of transport. As can be seen, road transport is the most used transport mode. We can also see that over 90% of fuel used in the EU transport sector is petroleum based. This is similar across the world. However, this creates challenges due to the unsustainability of fossil fuels. 
 
-These scenarios are often described as narratives of possible paths into
-the future, and can be differentiated into three classes:
+![](assets/Figure_6.2.1.jpg){width=100%}
 
-1.  Probable scenarios (what is likely to happen)
-2.  Possible scenarios (what could happen)
-3.  Normative scenarios (what should happen) [@Borjeson2006].
+**Figure 6.2.1:** Transport modes and fuel share in the EU [@en13020432].
 
-Within these various scenario generation exercises, it is useful to
-distinguish between endogenous (incorporating various
-policy/intervention options) and exogenous scenarios (outside of the
-control of actors) [@Hickford2015]. Endogenous t scenarios include
-strategies of alternative futures, mapping a 'possibility space', whilst
-exogenous scenarios include population, economy or climate scenarios.
+Due to the unsustainability of fossil fuels, other solutions have been taken up with support from governments around the world. For example, cars, motorbikes and buses can be fuelled by electricity. Electric vehicles have seen large reductions in cost and improvements in performance. Electric vehicles could play an important role in overcoming the sector's challenges. 
 
-Exogenous scenarios are useful in exploring uncertainties with respect
-to future socio-economic or climate scenarios (as covered in lecture
-block 4).
+It is possible to model the different technologies in MUSE, and observe competition between technologies based upon their technoeconomic parameters.
 
-Here we focus on the endogenous scenario generation literature to
-identify sets of infrastructure interventions, which can be combined
-into infrastructure strategies.
+## Emissions
 
-This mini-lecture will explore how to use (1) foresight methods, (2)
-strategic backcasting, or (3) content analysis to generate
-infrastructure strategies, and finally (4) reflect on using hybrid
-methods.
+The transport sector is estimated to be responsible for around 15% of global emissions. Thus, scenarios consistent with meeting global climate targets require transport sector emissions to decline rapidly. Therefore a rapid move towards sustainable technologies, such as electric vehicles is required. It is true, however, that some of the modes of transport are difficult to decarbonise. For example, it is difficult to decarbonise shipping and aviation technologies. This is because of the energy density of lithium ion batteries and other technologies are lower than oil based products.
 
-# Foresight methods
+## Transport sector in MUSE
 
-Foresight methods, such as Delphi methods, were first developed in the 1950s, and seek agreement on future trends from a wide range of experts [@Gordon1964]. These experts respond to sets of questions, review answers and revise their views in an iterative fashion. Answers are then presented anonymously to reduce the subjectivity of more influential group members [@Lempert2009].
-Delphi methods can be used to generate infrastructure strategies, by inviting leaders from different sectors, including government, business, science, technology or academia, to come together in workshops or focus groups to exchange views on future developments and decide on certain interventions [@Georghiou2008]. Consensus is typically the main objective in most foresight methods.
+Similar to in the residential sector, we can define different technologies using technoeconomic parameters. For example, we can split road transport into three categories: 
 
-![](assets/Figure_6.2.1.png){width=100%}
+- Cars
+- Motorcycles
+- Buses
 
-**Figure 6.2.1**: Overview of foresight method: working from a present state and envisioning different strategies into the future.
+We can then split these three categories into their propulsion system. For instance:
 
-# Strategic backcasting
+- Electric vehicles
+- Conventional vehicles
 
-In the development of preferred future options, backcasting methods can
-be used.
+We can source road transport data from national energy balances, and divide this between cars, motorcycles, and buses based on the split of transport by mode in the country. 
 
-The backcasting method works backwards from a particular normative
-vision to present interventions by visioning futures and developing
-agendas or policy measures to achieve the vision. This method -- similar
-to foresight methods -- is a participatory means by which different
-stakeholders can come together to develop infrastructure strategies
-[@Fuldauer2019].
-
-Research has argued that effective backcasting studies can bridge the
-gap between research and action, by involving various stakeholders to
-envision desirable futures, collecting data and generating strategies,
-thereby helping to overcome the implementation gap [@Banister2013].
-
-In the context of infrastructure strategy generation, strategic
-backcasting can be used by inviting various stakeholders to work
-backwards from national or global targets, such as development or
-climate targets, and identify sets of interventions (then grouped in
-strategies) to reach these targets. Unlike in most foresight studies,
-consensus is not one of the main objectives of backcasting. Instead, the
-aim of the backcasting process is to group different investment under
-contrasting visions, which allows the portfolio of strategies to be
-diversified.
-
-![](assets/Figure_6.2.2.png){width=100%}
-
-**Figure 6.2.2**: Overview of backcasting method: working from a future state and envisioning different strategies to achieve it.
-
-# Content analysis
-
-Content analysis is another means by which to identify infrastructure
-interventions, which can be grouped and categorised into different
-strategies.
-
-National policy documents, feasibility studies, infrastructure sector
-reports or regional studies and targets can be used to identify
-interventions or policies considered feasible. These interventions can
-be classified according to their likelihood of implementation:
-confirmed, proposed, or potential [@Adshead2021].
-
-Some interventions or policies might already by confirmed in certain
-policy documents or by different funders. Other interventions may be
-proposed in planning documents or national/regional reports. Yet other
-interventions may neither be confirmed nor proposed by national policy
-documents of feasibility studies, but could instead by identified
-through content analysis at the regional level. This could include
-adopting interventions that have been confirmed or proposed in similar
-or neighbouring countries, and which can provide examples of
-interventions not otherwise accounted for in existing reports or
-documents.
-
-# Hybrid methods
-
-Having identified sets of interventions through either participatory
-forecasting/ backcasting or through content analysis methods, these
-interventions can then be organised by broader categories of
-infrastructure system transformations, such as behavioural change,
-system efficiencies, capacity investments, etc. [@Otto2016].
-Alternatively, these interventions can also be organised around global
-development or climate outcomes [@Adshead2021] or sets of normative
-visions (e.g. circular economy; technology-led focus
-[@Fuldauer2019]). This step of reorganising specific interventions is
-most useful when interventions have been identified through foresight or
-content-analysis methods, as these typically lack specific
-vision-setting at the outset of the process. Conversely, backcasting
-methods can be used strategically to develop strategies, which are then
-assigned sets of infrastructure interventions.
-
-The above summary of different methods to develop infrastructure
-strategies points to the usefulness of using hybrid methods.
-Participatory methods such as backcasting can be used to develop the
-classifications of infrastructure strategies in the first place (such as
-behavioural change, system efficiencies, development-aligned
-strategies). Participatory methods can then be combined with content
-analysis methods to identify lists of confirmed, proposed or potential
-interventions under each of the proposed infrastructure strategies.
-
-The process of infrastructure strategy generation can be repeated for
-each sector, or explicitly be applied to consider cross-sectoral
-infrastructure strategies. Typically, various infrastructure strategies
-are compared to the case of 'inaction'. 'Inaction' is not strictly a
-strategy but serves as a counterfactual to understand the extent of
-infrastructure performance decline in the case of inaction with respect
-to interventions, and increasing demand for infrastructure services.
+We can then run a MUSE model with the different parameters and see the effect of these different parameters on agent investment decisions. These parameters could be fuel prices, technology costs or performance parameters. We can also run the model with a carbon limit, which places a tax on carbon emissions, allowing us to work out how to place a desirable policy on that which we would like.
 
 # Summary
 
-This lecture introduced the concept of endogenous infrastructure
-strategy development. Participatory forecasting, backcasting or content
-analysis methods can be used to develop various infrastructure
-interventions, which can be grouped under certain infrastructure
-strategies. Hybrid approaches may use backcasting to develop
-infrastructure strategies, and further use content analysis in
-combination with forecasting to identify sets of interventions or
-policies under these strategies.
+In this mini-lecture we have considered the transport sector and how we can model this within MUSE. We discussed the emissions of the transport sector, and how different technologies can be used to reduce these emissions. 

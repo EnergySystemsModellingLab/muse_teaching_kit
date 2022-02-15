@@ -43,7 +43,7 @@
 <p>Let’s say that we want to update the capital costs for heat pumps in 2040, but don’t want to update the prices for gasboilers. This is how we do it:</p>
 <p><img src="assets/Figure_5.4.2.png" style="width:100.0%" /></p>
 <p><strong>Figure 5.4.1:</strong> Updated technodata for residential sector</p>
-<p>Notice that we need seperate rows for both <code>heatpump</code> and <code>gasboiler</code> even though we are only making a change in the <code>heatpumnp</code> capital cost. If we don’t do this we will encounter an error. In between 2020 and 2040 we will get interpolation.</p>
+<p>Notice that we need seperate rows for both <code>heatpump</code> and <code>gasboiler</code> even though we are only making a change in the <code>heatpump</code> capital cost. If we don’t do this we will encounter an error. In between 2020 and 2040 we will get interpolation.</p>
 <h1 id="summary">Summary</h1>
 <p>In this mini-lecture we learned how to update costs in the time domain, and the assumptions MUSE makes if we do not give costs for every year. Namely, flat-forward extension and interpolation. We also learnt how to practically input these values in MUSE with the <code>Technodata.csv</code> file.</p>
 <h1 id="bibliography">Bibliography</h1>

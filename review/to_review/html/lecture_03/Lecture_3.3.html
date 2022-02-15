@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Energy demand, MUSE" />
+  <title>Mini-Lecture 3.3 – Energy demand in MUSE</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 3.3 – Energy demand in MUSE</h1>
+</header>
+<h2 id="short-description">Short description</h2>
+<p>Following mini-lecture 3.2, this mini-lecture provides an insight into how to model service demand within MUSE. There are two possible methods to model service demand in MUSE, from user input and by correlation. In this lecture we will learn what the difference is between these.</p>
+<h2 id="learning-objectives">Learning objectives</h2>
+<ul>
+<li>Understand how to input exogenous service demand</li>
+<li>Understand what service demand by correlation is</li>
+</ul>
+<h1 id="lecture-content">Lecture content</h1>
+<h2 id="service-demand">Service Demand</h2>
+<p>A service demand is a term used to describe the consumption of energy by human activity. This could be, for instance, energy for lighting or cooking in the residential sector, personal vehicles in the transportation sector or machine usage in the industrial sector. The service demand drives the entire energy sytem, and influences the total amount of energy used, the location and the types of fuels used in the energy supply system. It also includes the characteristics of the end use technologies that consume energy.</p>
+<h2 id="exogenous-service-demand">Exogenous service demand</h2>
+<p>Within MUSE we must set the energy demand exogenously. That means that the model does not calculate how much the service demand is. Effectively, this means that the user must make an assumption on how much electricity is consumed in the residential sector for a particular region in the model.</p>
+<p>We can change this per scenario, but these values will not change, even if the price for all fuels increase significantly, for instance. We are able to define the exogenous service demand by year, sector, region and timeslice.</p>
+<h2 id="service-demand-by-correlation.">Service demand by correlation.</h2>
+<p>In the previous section we learnt about the exogenous service demand. That is, we can explicilty specified what the demand would be per year, sector, region and timeslice. However, it may be the case that we do not know what the electricity demand is per year, especially in the future. We may instead clonclude that our electricity demand is a function of the GDP and population of a particular region, as previously discussed.</p>
+<p>To accommodate such a scenario, MUSE enables us to choose a regression function that estimates service demands from GDP and population projections, which may be more certain in your case.</p>
+<h2 id="sources-for-energy-demand-data">Sources for energy demand data</h2>
+<p>We can get energy balance data and/or demand projections from the following sources:</p>
+<ul>
+<li>International Energy Agency</li>
+<li>International Renewable Energy Agency</li>
+<li>United Nations Statistics</li>
+<li>Asia-Pacific Economic Cooperation</li>
+</ul>
+<p>Energy balances tell us the amount that each commodity is used by a country or region in a given year. This is usually broken down by sector. Several organisations produce energy balance data that is publicly available, such as the International Energy Agency.</p>
+<h2 id="summary">Summary</h2>
+<p>In this mini-lecture we introduced service demands, and the way we can input these into MUSE. The two ways we can input service demands are: - Exogenous service demand - Service demand by correlation</p>
+<p>We also learned where we can get energy data from for various countries.</p>
+<p>In the hands-on we will see how we can actually do this within MUSE.</p>
+<h1 id="bibliography">Bibliography</h1>
+</body>
+</html>

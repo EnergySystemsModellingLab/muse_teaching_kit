@@ -1,188 +1,137 @@
 ---
-title: Mini-Lecture 13.1 - Introduction to the future needs for infrastructure
+title: "Hands On Exercise 4: Adding a technology"
 keywords:
--   Socio-economic growth
--   Infrastructure needs
--   Future risk
+-   Adding a technology
+-   MUSE
 authors:
--   Jasper Verschuur
+-   Alexander J. M. Kell
 ---
 
-In this lecture, an outlook is provided for the need to invest in
-infrastructure in the near and distant future alongside the main drivers
-of infrastructure development. In particular, we will take a deeper dive
-into the different socio-economic scenarios, including a discussion on
-the main differences between them.
+
 
 # Learning objectives
 
--   Know what the future infrastructure investment gap is
--   Compare and contrast the different Shared Socio-economic Pathway
-    (SSP) scenarios
--   Interpret studies that use SSP scenarios for future risk estimates.
+-   Learn how to add a new technology in MUSE
 
-# Introduction
+## Addition of solar PV
 
-In lecture 12.1, we briefly discussed the multiple drivers of future
-infrastructure risk. The main drivers identified were changes in
-population and economic growth, which result in a larger demand for
-infrastructure services. This can result in either a more intense use of
-existing infrastructure, the expansion of existing infrastructure
-networks, or new infrastructure to be built. In addition to that, we saw
-that there are dependencies and feedbacks between society and
-infrastructure. For instance, the COVID-19 pandemic has changed the way
-we value (e.g. natural areas) and use infrastructure (e.g. more working
-from home).
+In this section, we will add solar photovoltaics to the default model. To achieve this, we must modify the input files in the default example.
 
-It is not yet clear how much infrastructure is needed in the near and
-distant future. For instance, some initial estimates (see Figure 13.1.1)
-show that an additional USD94 trillion of investments is needed by 2040,
-which is more than the value of existing infrastructure (USD50 trillion)
-[@Thacker2019]. Others have estimated that low- and middle-income
-countries require investments of around 4.5% of GDP to achieve the
-infrastructure-related Sustainable Development Goals (SDGs) and stay on
-track to limit climate change to 2°C [@Rozenberg2019]. Projections
-made by the Organisation for Economic Co-operation and Development
-(OECD) and the International Energy Agency (IEA), on the other hand,
-estimate that an additional 60% increase in length of road and railway
-is needed by 2050, which is equal to around USD45 trillion
-[@Dulac2013].
+## Technodata Input
 
-Whatever the exact number might be, there is an enormous amount of
-infrastructure needed to meet the needs of our future society.
+We must note, before starting, that we require consistency in input and output units. For example, if capacity is in PJ, the same basis would be needed for the output files `CommIn.csv` and `CommOut.csv`. In addition, across sectors a commodity needs to maintain the same unit. In these examples, we use the unit petajoule (PJ).
 
-![](assets/Figure_13.1.1.png){width=100%}
+Next, we will edit the `CommIn.csv` file, which specifies the commodities consumed by solar photovoltaics.
 
-**Figure 13.1.1:** An illustration of the global infrastructure gap for
-2040, with the red circle showing the current stock and the blue circle
-the investment need [@Thacker2019]
+The table below shows the original `CommIn.csv` version in normal text, and the added column and row in bold.
 
-# Drivers of infrastructure needs
+![](assets/Figure_4.1.png){width=100%}
 
-To better understand where largest demand for new infrastructure lies, we can distinguish different drivers of infrastructure needs.
-As mentioned, a growing population and urban expansion highlight the need for an increasing coverage and expansion of infrastructure services. Most infrastructure networks, such as road, rail, water, electricity and telecommunications are directly coupled to the growth in populations.
-Socio-economic growth may also change the ways in which we can afford certain infrastructure services, shifting demand. For instance, people might buy a car and start using the road network, while initially they could only afford taking the bus. Additionally, larger wealth may shift the quality of infrastructure being provided. For instance, water was initially only treated up to certain standards, but this will be upgraded to higher standards given society’s ability to pay for better quality water. Similarly, wealth changes might shift the need for a denser network, such as a larger number of telecommunications towers, to increase service speed.
-Other infrastructure types, such as ports and airports, are more dependent on developments in terms of international trade flows or tourism, which are not just confined to national boundaries. For instance, increasing demand for products from a certain country requires that country to increase the port capacity.
-For each type of infrastructure, it is therefore important to understand the current use and capacity of the systems and the main drivers of future infrastructure needs.
+**Figure 4.1:** Modified CommIn.csv file for the power sector
 
-# Introduction to Shared Socio-economic Pathways
+We must first add a new row at the bottom of the file, to indicate the new solar photovoltaic technology:
 
-Similar to the climate scenarios, scenarios of global development that
-cover the uncertainty in future socio-economic conditions have been
-developed. These societal development scenarios, called the
-'Shared Socio-economic Pathways' (SSP) cover both quantitative and qualitative
-components [@ONeill2017].
+- we call this technology `solarPV`
+- place it in region `R1`
+- the data in this row is associated to the year 2020
+- the input type is fixed
+- `solarPV` consumes solar
 
-The SSP scenarios are designed to construct a wider range of outcomes.
-In total, five SSP scenarios are constructed with different development
-outcomes for the year 2100 (Figure 13.1.2) They range from a
-sustainability scenario (SSP1) to an inequality scenario (SSP4) and a
-fossil-fuelled development scenario (SSP5). As can be seen, the outcome
-scenarios differ with respect to the varying challenges of mitigation
-and adaptation.
+As the solar commodity has not been previously defined, we must define it by adding a column, which we will call `solar`. We fill out the entries in the solar column, ie. that neither `gasCCGT` nor `windturbine` consume solar.
 
-Although there is an exhaustive list of assumptions and factors behind
-all the scenarios, the main demographic factors that drive the models
-are population growth, fertility, mortality, migration and the degree
-and type of urbanisation (e.g. well managed or poorly managed). In terms
-of human development, factors that are included are education, health,
-equity, gender equality and social cohesion. Similarly, a number of
-underlying drivers are identified that cover the economy (growth, trade,
-consumption and diet), institutions (international cooperation,
-environmental policy), technology (carbon intensity, energy intensity,
-technology transfer) and natural resources (fossil constraints,
-environment, agriculture, land-use).
+We repeat this process for the file: `CommOut.csv`. This file specifies the output of the technology. In our case, solar photovoltaics only output electricity. This is unlike `gasCCGT` which also outputs `CO2f`, or carbon dioxide.
 
-In the next sub-section, we will discuss some of the major differences
-between the five scenarios.
+![](assets/Figure_4.2.png){width=100%}
 
-![](assets/Figure_13.1.2.png){width=100%}
+**Figure 4.2:** Modified CommOut.csv file for the power sector
 
-**Figure 13.1.2:** The five SSP scenarios and how they relate to the
-challenges for adaptation and mitigation. The key words show the main
-differences between the scenarios [@ONeill2014]
+Similar to the the `CommIn.csv`, we create a new row, and add in the solar commodity. We must ensure that we call our new commodity and technologies the same as the previous file for MUSE to successfully run. ie `solar` and `solarPV`.
 
-# Differences between SSPs
+Please note that we use flat forward extension of the values when only one value is defined. For example, in the `CommOut.csv` we only provide data for the year 2020. Therefore for the benchmark years, 2025, 2030, 2035… we assume the data remains unchanged from 2020.
 
-In the previous sub-section we discussed that the Shared Socio-economic
-Pathway scenarios are based on a large number of underlying drivers.
-However, we can briefly summarise the main differences between the
-scenarios (see Figure 13.1.3).
+The next file to modify is the `ExistingCapacity.csv` file. This file details the existing capacity of each technology, per benchmark year. For this example, we will set the existing capacity to be 0.5 for all technologies in the base year and 0 for the remaining years. Please note, that the model interpolates between years linearly.
 
--   SSP1 leads to low challenges for both mitigation and adaptation,
-    mainly as a result of sharp income growth, reduced inequality, good
-    institutions, and a shift over time that prioritises sustainable
-    development.
+![](assets/Figure_4.3.png){width=100%}
 
--   SSP3 is the opposite of SSP1 with challenges to both mitigation and
-    adaptation. The challenges arise due to slow income growth and slow
-    technological change, ineffective institutions and limited human
-    capital.
+**Figure 4.3:** Modified ExistingCapacity.csv file for the power sector
 
--   SSP2 is a middle-of-the-road scenario leading to intermediate
-    challenges to mitigation and adaptation.
+Finally, the technodata.csv containts parametrisation data for the technology, such as the cost, growth constraints, lifetime of the power plant and fuel used. The technodata file is too long for it all to be displayed here, so we will truncate the full version.
 
--   SSP4 and SSP5 are a mix of the aforementioned scenarios. For SSP4,
-    there is a growing inequality across and within countries. Moreover,
-    there is low economic growth but high technological growth and human
-    capital, making the mitigation challenge low. However, the
-    adaptation challenge remains higher due to the large inequality in
-    terms of income, education and access to institutions. In SSP5,
-    economic growth is large, making adaptation challenges relatively
-    low. However, energy and carbon demand grow quickly with a large
-    reliance on fossil fuels, hindering mitigation efforts.
+Here, we will only define the parameters: `processName`, `RegionName`, `Time`, `Level`,`cap_par`, `Fuel`, `EndUse`, `Agent2` and `Agent1`
 
-These broad-scale scenarios can form the input of a range of additional
-models, including projections of the future risk of hazard impact under
-the various scenarios. To do this, however, the SSP scenarios should be
-coupled to spatially explicit maps of exposed assets.
+We shall copy the existing parameters from the windturbine technology for the remaining parameters that can be seen in the `technodata.csv` file for brevity. You can see the full file at the zenodo link.
 
-![](assets/Figure_13.1.3.png){width=100%}
+Again, flat forward extension is used here. Therefore, as in this example we only provide data for the benchmark year 2020, 2025 and the following benchmark years will keep the same characteristics, e.g. costs, for each benchmark year of the simulation.
 
-**Figure 13.1.3:** The key assumptions of, and main differences between,
-the SSP scenarios with regards to adaptation and mitigation
-[@Bauer2017]
 
-# Applications of SSP scenarios
+![](assets/Figure_4.4.png){width=100%}
 
-To illustrate what the SSP scenarios can be used for, two examples are
-shown below.
+**Figure 4.4:** Modified Technodata.csv file for the power sector
 
-In the first example [@Gao2020], the SSP scenarios were used to model
-the future evolution of urbanisation. In Figure 13.1.4, the evolution of
-the total amount of urban land area is depicted, showing that the urban
-land area for SSP5 may be around 3 times larger than in SSP1 and 75%
-higher than SSP2 and SSP4. Moreover, the spatial evolution of urban
-areas may differ considerably between scenarios. In Figure 13.1.5, the
-spatial evolution of urban areas is shown for North America and Africa.
-For both the United States and Africa, a large urban encroachment is
-shown in the coastal areas under SSP5, while this urban expansion is
-less pronounced in the SSP1 scenario.
+Notice that we have hidden the cells between F and T. These are the same as the `windturbine` technology, but we've changed the `cap_par` input to 30 and the `Fuel` technology to `solar`.
 
-In another example [@Winsemius2016], the SSP scenarios were used to
-project future risk from riverine flooding. For the Mekong Basin, for
-instance, flood risk may increase by 625% relative to 2010, mainly
-driven by socio-economic growth. A similar large increase is found for
-the Yangtze and Indus basins and the basins in Sub-Saharan Africa
-(Niger, Volta). As evident, the way in which socio-economic growth
-interacts with risk is very much location specific, therefore requiring
-spatial scenarios of socio-economic development.
+## Global inputs
 
-![](assets/Figure_13.1.4.png){width=100%}
+Next, navigate to the input folder, found at:
 
-**Figure 13.1.4:** The evolution of global urban land over the 21^st^
-century for different SSP scenarios [@Gao2020]
+```
+{muse_installation_location}/src/muse/data/example/default/input
+```
 
-![](assets/Figure_13.1.5.png){width=100%}
+We must now edit each of the files found here to add the new solar commodity. Due to space constraints we will not display all of the entries contained in the input files. The edited files can be viewed in the zenodo link, however.
 
-**Figure 13.1.5:** Spatial patterns of urbanisation in 2100 for two
-regions (North America, Africa) and two SSP scenarios (SSP1, SSP5)
-[@Gao2020]
+The `BaseYearExport.csv` file defines the exports in the base year. For our example we add a column to indicate that there is no export for solar. However, it is important that a column exists for our new commodity.
+
+It is noted, however, that the `BaseYearImport.csv` as well as the `BaseYearExport.csv` files are optional files to define exogenous imports and exports; all values are set to zero if they are not used.
+
+![](assets/Figure_4.5.png){width=100%}
+
+**Figure 4.5:** Modified BaseYearExport.csv file for the power sector
+
+The `BaseYearImport.csv` file defines the imports in the base year. Similarly to `BaseYearExport.csv`, we add a column for solar in the `BaseYearImport.csv` file. Again, we indicate that solar has no imports.
+
+![](assets/Figure_4.6.png){width=100%}
+
+**Figure 4.6:** Modified BaseYearImport.csv file for the power sector
+
+The `GlobalCommodities.csv` file is the file which defines the commodities. Here we give the commodities a commodity type, CO2 emissions factor and heat rate. For this file, we will add the `solar` commodity, with zero CO2 emissions factor and a heat rate of 1.
+
+
+![](assets/Figure_4.7.png){width=100%}
+
+**Figure 4.7:** Modified GlobalCommodities.csv file for the power sector
+
+The `projections.csv` file details the initial market prices for the commodities. The market clearing algorithm will update these throughout the simulation, however, an initial estimate is required to start the simulation. As solar energy is free, we will indicate this by adding a final column.
+
+Please note that the unit row is not read by MUSE, but used as a reference for the user. The units should be consistent across all input files for MUSE; MUSE does not carry out any unit conversion.
+
+
+![](assets/Figure_4.8.png){width=100%}
+
+**Figure 4.8:** Modified projections.csv file for the power sector
+
+## Running our customised simulation
+
+Now we are able to run our simulation with the new solar power technology.
+
+To do this we run the same run command as previously in the anaconda command prompt:
+
+```
+python -m muse settings.toml
+```
+
+If the simulation has run successfully, you should now have a folder in the same location as your `settings.toml` file called `Results`. The next step is to visualise the results using Excel.
+
+We will use the PivotChart, similar to the previous step.
+
+![](assets/Figure_4.9.png){width=100%}
+
+**Figure 4.9:** Visualisation with new technology.
+
+The power sector now shows us the new `solarPV` technology. 
+
+
 
 # Summary
 
-In this lecture, we have identified the main drivers of future
-infrastructure needs and the total infrastructure investment gap. We
-discussed the different scenarios of future socio-economic growth and
-illustrated how these scenarios can be used to model changes in
-urbanisation rate and flood risk.
+
