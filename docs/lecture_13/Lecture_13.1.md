@@ -59,7 +59,9 @@ Finally, the technodata.csv containts parametrisation data for the technology, s
 
 Here, we will only define the parameters: `processName`, `RegionName`, `Time`, `Level`,`cap_par`, `Fuel`, `EndUse`, `Agent2` and `Agent1`
 
-We shall copy the existing parameters from the windturbine technology for the remaining parameters that can be seen in the `technodata.csv` file for brevity. You can see the full file at the zenodo link.
+We shall copy the existing parameters from the windturbine technology for the remaining parameters that can be seen in the `technodata.csv` file for brevity. You can see the full file at the zenodo link, below:
+
+https://zenodo.org/record/6092287#.YgvOEy-l1pQ
 
 Again, flat forward extension is used here. Therefore, as in this example we only provide data for the benchmark year 2020, 2025 and the following benchmark years will keep the same characteristics, e.g. costs, for each benchmark year of the simulation.
 
@@ -78,7 +80,9 @@ Next, navigate to the input folder, found at:
 {muse_installation_location}/src/muse/data/example/default/input
 ```
 
-We must now edit each of the files found here to add the new solar commodity. Due to space constraints we will not display all of the entries contained in the input files. The edited files can be viewed in the zenodo link, however.
+We must now edit each of the files found here to add the new solar commodity. Due to space constraints we will not display all of the entries contained in the input files. The edited files can be viewed in the zenodo link below, however.
+
+https://zenodo.org/record/6092287#.YgvOEy-l1pQ
 
 The `BaseYearExport.csv` file defines the exports in the base year. For our example we add a column to indicate that there is no export for solar. However, it is important that a column exists for our new commodity.
 

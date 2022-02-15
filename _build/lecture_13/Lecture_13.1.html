@@ -55,7 +55,8 @@
 <p><strong>Figure 4.3:</strong> Modified ExistingCapacity.csv file for the power sector</p>
 <p>Finally, the technodata.csv containts parametrisation data for the technology, such as the cost, growth constraints, lifetime of the power plant and fuel used. The technodata file is too long for it all to be displayed here, so we will truncate the full version.</p>
 <p>Here, we will only define the parameters: <code>processName</code>, <code>RegionName</code>, <code>Time</code>, <code>Level</code>,<code>cap_par</code>, <code>Fuel</code>, <code>EndUse</code>, <code>Agent2</code> and <code>Agent1</code></p>
-<p>We shall copy the existing parameters from the windturbine technology for the remaining parameters that can be seen in the <code>technodata.csv</code> file for brevity. You can see the full file at the zenodo link.</p>
+<p>We shall copy the existing parameters from the windturbine technology for the remaining parameters that can be seen in the <code>technodata.csv</code> file for brevity. You can see the full file at the zenodo link, below:</p>
+<p>https://zenodo.org/record/6092287#.YgvOEy-l1pQ</p>
 <p>Again, flat forward extension is used here. Therefore, as in this example we only provide data for the benchmark year 2020, 2025 and the following benchmark years will keep the same characteristics, e.g. costs, for each benchmark year of the simulation.</p>
 <p><img src="assets/Figure_4.4.png" style="width:100.0%" /></p>
 <p><strong>Figure 4.4:</strong> Modified Technodata.csv file for the power sector</p>
@@ -63,7 +64,8 @@
 <h2 id="global-inputs">Global inputs</h2>
 <p>Next, navigate to the input folder, found at:</p>
 <pre><code>{muse_installation_location}/src/muse/data/example/default/input</code></pre>
-<p>We must now edit each of the files found here to add the new solar commodity. Due to space constraints we will not display all of the entries contained in the input files. The edited files can be viewed in the zenodo link, however.</p>
+<p>We must now edit each of the files found here to add the new solar commodity. Due to space constraints we will not display all of the entries contained in the input files. The edited files can be viewed in the zenodo link below, however.</p>
+<p>https://zenodo.org/record/6092287#.YgvOEy-l1pQ</p>
 <p>The <code>BaseYearExport.csv</code> file defines the exports in the base year. For our example we add a column to indicate that there is no export for solar. However, it is important that a column exists for our new commodity.</p>
 <p>It is noted, however, that the <code>BaseYearImport.csv</code> as well as the <code>BaseYearExport.csv</code> files are optional files to define exogenous imports and exports; all values are set to zero if they are not used.</p>
 <p><img src="assets/Figure_4.5.png" style="width:100.0%" /></p>

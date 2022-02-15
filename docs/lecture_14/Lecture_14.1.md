@@ -1,226 +1,83 @@
 ---
-title: Mini-Lecture 14.1 - Actions for enhancing resilience
+title: Mini-Lecture 14.1 - Adding a service demand by correlation
 keywords:
--   Interventions
--   Resilience
--   Disaster risk reduction
+- Service demand
+- Correlation
+- Regression functions
 authors:
--   Jasper Verschuur
+-   Alexander J. M. Kell
 ---
 
-In this lecture we will discuss the various ways in which resilience can
-be improved through the use of targeted interventions. A distinction
-between the type of interventions and their ability to reduce risk will
-be discussed. In addition, we introduce ways to reduce systemic risk.
+Previously, we added an exogenous service demand. That is, we explicitly specfied what the demand would be per year.
+
+However, we may not know what the electricity demand is per year into the future. Instead, we may conclude that our electricity demand is a function of the GDP and population of a particular region.
+
+To accommodate such scenarios, MUSE enables us to choose a regression functoin that estimates service demands from GDP and population, which may be more certain in your case. In this hands-on we find out how this can be done.
 
 # Learning objectives
 
--   Compare and contrast different types of interventions to improve
-    resilience
--   Identify how interventions can reduce risk in different ways
--   Describe how to improve the resilience of infrastructure networks.
+- How to add a service demand by correlation
 
 # Introduction
 
-In the previous lectures, it was shown that risk is increasing over time
-and will likely increase in the future due to the combined effect of
-climate change and socio-economic growth. Therefore, decision-makers
-have implemented various ways of enhancing resilience, both to reduce
-the physical asset damages and to improve network-wide resilience. In
-this lecture, we will briefly discuss both of these resilience options.
+For this work, we will use the default example, as before, from the MUSE repository.
 
-To reduce physical asset damages, a variety of interventions can be
-implemented. These interventions are often characterised as either
-structural or non-structural solutions.
+The full scenario files for the default example can be found at the zenodo link below.
+https://zenodo.org/record/6092720#.YgvcMy-l1pQ
 
-Structural solutions (also known as engineered solutions) often refer to
-any physical construction to reduce or avoid the impacts of hazards.
-Structural solutions can be further subdivided into hard and soft
-structures. Examples of hard structural solutions are embankments,
-floodproof housing, reservoirs, shelters, etc. Soft solutions, however,
-are interventions like mangrove restoration and artificial nourishments,
-which involve providing a natural buffer to reduce risk.
+We recommend that you download these files and save them to a location convenient to you, as we will be amending these throughout this tutorial.
 
-More recently, the term 'hybrid solutions' has been coined, which
-combines hard and soft measures. For instance, mangrove restoration in
-front of an embankment can reduce the elevation of the coastal
-embankments (see Figure 14.1.1) because of the wave dampening effect of
-mangroves (see mini-lecture 16.2 for more information). Moreover, the
-combination of beach nourishment with a seawall can reinforce both their
-functionalities, with the nourishment buffering small storms, while the
-seawall would only be used during very severe events.
+Similarly to before, we must amend the `preset` folder for this. However, we no longer require the `Residential2020Consumption.csv` and `Residential2050Consumption.csv` files. These files set the exogenous service demand for the residential sector.
 
-Non-structural solutions involve the use of policies, awareness and
-post-disaster support to reduce hazard risk. Examples are building
-codes, land-use planning, public awareness and emergency preparedness
-programmes and insurance.
+We must replace these files, with the following files:
 
-![](assets/Figure_14.1.1.png){width=100%}
+- A macrodrivers file. This contains the drivers of the service demand that we want to model. For this example, these will include GDP based on purchasing power parity (GDP PPP) and the population that we expect from 2010 to 2110.
+- A regression parameters file. This file will set the function type we would like to use to predict the service demand and the respective parameters of this regression file per region.
+- A timeslice share file. This file sets how the demand is shared between timeslice.
 
-**Figure 14.1.1:** An example of a hybrid solution in which mangrove
-reforestation in front of embankments can allow reduced embankment
-height [@Jongman2018]
+The example files for each of those just mentioned can be found in the zenodo link below.
+https://zenodo.org/record/6092720#.YgvcMy-l1pQ
 
-# Risk cascade
+Download these files and save them within the preset folder.
 
-In practice, interventions are not implemented in isolation. Often a
-portfolio of structural and non-structural interventions is designed,
-aimed at reducing risk [@Jongman2018]. How different interventions
-complement each other can be easily demonstrated through the so-called
-'risk cascade', which looks at the sequence of how interventions can
-reduce risk, either at the source, the pathways of impact, or the
-receptor.
+Next, we must amend our toml file to include our new way of calculating the preset service demand.
 
-![](assets/Figure_14.1.2.jpg){width=100%}
+## TOML file
 
-**Figure 14.1.2:** The risk cascade for flood risk management
-[@APFM2020]. Interventions that reduce the hazards, such as wetland
-restoration or mangroves, are found at the top (the source). Protection
-measures (e.g. embankments) reduce the hazard and exposure of assets.
-Land-use planning does not influence the source of the hazard much, but
-does influence the exposure of assets. Finally, awareness and
-preparedness systems and interventions targeted at reducing residual
-risk (e.g. insurance, recovery) mainly help the receptors of the hazard
-to become less vulnerable or may help them recover quickly.
+Editting the TOML file to include this can be done relatively quickly if we know the variable names.
 
-It has been recognised that relying on a single cascade will not be
-efficient in reducing risk. For instance, wetlands might buffer small
-events, but not very severe events. On the other hand, solely relying on
-structural measures might make a disaster very severe when it happens,
-because there is a lack of awareness and preparedness for such an event.
-A well-designed portfolio of risk and resilience measures therefore
-combines interventions from different cascades.
+In the second bottom section of the toml file, you will see the following section:
 
-# Risk layering
+```
+[sectors.residential_presets]
+type = 'presets'
+priority = 0
+consumption_path= "{path}/technodata/preset/*Consumption.csv"
+```
 
-The balance between different interventions within a portfolio depends
-on the local risk setting. A good way to look at this is through the
-'risk layering' concept [@Mechler2014].
+This enables us to run the model in exogenous mode, but now we would like to run the model from the files previously mentioned. This can be done by linking new variables to the new files, as follows:
 
-Risk layering can help to differentiate between different levels of
-risk, in terms of the probability of occurrence, and the degree of
-stress imposed by the risk. It can help the design of risk management
-strategies that are effective for low-, medium- and high-probability
-events, taking the absorption capacity of communities and governments
-into account. This framework can be applied for a specific hazard or
-across hazards.
+```
+[sectors.residential_presets]
+type = 'presets'
+priority = 0
 
-For frequent low-impact events, hazard reduction, protection and
-land-use planning measures are often most efficient. For medium-layer
-risks, the interventions to reduce risk in the sources and pathways (see
-above sub-section) should be combined with insurance and other financial
-instruments to cope with the residual risk. For very rare and
-catastrophic events, public and international assistance is necessary,
-including donor assistance for low-income countries.
+timeslice_shares_path = '{path}/technodata/preset/TimesliceSharepreset.csv'
+macrodrivers_path = '{path}/technodata/preset/Macrodrivers.csv'
+regression_path = '{path}/technodata/preset/regressionparameters.csv'
+```
 
-For infrastructure systems, a similar concept can be applied.
-Engineering design standards often help protect a road or power plant
-against frequent events. However, during very extreme events that result
-in damage or shutting down of infrastructure systems, it is important to
-have a financial buffer available to quickly recover and reconstruct the
-infrastructure system after failure. This should be combined with
-insurance in order to avoid overwhelming the financial coping capacity
-of governments. Hence, stress-testing exercises are extremely helpful to
-understand system response to different risk layers.
+We've just linked the new files to MUSE.
 
-![](assets/Figure_14.1.3.png){width=100%}
+## Running and visualising our new results
 
-**Figure 14.1.3:** The risk layering concept with the return period on
-the left and the balance of risk reduction and risk financing in the
-middle. It emphasises that different risk and resilience strategies need
-to be targeted for different types of events [adapted from
-@Mechler2014].
 
-# Improving network resilience: Theory
+Figure 5.1, below, shows the power sector over the future horizon. We can see a significantly higher installed capacity, as the demand has increased due to the correlation of GDP PPP and population.
 
-The unique nature of infrastructure systems means that a single node
-failure has the potential to cause far-reaching systemic impacts. The
-aforementioned risk frameworks often only focus on reducing the direct
-asset failure and impacts but do not consider systemic risks.
+![](assets/Figure_5.1.png){width=100%}
 
-Therefore, one should also consider interventions that minimise the
-systemic risk by reducing the potential adverse cascading effects of
-infrastructure failure. Examples of such network-wide interventions to
-improve resilience are, for instance:
-
--   Incorporating backup options to mitigate disruptions of services
-
--   Network restructuring
-
--   Increasing network redundancy and rerouting options (e.g. for
-    transport systems)
-
--   Speeding up the recovery of damaged assets to bring back the network
-    to a normal level of service.
-
-Hence, for infrastructure systems, the portfolio is a balanced mix of
-both asset-level interventions and network-wide interventions, with the
-latter being inherently more complicated to design.
-
-Figure 14.1.4 shows an example of a hypothetical infrastructure system
--- say an electricity network - with the existing network being a very
-centralised one (left) [@Hochrainer-Stigler2020]. If the asset in red
-fails, a systemic shock will be very large as there is no redundancy at
-all in the network. The network in the middle and right are much more
-decentralised. If any of the larger, more central, nodes fail, the
-service disruption of the electricity is buffered by other nodes taking
-over the service. However, having many connections also means that other
-components are more easily affected. Therefore, a balance of redundancy
-and the risk of transmission is important to consider when improving
-network resilience.
-
-![](assets/Figure_14.1.4.png){width=100%}
-
-**Figure 14.1.4:** An example of network restructuring from a
-centralised network towards a decentralised network
-[@Hochrainer-Stigler2020]
-
-# Improving network resilience in practice
-
-Improving the network resilience of real-world infrastructure systems is
-often more difficult. This is because:
-
-1.  Networks are often fixed infrastructures that cannot be easily
-    restructured
-
-2.  The complex and often non-linear interactions make it hard to know
-    where to target interventions to improve network resilience
-
-3.  The benefits of improving network resilience are often harder to
-    quantify than reducing asset risk.
-
-Within a risk and resilience study for the United Kingdom
-[@Pant2020], the benefits of adding backups to the electricity
-network was tested. Failures in the electricity network can easily
-propagate to other infrastructure networks (telecoms, water, and
-transport). In this idealised scenario using real-world networks, the
-effect of having backup for a 100-hour disruptive event was tested.
-
-The difference between the users affected with and without backup is
-shown in Figure 14.1.5. In the original scenarios, the disruption was
-equal to around 118 million customer-hours. In the situation with
-backup, this reduced to 104 million customer-hours, indicating that
-adding backup could reduce impacts by 14 million customer-hours in the
-first 24 hours. This also shows the significant gains to be made if
-networks are repaired within the first 10-24 hours.
-
-In short, such hypothetical model experiments using real-world
-infrastructure networks help to understand the benefits of improving
-network resilience. However, given that infrastructure networks are
-country- and site-specific, care should be taken when extrapolating
-these results to other systems.
-
-![](assets/Figure_14.1.5.png){width=100%}
-
-**Figure 14.1.5:** The avoided number of users that are disrupted by
-electricity failure; illustrating the difference between a scenario with
-backup generators to a scenario without in the United Kingdom
-[@Pant2020]
+**Figure 5.1:** Visualisation of the power sector
 
 # Summary
 
-In this lecture, we summarised the different types of interventions to
-improve both asset and network resilience. We discussed how different
-interventions reduce risk in different ways and highlighted that
-portfolios of complementary interventions need to be designed that are
-optimised for the local context.
+In this hands-on we added a service demand by correlation. Specifically, GDP purchasing power parity and population. We saw that we could make inferences on how the demand will grow based on these using seperate files in MUSE.
