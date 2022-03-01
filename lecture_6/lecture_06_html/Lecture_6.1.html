@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Mini-Lecture 6.1 - Sectors in MUSE</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 6.1 - Sectors in MUSE</h1>
+</header>
+<p>This mini-lecture introduces the concept of the residential sector</p>
+<h1 id="learning-objectives">Learning objectives</h1>
+<ul>
+<li>Understand the role of the residential sector, its technologies and the main energy and societal challenges</li>
+</ul>
+<h1 id="overview-of-the-residential-sector-and-its-demands">Overview of the residential sector and its demands?</h1>
+<p>Energy is used for many different reasons in the residential sector, as shown by Figure 6.1.1. This image shows teh share of residential energy by service demand/ We can see that energy is used for many different purposes, from heating and cooking to clearning and ironing. This split of energy demand will vary across different countries. Figure 6.1.1 shows residential energy demand in Italy, which will differ to countries in Asia, for instance. This is largely dependent on different climates, levels of development and lifestyles.</p>
+<p><img src="assets/Figure_6.1.1.png" style="width:100.0%" /></p>
+<p><strong>Figure 6.1.1:</strong> Residential sector and the different demands <span class="citation" data-cites="en12112055">(Mancini, Lo Basso, and De Santoli 2019)</span></p>
+<p>The total magnitude of energy demand also varies by country as a total value, but also as energy demand per capita. This is strongly dependent on the level of electricity access and availabiltiy of other fuels in the country. Residential activities can use different forms of energy. For example, cooking can be met by burning biomass, oil products, natural gas or electricity. The fuels used vary by country.</p>
+<h2 id="residential-sector-technologies">Residential sector technologies</h2>
+<p>Some of the key residential technologies include lamps, cooking stoves, heating and air conditioning systems, as well as other electrical appliances. Some of these technologies can only use one fuel, such as electrical appliances and air conditioning which rely on electricity.</p>
+<p>However, in other cases multiple different fuels can be used for the same purpose. For example, heating. Heating can be met by burning biomass, natural gas, oil or electricity, for instance. These technologies have differing performance parameters. For example, electric stoves are usually much more efficient than biomass stoves. Different technological options also have different impacts on the environment and on human health. For example, the emissions from biomass can have detrimental impacts to human health, whereas electric stoves do not have emissions in the home.</p>
+<p>It is possible to model these different options in MUSE, which allows us to gain insights into their environmental and cost implications. Modelling can allow us to model the entire system as a whole, understand the trade-offs between certain technologies and make decisions on which policies to implement.</p>
+<h2 id="residential-sector-in-muse">Residential sector in MUSE</h2>
+<p>Within MUSE we can model different technology options. For instance, if we are to model an electric stove and a biomass stove we would have different inputs (CommIn.csv file). However, we would have the same output (CommOut.csv file) of cooking demand. We can also model an increase in efficiency of a technology by lowering the value in the CommIn.csv file. We can also consider the costs of investing in more energy efficient appliances by increasing the cost of these high efficiency appliances relative to the low efficiency appliances. By doing this, we can understand where and when investments in energy efficiency might be economic.</p>
+<h1 id="summary">Summary</h1>
+<p>In this lecture we have explored the residential sector. We explored the different demands that can reside within the residential sector and the different technologies that can be used to meet these demands. We also learnt of the difference in demands between countries and how we can model different technologies within MUSE.</p>
+<h1 class="unnumbered" id="bibliography">Bibliography</h1>
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-en12112055" class="csl-entry" role="doc-biblioentry">
+Mancini, Francesco, Gianluigi Lo Basso, and Livio De Santoli. 2019. <span>“Energy Use in Residential Buildings: Characterisation for Identifying Flexible Loads by Means of a Questionnaire Survey.”</span> <em>Energies</em> 12 (11). <a href="https://doi.org/10.3390/en12112055">https://doi.org/10.3390/en12112055</a>.
+</div>
+</div>
+</body>
+</html>
