@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="keywords" content="Stakeholders, Multiple objectives, Uncertainty" />
-  <title>Mini-Lecture 7.1 – Key considerations for infrastructure decision-making</title>
+  <meta name="keywords" content="Agent-based model" />
+  <title>Mini-Lecture 7.1 – Agents in energy systems models</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -13,25 +13,6 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-    }
-    .hanging div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }
   </style>
   <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
   <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
@@ -41,91 +22,19 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Mini-Lecture 7.1 – Key considerations for infrastructure decision-making</h1>
+<h1 class="title">Mini-Lecture 7.1 – Agents in energy systems models</h1>
 </header>
-<p>In this mini-lecture we will describe the main considerations and challenges of making decisions for infrastructure planning.</p>
+<p>In this mini-lecture we will describe the importants of agents within MUSE and also within an energy systems modelling context.</p>
 <h1 id="learning-objectives">Learning objectives</h1>
 <ul>
-<li>List key considerations for infrastructure decision-making</li>
-<li>Explain why each of them are important.</li>
+<li>Understand why agents are important in an energy modelling context</li>
+<li>Understand how we can characterise these agents within MUSE</li>
 </ul>
-<h1 id="overview-of-performance-evaluation">Overview of performance evaluation</h1>
-<p>Following previous lectures, we are already able to:</p>
-<ul>
-<li>Establish the current state of infrastructure systems</li>
-<li>Develop forecasts of future infrastructure demands</li>
-<li>Establish a vision, performance metrics and goals for the future</li>
-<li>Develop strategic alternatives for future infrastructure provision.</li>
-</ul>
-<p>Therefore, in this lecture we will set the basis for decision-making on evaluating what strategies perform better under future forecasts to achieve our defined goals.</p>
-<p>The lack of strategic long-term planning is seen as one of the main challenges to overhauling infrastructure systems <span class="citation" data-cites="Anheier2016 OECD2017">(Anheier, Lorentz, and Fratzscher 2016; OECD 2017)</span>. However, making the right decisions about infrastructure is not an easy task. Infrastructure, as a high-cost long-lived asset, needs to take into account a variety of factors, scenarios, objectives, stakeholders and interdependencies with other sectors.</p>
-<h1 id="multiple-objectives">Multiple objectives</h1>
-<p>Infrastructure systems don’t only provide basic needs, they also facilitate economic growth and social well-being. Additionally, these systems account for approximately 70% of global emissions, mainly as a result of infrastructure construction and operations such as power plants, buildings, and transport <span class="citation" data-cites="Saha2018">(Saha 2018)</span>. Therefore, making decisions about infrastructure today, needs to take into account a variety of different aspects and goals, as described in Lecture 5.</p>
-<p>Figure 7.1.1 shows how water infrastructure (in this case natural infrastructure) can provide a variety of services such as environmental protection, flood mitigation, reducing erosion and water supply. Infrastructure impacts are broad, therefore it is common to take multiple goals in the decision-making process.</p>
-<p><img src="assets/Figure_7.1.1.jpg" style="width:100.0%" /></p>
-<p><strong>Figure 7.1.1:</strong> Natural infrastructure for multiple objectives <span class="citation" data-cites="Cohen-Shacham2016">(Cohen-Shacham et al. 2016)</span></p>
-<p>Common multiple objectives are costs, emissions (mainly for energy and transport), reliability of the service, access (mainly for water and wastewater in low-income settings), air and water quality, and other environmental impacts. One way of taking all these different metrics into account, is by converting them into monetary values. However, for planning purposes other methodologies might be preferred, such as multi-criteria decision-making, in which every metric can be analysed with its own value, and trade-off evaluations can be performed. One of the most prominent examples in this regard is energy planning under the Sustainable Development Goals (SDGs) and the Paris Agreement, in which planners are expected to consider climate mitigation objectives while developing a reliable and cost effective energy system <span class="citation" data-cites="Bhardwaj2019">(Bhardwaj et al. 2019)</span>.</p>
-<h1 id="interdependencies-between-infrastructure-sectors">Interdependencies between infrastructure sectors</h1>
-<p>Each infrastructure sector is a multifaceted socio-technical system, that contains a complex web of interconnections. Given the increased recognition of the need to take a more integrated view of infrastructure, many studies have evaluated infrastructure networks by analysing interdependencies between sectors such as the expanding body of research on the water-energy nexus <span class="citation" data-cites="Hamiche2016 Artioli2017">(Hamiche, Stambouli, and Flazi 2016; Artioli, Acuto, and McArthur 2017)</span>. An example of interdependent infrastructure networks is shown in Figure 7.1.2. In the figure you can see schematic interactions between infrastructure sectors and with societal and financial networks. The interactions are differentiated as intra-network (within the same sector), inter-network and human-centric communication.</p>
-<p><img src="assets/Figure_7.1.2.jpg" style="width:100.0%" /></p>
-<p><strong>Figure 7.1.2:</strong> Interdependent infrastructure systems <span class="citation" data-cites="Amini2020">(Amini, Imteaj, and Pardalos 2020)</span></p>
-<p>Some system interdependencies can be found between the energy and water sectors, mainly through hydropower plants (which generate water and energy at the same time), and the important amount of energy needed for water treatment and desalination. Interdependencies between the energy and transportation sectors are the fossil fuels used for vehicles and the increasing electrification of transport. Finally, interdependencies between waste and energy are the so-called waste-to-energy projects such as incinerators or anaerobic digesters as well as the methane collection in landfills. Some direct interdependencies between sectors were described, but it is important to identify other types of indirect dependencies. For instance, if infrastructure is planned centrally, one common budget might be distributed for different sectors, therefore the budget spent in one sector might affect another. On the demand side, a demand-management strategy such as increasing environmental awareness can have an impact on all sectors and can be considered a cross-sectoral intervention.</p>
-<h1 id="uncertainty-on-infrastructure-forecasts">Uncertainty on infrastructure forecasts</h1>
-<p>As seen in Lecture 4, infrastructure drivers are used to predict future demand. However, the longer the planning timeframe, the more uncertain the forecasts. A common question that arises when we have a broad range of scenarios is what we can do with them? Figure 7.1.3 shows the huge variation of expected sea level rise (between 1m to 8m) for the Thames river in London.</p>
-<p><img src="assets/Figure_7.1.3.jpg" style="width:100.0%" /></p>
-<p><strong>Figure 7.1.3:</strong> Different forecasts of sea level rise for London <span class="citation" data-cites="Hall2019">(Hall, Harvey, and Manning 2019)</span></p>
-<p>When facing that range of uncertainty, different approaches are commonly used:</p>
-<ul>
-<li>One can use simple statistic estimations such as the average or the median of the forecasts and plan accordingly. This is not considered a good uncertainty management.</li>
-<li>One can be a bit more detailed and evaluate the probability distribution of the forecasts. Then, it’s possible to better evaluate the likelihood of different scenarios and estimate an expected value. This holds if the only goal is to maximise the overall expected value of the decision.</li>
-<li>One can take a more conservative approach and decide to use the worst-case scenario. In this way the solution might be expensive but will always work.</li>
-<li>As we will see in the next mini-lectures, more specialised approaches intending to evaluate the performance of different strategies under the whole range of scenarios, can result in robust decisions in the present, and propose adaptive approaches through time.</li>
-</ul>
-<h1 id="multiple-stakeholders">Multiple stakeholders</h1>
-<p>Given that infrastructure is costly and its impacts are widespread, infrastructure decisions are usually taken by a group of stakeholders. This is part of what is called infrastructure governance, which entails the social and institutional factors that create and sustain infrastructure relationships <span class="citation" data-cites="Turner2018">(Turner 2018)</span>. Uncertainty on what decision is better arises when there are many viable alternatives to follow, when the problem depends upon people’s unpredictable behaviour, and the uncertainty of the decision-making process itself, where various stakeholders with different worldviews do not agree on a strategy <span class="citation" data-cites="Groves2007">(Groves and Lempert 2007)</span>.</p>
-<p>The multiplicity of stakeholders does not only affect the moment of making final decisions on infrastructure planning. The variety and sometimes conflicting opinions need to be accounted for from the framing of the problem, the development of a vision and objectives, and the metrics that should be used. This will lead to consensus-based decision-making. Figure 7.1.4 exemplifies a participatory decision-making process proposed for transportation planning. As evident in the figure, this entails a complex and iterative process.</p>
-<p><img src="assets/Figure_7.1.4.jpg" style="width:100.0%" /></p>
-<p><strong>Figure 7.1.4:</strong> A framework for the participatory decision-making process <span class="citation" data-cites="LePira2015">(Pira et al. 2015)</span></p>
+<h1 id="agents-overview">Agents overview</h1>
+<p>Within real life energy systems there are many different objectives that investors or consumers have. These objectives may differ by sector, by investor type or by proportions of the population. For instance, a certain percentage of the population may be willing to be spend more money on heating there homes than others.</p>
+<p>It is straightforward to specify these objectives and characteristics within MUSE. For instance, you may want to split a population based upon their geospatial and economic characteristics. For example by splitting a population into rural or urban. That would provide us with two groups. However, it is possible to go further, and we may want to split the rural and urban groups into different socioeconomic demographics, such as disposable income.</p>
+<p>Say for example, we only split the population into rural and urban. We can specify this as two agents within MUSE. Once we have specified the two agents we would have to give them characteristics which differentiate them from the other agents and the proportion of the population that they make up. It must be noted, at this stage, that we do not need to have a seperate agent for each individual or entity. It is perfectly fine to group and aggregate similar individuals or agents.</p>
 <h1 id="summary">Summary</h1>
-<p>In this mini-lecture we reviewed key considerations for infrastructure decision-making. Infrastructure normally has multiple objectives, interdependencies, future uncertainty and multiple stakeholders involved. Making infrastructure decisions is therefore a complex process.</p>
-<h1 class="unnumbered" id="bibliography">Bibliography</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Amini2020" class="csl-entry" role="doc-biblioentry">
-Amini, M. Hadi, Ahmed Imteaj, and Panos M. Pardalos. 2020. <span>“Interdependent Networks: A Data Science Perspective.”</span> <em>Patterns</em> 1 (April): 100003. <a href="https://doi.org/10.1016/j.patter.2020.100003">https://doi.org/10.1016/j.patter.2020.100003</a>.
-</div>
-<div id="ref-Anheier2016" class="csl-entry" role="doc-biblioentry">
-Anheier, H. K., B. Lorentz, and M. Fratzscher. 2016. <span>“Governance of Infrastructure: International Best Practices and Innovations Executive Summary.”</span> Hertie School of Governance. <a href="https://www.hertie-school.org/fileadmin/2_Research/2_Research_directory/Research_projects/Governance_of_infrastructure/HSoG_Policy_Paper_Best_Practice_Summary_2016_24_online.pdf">https://www.hertie-school.org/fileadmin/2_Research/2_Research_directory/Research_projects/Governance_of_infrastructure/HSoG_Policy_Paper_Best_Practice_Summary_2016_24_online.pdf</a>.
-</div>
-<div id="ref-Artioli2017" class="csl-entry" role="doc-biblioentry">
-Artioli, Francesca, Michele Acuto, and Jenny McArthur. 2017. <span>“The Water-Energy-Food Nexus: An Integration Agenda and Implications for Urban Governance.”</span> <em>Political Geography</em> 61 (November): 215–23. <a href="https://doi.org/10.1016/j.polgeo.2017.08.009">https://doi.org/10.1016/j.polgeo.2017.08.009</a>.
-</div>
-<div id="ref-Bhardwaj2019" class="csl-entry" role="doc-biblioentry">
-Bhardwaj, Ankit, Madhura Joshi, Radhika Khosla, and Navroz K. Dubash. 2019. <span>“More Priorities, More Problems? Decision-Making with Multiple Energy, Development and Climate Objectives.”</span> <em>Energy Research and Social Science</em>. Elsevier Ltd. <a href="https://doi.org/10.1016/j.erss.2018.11.003">https://doi.org/10.1016/j.erss.2018.11.003</a>.
-</div>
-<div id="ref-Cohen-Shacham2016" class="csl-entry" role="doc-biblioentry">
-Cohen-Shacham, E., C. Janzen, S. Maginnis, and G. Walters. 2016. <em>Nature-Based Solutions to Address Global Societal Challenges</em>. <em>Nature-Based Solutions to Address Global Societal Challenges</em>. IUCN International Union for Conservation of Nature. <a href="https://doi.org/10.2305/iucn.ch.2016.13.en">https://doi.org/10.2305/iucn.ch.2016.13.en</a>.
-</div>
-<div id="ref-Groves2007" class="csl-entry" role="doc-biblioentry">
-Groves, David G., and Robert J. Lempert. 2007. <span>“A New Analytic Method for Finding Policy-Relevant Scenarios.”</span> <em>Global Environmental Change</em> 17 (February): 73–85. <a href="https://doi.org/10.1016/j.gloenvcha.2006.11.006">https://doi.org/10.1016/j.gloenvcha.2006.11.006</a>.
-</div>
-<div id="ref-Hall2019" class="csl-entry" role="doc-biblioentry">
-Hall, Jim W., Hamish Harvey, and Lucy J. Manning. 2019. <span>“Adaptation Thresholds and Pathways for Tidal Flood Risk Management in London.”</span> <em>Climate Risk Management</em> 24 (January): 42–58. <a href="https://doi.org/10.1016/j.crm.2019.04.001">https://doi.org/10.1016/j.crm.2019.04.001</a>.
-</div>
-<div id="ref-Hamiche2016" class="csl-entry" role="doc-biblioentry">
-Hamiche, Ait Mimoune, Amine Boudghene Stambouli, and Samir Flazi. 2016. <span>“A Review of the Water-Energy Nexus.”</span> <em>Renewable and Sustainable Energy Reviews</em>. Elsevier Ltd. <a href="https://doi.org/10.1016/j.rser.2016.07.020">https://doi.org/10.1016/j.rser.2016.07.020</a>.
-</div>
-<div id="ref-OECD2017" class="csl-entry" role="doc-biblioentry">
-OECD. 2017. <em>Getting Infrastructure Right: A Framework for Better Governance</em>. <em>Getting Infrastructure Right</em>. OECD. <a href="https://doi.org/10.1787/9789264272453-en">https://doi.org/10.1787/9789264272453-en</a>.
-</div>
-<div id="ref-LePira2015" class="csl-entry" role="doc-biblioentry">
-Pira, Michela Le, Giuseppe Inturri, Matteo Ignaccolo, and Alessandro Pluchino. 2015. <span>“Analysis of AHP Methods and the Pairwise Majority Rule (PMR) for Collective Preference Rankings of Sustainable Mobility Solutions.”</span> In <em>Transportation Research Procedia</em>, 10:777–87. Elsevier. <a href="https://doi.org/10.1016/j.trpro.2015.09.031">https://doi.org/10.1016/j.trpro.2015.09.031</a>.
-</div>
-<div id="ref-Saha2018" class="csl-entry" role="doc-biblioentry">
-Saha, D. 2018. <span>“Low-Carbon Infrastructure: An Essential Solution to Climate Change?”</span> <em>World Bank Blogs</em>. <a href="https://blogs.worldbank.org/ppps/low-carbon-infrastructure-essential-solution-climate-change">https://blogs.worldbank.org/ppps/low-carbon-infrastructure-essential-solution-climate-change</a>.
-</div>
-<div id="ref-Turner2018" class="csl-entry" role="doc-biblioentry">
-Turner, Colin. 2018. <span>“The Governance of Polycentric National Infrastructure Systems: Evidence from the UK National Infrastructure Plan.”</span> <em>Environment and Planning C: Politics and Space</em> 36 (May): 513–29. <a href="https://doi.org/10.1177/2399654417717068">https://doi.org/10.1177/2399654417717068</a>.
-</div>
-</div>
+<p>In this mini-lecture we understood the concept of agents and how they relate to an energy modelling context. We briefly understood how we can translate these concepts into MUSE. In the hands-on we will learn how to add a new agent. # Bibliography</p>
 </body>
 </html>

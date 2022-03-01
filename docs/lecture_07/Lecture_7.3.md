@@ -5,7 +5,7 @@ keywords:
 -   Exploratory analysis
 -   Adaptive planning
 authors:
--   Orlando Roman
+-   Alexander J. M. Kell
 ---
 
 In this mini-lecture we will describe the most classical methods for
