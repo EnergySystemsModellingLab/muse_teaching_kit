@@ -1,7 +1,7 @@
 ---
 title: Mini-Lecture 6.1 - Sectors in MUSE
 keywords:
--   
+-   Residential sector
 authors:
 -   Alexander J. M. Kell
 ---

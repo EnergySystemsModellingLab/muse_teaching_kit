@@ -23,9 +23,8 @@ We can edit the `SearchRule` to reduce the space of technologies that those agen
 
 The rest of the parameters include the parameters discussed in the previous lecture:
 
-- MaturityThreshold
-- Budget
-
+- `MaturityThreshold`
+- `Budget`
 
 # Summary
 
