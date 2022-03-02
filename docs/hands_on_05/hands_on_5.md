@@ -1,5 +1,5 @@
 ---
-title: Mini-Lecture 14.1 - Adding a service demand by correlation
+title: "Hands On Exercise 5: Adding a service demand by correlation"
 keywords:
 - Service demand
 - Correlation

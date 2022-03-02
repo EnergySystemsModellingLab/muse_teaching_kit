@@ -6,7 +6,7 @@ authors:
 -   Alexander J. M. Kell
 ---
 
-In this mini-lecture we will describe the importants of agents within MUSE and also within an energy systems modelling context.
+In this mini-lecture we will describe the importance of agents within MUSE and also within an energy systems modelling context.
 
 # Learning objectives
 
