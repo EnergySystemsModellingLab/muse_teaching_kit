@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="keywords" content="Decision making under deep uncertainty, Exploratory analysis, Adaptive planning" />
-  <title>Mini-Lecture 7.3 – Methods for decision making under uncertainty</title>
+  <meta name="keywords" content="Sectors, Agent differentiation, Key agent parameters" />
+  <title>Mini-Lecture 7.3 – Agents by sector</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -22,55 +22,22 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Mini-Lecture 7.3 – Methods for decision making under uncertainty</h1>
+<h1 class="title">Mini-Lecture 7.3 – Agents by sector</h1>
 </header>
-<p>In this mini-lecture we will describe the most classical methods for decision-making under deep uncertainty (DMDU), looking at their applicability and differences.</p>
+<p>In this mini-lecture we will cover how agents and their characteristics can differ between sectors. We will also investigate the similarities between agents and sectors. We will also consider the key parameters that make up agents.</p>
 <h1 id="learning-objectives">Learning objectives</h1>
 <ul>
-<li>List and describe some DMDU methods</li>
-<li>Explain when a particular method is preferred.</li>
+<li>Understand the differences between agents of different sectors</li>
+<li>Understand the key parameters that differentiate agents</li>
 </ul>
-<h1 id="introduction">Introduction</h1>
-<p>One typical approach to address uncertain problems is through the evaluation of scenarios as explorations of plausible futures, where sensitivity analyses are carried out on the inputs to see the consequences in the outputs. However, evaluating a deeply uncertain future through a traditional scenario technique has important challenges:</p>
-<ul>
-<li><p>In complex systems, it is difficult to clearly visualise the relationship between inputs and outputs. These are often non-linear, with regions of extreme sensitivity to particular assumptions, and threshold points that are difficult to identify.</p></li>
-<li><p>The number of possible scenarios that can be analysed are limited, even for visualisation purposes, so instead a small number of plausible alternatives tends to be evaluated, and only those that are believed to contain the most important uncertainties are taken into account. Normally, the entire spectrum of the problem cannot be evaluated.</p></li>
-<li><p>It is difficult to establish monitoring criteria, decision rules or triggering points for decision-making, as these rely on how the future unfolds.</p></li>
-</ul>
-<p>Hence, in the face of deep uncertainty, the decision-making community is using innovative decision support methods. These tools combine creative thinking of scenario techniques, the capabilities of stress testing and the deliberative process of decision-making in a systematised fashion, thus reducing possible biases. The most commonly used methods will be described in this mini-lecture.</p>
-<h1 id="exploratory-analysis">Exploratory analysis</h1>
-<p>One of the first decision-making under deep uncertainty (DMDU) tools, and the basis of the most recent approaches, is the so-called “Exploratory Analysis,” which is a wide exploration of many alternative scenarios <span class="citation" data-cites="Bankes1993">(<strong>Bankes1993?</strong>)</span> opening up a range of plausible future states. Figure 7.3.1 shows different approaches for analysing future scenarios. The normative approach is based on the best forecast, while the predictive approach intends to account for variability in the future state. On the other hand, the exploratory approach takes a wider look into the future alternatives asking “what if” questions and evaluating all plausible alternatives. Therefore, the exploration of potential futures might guide the decision-making process by finding vulnerabilities and best strategies. In principle, when the future proves hard to predict, plans ought to be robust and flexible <span class="citation" data-cites="Lempert2019">(<strong>Lempert2019?</strong>)</span>. One approach is to evaluate this set of future states to identify robust decisions in the present, that is, decisions that work well whatever the future may be. A second, and complementary approach, is to identify decision points to adapt over time, encouraging flexibility for uncertainty management.</p>
-<p><img src="assets/Figure_7.3.1.jpg" style="width:100.0%" /></p>
-<p><strong>Figure 7.3.1:</strong> Types of future scenario approaches <span class="citation" data-cites="McGowan2019">(<strong>McGowan2019?</strong>)</span></p>
-<p>Some open source tools have been created with this purpose, such as the Exploratory Modelling Analysis (EMA) Workbench <span class="citation" data-cites="Kwakkel2017">(<strong>Kwakkel2017?</strong>)</span>. This tool has the capability of connecting any model created in different programming languages and softwares, such as Vensim or Excel, to perform computational experiments and deal with uncertainty. The main purpose of the analysis is to find regions of sensitivity, grouping and classification of future states or optimisation of strategies under uncertainty.</p>
-<h1 id="robust-decision-making-rdm">Robust decision-making (RDM)</h1>
-<p>Robust decision-making (RDM) is a method that uses analytics to perform an exploratory model allowing the evaluation of hundreds of alternative strategies, uncertainties and possible futures <span class="citation" data-cites="Groves2007">(<strong>Groves2007?</strong>)</span>. RDM starts by proposing possible strategies which are then evaluated against different possible futures, checking vulnerabilities and generating feedback loops to build even better strategies.</p>
-<p><img src="assets/Figure_7.3.2.jpg" style="width:100.0%" /></p>
-<p><strong>Figure 7.3.2:</strong> Iterative steps in RDM <span class="citation" data-cites="Lempert2019">(<strong>Lempert2019?</strong>)</span></p>
-<p>Figure 7.3.2 shows the steps of the process:</p>
-<ol type="1">
-<li><p>First, ‘decision framing’ is where stakeholders identify the alternatives, uncertainties and performance indicators they wish to evaluate (wider range).</p></li>
-<li><p>Second, ‘evaluate strategy across futures’ is a systematic development of the entire spectrum of possible scenarios, generating a range of futures, against which the performance of the originally proposed alternatives will be evaluated.</p></li>
-<li><p>Third, ‘vulnerability analysis’ is where data mining and machine learning algorithms are used to identify the vulnerabilities of each alternative, which allow modification or unifying alternatives, thus creating new ones. This feedback loop is the most creative process and where the method generates the most value.</p></li>
-<li><p>Fourth, ‘trade-off analysis’ is where the different alternatives generated are compared based on their performance, such as their robustness (best in most futures), regrets (the difference between the chosen and the optimal solution) or others identified. This step allows a transparent decision-making process for the different stakeholders.</p></li>
-<li><p>Lastly, based on the results, the process allows to develop new futures and strategies to be evaluated in a new round of analysis.</p></li>
-</ol>
-<p>The RDM method allows iteration and learning in each round of analysis until a satisfactory robust strategy is found.</p>
-<h1 id="realengineering-options-analysis">Real/engineering options analysis</h1>
-<p>The previous methods exploit concepts such as the exploration of futures and robustness. In contrast, Real Options Analysis <span class="citation" data-cites="deNeufville2011">(<strong>deNeufville2011?</strong>)</span> maintains the exploratory approach and focuses on flexibility – the capability to adapt over time – which is also used in the Dynamic Adaptive Planning approach, described in the next section.</p>
-<p>In the treatment of uncertainty, the Real or Engineering Options methodology is able to explore technical alternatives (such as the size, height or capacities) with more depth than other DMDU methods <span class="citation" data-cites="deNeufville2019">(<strong>deNeufville2019?</strong>)</span>. Therefore, this methodology is well suited for evaluating individual engineering projects under uncertainty. Real Options assumes that adding flexibility has a cost (e.g. building a power plant with the ability to be expanded is more costly than not) and intends to estimate the value of flexibility under future uncertainty. This means, it estimates if the benefit of the added flexibility is worth the cost, given future uncertainty.</p>
-<p>Figure 7.3.3 shows the results of 1,000 simulations under different climatological and physical variables. The results computed how many times an expansion of desalination capacity was needed over the lifetime of the project. Therefore, the likeliness and timing of potential expansion can be evaluated by the decision-maker.</p>
-<p><img src="assets/Figure_7.3.3.jpg" style="width:100.0%" /></p>
-<p><strong>Figure 7.3.3:</strong> Distribution of desalination capacity added over 1,000 simulations <span class="citation" data-cites="Fletcher2019">(<strong>Fletcher2019?</strong>)</span></p>
-<h1 id="dynamic-adaptive-planning">Dynamic Adaptive Planning</h1>
-<p>The RDM and Real Options methods can be complemented very well with the dynamic adaptive approach <span class="citation" data-cites="Kwakkel2016">(<strong>Kwakkel2016?</strong>)</span>. While the RDM method allows understanding of the functioning of systems, identifies vulnerabilities and allows a transparent comparison between the options, adaptive planning emphasises dynamic adaptation over time.</p>
-<p>Figure 7.3.4 shows a simple example of an adaptive pathway applied to long-term planning, where there are four possible strategies: A, B, C and D. The Figure shows the concept of tipping points: where the strategies are no longer satisfactory, a new course of action is required.</p>
-<p><img src="assets/Figure_7.3.4.jpg" style="width:100.0%" /></p>
-<p><strong>Figure 7.3.4:</strong> Adaptation pathways map <span class="citation" data-cites="Haasnoot2013">(<strong>Haasnoot2013?</strong>)</span></p>
-<p>For instance, Actions A and D are effective in the long term (usually these are expensive alternatives or with negative impacts on other fronts). However, if one chooses Action B, it will become necessary to change strategy after 10 years (e.g. due to increased demand), this being a tipping point where the strategy is no longer satisfactory. The same happens with Action C, which needs to be changed in the long term because a tipping point will also be reached (e.g. due to climate change).</p>
-<p>In this way, different possible pathways can be generated embedding flexibility that allows adaptation over time to other, better strategies. In practice, the estimation of tipping points or adaptation triggers is not easy but can be obtained <span class="citation" data-cites="Hall2019">(<strong>Hall2019?</strong>)</span>.</p>
+<h1 id="agent-parameters">Agent parameters</h1>
+<p>Different sectors may mean having agents with different characteristics. For instance, within the residential sector socioeconomic data can be used to characterise the agents. We could use wealth to characterise our agents in different geographic locations. For example we could place a constraint on the <code>Budget</code> parameter for residential users, and split these agents into different proportions. This would prevent agents from agents from investing in prohibitively expensive technologies.</p>
+<p>Another way we could classify residential agents is through the <code>Maturity</code> parameter. This would limit investments in novel technologies until the specified technology had a certain market share. This could be informed by the innovation adoption lifecycle, as shown by Figure 7.3.1. Where, for example, innovators make up 2.5% of the population but have no <code>Maturity</code> constraints. As we work our way up the curve from innovators to laggards, this <code>Maturity</code> constraint increases.</p>
+<p><img src="assets/Figure_7.3.1.png" style="width:100.0%" /></p>
+<p><strong>Figure 7.3.1:</strong> Innovation adoption lifecycle</p>
+<h1 id="sectors">Sectors</h1>
+<p>In this mini-lecture we have focused on the residential sector and seen the way we can characterise agents. However, these characteristics may not directly translate to the power sector. However, investors in the power sector can have similar characteristics. For instance, some companies are larger, and are more willing to invest their capital, reflecting a larger <code>Budget</code> parameter. Others may be less willing to invest in new technologies. A major difference between agents, also may be their objectives. For instance, some agents may only want to minimise their costs, whereas others may want to reduce their capital expenditure. It is easy to change these characteristics within MUSE to create diverse energy scenarios.</p>
 <h1 id="summary">Summary</h1>
-<p>In this mini-lecture we explained the need of more sophisticated methods when facing complex systems and a huge range of possible scenarios. Then we described four of the most used methods in practice: exploratory analysis, robust decision making (RDM), real/engineering options and dynamic adaptive pathways.</p>
-<h1 id="bibliography">Bibliography</h1>
+<p>In this mini-lecture we covered the differences between agents and the different parameters that can be used to inform these differences. We saw how the <code>Maturity</code> constraint maps to the innovation adoption lifecycle and how the <code>Budget</code> parameter can be informed by socioeconomic characteristics. These parameters lead to a large amount of possible scenarios that can be tested and run. # Bibliography</p>
 </body>
 </html>
