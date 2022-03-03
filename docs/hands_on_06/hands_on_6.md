@@ -20,7 +20,7 @@ Now we will learn how to add a new agent to our example.
 In this hands-on, we will add a new agent called `A2`. This agent will be slightly different to the other agents in the `default` example, in that it will make investments based upon a mixture of levelised cost of electricity (LCOE) and equivalent annual cost (EAC). These two objectives will be combined by calculating a weighted sum of the two when comparing potential investment options. We will give the LCOE a relative weight value of 1 and the EAC a relative weight value of 0.25.
 
 We will edit the default example to add a new agent, which can be found from the following zenodo link:
-
+https://zenodo.org/record/6323453#.Yh-QWi-l1pQ
 
 To achieve this, first, we must modify the Agents.csv file in the directory:
 ```
@@ -57,6 +57,8 @@ Figure 6.3 shows us the results of these two agents. We can see a divergence bet
 
 **Figure 6.3:** Visualisation of the two different agents - a) agent = A1, b) agent = A2.
 
+For all the files explored in this hands-on, please refer to the following link:
+https://zenodo.org/record/6323453#.Yh-QWi-l1pQ
 
 # Summary
 
