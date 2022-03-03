@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Regions, MUSE" />
+  <title>Mini-Lecture 8.1 – Introduction to regions and aggregation</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 8.1 – Introduction to regions and aggregation</h1>
+</header>
+<p>This mini-lecture provides an overview of different regions within energy systems models and how these can be represented within MUSE.</p>
+<h1 id="learning-objectives">Learning objectives</h1>
+<ul>
+<li>When to aggregate data into different regions</li>
+</ul>
+<h1 id="aggregation">Aggregation</h1>
+<p>Regions within energy models play an important role. We often want to aggregate technoeconomic data from multiple regions into one. For example, the UK is made up of multiple different counties with different energy demands and supply. However, it could be the case that we do not have comprehensive data for each of these counties. We may, however, have plentiful data for the UK as a whole, or even for England, Scotland, Northern Ireland and Wales. We can therefore aggregrate this data and make assumptions about the geographical locations of supply and demand.</p>
+<p>This is an example of aggregation and can make the modelling process more straightforward, whilst losing a small amount of accuracy. This is because we do not need to model each individual power plant, demand centre or end-use sector. This means we can use aggregated data which is often easier to access.</p>
+<p>We can also aggregate multiple countries into regions. For example, we can merge the European continent together. This would be especially useful if we are considering a global model. However, it must be noted that we would lose significant detail by aggregating up regions. It is up to you, the model user, to consider the trade-offs between aggregation and disaggregation. For example, if you only wanted to model a single country, it would be possible to have a single region. However, if you had good access to data at the local level, you could disaggregate this further.</p>
+<h1 id="summary">Summary</h1>
+<p>In this mini-lecture we learnt about the trade-offs between aggregation and disaggregation when defining regions. We learnt that the more aggregated the model, the less granular data is required. This can be helpful in cases where the data is not available at a local level, but available at a national level.</p>
+<h1 id="bibliography">Bibliography</h1>
+</body>
+</html>

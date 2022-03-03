@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="keywords" content="Agent parameters, MUSE" />
+  <title>Mini-Lecture 7.4 – Agent parameters</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
+  <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Mini-Lecture 7.4 – Agent parameters</h1>
+</header>
+<p>This mini-lecture explores all the major parameters that can define agents within MUSE.</p>
+<h1 id="learning-objectives">Learning objectives</h1>
+<ul>
+<li>Understand the different agent parameters and their role within MUSE</li>
+</ul>
+<h1 id="overview-agent-parameters">Overview agent parameters</h1>
+<p>Within MUSE each agent can have their own objectives. MUSE is flexible enough to allow for up to 3 objectives, which can be summed together at various weightings. To input these objectives into MUSE one would use the <code>Objective1</code>, <code>Objective2</code> and/or <code>Objective3</code> parameters and select an objective such as <code>comfort</code>, <code>lifetime_levelized_cost_of_energy</code> or <code>fixed_costs</code>.</p>
+<p>Then we would select the weight of each of the objectives using the <code>ObjData1</code>, <code>ObjData2</code>, <code>ObjData3</code> inputs. For example, if we had 3 objectives, we could make the objective of <code>Objective1</code> dominant by setting <code>ObjData1</code> to 0.5. This would mean it would make up 50% of the final objective.</p>
+<p>We can edit the <code>SearchRule</code> to reduce the space of technologies that those agents are likely to consider. For example, we could fill this with <code>same_fuels</code>, or <code>same_enduse</code>.</p>
+<p>The rest of the parameters include the parameters discussed in the previous lecture:</p>
+<ul>
+<li><code>MaturityThreshold</code></li>
+<li><code>Budget</code></li>
+</ul>
+<h1 id="summary">Summary</h1>
+<p>In this mini-lecture we discovered the main parameters that are used by agents within MUSE. For a full breakdown of the parameters please refer to the MUSE documentation that can be found online.</p>
+<h1 id="bibliography">Bibliography</h1>
+</body>
+</html>
