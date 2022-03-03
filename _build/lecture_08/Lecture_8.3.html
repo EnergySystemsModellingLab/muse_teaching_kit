@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="keywords" content="Probabilistic hazards, Loss-probability curves, Risk calculations" />
-  <title>Mini-Lecture 8.3 – Characterising hazards and risk calculations for infrastructure networks</title>
+  <meta name="keywords" content="Science communication, Visualisation" />
+  <title>Mini-Lecture 8.3 – Communicating research</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -13,107 +13,32 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    div.csl-bib-body { }
-    div.csl-entry {
-      clear: both;
-    }
-    .hanging div.csl-entry {
-      margin-left:2em;
-      text-indent:-2em;
-    }
-    div.csl-left-margin {
-      min-width:2em;
-      float:left;
-    }
-    div.csl-right-inline {
-      margin-left:2em;
-      padding-left:1em;
-    }
-    div.csl-indent {
-      margin-left: 2em;
-    }
   </style>
   <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/pandoc.css" />
   <link rel="stylesheet" href="https://climatecompatiblegrowth.github.io/style/csl-style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Mini-Lecture 8.3 – Characterising hazards and risk calculations for infrastructure networks</h1>
+<h1 class="title">Mini-Lecture 8.3 – Communicating research</h1>
 </header>
-<p>This mini-lecture introduces the theory of quantifying hazards for infrastructure risk analysis. The concept of loss-probability curves and the calculations of expected risks are also discussed. The lecture provides some useful data sources of openly available global hazard maps, that are used widely in risk analysis.</p>
+<p>In this mini-lecture, we will explore the different ways that research can be communicated effectively.</p>
 <h1 id="learning-objectives">Learning objectives</h1>
 <ul>
-<li><p>Introduce the concept of hazard exceedance probabilities</p></li>
-<li><p>Discuss the process of generating loss-probability curves</p></li>
-<li><p>Show how to calculate expected risks for discrete probabilities and losses.</p></li>
+<li>Understand how to communicate the results of your research to influence policy development</li>
 </ul>
-<h1 id="quantifying-a-hazard">Quantifying a hazard</h1>
-<p>As introduced in mini-lecture 8.2, an extreme weather event only becomes a hazard when it causes adverse effects to exposed and vulnerable assets. If we are given information on several potential extreme weather events, we need to understand how to filter out events that could be considered hazard events suitable for spatial risk analysis.</p>
-<p>For spatial risk analysis, extreme hazard models are created over a 2-dimensional surface area <span class="math inline">\(\mathbf{x}\)</span>, and are characterized by a <em>load</em> <span class="math inline">\(\mathbf{h}\left( \mathbf{x} \right) \equiv \mathbf{h}\)</span> sampled from a <em>probability density function</em> <span class="math inline">\(g_{H}(\mathbf{h})\)</span>. The most extreme hazards are chosen to be the ones that exceed a particular <em>threshold load</em> (<span class="math inline">\(\mathbf{h}_{\text{tr}}\)</span>) and are sampled from an exceedance probability (EP) curve that satisfies equation (1). Here <span class="math inline">\(\mathbb{P}\left\lbrack \mathbf{h} &gt; \mathbf{h}_{\text{tr}} \right\rbrack\)</span> denotes the probability that a chosen hazard load will exceed the threshold level, and <span class="math inline">\(\int_{\mathbf{0}}^{\mathbf{h}\ }{g_{H}\left( \mathbf{h} \right)d\mathbf{h}}\)</span> is the <em>cumulative density function</em> of hazard loading.</p>
-<p><span class="math inline">\(\text{EP}\left( \mathbf{h} \right)\mathbb{= \ P}\left\lbrack \mathbf{h} &gt; \mathbf{h}_{\text{tr}} \right\rbrack = 1 - \ \int_{\mathbf{0}}^{\mathbf{h}\ }{g_{H}\left( \mathbf{h} \right)d\mathbf{h}}\)</span> (1)</p>
-<p>The reciprocal of the exceedance probability is called the <em>return period</em> of an event.</p>
-<p>In simplistic terms, the above means that if we were given a model for creating flood events, we might use the following criteria to sample possible extreme events:</p>
-<ul>
-<li><p>Not all flooding would be a problem – 5cm of flood depth might be okay, but 1metre of flood depth might be catastrophic. Hence, we may select model outputs with <span class="math inline">\(\mathbf{h} &gt; \mathbf{h}_{\text{tr}} = 1metre\)</span> at several locations.</p></li>
-<li><p>The exceedance probability is a good indicator for selecting events – an event that has 0.001 probability of being exceeded (i.e. <span class="math inline">\(\text{EP}\left( \mathbf{h} \right) = 0.001\)</span>) would be a rare event and possibly a hazard. This is a 1 in 1000-year return period flood event.</p></li>
-</ul>
-<h1 id="hazard-information-used-in-practice">Hazard information used in practice</h1>
-<p>Figure 8.3.1 shows a river flooding hazard map for Uruguay, from a global flood modelling product known as FATHOM <span class="citation" data-cites="wing2020toward">(Wing et al. 2020)</span>. River flooding occurs when the rivers overtop their banks, and the water inundates the surrounding areas. The map shows the following information:</p>
-<ul>
-<li><p>The river flood hazard here is defined as an event for which the river flows at every location have 0.001 exceedance probability values, i.e. at every location the selected flow is the one that has a 1 in 1000 chance of being exceeded.</p></li>
-<li><p>The flood depths in metres are the hazard loads here. Very high flood depths at specific locations (in darkest shades of blue) would make potential areas vulnerable to flooding.</p></li>
-</ul>
-<p>There are now several open-source hazard products at global scales which are being used widely for vulnerability and risk analysis. A few resources include:</p>
-<ul>
-<li><p>Global river and coastal flood maps: Historical and future hazard maps at different return periods (2, 5, 10, 25, 50, 100, 250, 500, 1000 years). All data is available at a 30 arc-seconds resolution (~1km at equator) <span class="citation" data-cites="gassert2015aqueduct">(Gassert et al. 2015)</span>.</p></li>
-<li><p>Global hazard maps for earthquakes for different return periods (250, 475, 975, 1500, 2475 years) both Peak Ground Acceleration and spectral acceleration. Data is available at 0.072 degrees (~8km at equator).</p></li>
-<li><p>Global dataset of 10,000 synthetic tropical cyclones paths with cyclone characteristics (e.g., wind speed, pressure) on a global scale. Wind speed probabilities are derived globally (10 metre, 10 minutes sustained speed) for different return periods (10 to 10,000 years) at 10km resolution <span class="citation" data-cites="Bloemendaal2019storm">(Bloemendaal et al. 2019)</span>.</p></li>
-</ul>
-<p><img src="assets/Figure_8.3.1.png" style="width:100.0%" /></p>
-<p><strong>Figure 8.3.1:</strong> A 1 in 1000 exceedance probability river flood map for Uruguay showing areas with different flood depths in metres. Created from FATHOM data <span class="citation" data-cites="wing2020toward">(Wing et al. 2020)</span>.</p>
-<h1 id="generating-loss-exceedance-probability-curves">Generating loss-exceedance probability curves</h1>
-<p>A key result in risk analysis is the distribution of the vulnerability outcomes (losses) for different hazard events sampled from a probability distribution. A comprehensive approach to generating such curves includes the following steps:</p>
-<ul>
-<li><p>Simulate several thousand sample hazard events from a probability distribution (<span class="math inline">\(g_{H}(\mathbf{h,}t)\)</span>) over space and time – for example, flood models can generate 10,000 flood events over a 50-year timeline over a country.</p></li>
-<li><p>Intersect each hazard event with the infrastructure assets (e.g. electricity substations, roads, etc.).</p></li>
-<li><p>Simulate the failure of an asset based on a <em>fragility curve</em> for a given hazard load (<span class="math inline">\(\mathbf{h}\)</span>) (fragility is further explained in mini-lecture 10.2).</p></li>
-<li><p>Estimate infrastructure network losses (<span class="math inline">\(l\)</span>(<em>t</em>)) associated with each hazard event for each year.</p></li>
-<li><p>Find the mean losses over each year <span class="math inline">\(\bar{l}\)</span>, by taking the average of losses for the same year.</p></li>
-<li><p>Plot the probability distribution of losses <span class="math inline">\(\bar{l}\)</span> or plot a curve of loss vs the exceedance probability of a loss, i.e., <span class="math inline">\(\mathbb{P}\left\lbrack L &gt; \bar{l} \right\rbrack\)</span>.</p></li>
-</ul>
-<h1 id="risk-calculations-from-loss-probability-curves">Risk calculations from loss-probability curves</h1>
-<p>Figures 8.3.2 shows the loss-exceedance probability curves that are created from the steps outlined in the previous section. These curves are derived from failure analysis of a national-scale road network in Viet Nam, subjected to river flooding maps of different return periods <span class="citation" data-cites="oh2019addressing">(Oh et al. 2019)</span>. The losses represent the aggregated daily values of freight transport and economic activity that is affected due to individual road network asset failures in Viet Nam. These losses are uncertain and are reported with a lower (minimum) and upper (maximum) bound.</p>
-<p>The exceedance probabilities here are more discrete than what would be ideal for a probabilistic risk analysis. They are taken from the global river flooding dataset mentioned previously <span class="citation" data-cites="gassert2015aqueduct">(Gassert et al. 2015)</span>.</p>
-<p>The loss-probability curve here represents the exceedance probabilities in any given year of flooding. In risk analysis there is interest in estimating the Expected Annual Losses (EAL) or Annual Average Losses (AAL), which are the areas under the loss-probability curves. Mathematically this calculation is done using equation (2), where there are <span class="math inline">\(1,\ldots,m\)</span> discrete instances of exceedance probabilities <span class="math inline">\(\text{EP}_{k}\)</span> and losses <span class="math inline">\(l_{k}\)</span>.</p>
-<p><span class="math inline">\(EAL = \ \frac{1}{2}\sum_{k = 1}^{m}{\left( \text{EP}_{k + 1} - \text{EP}_{k} \right)\left( l_{k} + l_{k + 1} \right)}\)</span> (2)</p>
-<p><img src="assets/Figure_8.3.2.png" style="width:100.0%" /></p>
-<p><strong>Figure 8.3.2:</strong> Minimum and maximum daily loss vs exceedance probability curves for river flooding of the national road network. From a climate risk analysis study in Viet Nam <span class="citation" data-cites="oh2019addressing">(Oh et al. 2019)</span>.</p>
-<h1 id="nuances-in-infrastructure-risk-assessments">Nuances in infrastructure risk assessments</h1>
-<p>The overall risk calculations and exceedance probability curves being done here apply to any infrastructure network risk analysis problem that we want to quantify. But there are specific nuances in the ways that the losses are estimated that vary across infrastructures.</p>
-<p>In general, infrastructure losses are a combination of the monetary value of asset damages that need to be replaced (direct damages) and the economic losses accrued due to disruption of network services (indirect losses). These concepts are discussed in more detail across Lectures 10 and 11.</p>
-<p>While the principles of finding direct damages might be the same across all types of infrastructure assets, the process of estimating indirect losses are very network specific. For example, electricity and telecoms network failure result in instantaneous loss of service (electricity), which might result in losses and risks within a matter of a few minutes. On the other hand, transport network failures might result in a gradual build-up of losses over several days or months until commodity supplies run out.</p>
-<p>Hence, in infrastructure risk analysis often the quantification of the losses (<span class="math inline">\(l\)</span>) is not a straightforward process. It often depends on creating good network flow models. Across Lecture 9 transport, water and energy flow models are presented to show the nuances for each type of infrastructure network.</p>
+<h1 id="effective-communication-of-research">Effective communication of research</h1>
+<p>Throughout this course, we have explored the useful insights and analysis that can be provided by energy systems models. We have also explored the types of results that can lead to changes in the planning of energy systems. For example by taking a more holistic approach to investment planning.</p>
+<p>However, it is important that these results are communicated effectively to ensure that decision makers can fully understand the implications of these results. Effective communication also allows the methodology of the study to be better understood, which allows for the positives and limitations of the model to be explored.</p>
+<h2 id="presenting-figures">Presenting figures</h2>
+<p>It is crucial to present figures in an understandable way. Figures are often the first thing that the audience will look at and try to understand. Figures can be used to convey the key results from your study in an impactful way. There are therefore some things that should be considered.</p>
+<p>The first of these is to design the figure with the target audience in mind. For example, if the audience is made of non-specialists it may be sensible to ensure figures focus on the message without lots of technical jargon. For any audience, it is important that they understand the content of the figure, and so it is important to always include a figure caption, legend and axis titdles where appropriate. Finally, the colours chosen can have a large impact and so the colours should be chosen carefully with sufficient distinction between the colours.</p>
+<h2 id="common-mistakes">Common mistakes</h2>
+<p>This section focuses on the commonly made mistakes when presenting figures in research. It can often be the case that figures are too confusing and contain too much data. This can often result in the message of the figure being unclear. It may be the case that by confusing your audience you reduce the impact of your research findings. Therefore, it is advisable to make figures as simple as possible to ensure that they are understandable.</p>
+<p>Other common mistakes include: - The use of inappropriate axis for graphs which can distort results - Lack of figure captions, axis titles, labels or lagents</p>
 <h1 id="summary">Summary</h1>
-<p>In this lecture, we explained the general theory of sampling hazard events from hazard models. We introduced the concept of exceedance probabilities as applied to spatial hazard event sets. We listed some real-world open-source hazard exceedance probability datasets for global scale flooding, earthquakes and cyclones, used widely in research and practice.</p>
-<p>We also explained theoretical steps in the process of generating a comprehensive loss-probability curve for hazards and network losses. We demonstrated a loss-probability curve from a real-world study, and also showed how to estimate the expected annual risks. The different theoretical formulations and concepts introduced in this mini-lecture provide over-arching concepts that apply to every type of network and hazard combination that we could analyse. But we note that there are network-specific nuances that need to be considered in infrastructure loss calculations.</p>
-<h1 class="unnumbered" id="bibliography">Bibliography</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-Bloemendaal2019storm" class="csl-entry" role="doc-biblioentry">
-Bloemendaal, Nadia, Ivan Haigh, Hans de Moel, S. Muis, Reindert Haarsma, and Jeroen Aerts. 2019. <span>“<span class="nocase">STORM IBTrACS present climate synthetic tropical cyclone tracks</span>,”</span> November. <a href="https://doi.org/10.4121/uuid:82c1dc0d-5485-43d8-901a-ce7f26cda35d">https://doi.org/10.4121/uuid:82c1dc0d-5485-43d8-901a-ce7f26cda35d</a>.
-</div>
-<div id="ref-gassert2015aqueduct" class="csl-entry" role="doc-biblioentry">
-Gassert, Francis, Paul Reig, Tien Shiao, Matt Landis, Matt Luck, and others. 2015. <span>“Aqueduct Global Maps 2.1.”</span>
-</div>
-<div id="ref-oh2019addressing" class="csl-entry" role="doc-biblioentry">
-Oh, Jung Eun, Xavier Espinet Alegre, Raghav Pant, Elco E Koks, Tom Russell, Roald Schoenmakers, and Jim W Hall. 2019. <span>“Addressing Climate Change in Transport: Volume 2: Pathway to Resilient Transport.”</span> World Bank.
-</div>
-<div id="ref-wing2020toward" class="csl-entry" role="doc-biblioentry">
-Wing, Oliver EJ, Niall Quinn, Paul D Bates, Jeffrey C Neal, Andrew M Smith, Christopher C Sampson, Gemma Coxon, Dai Yamazaki, Edwin H Sutanudjaja, and Lorenzo Alfieri. 2020. <span>“Toward Global Stochastic River Flood Modeling.”</span> <em>Water Resources Research</em> 56 (8): e2020WR027692.
-</div>
-</div>
+<p>In this mini-lecture we explored the different ways that we can communicate our research for maximum impact. We explored the ways to make figures understandable to our target audience. # Bibliography</p>
 </body>
 </html>
