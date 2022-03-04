@@ -10,7 +10,7 @@ authors:
 
 # Short description
 
-This mini-lecture will provide an overview of how the course is structured. The course is structured into 
+This mini-lecture will provide an overview of how the course is structured.
 
 # Learning objectives
 
