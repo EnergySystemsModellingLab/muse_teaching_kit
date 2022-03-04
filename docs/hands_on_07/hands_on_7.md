@@ -28,6 +28,7 @@ regions = ["R1", "R2"]
 The process to change the input files, however, takes a bit more time. To achieve this, there must be data for each of the sectors for the new region. This, therefore, requires the modification of every input file.
 
 Due to space constraints, we will not show you how to edit all of the files. However, you can access the modified files at the zenodo link below:
+https://zenodo.org/record/6327789#.YiI1ri-l1pQ
 
 Effectively, for this example, we will copy and paste the results for each of the input files from region `R1`, and change the name of the region for the new rows to `R2`.
 
@@ -56,6 +57,7 @@ Again, we don’t show the entries for 2040, apart from the edited `windturbine`
 **Figure 7.3:** Updated Technodata.csv.
 
 Now, go ahead and amend all of the other input files for each of the sectors, the Agents file and the input files `BaseYearExport`, `BaseYearImport` and `Projections.csv` by copying and pasting the rows from `R1` and replacing the `RegionName` to `R2` for the new rows. All of the edited input files can be seen at the zenodo link:
+https://zenodo.org/record/6327789#.YiI1ri-l1pQ
 
 Again, we will run the results using the `python -m pip muse settings.toml` in anaconda prompt, and analyse the data using excel as follows:
 

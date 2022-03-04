@@ -68,7 +68,7 @@ The simplest method to install python is by downloading the Anaconda distributio
 After python is installed we can install MUSE. MUSE can be installed via the Anaconda Prompt (or any terminal on Mac and Linux). This is a command-line interface to python and the python eco-system. In the anaconda prompt, run:
 
 ```
-python -m pip install --user git+https://github.com/SGIModel/StarMuse
+python -m pip install --user git+https://github.com/SGIModel/MUSE_OS
 ```
 
 It should now be possible to run muse. Again, this can be done in the anaconda prompt as follows:
@@ -82,7 +82,7 @@ python -m muse --help
 In this section we run an example simulation of MUSE, in the next section we will visualise the results.
 
 First we need to download the MUSE source code. To do that navigate to the MUSE GitHub repository:
-https://github.com/SGIModel/StarMuse
+https://github.com/SGIModel/MUSE_OS
 
 Click on the green `Code` button in the top right hand corner and then click on `Download ZIP`. Figure 2.1 shows how to do this, once you are on the relevant page.
 
