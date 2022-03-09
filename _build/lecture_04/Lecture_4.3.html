@@ -24,7 +24,7 @@
 <header id="title-block-header">
 <h1 class="title">Mini-Lecture 4.3 - Different energy demands by timeslice</h1>
 </header>
-<p>This mini-lecture will continue exploring the importance of timeslices in energy modelling, however it will have a particular focus on energy demands, and how these can change by timeslice and over the years.</p>
+<p>This mini-lecture will continue exploring the importance of timeslices in energy modelling; however, it will have a particular focus on energy demands, and how these can change by timeslice and over the years.</p>
 <p>In the previous lecture we explored energy demands and timeslices. In this lecture we will have a brief recap of this, and explore how energy demand can be represented within MUSE.</p>
 <h1 id="learning-objectives">Learning objectives</h1>
 <ul>
@@ -32,15 +32,15 @@
 <li>Learn how energy demand is represented in MUSE</li>
 </ul>
 <h1 id="energy-demand">Energy demand</h1>
-<p>Energy demand can come in various forms. For instance, the demand we model can be for heating or cooling in the residential sector. It is the case that these demands have different characteristics. For instance they may have different magnitudes, different technologies which serve these demands as well as different time varying capabilities.</p>
+<p>Energy demand can come in various forms. For instance, the demand we model can be for heating or cooling in the residential sector. It is the case that these demands have different characteristics. For instance, they may have different magnitudes and different technologies which serve these demands as well as they may be able to run at different times.</p>
 <p>Within MUSE, similarly to the supply sectors, we can model this time varying capability with timeslices. For instance, if we have 4 representative days which refer to the different seasons, we can model the high heating demand in winter and cooling demand in summer. On top of this we can vary these demands by time of day.</p>
-<p>To do this, we must edit the demand in the <code>preset/Residential2050Consumption.csv</code> sector. An example of which is shown in Figure</p>
+<p>To do this, we must edit the demand in the <code>preset/Residential2050Consumption.csv</code> sector. An example of which is shown in Figure 4.3.1.</p>
 <p><img src="assets/Figure_4.1.1.png" style="width:100.0%" /></p>
-<p><strong>Figure 4.1.1:</strong> Example input for the preset sector.</p>
-<p>In this small example we see that there is only a demand for <code>heat</code> in the residential sector. However, this demand changes per timeslice. For instance, there is low demand for heat in timeslice 0 and a high demand for heat in timeslice 5. These timeslices refer to a single representative day, and therefore timeslice 5 has the highest demand for heat as it is in the late-evening. When people come home from work and turn on their radiators.</p>
+<p><strong>Figure 4.3.1:</strong> Example input for the preset sector.</p>
+<p>In this small example we see that there is only a demand for <code>heat</code> in the residential sector. However, this demand changes per timeslice (which are listed in the leftmost column). For instance, there is low demand for heat in timeslice 0 and a high demand for heat in timeslice 4. These timeslices refer to a single representative day, and therefore timeslice 4 has the highest demand for heat as it is in the late-evening, when people generally come home from work and turn on their radiators.</p>
 <p>In your models you can use datasets to disaggregate the demand into different types, or you can aggregate demand to include all gas or electricity utilised in the residential sector. This is largely dependent on the data available and the complexity of the model you would like.</p>
 <h1 id="summary">Summary</h1>
-<p>In this mini-lecture we explored the importance of timeslicing for modelling demand in energy models. We also covered how this can be done within MUSE using the preset sector.</p>
+<p>In this mini-lecture, we explored the importance of timeslicing for modelling demand in energy models. We also covered how this can be done within MUSE using the preset sector.</p>
 <h1 id="bibliography">Bibliography</h1>
 </body>
 </html>

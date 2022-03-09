@@ -7,13 +7,12 @@ authors:
 -   Alexander J. M. Kell
 ---
 
-This hands-on will allow users to define their own service demand for an exogenous sector or by correlation.
+This hands-on will allow users to define their own service demand for an exogenous sector.
 
 
 # Learning objectives
 
 - Define own service demand for an exogenous sector
-- Define own service demand by correlation
 
 # Adding an exogenous service demand
 
