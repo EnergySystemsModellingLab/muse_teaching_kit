@@ -24,18 +24,18 @@
 <header id="title-block-header">
 <h1 class="title">Hands On Exercise 2: Modifying a service demand</h1>
 </header>
-<p>This hands-on will allow users to define their own service demand for an exogenous sector or by correlation.</p>
+<p>This hands-on will allow users to define their own service demand for an exogenous sector.</p>
 <h1 id="learning-objectives">Learning objectives</h1>
 <ul>
 <li>Define own service demand for an exogenous sector</li>
-<li>Define own service demand by correlation</li>
 </ul>
 <h1 id="adding-an-exogenous-service-demand">Adding an exogenous service demand</h1>
 <p>As a quick example, in the residential sector a service demand could be cooking. Houses require energy to cook food and a technology to service this demand, such as an electric stove.</p>
 <p>We will start by looking at the <code>default</code> example. This can be found in your MUSE download at <code>/src/muse/data/example/default/example</code>, or you can download it at the following link:</p>
-<p>https://zenodo.org/record/6022713#.YgOYyS-l1pQ</p>
+<p><a href="https://zenodo.org/record/6340451#.YiiY5y-l1pQ">https://zenodo.org/record/6340451#.YiiY5y-l1pQ</a></p>
+<p>The file you will need to start with is called <code>default.zip</code>, the finished version for your records is called <code>final_version.zip</code></p>
 <p>Next, download this and place it in a convenient location on your computer. We will now start by adding a cooking demand to this example. The default example currently only has a service demand of <code>heat</code>, so we will need to do some editing.</p>
-<p>To achieve this, we will need to edit the <code>Residential2020Consumption.csv</code> and <code>Residential2050Consumption.csv</code>files found within the <code>technodata/preset/</code> directory. The <code>Residential2020Consumption.csv</code> file allows us to specify the demand in 2020 for each region and technology per timeslice. The <code>Residential2050Consumption.csv</code> file does the same but for the year 2050. The datapoints between these are interpolated.</p>
+<p>To achieve this, we will need to edit the <code>Residential2020Consumption.csv</code> and <code>Residential2050Consumption.csv</code>files found within the <code>technodata/preset/</code> directory. The <code>Residential2020Consumption.csv</code> file allows us to specify the demand in 2020 for each region and technology per timeslice. The <code>Residential2050Consumption.csv</code> file does the same but for the year 2050. The datapoints between these are interpolated. We will explain further details on interpolation in lecture 5.</p>
 <p>Firstly, we must add the new service demand <code>cook</code> as a column in these two files. Next, we add the demand. We can do this in Excel, or an editor of your choice. This is how it may look like for you when you open the <code>Residential2020Consumption.csv</code> file:</p>
 <p><img src="assets/Figure_2.1.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.1:</strong> Residential2020Consumption file opened in Excel.</p>
@@ -50,23 +50,36 @@
 <p>The same is true for the <code>BaseYearImport.csv</code> file:</p>
 <p><img src="assets/Figure_2.4.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.4:</strong> Modified BaseYearExport file opened in Excel.</p>
-<p>Next, we must edit the <code>GlobalCommodities.csv</code> file. This is where we define the new commodity cook. It tells MUSE the commodity type, name, emissions factor of CO2 and heat rate, amongst other things.</p>
+<p>Next, we must edit the <code>GlobalCommodities.csv</code> file. This is where we define the new commodity <code>cook</code>. It tells MUSE the commodity type, name, emissions factor of CO2 and heat rate, amongst other things.</p>
 <p>The default version used for this tutorial is below:</p>
 <p><img src="assets/Figure_2.5.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.5:</strong> Non-edited GlobalCommodities file opened in Excel.</p>
-<p>We then add a new line at the bottom to include the cook commodity:</p>
+<p>We then add a new row at the bottom to include the cook commodity:</p>
 <p><img src="assets/Figure_2.6.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.6:</strong> Edited GlobalCommodities file opened in Excel.</p>
-<p>Finally, the <code>Projections.csv</code> file must be changed. This is a large file which details the expected cost of the technology in the first benchmark year of the simulation. We have highlighted in <strong>bold</strong> the changed column for this example.</p>
+<p>The <code>CommodityName</code> column must be consistent internally within the model. Whereas the <code>Commodity</code> column is for your reference.</p>
+<p>Finally, the <code>Projections.csv</code> file must be changed. This is a large file which details the expected future costs of the technology in the first benchmark year of the simulation, the subsequent and actual simulated costs will be calculated during the running of the model. We have highlighted in <strong>bold</strong> the changed column for this example.</p>
 <p><img src="assets/Figure_2.7.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.7:</strong> Edited Projections file opened in Excel.</p>
 <h2 id="addition-of-a-cooking-technology">Addition of a cooking technology</h2>
-<p>Next, we must add a technology to service this new demand. During this process we must be careful to specify the end-use of the technology as cook.</p>
-<p>For this example, we will add two competing technologies to service the cooking demand: <code>electric_stove</code> and <code>gas_stove</code> to the <code>Technodata.csv</code> file in <code>/technodata/residential/Technodata.csv</code>.</p>
-<p>For this, we copy the <code>gasboiler</code> row for <code>R1</code> and paste it for the new <code>electric_stove</code>. For <code>gas_stove</code> we copy and paste the data for <code>heatpump</code> from region R1. In the figure below we show this, but only show the first few columns for the interest of space. We will also relax the growth constraints, to ensure that the growth in technologies can meet demand.</p>
+<p>Next, we must add a technology to service this new demand. During this process we must be careful to specify the end-use of the technology as <code>cook</code>, which is case-sensitive.</p>
+<p>For this example, we will add two competing technologies to the residential sector to service the cooking demand: <code>electric_stove</code> and <code>gas_stove</code> to the <code>Technodata.csv</code> file in <code>/technodata/residential/Technodata.csv</code>.</p>
+<p>For this, we copy the <code>gasboiler</code> row for <code>R1</code> and paste it for the new <code>electric_stove</code>. For <code>gas_stove</code> we copy and paste the data for <code>heatpump</code> from region R1. In the figure below we show this, but only show the first few columns for the interest of space. We will also relax the growth constraints to ensure that the growth in technologies can meet demand.</p>
+<p>The growth constraints are:</p>
+<ul>
+<li>MaxCapacityAddition: The maximum absolute capacity that the technology can grow in a single year.</li>
+<li>MaxCapacityGrowth: The maximum percentage that the technology can grow in a particular year.</li>
+<li>TotalCapacityLimit: The total absolute number that cannot be exceeded for a particular technology.</li>
+</ul>
+<p>Due to space constraints we can’t show all the values as the technodata file is very wide, but we can set the parameters to be the following for both technologies:</p>
+<ul>
+<li>MaxCapacityAddition: 100 PJ</li>
+<li>MaxCapacityGrowth: 20 PJ</li>
+<li>TotalCapacityLimit: 120 PJ</li>
+</ul>
 <p><img src="assets/Figure_2.8.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.8:</strong> Edited technodata file opened in Excel.</p>
-<p>As can be seen we have added two technologies with different cap_par costs. We specified their respective fuels, and the enduse for both is cook.</p>
+<p>As can be seen we have added two technologies with different cap_par costs to each other. We specified their respective fuels, and the enduse for both is cook.</p>
 <p>We must also add the data for these new technologies to the following files:</p>
 <ul>
 <li>CommIn.csv</li>
@@ -74,29 +87,29 @@
 <li>ExistingCapacity.csv</li>
 </ul>
 <p>The <code>CommIn.csv</code> file details the input commodities for each technology. In this case, the inputs are gas and electricity. The <code>CommOut</code> file details the outputs of the technology, which will be the <code>cook</code> commodity.</p>
-<p>We must add the input to each of the technologies (gas and electricity for <code>gas_stove</code> and <code>electric_stove</code> respectively), outputs of <code>cook</code> for both and the existing capacity for each technology.</p>
+<p>We must add the input to each of the technologies (gas and electricity for <code>electric_stove</code> and <code>gas_stove</code> respectively), outputs of <code>cook</code> for both and the existing capacity for each technology.</p>
 <p><img src="assets/Figure_2.9.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.9:</strong> Edited CommIn file opened in Excel.</p>
 <p>Notice in Figure 2.9 that we had to add a column for the new <code>cook</code>. We must also do the same for the CommOut file, below:</p>
 <p><img src="assets/Figure_2.10.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.10:</strong> Edited CommOut file opened in Excel.</p>
-<p>We must do this for the <code>gas</code> and <code>power</code> sector as well.</p>
-<p>Next, we must edit the <code>ExistingCapacity.csv</code> file to detail how much existing capacity there is in the base year and beyond.</p>
+<p>We must do this for the <code>gas</code> and <code>power</code> sector as well. This is just for consistency within MUSE.</p>
+<p>Next, we must edit the <code>residsential/ExistingCapacity.csv</code> file to detail how much existing capacity there is in the base year and beyond. The existing capacity details power plants, or other technologies, which are already installed in the real world and therefore not invested in by the model. It is important to have a clear idea about the real world system in the base year before we run MUSE.</p>
 <p><img src="assets/Figure_2.11.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.11:</strong> Edited ExistingCapacity file opened in Excel.</p>
-<p>Due to the additional demand for gas and electricity brought on by the new cook demand, it is necessary to relax the growth constraints for <code>gassupply1</code> in the <code>technodata/gas/technodata.csv</code> file. For this example, we set this file as follows:</p>
+<p>Due to the additional demand for gas and electricity brought on by the new cook demand, it is necessary to relax the growth constraints for <code>gassupply1</code> in the <code>technodata/gas/technodata.csv</code> file. For this example, we set this file as follows (see bold cells):</p>
 <p><img src="assets/Figure_2.12.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.12:</strong> Edited gas/technodata file opened in Excel.</p>
-<p>We must also ensure there are no <code>0</code> in the <code>ExistingCapacity.csv</code> for any of the sectors. Therefore, go through the <code>gas/ExistingCapacity.csv</code> and <code>power/ExistingCapacity.csv</code> and replace them with a non-zero value, such as <code>0.01</code>. Below is an example for the <code>gas</code> sector:</p>
+<p>We must also ensure there are no <code>0</code> in the <code>ExistingCapacity.csv</code> for any of the sectors. This is because the MUSE model will produce an error. For error debugging it is helpful to go to the <a href="https://groups.google.com/g/muse-model">MUSE google groups</a>. So to do this, go through the <code>gas/ExistingCapacity.csv</code> and <code>power/ExistingCapacity.csv</code> and replace them with a non-zero value, such as <code>0.01</code>. Below is an example for the <code>gas</code> sector:</p>
 <p><img src="assets/Figure_2.13.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.13:</strong> Edited gas/ExistingCapacity.csv file opened in Excel.</p>
-<p>Next, we must run the simulation with our modified input files using the following command in the relevant directory:</p>
+<p>Next, we must run the simulation with our modified input files using the following command in the directory where you saved the default example. To do this follow the instructions shown in hands-on 1:</p>
 <pre><code>python -m pip muse settings.toml</code></pre>
 <p>The figure below shows the results for this new demand in the residential sector:</p>
 <p><img src="assets/Figure_2.14.png" style="width:100.0%" /></p>
 <p><strong>Figure 2.14:</strong> Capacity results for the residential sector.</p>
-<p>We can see that <code>electric_stove</code> takes over completely. This is because of the lower <code>cap_par</code> value when compared to <code>gas_stove</code>.</p>
-<p>For the final example input data showed in this tutorial and results spreadsheet, please refer to the link below:</p>
-<p>https://zenodo.org/record/6022713#.YgOYyS-l1pQ</p>
+<p>We can see that <code>electric_stove</code> takes over completely. This is because of the lower <code>cap_par</code> value when compared to <code>gas_stove</code>. Do not be surprised if your results differ from this, as the MUSE model will change over time. The important thing is to understand the outputs from the inputs.</p>
+<p>For the final example input data (<code>final_version.zip</code>) showed in this tutorial and results spreadsheet, please refer to the link below:</p>
+<p><a href="https://zenodo.org/record/6340451#.YiiY5y-l1pQ">https://zenodo.org/record/6340451#.YiiY5y-l1pQ</a></p>
 </body>
 </html>

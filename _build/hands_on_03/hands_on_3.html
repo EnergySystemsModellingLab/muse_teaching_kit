@@ -24,21 +24,22 @@
 <header id="title-block-header">
 <h1 class="title">Hands On Exercise 3: Productions constraints by timeslice</h1>
 </header>
-<p>In this hands-on we explain how to add constraints to outputs of technologies at certain timeslices. This could either by a maximum constraint, for instance with the solar PV example mentioned in the previous lecture. Or, this could be a minimum constraint, where we expect a minimum amount of output by a nuclear power plant at all times.</p>
+<p>In this hands-on we explain how to add constraints to outputs of technologies at certain timeslices. This could either by a maximum constraint, for instance with the solar PV example mentioned in the previous lecture (lecture 2). Or, this could be a minimum constraint, where we expect a minimum amount of output by a nuclear power plant at all times.</p>
 <h1 id="learning-objectives">Learning objectives</h1>
 <ul>
 <li>Learn how to add min/max production constraints in MUSE</li>
 </ul>
 <h1 id="minimum-timeslice">Minimum timeslice</h1>
-<p>In this tutorial we will be amending the default example, which you can find in the following zenodo link: https://zenodo.org/record/6026087#.YgPuHS-l1pQ</p>
-<p>Firstly, we will be imposing a minimium service factor for gasCCGT in the power sector. This is the minimum that a technology can output per timeslice.</p>
+<p>In this tutorial we will be amending the same default example (<code>default.zip</code>) as in hands-on 2, which you can find in the following zenodo link: <a href="https://zenodo.org/record/6026087#.YgPuHS-l1pQ">https://zenodo.org/record/6026087#.YgPuHS-l1pQ</a></p>
+<p>Firstly, we will be imposing a minimum service factor for gasCCGT (combined cycle gas turbine) in the power sector. This is the minimum that a technology can output per timeslice.</p>
 <p>To do this, we will need to create a new csv file that specifies the minimum service factor per timeslice.</p>
-<p>An example of the file can be seen below and in the zenodo link.</p>
+<p>An example of the file, which also contains values for <code>windturnine</code> can be seen below and in the zenodo link.</p>
 <p><img src="assets/Figure_3.1.png" style="width:100.0%" /></p>
 <p><strong>Figure 3.1:</strong> TechnodataTimeslices.csv file for the power sector.</p>
 <p>Notice that we have to specify the following columns: <code>ProcessName</code>, <code>RegionName</code>, <code>Time</code>, <code>month</code>, <code>day</code>, <code>hour</code>, <code>UtilizationFactor</code>, <code>MinimumServiceFactor</code>.</p>
 <p>The majority of these columns are self explanatory, and correspond to the columns in other csv files - for instance, <code>ProcessName</code>, <code>RegionName</code> and <code>Time</code>. The timeslice based columns, however, are dynamic and will match the levels as defined in the toml file.</p>
 <p>The majority of these columns are self explanatory, and correspond to the columns in other csv files - for instance, ProcessName, RegionName and Time. The timeslice based columns, however, are dynamic and will match the levels as defined in the <code>settings.toml</code> file in the main <code>default</code> folder.</p>
+<p>We need to link the <code>TechnodataTimeslices.csv</code> file to the MUSE model. So to do this, we must enter into the <code>settings.toml</code> file and under the <code>[sectors.power]</code> add the line <code>technodata_timeslices = '{path}/technodata/power/TechnodataTimeslices.csv'</code> as shown below. Although we must ensure that the <code>TechnodataTimeslices.csv</code> is in the <code>/technodata/power/</code> folder of the default example.</p>
 <pre><code>[sectors.power]
 type = &#39;default&#39;
 priority = 2
@@ -52,11 +53,11 @@ technodata_timeslices = &#39;{path}/technodata/power/TechnodataTimeslices.csv&#3
 <pre><code>python -m muse settings.toml</code></pre>
 <p>We can then view the results as before using Excel.</p>
 <h1 id="maximum-timeslice-constraint">Maximum timeslice constraint</h1>
-<p>Next, we want to ensure that the supply of windturbine does not exceed a certain value during the day. This may be because, for example, there is reduced wind during the day. We will, therefore, modify the <code>TechnodataTimeslices.csv</code> file by changing the values of UtilizationFactor. This is shown in the figure below. Where we change the morning and afternoon timeslices to be 0.5, as an example.</p>
+<p>Next, we want to ensure that the supply of windturbine does not exceed a certain value during the day. This may be because, for example, there is reduced wind during the day. We will, therefore, modify the <code>TechnodataTimeslices.csv</code> file by changing the values of UtilizationFactor. This is shown in the figure below, where we change the morning and afternoon timeslices to be 0.5, as an example.</p>
 <p><img src="assets/Figure_3.2.png" style="width:100.0%" /></p>
 <p><strong>Figure 3.2:</strong> Edited TechnodataTimeslices file opened in Excel.</p>
 <p>Once this has been saved, we can run the model again (<code>python -m muse settings.toml</code>). We can then visualise our results as before.</p>
 <h1 id="summary">Summary</h1>
-<p>In this lecture we have introduced the <code>TimeslicesTechnodata.csv</code> file, and linked it to the <code>settings.toml</code> file. This has allowed us to vary the output of various energy technologies by their characteristics.</p>
+<p>In this hands-on we have introduced the <code>TechnodataTimeslices.csv</code> file, and linked it to the <code>settings.toml</code> file. This has allowed us to vary the output of various energy technologies by their characteristics.</p>
 </body>
 </html>

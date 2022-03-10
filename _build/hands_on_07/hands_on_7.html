@@ -30,11 +30,11 @@
 <li>Learn how to add a new region</li>
 </ul>
 <h1 id="introduction">Introduction</h1>
-<p>The next step is to add a region which we will call <code>R2</code>, however, this could equally be called <code>USA</code> or <code>India</code>. These regions do not have any energy trade. This requires us to undertake a similar process as before of modifying the input simulation data. However, this time we will also have to change the <code>settings.toml</code> file to achieve this.</p>
+<p>The next step is to add a region which we will call <code>R2</code>, however, this could equally be called <code>USA</code> or <code>India</code>. These regions do not have any energy trade. This requires us to undertake a similar process as in the previous hands-on when modifying the input simulation data. However, this time we will also have to change the <code>settings.toml</code> file to achieve this.</p>
 <p>The process to change the <code>settings.toml</code> file is relatively simple. We just have to add our new region to the regions variable, in the 4th line of the <code>settings.toml</code> file, like so:</p>
 <pre><code>regions = [&quot;R1&quot;, &quot;R2&quot;]</code></pre>
 <p>The process to change the input files, however, takes a bit more time. To achieve this, there must be data for each of the sectors for the new region. This, therefore, requires the modification of every input file.</p>
-<p>Due to space constraints, we will not show you how to edit all of the files. However, you can access the modified files at the zenodo link below: https://zenodo.org/record/6327789#.YiI1ri-l1pQ</p>
+<p>Due to space constraints, we will not show you how to edit all of the files. However, you can access the modified files at the zenodo link below: <a href="https://zenodo.org/record/6327789#.YiI1ri-l1pQ">https://zenodo.org/record/6327789#.YiI1ri-l1pQ</a></p>
 <p>Effectively, for this example, we will copy and paste the results for each of the input files from region <code>R1</code>, and change the name of the region for the new rows to <code>R2</code>.</p>
 <p>However, as we are increasing the demand by adding a region, as well as modifying the costs of technologies, it may be the case that a higher growth in technology is required. For example, there may be no possible solution to meet demand without increasing the <code>windturbine</code> maximum allowed limit. We will therefore increase the allowed limits for <code>windturbine</code> in region <code>R2</code>.</p>
 <p>We have placed two examples as to how to edit the power sector below. Again, the edited data are highlighted in <strong>bold</strong>, with the original data in normal text.</p>
@@ -44,14 +44,13 @@
 <p>Whereas the following file is the modified <code>/technodata/power/ExistingCapacity.csv</code> file:</p>
 <p><img src="assets/Figure_7.2.png" style="width:100.0%" /></p>
 <p><strong>Figure 7.2:</strong> Updated ExistingCapacity.csv.</p>
-<p>Below is the reduced <code>/technodata/power/technodata.csv</code> file, showing the increased capacity for <code>windturbine</code> in <code>R2</code>. For this, we highlight only the elements we changed from the rows in <code>R1</code>. The rest of the elements are the same for <code>R1</code> as they are for <code>R2</code>.</p>
-<p>Again, we don’t show the entries for 2040, apart from the edited <code>windturbine</code> row, for the sake of brevity.</p>
+<p>Below is the reduced <code>/technodata/power/technodata.csv</code> file, showing the new <code>windturbine</code> in <code>R2</code>. For this, we highlight only the elements we changed from the rows in <code>R1</code>. The rest of the elements are the same for <code>R1</code> as they are for <code>R2</code>.</p>
 <p><img src="assets/Figure_7.3.png" style="width:100.0%" /></p>
 <p><strong>Figure 7.3:</strong> Updated Technodata.csv.</p>
-<p>Now, go ahead and amend all of the other input files for each of the sectors, the Agents file and the input files <code>BaseYearExport</code>, <code>BaseYearImport</code> and <code>Projections.csv</code> by copying and pasting the rows from <code>R1</code> and replacing the <code>RegionName</code> to <code>R2</code> for the new rows. All of the edited input files can be seen at the zenodo link: https://zenodo.org/record/6327789#.YiI1ri-l1pQ</p>
+<p>Now, go ahead and amend all of the other input files for each of the sectors, the Agents file and the input files <code>BaseYearExport</code>, <code>BaseYearImport</code> and <code>Projections.csv</code> by copying and pasting the rows from <code>R1</code> and replacing the <code>RegionName</code> with <code>R2</code> for the new rows. All of the edited input files can be seen at the zenodo link: <a href="https://zenodo.org/record/6327789#.YiI1ri-l1pQ">https://zenodo.org/record/6327789#.YiI1ri-l1pQ</a></p>
 <p>Again, we will run the results using the <code>python -m pip muse settings.toml</code> in anaconda prompt, and analyse the data using excel as follows:</p>
-<p><img src="assets/Figure_7.3.png" style="width:100.0%" /></p>
-<p><strong>Figure 7.3:</strong> Capacity visualisation for both regions in the power sector - a) Region = R1, b) Region = R2.</p>
+<p><img src="assets/Figure_7.4.png" style="width:100.0%" /></p>
+<p><strong>Figure 7.4:</strong> Capacity visualisation for both regions in the power sector - a) Region = R1, b) Region = R2.</p>
 <h1 id="summary">Summary</h1>
 <p>In this hands-on we added a new fictional region with the same characteristics for both of these regions. We see that the output of the two regions in the power sector are the same. This is because the characteristics in both regions are identical.</p>
 </body>

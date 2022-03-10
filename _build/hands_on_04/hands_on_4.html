@@ -29,10 +29,11 @@
 <li>Learn how to add a new technology in MUSE</li>
 </ul>
 <h2 id="addition-of-solar-pv">Addition of solar PV</h2>
-<p>In this section, we will add solar photovoltaics to the default model. To achieve this, we must modify the input files in the default example.</p>
+<p>In this section, we will add solar photovoltaics to the default model. We will be starting from scratch and not continuing with the examples from hands-on 2 and 3. Therefore, to achieve this, we must modify the input files in the default example (default.zip) which can be found in the zenodo link provided below.</p>
+<p><a href="https://zenodo.org/record/6092287#.YgvOEy-l1pQ">https://zenodo.org/record/6092287#.YgvOEy-l1pQ</a></p>
 <h2 id="technodata-input">Technodata Input</h2>
 <p>We must note, before starting, that we require consistency in input and output units. For example, if capacity is in PJ, the same basis would be needed for the output files <code>CommIn.csv</code> and <code>CommOut.csv</code>. In addition, across sectors a commodity needs to maintain the same unit. In these examples, we use the unit petajoule (PJ).</p>
-<p>Next, we will edit the <code>CommIn.csv</code> file, which specifies the commodities consumed by solar photovoltaics.</p>
+<p>Next, we will edit the <code>CommIn.csv</code> file in the power sector, which specifies the commodities consumed by solar photovoltaics.</p>
 <p>The table below shows the original <code>CommIn.csv</code> version in normal text, and the added column and row in bold.</p>
 <p><img src="assets/Figure_4.1.png" style="width:100.0%" /></p>
 <p><strong>Figure 4.1:</strong> Modified CommIn.csv file for the power sector</p>
@@ -48,15 +49,15 @@
 <p>We repeat this process for the file: <code>CommOut.csv</code>. This file specifies the output of the technology. In our case, solar photovoltaics only output electricity. This is unlike <code>gasCCGT</code> which also outputs <code>CO2f</code>, or carbon dioxide.</p>
 <p><img src="assets/Figure_4.2.png" style="width:100.0%" /></p>
 <p><strong>Figure 4.2:</strong> Modified CommOut.csv file for the power sector</p>
-<p>Similar to the the <code>CommIn.csv</code>, we create a new row, and add in the solar commodity. We must ensure that we call our new commodity and technologies the same as the previous file for MUSE to successfully run. ie <code>solar</code> and <code>solarPV</code>.</p>
-<p>Please note that we use flat forward extension of the values when only one value is defined. For example, in the <code>CommOut.csv</code> we only provide data for the year 2020. Therefore for the benchmark years, 2025, 2030, 2035… we assume the data remains unchanged from 2020.</p>
-<p>The next file to modify is the <code>ExistingCapacity.csv</code> file. This file details the existing capacity of each technology, per benchmark year. For this example, we will set the existing capacity to be 0.5 for all technologies in the base year and 0 for the remaining years. Please note, that the model interpolates between years linearly.</p>
+<p>Similar to the the <code>CommIn.csv</code>, we create a new row, and add in the solar commodity. We must ensure that we call our new commodity and technologies the same as the previous file for MUSE to successfully run, i.e. <code>solar</code> and <code>solarPV</code>. Please note that the commodity names are case-sensitive.</p>
+<p>Please note that we use flat forward extension of the values when only one value is defined. For example, in the <code>CommOut.csv</code> we only provide data for the year 2020. Therefore for the benchmark years, 2025, 2030, 2035â€¦ we assume the data remains unchanged from 2020.</p>
+<p>The next file to modify is the <code>ExistingCapacity.csv</code> file. This file details the existing capacity of each technology, per benchmark year. For this example, we will set the existing capacity to be 0.5 for all technologies in the base year and 0 for the remaining years. Please note, that the model interpolates between benchmark years linearly.</p>
 <p><img src="assets/Figure_4.3.png" style="width:100.0%" /></p>
 <p><strong>Figure 4.3:</strong> Modified ExistingCapacity.csv file for the power sector</p>
-<p>Finally, the technodata.csv containts parametrisation data for the technology, such as the cost, growth constraints, lifetime of the power plant and fuel used. The technodata file is too long for it all to be displayed here, so we will truncate the full version.</p>
+<p>Finally, the technodata.csv contains parametrisation data for the technology, such as the cost, growth constraints, lifetime of the power plant and fuel used. The technodata file is too long for it all to be displayed here, so we will truncate the full version.</p>
 <p>Here, we will only define the parameters: <code>processName</code>, <code>RegionName</code>, <code>Time</code>, <code>Level</code>,<code>cap_par</code>, <code>Fuel</code>, <code>EndUse</code>, <code>Agent2</code> and <code>Agent1</code></p>
 <p>We shall copy the existing parameters from the windturbine technology for the remaining parameters that can be seen in the <code>technodata.csv</code> file for brevity. You can see the full file at the zenodo link, below:</p>
-<p>https://zenodo.org/record/6092287#.YgvOEy-l1pQ</p>
+<p><a href="https://zenodo.org/record/6092287#.YgvOEy-l1pQ">https://zenodo.org/record/6092287#.YgvOEy-l1pQ</a></p>
 <p>Again, flat forward extension is used here. Therefore, as in this example we only provide data for the benchmark year 2020, 2025 and the following benchmark years will keep the same characteristics, e.g. costs, for each benchmark year of the simulation.</p>
 <p><img src="assets/Figure_4.4.png" style="width:100.0%" /></p>
 <p><strong>Figure 4.4:</strong> Modified Technodata.csv file for the power sector</p>
@@ -64,9 +65,9 @@
 <h2 id="global-inputs">Global inputs</h2>
 <p>Next, navigate to the input folder, found at:</p>
 <pre><code>{muse_installation_location}/src/muse/data/example/default/input</code></pre>
-<p>We must now edit each of the files found here to add the new solar commodity. Due to space constraints we will not display all of the entries contained in the input files. The edited files can be viewed in the zenodo link below, however.</p>
-<p>https://zenodo.org/record/6092287#.YgvOEy-l1pQ</p>
-<p>The <code>BaseYearExport.csv</code> file defines the exports in the base year. For our example we add a column to indicate that there is no export for solar. However, it is important that a column exists for our new commodity.</p>
+<p>We must now edit each of the files found here to add the new solar commodity. The edited files can be viewed in the zenodo link below:</p>
+<p><a href="https://zenodo.org/record/6092287#.YgvOEy-l1pQ">https://zenodo.org/record/6092287#.YgvOEy-l1pQ</a></p>
+<p>The <code>BaseYearExport.csv</code> file defines the exogenous exports for commodities. For our example we add a column to indicate that there is no export for solar. However, it is important that a column exists for our new commodity.</p>
 <p>It is noted, however, that the <code>BaseYearImport.csv</code> as well as the <code>BaseYearExport.csv</code> files are optional files to define exogenous imports and exports; all values are set to zero if they are not used.</p>
 <p><img src="assets/Figure_4.5.png" style="width:100.0%" /></p>
 <p><strong>Figure 4.5:</strong> Modified BaseYearExport.csv file for the power sector</p>
@@ -76,7 +77,7 @@
 <p>The <code>GlobalCommodities.csv</code> file is the file which defines the commodities. Here we give the commodities a commodity type, CO2 emissions factor and heat rate. For this file, we will add the <code>solar</code> commodity, with zero CO2 emissions factor and a heat rate of 1.</p>
 <p><img src="assets/Figure_4.7.png" style="width:100.0%" /></p>
 <p><strong>Figure 4.7:</strong> Modified GlobalCommodities.csv file for the power sector</p>
-<p>The <code>projections.csv</code> file details the initial market prices for the commodities. The market clearing algorithm will update these throughout the simulation, however, an initial estimate is required to start the simulation. As solar energy is free, we will indicate this by adding a final column.</p>
+<p>The <code>projections.csv</code> file details the initial market prices for the commodities. The market clearing algorithm will update these throughout the simulation; however, an initial estimate is required to start the simulation. As solar irradiance as a fuel is free, we will indicate this by adding a final column.</p>
 <p>Please note that the unit row is not read by MUSE, but used as a reference for the user. The units should be consistent across all input files for MUSE; MUSE does not carry out any unit conversion.</p>
 <p><img src="assets/Figure_4.8.png" style="width:100.0%" /></p>
 <p><strong>Figure 4.8:</strong> Modified projections.csv file for the power sector</p>
@@ -84,11 +85,11 @@
 <p>Now we are able to run our simulation with the new solar power technology.</p>
 <p>To do this we run the same run command as previously in the anaconda command prompt:</p>
 <pre><code>python -m muse settings.toml</code></pre>
-<p>If the simulation has run successfully, you should now have a folder in the same location as your <code>settings.toml</code> file called <code>Results</code>. The next step is to visualise the results using Excel.</p>
-<p>We will use the PivotChart, similar to the previous step.</p>
+<p>If the simulation has run successfully, you should now have a folder in the same location as your <code>settings.toml</code> file called <code>Results</code>. It must be noted, however, that if you update a value and re-run the model, the results folder will be overwritten.</p>
+<p>The next step is to visualise the results using Excel.</p>
+<p>We will use the PivotChart, similar to that shown in hands-on 1. The file to be used is the MCACapacity.csv file. For our visualisation we have selected a stacked area chart, but you are free to choose the type you like.</p>
 <p><img src="assets/Figure_4.9.png" style="width:100.0%" /></p>
 <p><strong>Figure 4.9:</strong> Visualisation with new technology.</p>
 <p>The power sector now shows us the new <code>solarPV</code> technology.</p>
-<h1 id="summary">Summary</h1>
 </body>
 </html>

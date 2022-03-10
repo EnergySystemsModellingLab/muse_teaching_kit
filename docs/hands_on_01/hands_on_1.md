@@ -11,9 +11,9 @@ authors:
 
 This hands-on exercise will allow you to install MUSE on your computer. We will then take you though an example to run and visualise a default MUSE example.
 
-If at any point you get stuck with these hands-on, feel free to post a question in the purpose made MUSE google group if your question hasn't already been answered there!:
+If at any point you get stuck with these hands-on exercises, feel free to post a question in the purpose-made MUSE google, group if your question hasn't already been answered there!:
 
-https://groups.google.com/g/muse-model
+[https://groups.google.com/g/muse-model](https://groups.google.com/g/muse-model)
 
 ## Learning objectives
 
@@ -25,7 +25,7 @@ https://groups.google.com/g/muse-model
 
 ### For Windows users only
 
-Windows users and developers may need to install `Windows Build Tools`__. These tools include C/C++ compilers which are needed to build some python dependencies.
+Windows users and developers may need to install `Windows Build Tools`. These tools include C/C++ compilers which are needed to build some python dependencies.
 
 MacOS includes compilers by default, hence no action is needed for Mac users.
 
@@ -33,13 +33,13 @@ Linux users may need to install a C compiler, whether GNU gcc or Clang, as well 
 
 If you have MacOS or Linux you can skip this section and head to the next section below here.
 
-1. Install Visual Studio from the following link: https://visualstudio.microsoft.com/downloads/
+1. Install Visual Studio from the following link: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
 
 2. Select your preferred edition. Although, the "Community" version is free and contains what is required.
 
 3. Install Visual Studio by selecting the default options.
 
-4.   Download the Microsoft Visual C++ Build Tools from the following link by downloading Visual Studio 2019: https://visualstudio.microsoft.com/downloads/   
+4.   Download the Microsoft Visual C++ Build Tools from the following link by downloading Visual Studio 2019: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)   
 
 5. Select your preferred edition. The "Community" is free and contains what is required.
 
@@ -47,7 +47,7 @@ If you have MacOS or Linux you can skip this section and head to the next sectio
 
 7.   Select: Workloads → Desktop development with C++.
 
-8. Install options: select only the “Windows 10 SDK” (assuming the computer is Windows 10)]. This will come up on the right hand side of the screen.
+8. Install options: select only the “Windows 10 SDK” (assuming the computer is Windows 10)]. This will come up on the right-hand side of the screen.
 
 The installation screen should look similar to the following:
 
@@ -56,20 +56,33 @@ The installation screen should look similar to the following:
 **Figure 1.1:** Visual Studio Installer window
 
 
-For further information, see this link: https://www.scivision.dev/python-windows-visual-c-14-required
+For further information, see this link: [https://www.scivision.dev/python-windows-visual-c-14-required](https://www.scivision.dev/python-windows-visual-c-14-required)
 
 
 ## Installing MUSE
 
 MUSE is developed using python, an open-source programming language, which means that there are two steps to the installation process. First, python should be installed. Then so should MUSE.
 
-The simplest method to install python is by downloading the Anaconda distribution. Make sure to choose the appropriate operating system (e.g. windows), python version 3.8, and the 64 bit installer. Once this has been done follow the steps for the anaconda installer, as prompted.
+The simplest method to install python is by downloading the [Anaconda distribution](https://www.anaconda.com/products/individual). Make sure to choose the appropriate operating system (e.g. windows), python version 3.9, and the 64 bit installer. Once this has been done follow the steps for the anaconda installer, as prompted.
 
-After python is installed we can install MUSE. MUSE can be installed via the Anaconda Prompt (or any terminal on Mac and Linux). This is a command-line interface to python and the python eco-system. In the anaconda prompt, run:
+After python is installed we can install MUSE. MUSE can be installed via the Anaconda Prompt or CMD.exe (or any terminal on Mac and Linux). This is a command-line interface to python and the python eco-system. In the anaconda prompt, run:
 
 ```
 python -m pip install --user git+https://github.com/SGIModel/MUSE_OS
 ```
+
+If you get an error such as the following:
+
+```
+Cannot find command 'git' - do you have 'git' installed and in your PATH
+```
+
+Then you have to install git in anaconda. This can be completed by running the following command:
+
+```
+conda install git pip
+```
+
 
 It should now be possible to run muse. Again, this can be done in the anaconda prompt as follows:
 
@@ -82,9 +95,9 @@ python -m muse --help
 In this section we run an example simulation of MUSE, in the next section we will visualise the results.
 
 First we need to download the MUSE source code. To do that navigate to the MUSE GitHub repository:
-https://github.com/SGIModel/MUSE_OS
+[https://github.com/SGIModel/MUSE_OS](https://github.com/SGIModel/MUSE_OS)
 
-Click on the green `Code` button in the top right hand corner and then click on `Download ZIP`. Figure 2.1 shows how to do this, once you are on the relevant page.
+Click on the green `Code` button in the top right-hand corner and then click on `Download ZIP`. Figure 2.1 shows how to do this, once you are on the relevant page.
 
 ![](assets/Figure_1.2.png){width=100%}
 
@@ -94,7 +107,7 @@ Once you have downloaded the source code, unzip the folder and move it to a loca
 
 We will place ours on the desktop for simplicity, but feel free to make a folder in your documents or otherwise. 
 
-To run MUSE, we must open anaconda prompt for Windows machines or terminal if on MacOS or Linux. Then we must navigate to the directory using the prompt or terminal to find the MUSE examples. Ours is in Desktop, so we will run the following command:
+To run MUSE, we must open the anaconda prompt for Windows machines or terminal if on MacOS or Linux. Then we must navigate to the directory using the prompt or terminal to find the MUSE examples. Ours is in Desktop, so we will run the following command:
 
 ```
 cd ~/Desktop/StarMuse/run/example/default/
@@ -106,7 +119,7 @@ But yours could be in another location, so fill in the {MUSE_download_location} 
 cd {MUSE_download_location}/StarMuse/run/example/default/
 ```
 
-Once we have navigated to the directory containing the example settings settings.toml we can run the simulation using the following command in the anaconda prompt or terminal:
+Once we have navigated to the directory containing the example settings (settings.toml) we can run the simulation using the following command in the anaconda prompt or terminal:
 
 ```
 python -m muse settings.toml
@@ -134,21 +147,23 @@ Reading MUSE settings
 
 If the default MUSE example has run successfully, you should now have a folder called `Results` in the same directory as `settings.toml`.
 
-This directory should contain results for each sector (Gas,Power and Residential) as well as results for the entire simulation in the form of `MCACapacity.csv` and `MCAPrices.csv`.
+This directory should contain results for each sector contained within this example (Gas, Power and Residential) as well as results for the entire simulation in the form of the files `MCACapacity.csv` and `MCAPrices.csv`.
 
-`MCACapacity.csv` contains information about the capacity each agent has per technology per benchmark year. Each benchmark year is the modelled year in the `settings.toml` file. In our example, this is 2020, 2025, …, 2050.
+`MCACapacity.csv` contains information about the energy capacity each agent has per technology per benchmark year. Each benchmark year is the modelled year in the `settings.toml` file. In our example, this is 2020, 2025, …, 2050.
 
-`MCAPrices.csv` has the converged price of each commodity per benchmark year and timeslice. eg. the cost of electricity at night for electricity in 2020.
+`MCAPrices.csv` has the converged price of each commodity per benchmark year and timeslice. For example, it has the cost of electricity at night for electricity in 2020, and other similar results.
 
-Within each of the sector result folders, there is an output for Capacity for each commodity in each year. The years into the future, which the simulation has not run to, refers to the capacity as it retires. Within the Residential folder there is also a folder for Supply within each year. This refers to how much end-use commodity was output.
+Within each of the sector result folders, there is an output for capacity for each commodity in each year. Future years, which the simulation has not run to, refers to the technology capacity as it retires. Within the Residential folder there is also a folder for Supply within each year. This refers to how much end-use commodity was output.
+
+Some of these terms will not be familiar to you yet, but do not worry about this for now. This hands-on is just guiding you the basic process from installation to data visualisation and later hands-on material will give more information.
 
 ## Visualisation
 
 There are many different ways to visualise the results of MUSE. For example, you could use a programming language such as python or R. In this course, however, we will use Excel for simplicity. 
 
-There are also many different variables and combinations of data that we can plot. In this course we will primarily explore the capacity installed over the time horizon (2020-2050). Through this, we can see which of the technologies are invested in and understand the competition between technologies.
+There are also many different variables and combinations of data that we can plot. In this course we will primarily explore the capacity installed over the time horizon (2020 to 2050). Through this, we can see which of the technologies are invested in and understand the competition between technologies.
 
-To start the visualisation process of the default example, navigate to the folder where you run the `default` example. For instance:
+To start the visualisation process of the default example, navigate to the folder where you run the `default` example in anaconda prompt or CMD.exe. For instance:
 
 ```
 cd {MUSE_download_location}/StarMuse/run/example/default/
@@ -160,21 +175,21 @@ First, select the PivotChart button under the insert menu. You should then see a
 
 ![](assets/Figure_1.3.png){width=50%}
 
-**Figure 1.3:** Insert Create PivotChart
+**Figure 1.3:** Insert -> Create PivotChart
 
-Ensure that the "Select a table or range" highlights all of the data, and the "Choose where you want the PivotChart to be placed" is selected to "Existing worksheet" like in the figure above. Then within the "Table/Range" box, click the cell where you woud like the figure to be placed.
+Ensure that the "Select a table or range" highlights all of the data, and the "Choose where you want the PivotChart to be placed" is selected to "Existing worksheet" like in the figure above. Then within the "Table/Range" box, click the cell where you would like the figure to be placed. Click "OK" when finished.
 
-You should then see the boxes appear shown below in Figure 1.4 in Excel:
+You should then see the boxes appear as shown below in Figure 1.4 in Excel:
 
 ![](assets/Figure_1.4.png){width=100%}
 
 **Figure 1.4:** Inserted PivotChart
 
-Next we want to view how the capacity changes per technology over the technology horizon for the power sector.
+Next we want to view how the capacity changes per technology over the modelled time period for the power sector.
 
 To do this, we must drag the relevant Fields from the PivotTable to the `Filters`, `Columns`, `Rows` and `Values` boxes.
 
-First, we will drag the `capacity` field to the `Values` boxes. These are the values that we want to plot. Then we will drag the `year` field to the `Axis (Categories)` box. This will start to populate a table and a graph. Finally, we want to filter for the residential sector. To do that we will drag the `sector` field to the `Filters` box. 
+First, we will drag the `capacity` field to the `Values` boxes. These are the values that we want to plot. Then we will drag the `year` field to the `Axis (Categories)` box. This will start to populate a table and a graph. Finally, we want to filter for the power sector. To do that we will drag the `sector` field to the `Filters` box. 
 
 We should then end up with the chart, table and PivotTable fields shown in Figure 1.5.
 

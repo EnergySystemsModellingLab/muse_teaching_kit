@@ -8,11 +8,11 @@ authors:
 -   Alexander J. M. Kell
 ---
 
-Previously, we added an exogenous service demand. That is, we explicitly specfied what the demand would be per year.
+In hands-on 2, we added an exogenous service demand. That is, we explicitly specified what the demand would be per year.
 
-However, we may not know what the electricity demand is per year into the future. Instead, we may conclude that our electricity demand is a function of the GDP and population of a particular region.
+However, we may not know what the electricity demand is for each year into the future. Instead, we may conclude that our electricity demand is a function of the GDP and population of a particular region.
 
-To accommodate such scenarios, MUSE enables us to choose a regression functoin that estimates service demands from GDP and population, which may be more certain in your case. In this hands-on we find out how this can be done.
+To accommodate such scenarios, MUSE enables us to choose a regression function that estimates service demands from GDP and population, which may be more certain in your case. In this hands-on we find out how this can be done.
 
 # Learning objectives
 
@@ -23,30 +23,30 @@ To accommodate such scenarios, MUSE enables us to choose a regression functoin t
 For this work, we will use the default example, as before, from the MUSE repository.
 
 The full scenario files for the default example can be found at the zenodo link below.
-https://zenodo.org/record/6092720#.YgvcMy-l1pQ
+[https://zenodo.org/record/6092720#.YgvcMy-l1pQ](https://zenodo.org/record/6092720#.YgvcMy-l1pQ)
 
 We recommend that you download these files and save them to a location convenient to you, as we will be amending these throughout this tutorial.
 
-Similarly to before, we must amend the `preset` folder for this. However, we no longer require the `Residential2020Consumption.csv` and `Residential2050Consumption.csv` files. These files set the exogenous service demand for the residential sector.
+Similarly to before, we must amend the preset folder for this. However, we no longer require the `Residential2020Consumption.csv` and `Residential2050Consumption.csv` files. These files set the exogenous service demand for the residential sector.
 
 We must replace these files, with the following files:
 
 - A macrodrivers file. This contains the drivers of the service demand that we want to model. For this example, these will include GDP based on purchasing power parity (GDP PPP) and the population that we expect from 2010 to 2110.
-- A regression parameters file. This file will set the function type we would like to use to predict the service demand and the respective parameters of this regression file per region.
-- A timeslice share file. This file sets how the demand is shared between timeslice.
+- A regression parameters file. This file will set the function type we would like to use to predict the service demand and the respective parameters of this regression file per region. We will not go into detail about the different functions that you can choose, but for more information, please refer to the documentation: [https://muse-docs.readthedocs.io/en/latest/](https://muse-docs.readthedocs.io/en/latest/)
+- A timeslice share file. This file sets how the demand is shared between timeslices.
 
 The example files for each of those just mentioned can be found in the zenodo link below.
-https://zenodo.org/record/6092720#.YgvcMy-l1pQ
+[https://zenodo.org/record/6092720#.YgvcMy-l1pQ](https://zenodo.org/record/6092720#.YgvcMy-l1pQ)
 
 Download these files and save them within the preset folder.
 
-Next, we must amend our toml file to include our new way of calculating the preset service demand.
+Next, we must amend our TOML file to include our new way of calculating the preset service demand.
 
 ## TOML file
 
-Editting the TOML file to include this can be done relatively quickly if we know the variable names.
+Editing the TOML file to include this can be done relatively quickly if we know the variable names. This just requires opening the TOML file in a text editor of your choice.
 
-In the second bottom section of the toml file, you will see the following section:
+In the second bottom section of the TOML file, you will see the following section:
 
 ```
 [sectors.residential_presets]
@@ -81,3 +81,4 @@ Figure 5.1, below, shows the power sector over the future horizon. We can see a 
 # Summary
 
 In this hands-on we added a service demand by correlation. Specifically, GDP purchasing power parity and population. We saw that we could make inferences on how the demand will grow based on these using seperate files in MUSE.
+

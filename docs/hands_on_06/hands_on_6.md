@@ -17,21 +17,22 @@ Now we will learn how to add a new agent to our example.
 
 # Introduction
 
-In this hands-on, we will add a new agent called `A2`. This agent will be slightly different to the other agents in the `default` example, in that it will make investments based upon a mixture of levelised cost of electricity (LCOE) and equivalent annual cost (EAC). These two objectives will be combined by calculating a weighted sum of the two when comparing potential investment options. We will give the LCOE a relative weight value of 1 and the EAC a relative weight value of 0.25.
+In this hands-on, we will add a new agent called `A2`. This agent will be slightly different to the other agents in the `default` example, in that it will make investments based upon a mixture of levelised cost of electricity (LCOE) and equivalent annual cost (EAC). Where EAC is the is the annual cost of owning, operating, and maintaining an asset over its entire life. These two objectives will be combined by calculating a weighted sum of the two when comparing potential investment options. We will give the LCOE a relative weight value of 0.5 and the EAC a relative weight value of 0.5.
 
 We will edit the default example to add a new agent, which can be found from the following zenodo link:
-https://zenodo.org/record/6323453#.Yh-QWi-l1pQ
+[https://zenodo.org/record/6323453#.Yh-QWi-l1pQ]( https://zenodo.org/record/6323453#.Yh-QWi-l1pQ)
 
 To achieve this, first, we must modify the Agents.csv file in the directory:
 ```
 {muse_install_location}/src/muse/data/example/default/technodata/Agents.csv
 ```
 
-To do this, we will add two new rows to the file. To simplify the process, we copy the data from the first two rows of agent A1, changing only the rows: `AgentShare`, `Name`, `Objective1`, `Objective2`, `ObjData1`, `ObjData2`, `DecisionMethod` and `Quantity`. The values we changed can be seen below. Notice how we edit the `AgentShare` column. This variable allows us to split the existing capacity between the two different agents. We will also need to edit the technodata file to define these new AgentShares.
+To do this, we will add two new rows to the file. To simplify the process, we copy the data from the first two rows of agent A1, changing only the rows: `AgentShare`, `Name`, `Objective1`, `Objective2`, `ObjData1`, `ObjData2`, `DecisionMethod` and `Quantity`. The values we changed can be seen below. Notice how we edit the `AgentShare` column. This variable allows us to split the existing capacity between the two different agents. There is a set list of objectives that can be chosen from, with more information provided at the documentation: [https://muse-docs.readthedocs.io/en/latest/]( https://muse-docs.readthedocs.io/en/latest/)
+We will also need to edit the Agents.csv file to define these new AgentShares.
 
 ![](assets/Figure_6.1.png){width=100%}
 
-**Figure 6.1:** Updated technodata.
+**Figure 6.1:** Updated Agents.csv.
 
 Also notice that we amend the Quantity column. The reason for this is that we want to specify that Agent `A1` makes up 50% of the population, and `A2` makes up the remaining 50% of the population.
 
@@ -45,7 +46,7 @@ The new technodata file for the power sector will look like the following (we ha
 
 However, remember you will have to make the same changes for the residential and gas sectors!
 
-We will now save this file and run the new simulation model using the following command in Anaconda prompt:
+We will now save these files and run the new simulation model using the following command in Anaconda prompt:
 
 ```
 python -m muse settings.toml
@@ -62,4 +63,5 @@ https://zenodo.org/record/6323453#.Yh-QWi-l1pQ
 
 # Summary
 
-In this hands-on we added a new agent which had different characteristics to the original agent and saw that this lead to a dramatic change in technologies invested in.
+In this hands-on we added a new agent which had different characteristics to the original agent and saw that this led to a dramatic change in the technologies invested in.
+

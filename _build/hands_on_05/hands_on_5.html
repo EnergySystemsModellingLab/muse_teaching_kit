@@ -24,30 +24,30 @@
 <header id="title-block-header">
 <h1 class="title">Hands On Exercise 5: Adding a service demand by correlation</h1>
 </header>
-<p>Previously, we added an exogenous service demand. That is, we explicitly specfied what the demand would be per year.</p>
-<p>However, we may not know what the electricity demand is per year into the future. Instead, we may conclude that our electricity demand is a function of the GDP and population of a particular region.</p>
-<p>To accommodate such scenarios, MUSE enables us to choose a regression functoin that estimates service demands from GDP and population, which may be more certain in your case. In this hands-on we find out how this can be done.</p>
+<p>In hands-on 2, we added an exogenous service demand. That is, we explicitly specified what the demand would be per year.</p>
+<p>However, we may not know what the electricity demand is for each year into the future. Instead, we may conclude that our electricity demand is a function of the GDP and population of a particular region.</p>
+<p>To accommodate such scenarios, MUSE enables us to choose a regression function that estimates service demands from GDP and population, which may be more certain in your case. In this hands-on we find out how this can be done.</p>
 <h1 id="learning-objectives">Learning objectives</h1>
 <ul>
 <li>How to add a service demand by correlation</li>
 </ul>
 <h1 id="introduction">Introduction</h1>
 <p>For this work, we will use the default example, as before, from the MUSE repository.</p>
-<p>The full scenario files for the default example can be found at the zenodo link below. https://zenodo.org/record/6092720#.YgvcMy-l1pQ</p>
+<p>The full scenario files for the default example can be found at the zenodo link below. <a href="https://zenodo.org/record/6092720#.YgvcMy-l1pQ">https://zenodo.org/record/6092720#.YgvcMy-l1pQ</a></p>
 <p>We recommend that you download these files and save them to a location convenient to you, as we will be amending these throughout this tutorial.</p>
-<p>Similarly to before, we must amend the <code>preset</code> folder for this. However, we no longer require the <code>Residential2020Consumption.csv</code> and <code>Residential2050Consumption.csv</code> files. These files set the exogenous service demand for the residential sector.</p>
+<p>Similarly to before, we must amend the preset folder for this. However, we no longer require the <code>Residential2020Consumption.csv</code> and <code>Residential2050Consumption.csv</code> files. These files set the exogenous service demand for the residential sector.</p>
 <p>We must replace these files, with the following files:</p>
 <ul>
 <li>A macrodrivers file. This contains the drivers of the service demand that we want to model. For this example, these will include GDP based on purchasing power parity (GDP PPP) and the population that we expect from 2010 to 2110.</li>
-<li>A regression parameters file. This file will set the function type we would like to use to predict the service demand and the respective parameters of this regression file per region.</li>
-<li>A timeslice share file. This file sets how the demand is shared between timeslice.</li>
+<li>A regression parameters file. This file will set the function type we would like to use to predict the service demand and the respective parameters of this regression file per region. We will not go into detail about the different functions that you can choose, but for more information, please refer to the documentation: <a href="https://muse-docs.readthedocs.io/en/latest/">https://muse-docs.readthedocs.io/en/latest/</a></li>
+<li>A timeslice share file. This file sets how the demand is shared between timeslices.</li>
 </ul>
-<p>The example files for each of those just mentioned can be found in the zenodo link below. https://zenodo.org/record/6092720#.YgvcMy-l1pQ</p>
+<p>The example files for each of those just mentioned can be found in the zenodo link below. <a href="https://zenodo.org/record/6092720#.YgvcMy-l1pQ">https://zenodo.org/record/6092720#.YgvcMy-l1pQ</a></p>
 <p>Download these files and save them within the preset folder.</p>
-<p>Next, we must amend our toml file to include our new way of calculating the preset service demand.</p>
+<p>Next, we must amend our TOML file to include our new way of calculating the preset service demand.</p>
 <h2 id="toml-file">TOML file</h2>
-<p>Editting the TOML file to include this can be done relatively quickly if we know the variable names.</p>
-<p>In the second bottom section of the toml file, you will see the following section:</p>
+<p>Editing the TOML file to include this can be done relatively quickly if we know the variable names. This just requires opening the TOML file in a text editor of your choice.</p>
+<p>In the second bottom section of the TOML file, you will see the following section:</p>
 <pre><code>[sectors.residential_presets]
 type = &#39;presets&#39;
 priority = 0
