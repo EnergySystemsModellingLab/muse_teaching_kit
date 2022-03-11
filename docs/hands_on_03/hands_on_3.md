@@ -17,7 +17,8 @@ In this hands-on we explain how to add constraints to outputs of technologies at
 # Minimum timeslice
 
 In this tutorial we will be amending the same default example (`default.zip`) as in hands-on 2, which you can find in the following zenodo link:
-[https://zenodo.org/record/6026087#.YgPuHS-l1pQ](https://zenodo.org/record/6026087#.YgPuHS-l1pQ)
+[https://zenodo.org/record/6346284#.YisfUS-l1pQ](https://zenodo.org/record/6346284#.YisfUS-l1pQ)
+
 
 Firstly, we will be imposing a minimum service factor for gasCCGT (combined cycle gas turbine) in the power sector. This is the minimum that a technology can output per timeslice.
 
