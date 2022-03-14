@@ -17,6 +17,9 @@ Now we will learn how to add a new region to our example.
 
 # Introduction
 
+Hands-on accompanying video:
+[https://youtu.be/Ybj-zLH1mmg](https://youtu.be/Ybj-zLH1mmg)
+
 The next step is to add a region which we will call `R2`, however, this could equally be called `USA` or `India`. These regions do not have any energy trade. This requires us to undertake a similar process as in the previous hands-on when modifying the input simulation data. However, this time we will also have to change the `settings.toml` file to achieve this.
 
 The process to change the `settings.toml` file is relatively simple. We just have to add our new region to the regions variable, in the 4th line of the `settings.toml` file, like so:

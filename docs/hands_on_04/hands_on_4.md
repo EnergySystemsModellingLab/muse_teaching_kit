@@ -15,6 +15,9 @@ authors:
 
 ## Addition of solar PV
 
+Hands-on accompanying video:
+[https://youtu.be/d_KlS4QL5mw](https://youtu.be/d_KlS4QL5mw)
+
 In this section, we will add solar photovoltaics to the default model. We will be starting from scratch and not continuing with the examples from hands-on 2 and 3. Therefore, to achieve this, we must modify the input files in the default example (default.zip) which can be found in the zenodo link provided below.
 
 [https://zenodo.org/record/6092287#.YgvOEy-l1pQ](https://zenodo.org/record/6092287#.YgvOEy-l1pQ)

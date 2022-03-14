@@ -17,6 +17,9 @@ Now we will learn how to add a new agent to our example.
 
 # Introduction
 
+Hands-on accompanying video:
+[https://youtu.be/dhZfrZ9YtuU](https://youtu.be/dhZfrZ9YtuU)
+
 In this hands-on, we will add a new agent called `A2`. This agent will be slightly different to the other agents in the `default` example, in that it will make investments based upon a mixture of levelised cost of electricity (LCOE) and equivalent annual cost (EAC). Where EAC is the is the annual cost of owning, operating, and maintaining an asset over its entire life. These two objectives will be combined by calculating a weighted sum of the two when comparing potential investment options. We will give the LCOE a relative weight value of 0.5 and the EAC a relative weight value of 0.5.
 
 We will edit the default example to add a new agent, which can be found from the following zenodo link:

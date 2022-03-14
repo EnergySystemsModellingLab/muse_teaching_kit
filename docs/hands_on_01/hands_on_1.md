@@ -15,6 +15,9 @@ If at any point you get stuck with these hands-on exercises, feel free to post a
 
 [https://groups.google.com/g/muse-model](https://groups.google.com/g/muse-model)
 
+For an in-depth look at the MUSE documentation have a look here:
+[http://muse-docs.readthedocs.io](http://muse-docs.readthedocs.io)
+
 ## Learning objectives
 
 -   Install MUSE
@@ -22,6 +25,11 @@ If at any point you get stuck with these hands-on exercises, feel free to post a
 -   Visualise the results of the example
 
 # Exercise content
+
+In all of the hands-on, there is an accompanying video linked at the start of the lectuer. Here we show you how to do the hands-on. This should make the process simpler to follow.
+
+Hands-on accompanying video:
+[https://youtu.be/Gppj1Gl-ajA](https://youtu.be/Gppj1Gl-ajA)
 
 ### For Windows users only
 
@@ -33,21 +41,19 @@ Linux users may need to install a C compiler, whether GNU gcc or Clang, as well 
 
 If you have MacOS or Linux you can skip this section and head to the next section below here.
 
-1. Install Visual Studio from the following link: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)
+1. Install Visual Studio from the following link: [https://visualstudio.microsoft.com/vs/older-downloads/](https://visualstudio.microsoft.com/vs/older-downloads/). Please select the 2019 version. Click on download. 
 
-2. Select your preferred edition. Although, the "Community" version is free and contains what is required.
+2. Select the "Visual Studio Community" version. Click on "Download" and save the executable vs_Commmunity.exe.
 
-3. Install Visual Studio by selecting the default options.
+3. Install Visual Studio by selecting the default options. You may be asked to reboot your computer to complete the installation.
 
-4.   Download the Microsoft Visual C++ Build Tools from the following link by downloading Visual Studio 2019: [https://visualstudio.microsoft.com/downloads/](https://visualstudio.microsoft.com/downloads/)   
+4.   Download the Microsoft Visual C++ Build Tools from the following link: [https://visualstudio.microsoft.com/vs/older-downloads/](https://visualstudio.microsoft.com/vs/older-downloads/). 
 
-5. Select your preferred edition. The "Community" is free and contains what is required.
+5.  Please select the "Build Tools for Visual Studio 2019 (version 16.9)". Click on download. Save the vs_BuildTools.exe.
 
 6.   Run the installer
 
-7.   Select: Workloads → Desktop development with C++.
-
-8. Install options: select only the “Windows 10 SDK” (assuming the computer is Windows 10)]. This will come up on the right-hand side of the screen.
+7. Install options: select only the “Windows 10 SDK” (assuming the computer is Windows 10)]. This will come up on the right-hand side of the screen.
 
 The installation screen should look similar to the following:
 
@@ -56,14 +62,20 @@ The installation screen should look similar to the following:
 **Figure 1.1:** Visual Studio Installer window
 
 
-For further information, see this link: [https://www.scivision.dev/python-windows-visual-c-14-required](https://www.scivision.dev/python-windows-visual-c-14-required)
-
-
 ## Installing MUSE
 
 MUSE is developed using python, an open-source programming language, which means that there are two steps to the installation process. First, python should be installed. Then so should MUSE.
 
 The simplest method to install python is by downloading the [Anaconda distribution](https://www.anaconda.com/products/individual). Make sure to choose the appropriate operating system (e.g. windows), python version 3.9, and the 64 bit installer. Once this has been done follow the steps for the anaconda installer, as prompted.
+
+Open the Anaconda prompt for Windows machines or terminal if on MacOS or Linux and create a new environment hosting python 3.8.
+
+Activate the new environment.
+
+```
+conda create --name muse python=3.8
+activate muse
+```
 
 After python is installed we can install MUSE. MUSE can be installed via the Anaconda Prompt or CMD.exe (or any terminal on Mac and Linux). This is a command-line interface to python and the python eco-system. In the anaconda prompt, run:
 
@@ -110,16 +122,10 @@ We will place ours on the desktop for simplicity, but feel free to make a folder
 To run MUSE, we must open the anaconda prompt for Windows machines or terminal if on MacOS or Linux. Then we must navigate to the directory using the prompt or terminal to find the MUSE examples. Ours is in Desktop, so we will run the following command:
 
 ```
-cd ~/Desktop/StarMuse/run/example/default/
+python -m muse -model --default
 ```
 
-But yours could be in another location, so fill in the {MUSE_download_location} with your path (This could be `/Users/{my_name}/Documents` for instance):
-
-```
-cd {MUSE_download_location}/StarMuse/run/example/default/
-```
-
-Once we have navigated to the directory containing the example settings (settings.toml) we can run the simulation using the following command in the anaconda prompt or terminal:
+Alternatively, once we have navigated to the directory containing the example settings (settings.toml) we can run the simulation using the following command in the anaconda prompt or terminal:
 
 ```
 python -m muse settings.toml
@@ -171,43 +177,17 @@ cd {MUSE_download_location}/StarMuse/run/example/default/
 
 Go into the folder called `/Results/` and right click on the file called `MCACapacity.csv` and open it with Microsoft Excel. Once you've opened the file with Excel, we can begin the data visualisation process.
 
-First, select the PivotChart button under the insert menu. You should then see a box open up such as that shown in Figure 1.3, below:
+First, select the PivotChart button under the insert menu. Ensure that the "Select a table or range" highlights all of the data, and the "Choose where you want the PivotChart to be placed" is selected to "Existing worksheet" like in the figure above. Then within the "Table/Range" box, click the cell where you would like the figure to be placed. Click "OK" when finished.
+
+You can choose to filter with "sector", add "technology" to columns, "year" to rows, and display "capacity" as sum.
+
+You can then display a barchart like the one in Figure 1.3, below:
 
 ![](assets/Figure_1.3.png){width=50%}
 
 **Figure 1.3:** Insert -> Create PivotChart
 
-Ensure that the "Select a table or range" highlights all of the data, and the "Choose where you want the PivotChart to be placed" is selected to "Existing worksheet" like in the figure above. Then within the "Table/Range" box, click the cell where you would like the figure to be placed. Click "OK" when finished.
 
-You should then see the boxes appear as shown below in Figure 1.4 in Excel:
-
-![](assets/Figure_1.4.png){width=100%}
-
-**Figure 1.4:** Inserted PivotChart
-
-Next we want to view how the capacity changes per technology over the modelled time period for the power sector.
-
-To do this, we must drag the relevant Fields from the PivotTable to the `Filters`, `Columns`, `Rows` and `Values` boxes.
-
-First, we will drag the `capacity` field to the `Values` boxes. These are the values that we want to plot. Then we will drag the `year` field to the `Axis (Categories)` box. This will start to populate a table and a graph. Finally, we want to filter for the power sector. To do that we will drag the `sector` field to the `Filters` box. 
-
-We should then end up with the chart, table and PivotTable fields shown in Figure 1.5.
-
-![](assets/Figure_1.5.png){width=80%}
-
-**Figure 1.5:** Default visualisation example. 
-
-However, this is displaying all sectors currently, so to filter for solely the residential sector, we must click the dropdown arrow next to the "sector, (All)" cells.
-
-This can be shown in Figure 1.6, below:
-
-![](assets/Figure_1.6.png){width=60%}
-
-**Figure 1.6:** Residential sector visualisation for default example. 
-
-We have unchecked all sectors apart from the residential sector to generate the results shown in Figure 1.6.
-
-We can see that gas boilers are the main technology in 2020, but this reduces to zero by 2040. Heatpumps take over between 2020 and 2050, increasing significantly as demand increases.
 
 ## Summary
 

@@ -16,6 +16,9 @@ This hands-on will allow users to define their own service demand for an exogeno
 
 # Adding an exogenous service demand
 
+Hands-on accompanying video:
+[https://youtu.be/btcWsSK5pnw](https://youtu.be/btcWsSK5pnw)
+
 As a quick example, in the residential sector a service demand could be cooking. Houses require energy to cook food and a technology to service this demand, such as an electric stove. 
 
 We will start by looking at the `default` example. This can be found in your MUSE download at `/src/muse/data/example/default/example`, or you can download it at the following link:

@@ -20,6 +20,9 @@ To accommodate such scenarios, MUSE enables us to choose a regression function t
 
 # Introduction
 
+Hands-on accompanying video:
+[https://youtu.be/_KMHRMd2QoM](https://youtu.be/_KMHRMd2QoM)
+
 For this work, we will use the default example, as before, from the MUSE repository.
 
 The full scenario files for the default example can be found at the zenodo link below.

@@ -16,6 +16,9 @@ In this hands-on we explain how to add constraints to outputs of technologies at
 
 # Minimum timeslice
 
+Hands-on accompanying video:
+[https://youtu.be/cC00jjSQBuQ](https://youtu.be/cC00jjSQBuQ)
+
 In this tutorial we will be amending the same default example (`default.zip`) as in hands-on 2, which you can find in the following zenodo link:
 [https://zenodo.org/record/6346284#.YisfUS-l1pQ](https://zenodo.org/record/6346284#.YisfUS-l1pQ)
 
