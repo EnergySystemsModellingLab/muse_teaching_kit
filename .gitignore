@@ -1,4 +1,6 @@
 tmp.bib
-docs/.DS_Store
-docs/*/.DS_Store
 
+.DS_Store
+
+_build/
+_deploy/
