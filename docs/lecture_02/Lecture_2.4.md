@@ -20,7 +20,7 @@ In this mini-lecture we will explore the key components which make up MUSE. Thes
 
 The energy service demand is a user input which defines the demand that an end-use sector has. An example of this is the service demand commodity of heat or cooling that the residential sector requires. End-use, in this case, refers to the energy which is utilised at the very final stage, after both extraction and conversion.
 
-The estimate of the energy service demand is the first step. This estimate can be an exogenous input derived from the user, or correlations of GDP and population which reflect the socio-economic development of a region or country.
+The estimate of the energy service demand is the first step. This estimate can be an exogenous input derived from the user, or correlations of GDP and population which reflect the socioeconomic development of a region or country.
 
 ## Technologies
 
@@ -53,7 +53,7 @@ Each of the technologies, which consume a commodity, also output a different com
 
 ## Agents
 
-Agents represent the investment decision makers in an energy system, for example consumers or companies. They invest in technologies that meet service demands, like heating, or produce other needed energy commodities, like electricity. These agents can be heterogenous, meaning that their investment priorities have the ability to differ.
+Agents represent the investment decision makers in an energy system, for example consumers or companies. They invest in technologies that meet service demands, like heating, or produce other needed energy commodities, like electricity. These agents can be heterogeneous, meaning that their investment priorities have the ability to differ.
 
 As an example, a generation company could compare potential power generators based on their levelised cost of electricity, their net present value, by minimising the total capital cost, a mixture of these and/or any user-defined approach. This approach more closely matches the behaviour of real-life agents in the energy market, where companies, or people, have different priorities and constraints.
 
