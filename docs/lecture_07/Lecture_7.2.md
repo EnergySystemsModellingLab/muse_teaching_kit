@@ -1,38 +1,37 @@
 ---
-title: Mini-Lecture 7.2 -- How to relate agent representations to the real world
+title: Mini-Lecture 7.2 - Technologies by timeslice
 keywords:
-- Agent-based modelling
-- Characterisation
+- Energy technologies
+- Energy modelling
+- Timeslices
 authors:
 -   Alexander J. M. Kell
 ---
 
-In this mini-lecture we will introduce some methods to translate socioeconomic data into MUSE with a quantitative approach.
+In this mini-lecture we describe how different technologies can have different characteristics by timeslices.
 
 # Learning objectives
 
-- Discuss surveys and socioeconomic data and how these can relate to MUSE
-- Discover ways that surveys can be used in quantitative modelling
+- Understand the different characteristics of technologies by timeslice
+- Understand how to characterise technologies by timeslice
 
-# Qualitative representation in agent-based models
+# Introduction
 
-Through the use of qualitative data, such as using qualitative surveys, it is possible to gain greater insight into the different characteristics of consumers or investors. One example of how this can be done was by Moya et al. (2020). In this paper the authors explore fuel-switching investment in the long-term energy transitions of India's industry sector. They inform the modelled agents through a questionnaire that was carried out to inform MUSE.
+In the previous lecture we discovered the importance of timeslices. In this mini-lecture we will learn about how different technologies have different characteristics when it comes to timeslices, and how this can be modelled within MUSE. 
 
-Some of the types of questions asked in the questionnaire to industrial companies are listed below:
 
-- Geographical location
-- Financial details
-- Investment plans
-- Type of fuels used
-- Willingness to switch fuels
+# Technologies by timeslices
 
-Once these data have been collected, they can be used to find similar groups of investors and to start characterising the agents. For instance, if from the data it is clear that geographical location is an important consideration, the decision could be made to group companies by geographical region and form an agent on this basis. If the more important consideration is the investment plans, then a group can be made there. 
+Different technologies and supply sectors have different characteristics when it comes to timeslices. For instance, solar photovoltaics do not produce any energy when it is dark (for instance, at night) and produce less in the winter. Wind, on the other hand, has a completely different profile and is largely dependent on geography. Therefore, it would make sense to provide a maximum output of the technologies at different times. For instance, it would be useful if the model limited solar output at night time in the form of a maximum utilization factor. Where utilization factor is the ratio of average amount of energy output to total possible output of an energy technology if it were to run 100% of time.
 
-This approach is a more than efficient method of better understanding the characteristics of agents of a system, and it can help to inform a better modelling process. The work by Moya et al. ([@Moya2020]) finds that the results represent the unique heterogeneity of fuel-switching industrial investors with distinct investment goals and limited foresight on costs. In other words, the survey results have an impact on the outcome of the energy system over the long-term.
+However, it can be very difficult to turn off some technologies, such as a nuclear power plant. Nuclear power plants are expensive to turn on and can be unsafe if constantly varying their power. Also, their marginal cost, or the cost to produce 1MWh of electricity excluding capital costs, is usually much lower than other power plants such as gas or coal plants. It, therefore, makes sense that we place a minimum service factor, or minimum output allowed, on nuclear, to ensure their output does not fall below a certain level.
 
+Other technologies, however, such as gas power plants, can be turned on and off readily; therefore we can simply leave an average utilization factor for all the timeslices. 
+
+All of these features exist in MUSE, and during this lecture's hands-on, we will show you how to do this within MUSE.
 
 # Summary
 
-In this mini-lecture we explored how surveys can be used to inform agents within MUSE. We also discovered how these results can affect the modelling outcomes of energy systems. 
+In this mini-lecture we have explored the importance of characterising technologies not just by their economic data, but also by their physical characteristics. We discovered that different technologies have different outputs at different times, such as solar and wind. We also found out that nuclear power, for instance, must output a certain level to remain within a safety range.
 
- 
+

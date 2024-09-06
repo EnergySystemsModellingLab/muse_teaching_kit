@@ -1,38 +1,39 @@
 ---
-title: Mini-Lecture 7.3 -- Agents by sector
+title: Mini-Lecture 7.3 - Different energy demands by timeslice
 keywords:
-- Sectors
-- Agent differentiation
-- Key agent parameters
+- Energy demands
+- Timeslice
+- Energy modelling
 authors:
 -   Alexander J. M. Kell
 ---
 
-In this mini-lecture we will cover how agents and their characteristics can differ between sectors. We will also investigate the similarities between agents and sectors and consider the key parameters that make up agents.
+This mini-lecture will continue exploring the importance of timeslices in energy modelling; however, it will have a particular focus on energy demands, and how these can change by timeslice and over the years.
+
+In the previous lecture we explored energy demands and timeslices. In this lecture we will have a brief recap of this, and explore how energy demand can be represented within MUSE.
 
 # Learning objectives
 
-- Understand the differences between agents of different sectors
-- Understand the key parameters that differentiate agents
+-   Understand how energy demand can change by timeslice
+-   Learn how energy demand is represented in MUSE
 
+# Energy demand
 
-# Agent parameters
+Energy demand can come in various forms. For instance, the demand we model can be for heating or cooling in the residential sector. It is the case that these demands have different characteristics. For instance, they may have different magnitudes and different technologies which serve these demands as well as they may be able to run at different times.
 
-Different sectors may mean having agents with different characteristics. For instance, within the residential sector socioeconomic data can be used to characterise the agents. We could use wealth to characterise our agents in different geographic locations. For example we could place a constraint on the `Budget` parameter for residential users, and split these agents into different proportions. For example, we could prohibit 70% of residential users from spending more than a certain amount on heating which could affect their technology choice. The other 30% of users would form an agent that was not constricted in this way, and thus their choices may end up being differet in the model. 
+Within MUSE, similarly to the supply sectors, we can model this time varying capability with timeslices. For instance, if we have 4 representative days which refer to the different seasons, we can model the high heating demand in winter and cooling demand in summer. On top of this we can vary these demands by time of day.
 
-Another way we could classify residential agents is through the `Maturity` parameter. This would limit investments in novel technologies until the specified technology had a certain market share. This could be informed by the innovation adoption lifecycle, as shown by Figure 7.3.1. Where, for example, innovators make up 2.5% of the population but have no `Maturity` constraints. As we work our way up the curve from innovators to laggards, this `Maturity` constraint increases.
+To do this, we must edit the demand in the `preset/Residential2050Consumption.csv` sector. An example of which is shown in Figure 7.3.1.
 
-![](assets/Figure_7.3.1.png){width=100%}
+![](assets/Figure_7.1.1.png){width=100%}
 
-**Figure 7.3.1:** Innovation adoption lifecycle
+**Figure 7.3.1:** Example input for the preset sector.
 
-# Sectors
+In this small example we see that there is only a demand for `heat` in the residential sector. However, this demand changes per timeslice (which are listed in the leftmost column). For instance, there is low demand for heat in timeslice 0 and a high demand for heat in timeslice 4. These timeslices refer to a single representative day, and therefore timeslice 4 has the highest demand for heat as it is in the late-evening, when people generally come home from work and turn on their radiators.
 
-In this mini-lecture we have focused on the residential sector and seen the way we can characterise agents. Although these characteristics may not directly translate to the power sector, in some cases investors in the power sector can have similar characteristics. For instance, some companies are larger, and are more willing to invest their capital, reflecting a larger `Budget` parameter. Others may be less willing to invest in new technologies. The differing objectives of agents will often be the reason behind differences with other agents. For instance, some agents may only want to minimise their costs, whereas others may want to reduce their capital expenditure. It is easy to change these characteristics within MUSE to create diverse energy scenarios.
-
-
+In your models you can use datasets to disaggregate the demand into different types, or you can aggregate demand to include all gas or electricity utilised in the residential sector. This is largely dependent on the data available and the complexity of the model you would like.
 
 # Summary
 
-In this mini-lecture we covered the differences between agents and the different parameters that can be used to inform these differences. We saw how the `Maturity` constraint maps to the innovation adoption lifecycle and how the `Budget` parameter can be informed by socioeconomic characteristics. These parameters lead to a large amount of possible scenarios that can be tested and run.
- 
+In this mini-lecture, we explored the importance of timeslicing for modelling demand in energy models. We also covered how this can be done within MUSE using the preset sector.
+

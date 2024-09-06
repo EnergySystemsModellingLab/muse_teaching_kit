@@ -1,50 +1,69 @@
 ---
-title: Mini-Lecture 8.4 -- Oral presentations
+title: "Mini-Lecture 8.4 -- Demand examples and units"
 keywords:
-- 
+-   Infrastructure performance
 authors:
-- Alexander J. M. Kell
+-   Alexander J. M. Kell
 ---
 
-In this mini-lecture we will focus on effective oral communication of research. 
+# Short description
+
+Mini-lecture 8.4 explains how we can use timeslices to approximate the real-world demand profile. We will look into the difference between power and energy. Finally, we will learn how to convert units to ensure we are consistent within MUSE. 
 
 # Learning objectives
 
-- Implement tips for improved oral presentations to influence policy development
+- Understand how timeslices can be used in the context of demand
+- Understand the difference between power and energy
+- Know the units to use within MUSE and how to convert these
 
-# Key features of presentations
+# Demand profile
 
-The key features of presentations are:
+Figure 8.1.5 shown an example demand profile for electricity that could be used in MUSE. In this demand profile there are 96 bars: one for each of the timeslices used in MUSE. These timeslices are split into 16 different sections – seasonal and into day and night. This is because there are four different seasons, which are split into day and night (twice). The demand profile is used to represent the proportion of demand occurring in each timeslice. 
 
-- Entry point: capture the audience's attention
-- Aim: focus on what you want to achieve with the presentation
-- Structure: ensure consistency across the slides and tell a coherent story from beginning to end
-- Audience: plan for your audience and their background
-- Impact: identify key take-home points that the audience should remember
+![](assets/Figure_8.1.5.png){width=100%}
 
-Firstly, there is the entry point of the presentation. It is important to focus the audience's attention. This ensures that they are interested in the presentation and understand what will be presented. This could take the form of presenting a question that you know will interest your audience, and telling them that by the end of the presentation they will know the answer.
+**Figure 8.4.1:** Example demand profile for MUSE
 
-Throughout the presentation it is important to have the aim in mind. For example, you could be trying to increase engagement with a new department. For example, if you wish to demonstrate the advantages and disadvantages of building a new coal-power plant in a particular country, the figures and data you present should be focused on this particular situation, rather than providing information about scenarios that are not affected by a new coal power plant.
+The chart shows us that electricity demand, in this example, is highest during the day in winter, while it is lowest during the night in spring. However, it is important to note that this is a simplification: in reality demand varies in the season and with each hour of the day. This simplification means that we model one representative day for each season, and we assume equal demand within days and nights of those seasons. 
 
-The structure of the presentation can be tailored to your aim. It is important to have a clear beginning, middle and end. There should be consistency across the presentation to maximise the audience's understanding. 
+Whilst this is a simplification, it allows us to consider the variation in demand across seasons and days without having an incredibly complex model structure. This reduces the amount of time required to run a full model relative to having timeslices for each hour and day of the year, as well as reducing the data input requirements.
 
-To further ensure that the audience understand and engage with the presentation, it should be designed with the audience's backgrounds and motivations in mind (see more below). 
+## Units
 
-Finally, it is important to consider the impact of the presentation and identify key points or policy recommendations that you would like the audience to remember. 
+We must ensure that during our data input process we are consistent with our units. Usually we will use the petajoules unit as this is the unit for energy for different sectors. If you were just modelling the power sector, you could use megawatt hours. 
 
-## Audiences
+## Power vs. Energy
 
-It is important to understand the types of audience that you will be presenting to. For instance, they may be generalists or non-specialists. Or they could be scientists from different disciplines, or even scientists from the same discipline, but focusing on different topics.
+When using energy modelling tools it is important to remember the difference between power and energy. Sometimes these terms are used interchangeably. However, there is an important difference between the two:
 
-The presentation should be adapted depending on your audience in order to increase the audience's understanding and engagement. Technical content, for example, can be explained in a simple and understandable manner if the audience contains non-specialists. If you think that your audience, on the other hand, will have technical expertise, you can spend less time on explaining technical content. The amount of technical detail you provide may also change: if you are speaking to a policymaker they may be more interested in the results and recommendations than the modelling process.
+- Energy is the total amount of work done or the total capacity for doing work
+- Power is the rate at which this energy is supplied or used. 
 
-The purpose of the presentation should be optimised throughout. For example, if you are aiming to create a partnership with a new department, the presentation should have a focus on the implications of your research for that department and the benefits of the proposed partnership for the audience.
+Therefore, energy and power have different units. For example, energy is often measured in Joules, while power is often measured in Joules per Second (or Watts). 
 
+For example, providing the weight stays the same, lifting a weight requires the exact same amount of energy no matter how quickly we lift it. However, if we lift the weight more quickly, the power has increased. We used the same amount of energy, but over a shorter amount of time. 
+
+## Units for demand
+
+It is important that we convert our data from different sources to petajoules (PJ) when we include it in MUSE. 
+
+Here are some example conversion factors:
+
+- 1 Petajoule (PJ) = 1000 Terajoules (TJ)
+- 1 Petajoule (PJ) = 1,000,000 Gigajoules (GJ)
+- 3.6 Petajoules (PJ) = 1 Terawatt hour (TWh)
+- 0.0036 Petajoules (PJ) = 1 Gigawatt hour (GWh)
+
+We must ensure that we are consistent with the units we use within MUSE.
 
 # Summary
 
-In this mini-lecture we introduced some key tips for oral presentations. We explored why understanding your audience of importance, especially when introducing technical content. We also learnt that we can be strategic in our presentation planning and should optimise for the aims for which we want to achieve.
+In this lecture we have learnt the difference between power and energy. We have also learnt how to use timeslicing to speed up our model and reduce complexity. Finally, we learnt that we must use consistent units.
 
-This is the final lecture of the Agent-based energy systems modelling: MUSE course. After this lecture you should be in a good position to develop your own models through MUSE, which can then be used to assess the impact of different policy options.
 
-Thank you for engaging with this course, and we hope you have enjoyed the lectures, found them valuable, and find practical uses for MUSE in your research.
+
+
+
+
+
+
