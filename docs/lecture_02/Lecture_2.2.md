@@ -11,7 +11,7 @@ authors:
 
 # Short description
 
-In this mini-lecture we will give you an overview of how MUSE works. This will include the different sectors that make up MUSE, including primary supply sectors, conversion sectors and demand sectors. We will discover how these sectors are interlinked through a market clearing algorithm, which ultimately decides the prices of energy commodities and the final energy system, according to MUSE. 
+In this mini-lecture we will give you an overview of how MUSE works. This will include the different sectors that make up MUSE, including primary supply sectors, conversion sectors and demand sectors. We will discover how these sectors are interlinked through a market clearing algorithm, which ultimately decides the prices of energy commodities and the final energy system, according to MUSE.
 
 # Learning objectives
 
@@ -55,6 +55,4 @@ The MCA then sends these demands to the sectors that supply these energy commodi
 
 # Summary
 
-This mini-lecture provided key information to understand the underlying mechanics of MUSE. We learnt how MUSE is made up of different sectors, which are linked by a market clearing algorithm to simulate how prices are calculated. This mechanism closely models the real-life global electricity market. 
-
-
+This mini-lecture provided key information to understand the underlying mechanics of MUSE. We learnt how MUSE is made up of different sectors, which are linked by a market clearing algorithm to simulate how prices are calculated. This mechanism closely models the real-life global electricity market.

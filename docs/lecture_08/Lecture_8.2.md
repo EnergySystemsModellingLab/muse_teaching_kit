@@ -7,7 +7,7 @@ authors:
 -   Alexander J. M. Kell
 ---
 
-Mini-lecture 8.2 outlines the general requirements for defining energy demands and how modelling different scenarios can help assess potential future energy demand. 
+Mini-lecture 8.2 outlines the general requirements for defining energy demands and how modelling different scenarios can help assess potential future energy demand.
 
 # Learning objectives
 
@@ -37,21 +37,17 @@ As has just been seen, when we want to define our own energy demand, we need to 
 
 - The energy carrier for which the demand arises for. In this case it is electricity.
 - The sector the demand arises from. In this example it is the residential sector, or the urban residential sector if you would like to be more specific.
-- The average variability of the demand over the year. In this example we can look at daily and yearly electricity demand profiles for a residential urban area. This will tell us how the demand varies on a daily and seasonal scale. 
+- The average variability of the demand over the year. In this example we can look at daily and yearly electricity demand profiles for a residential urban area. This will tell us how the demand varies on a daily and seasonal scale.
 - Current and predicted future demand. For this, we can look at an energy balance (covered in more detail later) to get data for the current and historical residential electricity demand. We can use these data as a baseline, and we could combine it with an estimate of population growth to create a future projection for the demand.
 
 ## Scenario analysis
 
-Within energy systems modelling, we must explore different possibilities of what could happen in the future. This is known as scenario analysis. We do this as the future is uncertain, particularly over the long-term horizon. We therefore might want to consider multiple scenarios to assess how demand could vary in the future. 
+Within energy systems modelling, we must explore different possibilities of what could happen in the future. This is known as scenario analysis. We do this as the future is uncertain, particularly over the long-term horizon. We therefore might want to consider multiple scenarios to assess how demand could vary in the future.
 
-For example, for different scenarios, key predictors of energy demand, such as population growth, economic development and energy policy can be varied across the scenarios. This would mean that each scenario has a different energy demand projection. 
+For example, for different scenarios, key predictors of energy demand, such as population growth, economic development and energy policy can be varied across the scenarios. This would mean that each scenario has a different energy demand projection.
 
 Since we can not be certain of the scenario which will be the best predictor of the future, it is useful to model several scenarios and consider the implications of each of them to give useful insights for policymaking. This allows policy makers to assess which of the different policies and mixes suit their needs based upon likelihoods and risk tolerances.
 
 # Summary
 
 Mini-lecture 8.2 provided an overview of energy demands, how we can define them and the details which make them up. We also explored how we can perform scenario analysis with energy demands, to understand what could happen in the future.
-
-
-
-

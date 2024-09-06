@@ -29,5 +29,3 @@ The rest of the parameters include the parameters discussed in the previous lect
 # Summary
 
 In this mini-lecture we discovered the main parameters that are used by agents within MUSE. For a full breakdown of the parameters please refer to the MUSE documentation that can be found online.
-
-

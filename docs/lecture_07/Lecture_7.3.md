@@ -14,8 +14,8 @@ In the previous lecture we explored energy demands and timeslices. In this lectu
 
 # Learning objectives
 
--   Understand how energy demand can change by timeslice
--   Learn how energy demand is represented in MUSE
+- Understand how energy demand can change by timeslice
+- Learn how energy demand is represented in MUSE
 
 # Energy demand
 
@@ -36,4 +36,3 @@ In your models you can use datasets to disaggregate the demand into different ty
 # Summary
 
 In this mini-lecture, we explored the importance of timeslicing for modelling demand in energy models. We also covered how this can be done within MUSE using the preset sector.
-

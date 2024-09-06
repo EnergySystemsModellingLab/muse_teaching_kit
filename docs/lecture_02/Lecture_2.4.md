@@ -36,7 +36,7 @@ Each of the technologies are placed in their regions of interest, such as the US
 - Utilisation factor
 - Interest rate
 
-Technologies, and their parameters, are defined in a specific file called the Technodata file. 
+Technologies, and their parameters, are defined in a specific file called the Technodata file.
 
 ## Sectors
 
@@ -65,7 +65,6 @@ For a hypothetical example, the price of electricity is set in a first iteration
 
 This is the principle of the MCA. It finds an equilibrium by iterating through each of the different sectors until an overall equilibrium is reached for each of the commodities. It is possible to run the MCA in a carbon budget mode, as well as an exogenous mode. The carbon budget mode ensures that an endogenous carbon price is calculated to limit the emissions of the energy system to be below a user-defined value. Whereas, the exogenous mode allows the carbon price to be set by the user.
 
-
 # Summary
 
 In this mini-lecture we have explored the different components which make up MUSE. We have explored the:
@@ -79,5 +78,3 @@ In this mini-lecture we have explored the different components which make up MUS
 All of these components interact, for example the agents in a particular sector invest in technologies to meet a certain service demand. Finally, the market clearing algorithm brings these different components together to find an ultimate price on all the different factors of the particular case study.
 
 We will provide more information on agents and their capabilities in lecture 7.
-
-

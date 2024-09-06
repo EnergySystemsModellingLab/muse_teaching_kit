@@ -12,7 +12,7 @@ Mini-lecture 2.3 provides an overview of the benefits of using an agent-based mo
 
 # Learning objectives
 
-- Understand the concept of limited foresight 
+- Understand the concept of limited foresight
 - Understand the concept of imperfect information
 
 # Introduction
@@ -27,9 +27,9 @@ With some models it is necessary to make this assumption of perfect information.
 
 ## Limited foresight
 
-Limited foresight specifies how players within a game understand how the future may evolve. In the real-world, prediction and forecasting are difficult problems to solve, particularly within the uncertainty of energy markets. This become even more challenging when trying to make long-term predictions. 
+Limited foresight specifies how players within a game understand how the future may evolve. In the real-world, prediction and forecasting are difficult problems to solve, particularly within the uncertainty of energy markets. This become even more challenging when trying to make long-term predictions.
 
-Within MUSE long-term predictions must be made by investor agents. For example, if a company wanted to invest in a power plant, they would need to predict the amount of money they can sell their electricity for over the lifetime of the power plant, or in other words the market price for electricity. In some cases power plants operate for 30 years or more and so electricity prices 30 years into the future are required! 
+Within MUSE long-term predictions must be made by investor agents. For example, if a company wanted to invest in a power plant, they would need to predict the amount of money they can sell their electricity for over the lifetime of the power plant, or in other words the market price for electricity. In some cases power plants operate for 30 years or more and so electricity prices 30 years into the future are required!
 
 MUSE makes a simplified assumption about the future prices expected by investors: they know what the price will be in the next five years. However, they assume a flat forward extension of the prices from this period. Or in other words, the energy prices over the entire lifetime of the plant are the same as the known price in the next five years. However, this assumption that the investors make will more than likely not be correct, leading to errors in their predictions, just like in the real world.
 
@@ -43,10 +43,6 @@ This whole process repeats itself at every timestep (t) until the specified numb
 
 **Figure 2.3.1:** MUSE iteration process
 
-
-
 # Summary  
 
 This mini-lecture provided an introduction to the terms limited foresight and imperfect information. We learnt how these assumptions have been integrated into the MUSE model and what this means for the modelling process. In the next mini-lecture we will explore the key components that make up MUSE.
-
-

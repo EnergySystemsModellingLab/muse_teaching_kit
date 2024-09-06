@@ -8,7 +8,7 @@ authors:
 -   Alexander J. M. Kell
 ---
 
-This mini-lecture provides an overview of timeslicing in energy systems modelling. 
+This mini-lecture provides an overview of timeslicing in energy systems modelling.
 
 # Learning objectives
 
@@ -17,9 +17,9 @@ This mini-lecture provides an overview of timeslicing in energy systems modellin
 
 # Introduction
 
-With energy systems models we must model how demand is met by supply. However, over the course of a year, or even over the course of 30 years we have large variations in demand and supply. For instance, the weather changes between years, seasons, and days. This all has an effect on the amount of energy that can be supplied by renewable energy sources such as solar and wind. 
+With energy systems models we must model how demand is met by supply. However, over the course of a year, or even over the course of 30 years we have large variations in demand and supply. For instance, the weather changes between years, seasons, and days. This all has an effect on the amount of energy that can be supplied by renewable energy sources such as solar and wind.
 
-It is also true that this variation in demand has a large impact on the demand. In a particularly cold year, or on a particular cold day, energy demand may significantly increase as consumers use more energy for heating. The same may be true during a particularly warm period if people need energy for cooling systems. We therefore need to model this variability. 
+It is also true that this variation in demand has a large impact on the demand. In a particularly cold year, or on a particular cold day, energy demand may significantly increase as consumers use more energy for heating. The same may be true during a particularly warm period if people need energy for cooling systems. We therefore need to model this variability.
 
 ## Representative days
 
@@ -33,5 +33,4 @@ We do not always have to take into account entire days, to reduce the complexity
 
 # Summary
 
-In this mini-lecture we discovered why long-term energy models consider timeslices and representative days. Through this approach we are able to maintain high accuracy whilst also reducing computation time. 
-
+In this mini-lecture we discovered why long-term energy models consider timeslices and representative days. Through this approach we are able to maintain high accuracy whilst also reducing computation time.

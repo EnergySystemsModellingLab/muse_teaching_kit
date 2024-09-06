@@ -6,7 +6,7 @@ authors:
 - Alexander J. M. Kell
 ---
 
-In this mini-lecture we will focus on effective oral communication of research. 
+In this mini-lecture we will focus on effective oral communication of research.
 
 # Learning objectives
 
@@ -26,11 +26,11 @@ Firstly, there is the entry point of the presentation. It is important to focus 
 
 Throughout the presentation it is important to have the aim in mind. For example, you could be trying to increase engagement with a new department. For example, if you wish to demonstrate the advantages and disadvantages of building a new coal-power plant in a particular country, the figures and data you present should be focused on this particular situation, rather than providing information about scenarios that are not affected by a new coal power plant.
 
-The structure of the presentation can be tailored to your aim. It is important to have a clear beginning, middle and end. There should be consistency across the presentation to maximise the audience's understanding. 
+The structure of the presentation can be tailored to your aim. It is important to have a clear beginning, middle and end. There should be consistency across the presentation to maximise the audience's understanding.
 
-To further ensure that the audience understand and engage with the presentation, it should be designed with the audience's backgrounds and motivations in mind (see more below). 
+To further ensure that the audience understand and engage with the presentation, it should be designed with the audience's backgrounds and motivations in mind (see more below).
 
-Finally, it is important to consider the impact of the presentation and identify key points or policy recommendations that you would like the audience to remember. 
+Finally, it is important to consider the impact of the presentation and identify key points or policy recommendations that you would like the audience to remember.
 
 ## Audiences
 
@@ -39,7 +39,6 @@ It is important to understand the types of audience that you will be presenting 
 The presentation should be adapted depending on your audience in order to increase the audience's understanding and engagement. Technical content, for example, can be explained in a simple and understandable manner if the audience contains non-specialists. If you think that your audience, on the other hand, will have technical expertise, you can spend less time on explaining technical content. The amount of technical detail you provide may also change: if you are speaking to a policymaker they may be more interested in the results and recommendations than the modelling process.
 
 The purpose of the presentation should be optimised throughout. For example, if you are aiming to create a partnership with a new department, the presentation should have a focus on the implications of your research for that department and the benefits of the proposed partnership for the audience.
-
 
 # Summary
 

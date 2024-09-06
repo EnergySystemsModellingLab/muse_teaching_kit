@@ -10,34 +10,34 @@ authors:
 
 ## Short description
 
-Energy systems models can take many different forms, as they can be designed for global long-term energy markets, short-term energy dispatch markets or local markets. In this mini-lecture we will explore the different types of models that fit into different classifications. 
+Energy systems models can take many different forms, as they can be designed for global long-term energy markets, short-term energy dispatch markets or local markets. In this mini-lecture we will explore the different types of models that fit into different classifications.
 
 ## Learning objectives
 
--   Classify different types of energy systems models
+- Classify different types of energy systems models
 
--   Identify the pros and cons of selected energy systems models
+- Identify the pros and cons of selected energy systems models
 
 # Lecture content
 
 ## Introduction: Typical classifications
 
-Energy systems models can be broken down into four different categories in a typical classification. These include the time scales in which they model, the geographies in which they model, the analytical approach and the methodology [@Pfenninger2014]. The different classifications are shown below: 
+Energy systems models can be broken down into four different categories in a typical classification. These include the time scales in which they model, the geographies in which they model, the analytical approach and the methodology [@Pfenninger2014]. The different classifications are shown below:
 
 - Time Scale
-    - Short
-    - Medium
-    - Long
+  - Short
+  - Medium
+  - Long
 - Geography
-    - Global
-    - National 
-    - Sub-national
+  - Global
+  - National
+  - Sub-national
 - Analytical Approach
-    - Top-down
-    - Bottom-up
+  - Top-down
+  - Bottom-up
 - Methodology
-    - Optimisation
-    - Simulation
+  - Optimisation
+  - Simulation
 
 ## Time
 
@@ -59,10 +59,6 @@ Within energy systems models there exist at least two broad methodologies which 
 
 Simulations, on the other hand, are computer programs which describe system evolutions. These represent the behaviour of the main players in the energy system. This does not necessarily lead to a minimisation or maximisation of an objective, and it can take into account different uncertainties of what may occur as opposed to what should occur.
 
-
-
 ## Summary
 
 This mini-lecture has covered the different classifications that energy models can fit into. We have seen that a range of different models are required to cover the whole requirements of different energy systems, with models suited for different needs.
-
-

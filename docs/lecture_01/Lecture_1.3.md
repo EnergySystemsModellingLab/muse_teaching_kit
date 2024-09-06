@@ -9,20 +9,19 @@ authors:
 
 ## Short description
 
-In this mini-lecture we will explore the benefits of energy planning and why energy modelling is needed. We will discover why different countries require different solutions and how a continuous, iterative process is required to perform analyses. 
+In this mini-lecture we will explore the benefits of energy planning and why energy modelling is needed. We will discover why different countries require different solutions and how a continuous, iterative process is required to perform analyses.
 
 ## Learning objectives
 
--   Learn the principles of energy planning
+- Learn the principles of energy planning
 
--   Learn why energy modelling is needed
-
+- Learn why energy modelling is needed
 
 # Lecture content
 
 ## Introduction
 
-Energy has become a fundamental commodity over the last 100 years. It has allowed society to make significant progress in some of the Sustainable Development Goals. For instance, it has brought millions out of poverty across the world. However, it has required the development of other development goals such as SDG13, which focuses on climate action. In addition, economic and sustainable development have grown in an inequitable manner, with certain regions prospering more than others. 
+Energy has become a fundamental commodity over the last 100 years. It has allowed society to make significant progress in some of the Sustainable Development Goals. For instance, it has brought millions out of poverty across the world. However, it has required the development of other development goals such as SDG13, which focuses on climate action. In addition, economic and sustainable development have grown in an inequitable manner, with certain regions prospering more than others.
 
 This mini-lecture will introduce the concepts of energy planning in the context of the Sustainable Development Goals. In particular, we will explore how energy planning can be used to tackle some of the most difficult issues humanity faces.  
 
@@ -30,26 +29,25 @@ This mini-lecture will introduce the concepts of energy planning in the context 
 
 The traditional methods of supplying energy come with some major pitfalls. One of the most significant issues is the emissions of carbon emissions, leading to climate change. However, we require energy to sustain the current global population; no energy would lead to mass starvation and population decline.
 
-Thus, a fundamental transformation of the energy system is required. Energy systems, however, are highly complex and capital intensive. In addition, these systems are constantly interacting with many other critical systems, such as the environment, natural resource systems and infrastructure. Thus, comprehensive, systematic analyses are required to avoid expensive stop-gap measures and long-term "lock-in" [@rodriguez2017energy]. 
+Thus, a fundamental transformation of the energy system is required. Energy systems, however, are highly complex and capital intensive. In addition, these systems are constantly interacting with many other critical systems, such as the environment, natural resource systems and infrastructure. Thus, comprehensive, systematic analyses are required to avoid expensive stop-gap measures and long-term "lock-in" [@rodriguez2017energy].
 
 ## Importance of energy planning
 
-An additional complication is that there is no single solution that can be applied to all energy systems. Different geographies have differing needs and resources. For instance, the UK has access to lots of offshore wind, whilst Kenya has access to lots of geothermal energy. The energy demand profiles and challenges of these two countries are also very different. 
+An additional complication is that there is no single solution that can be applied to all energy systems. Different geographies have differing needs and resources. For instance, the UK has access to lots of offshore wind, whilst Kenya has access to lots of geothermal energy. The energy demand profiles and challenges of these two countries are also very different.
 
-In developing countries, access to affordable energy services is important to combat energy poverty. This is especially true for rural areas, but it is becoming increasingly true for large metropolitan areas as urbanisation accelerates. 
+In developing countries, access to affordable energy services is important to combat energy poverty. This is especially true for rural areas, but it is becoming increasingly true for large metropolitan areas as urbanisation accelerates.
 
 In contrast, developed countries, such as those in Europe, North America and Asia, struggle with the replacement of ageing plants and equipment. It is estimated that 40% of existing capacity stock is scheduled for retirement by 2040.
 
 Therefore, investment decisions are required to alleviate these different issues. However, due to the long-term nature of these investments, these private sector dominated energy markets rely on clear and consistent government energy-environment policy to reduce uncertainty.
 
-
 ## What is energy planning?
 
 Energy planning is the act of assessing the ability of a local, national or regional system to provide dependable energy services under constantly changing conditions. For example, variables such as the cost of materials and fuels, investment costs in technologies, demand levels and distribution requirements may all change.
 
-Drawing on the field of operations research, electricity planning applies advanced analytical methods and tools to make better decisions when faced with complex decisions. This process, however, must be done iteratively due to the fast transformations that can take place over a very limited time period. 
+Drawing on the field of operations research, electricity planning applies advanced analytical methods and tools to make better decisions when faced with complex decisions. This process, however, must be done iteratively due to the fast transformations that can take place over a very limited time period.
 
-Energy planning models help discern the most cost-effective way of delivering energy to the final consumer. Of course, the most effective way of providing energy is different in different parts of the world. However, quantitative energy modelling offers a promising tool to make better decisions under uncertain conditions. 
+Energy planning models help discern the most cost-effective way of delivering energy to the final consumer. Of course, the most effective way of providing energy is different in different parts of the world. However, quantitative energy modelling offers a promising tool to make better decisions under uncertain conditions.
 
 There is a requirement in developing countries for energy planning
 due to growing populations and a lack of access to electricity. However, the main barriers to energy models in developing countries are the lack of adequate data and a shortage of skilled human resources to perform the analyses. As a result, investment decisions are often based on ill-informed policy targets and the need for ad-hoc stop-gap measures. These measures, therefore, tend to focus on cheap and quick-to-build technologies. This can result in higher environmental and operating costs. It is often the case that such actions serve the supply shortfalls of already-connected consumers, and so, increasing access to energy is rarely part of the strategy.
@@ -72,4 +70,4 @@ For developing countries, the impact of even minor system improvements often can
 
 ## Summary
 
-In this mini-lecture we have covered the reasons that energy planning is important, how it can help with the Sustainable Development Goals and the various pitfalls that could occur without energy planning. We discovered that with sound energy planning, uncertainty can be reduced and greater stability can be provided to private sector investments. This can lead to sustainable economic growth if done in an optimal manner. 
+In this mini-lecture we have covered the reasons that energy planning is important, how it can help with the Sustainable Development Goals and the various pitfalls that could occur without energy planning. We discovered that with sound energy planning, uncertainty can be reduced and greater stability can be provided to private sector investments. This can lead to sustainable economic growth if done in an optimal manner.

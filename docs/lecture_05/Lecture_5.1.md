@@ -24,4 +24,3 @@ Say for example, we only split the population into rural and urban. We can speci
 # Summary
 
 In this mini-lecture we understood the concept of agents and how they relate to an energy modelling context. We briefly understood how we can translate these concepts into MUSE. Urban populations might have greater energy needs or rural populations may not have access to the same energy sources. Giving the model a bit more detail will allow you to make sure that the model is both more accurate, and that its projections take into account different parts of society. In the hands-on we will learn how to add a new agent.
-

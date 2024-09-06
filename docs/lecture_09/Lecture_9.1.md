@@ -7,7 +7,7 @@ authors:
 - Alexander J. M. Kell
 ---
 
-In this mini-lecture, we will explore the different ways that research can be communicated effectively. 
+In this mini-lecture, we will explore the different ways that research can be communicated effectively.
 
 # Learning objectives
 
@@ -30,11 +30,10 @@ The first of these is to design the figure with the target audience in mind. For
 This section focuses on the commonly made mistakes when presenting figures in research. It can often be the case that figures are too confusing and contain too much data. This can often result in the message of the figure being unclear. It may be the case that by confusing your audience you reduce the impact of your research findings. Therefore, it is advisable to make figures as simple as possible to ensure that they are understandable.
 
 Other common mistakes include:
+
 - The use of inappropriate axis for graphs which can distort results
 - Lack of figure captions, axis titles, labels or legends
-
 
 # Summary
 
 In this mini-lecture we explored the different ways that we can communicate our research for maximum impact and ways to make figures understandable to our target audience.
- 

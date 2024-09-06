@@ -27,7 +27,7 @@ Then there are annual costs, which are split into variable and fixed costs. Ther
 
 **Figure 4.2.1:** Cost types [@Taliotis2018]
 
-In MUSE, these are defined in the `cap_par`, `cap_exp`, `fix_par`, `fix_exp`, `var_par`, and `var_exp` variables where: 
+In MUSE, these are defined in the `cap_par`, `cap_exp`, `fix_par`, `fix_exp`, `var_par`, and `var_exp` variables where:
 
 -- `cap_par` is the capital costs, and `cap_exp` is the exponential component of this. Effectively, the `cap_exp` defines the reduction in cost due to economies of scale as the investment into this technology and its capacity increases. This should be a number between 0 and 1.
 -- `fix_par` is the fixed costs, and `fix_exp` is the exponential component similar to the exponential component in `cap_exp`.
@@ -57,10 +57,6 @@ The interest rate is the parameter which defines the discount rate. For instance
 
 Finally, there are the input and output parameters. For a gas power plant, the input is gas and the end use is electricity. This can be set in the `Fuel` and `EndUse` parameters respectively.
 
-
-
 # Summary
 
  In this mini-lecture we have discovered the main components which make up the Technodata sheet. We discovered the importance of properly defining the costs, lifetime and other characteristics which have a large impact on the final investment decisions.
-
- 

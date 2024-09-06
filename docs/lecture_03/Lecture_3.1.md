@@ -9,7 +9,6 @@ authors:
 
 This mini-lecture introduces the concept of the residential sector
 
-
 # Learning objectives
 
 - Understand the role of the residential sector, its technologies and the main energy and societal challenges
@@ -26,9 +25,9 @@ The total magnitude of energy demand varies by country as a total value, but als
 
 ## Residential sector technologies
 
-Some of the key residential technologies include lamps, cooking stoves, heating and air conditioning systems, as well as other electrical appliances. Some of these technologies can only use one fuel, such as electrical appliances and air conditioning which rely on electricity. 
+Some of the key residential technologies include lamps, cooking stoves, heating and air conditioning systems, as well as other electrical appliances. Some of these technologies can only use one fuel, such as electrical appliances and air conditioning which rely on electricity.
 
-However, in other cases multiple different fuels can be used for the same purpose. For example, heating. Heating can be met by burning biomass, natural gas, oil or electricity, for instance. These technologies have differing performance parameters. For example, electric stoves are usually much more efficient than biomass stoves. Different technological options also have different impacts on the environment and on human health. For example, the emissions from biomass can have detrimental impacts on human health, whereas electric stoves do not have emissions in the home. 
+However, in other cases multiple different fuels can be used for the same purpose. For example, heating. Heating can be met by burning biomass, natural gas, oil or electricity, for instance. These technologies have differing performance parameters. For example, electric stoves are usually much more efficient than biomass stoves. Different technological options also have different impacts on the environment and on human health. For example, the emissions from biomass can have detrimental impacts on human health, whereas electric stoves do not have emissions in the home.
 
 It is possible to model these different options in MUSE, which allows us to gain insights into their environmental and cost implications. Modelling can allow us to model the entire system as a whole, understand the trade-offs between certain technologies and make decisions on which policies to implement.
 
@@ -36,10 +35,6 @@ It is possible to model these different options in MUSE, which allows us to gain
 
 Within MUSE we can model different technology options. For instance, if we are to model an electric stove and a biomass stove we would have different inputs (CommIn.csv file). However, we would have the same output (CommOut.csv file) of cooking demand. We can also model an increase in efficiency of a technology by lowering the value in the CommIn.csv file. It is possible to change the efficiency over time using interpolation or a flat-forward extension as explained in mini-lecture 5.4. We can also consider the costs of investing in more energy efficient appliances by increasing the cost of these high efficiency appliances relative to the low efficiency appliances. By doing this, we can understand where and when investments in energy efficiency might be economic.
 
-
-
 # Summary
 
 In this lecture we have explored the residential sector. We considered the different demands that can reside within the residential sector and the different technologies that can be used to meet these demands. We also learnt of the difference in demands between countries and how we can model different technologies within MUSE.
-
-

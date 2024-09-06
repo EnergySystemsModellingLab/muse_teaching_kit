@@ -14,9 +14,9 @@ This mini-lecture will provide an overview of how the course is structured.
 
 # Learning objectives
 
--   To present the structure of the course for both the lecture content
+- To present the structure of the course for both the lecture content
     and the hands-on sessions
--   To obtain an introductory insight into the content delivered within
+- To obtain an introductory insight into the content delivered within
     this course.
 
 # Introduction and structure of the course
@@ -48,6 +48,4 @@ The accompanying hands-on exercises are:
 6. Adding an agent
 7. Adding a region
 
-As you can see, through the hands-on exercises you will pick up the key skills needed to design an energy systems model with MUSE. 
-
-
+As you can see, through the hands-on exercises you will pick up the key skills needed to design an energy systems model with MUSE.
