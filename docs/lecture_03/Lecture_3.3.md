@@ -43,4 +43,4 @@ In addition, the commercial sector will have a different demand load profile to 
 
 # Summary
 
-In this mini-lecture we explored the industrial and commercial sectors. We learnt the difference between these two sectors in terms of demand and the different types of technologies used in these sectors. We saw that demand for the industrial sector is expected to rise significantly in non-OECD countries. Finally, we learnt how we can model different technologies in MUSE.  
+In this mini-lecture we explored the industrial and commercial sectors. We learnt the difference between these two sectors in terms of demand and the different types of technologies used in these sectors. We saw that demand for the industrial sector is expected to rise significantly in non-OECD countries. Finally, we learnt how we can model different technologies in MUSE.

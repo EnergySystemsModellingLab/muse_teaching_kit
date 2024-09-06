@@ -43,6 +43,6 @@ This whole process repeats itself at every timestep (t) until the specified numb
 
 **Figure 2.3.1:** MUSE iteration process
 
-# Summary  
+# Summary
 
 This mini-lecture provided an introduction to the terms limited foresight and imperfect information. We learnt how these assumptions have been integrated into the MUSE model and what this means for the modelling process. In the next mini-lecture we will explore the key components that make up MUSE.

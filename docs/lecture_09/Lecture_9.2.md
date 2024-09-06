@@ -1,7 +1,7 @@
 ---
 title: Mini-Lecture 9.4 -- Oral presentations
 keywords:
-- 
+-
 authors:
 - Alexander J. M. Kell
 ---

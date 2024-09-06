@@ -23,7 +23,7 @@ In this mini-lecture we will explore the benefits of energy planning and why ene
 
 Energy has become a fundamental commodity over the last 100 years. It has allowed society to make significant progress in some of the Sustainable Development Goals. For instance, it has brought millions out of poverty across the world. However, it has required the development of other development goals such as SDG13, which focuses on climate action. In addition, economic and sustainable development have grown in an inequitable manner, with certain regions prospering more than others.
 
-This mini-lecture will introduce the concepts of energy planning in the context of the Sustainable Development Goals. In particular, we will explore how energy planning can be used to tackle some of the most difficult issues humanity faces.  
+This mini-lecture will introduce the concepts of energy planning in the context of the Sustainable Development Goals. In particular, we will explore how energy planning can be used to tackle some of the most difficult issues humanity faces.
 
 ## Why plan an energy system?
 

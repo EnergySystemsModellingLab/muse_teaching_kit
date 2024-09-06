@@ -1,5 +1,5 @@
 ---
-title: Mini-Lecture 1.2 -- Sustainable Development Goals and the global climate agenda. 
+title: Mini-Lecture 1.2 -- Sustainable Development Goals and the global climate agenda.
 keywords:
 -   Sustainable development
 -   Sustainable Development Goals (SDGs)

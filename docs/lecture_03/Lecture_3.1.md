@@ -2,7 +2,7 @@
 title: Mini-Lecture 3.1 –- Residential Sectors in MUSE
 keywords:
 -   Residential sector
--   Sectors in MUSE 
+-   Sectors in MUSE
 authors:
 -   Alexander J. M. Kell
 ---
