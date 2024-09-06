@@ -77,4 +77,4 @@ In this mini-lecture we have explored the different components which make up MUS
 
 All of these components interact, for example the agents in a particular sector invest in technologies to meet a certain service demand. Finally, the market clearing algorithm brings these different components together to find an ultimate price on all the different factors of the particular case study.
 
-We will provide more information on agents and their capabilities in lecture 7.
+We will provide more information on agents and their capabilities in lecture 5.

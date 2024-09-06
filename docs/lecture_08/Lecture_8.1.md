@@ -7,7 +7,7 @@ authors:
 -   Alexander J. M. Kell
 ---
 
-To begin lecture 3, this mini-lecture provides an overview of energy demands within an energy system. We will cover differences in energy demands by sector, time and population classes. We will also begin to explore why these differences are important within energy models. Lecture 3 will take you through the basics for modelling energy demand in MUSE, the different options available to do so, and some specific examples
+To begin lecture 8, this mini-lecture provides an overview of energy demands within an energy system. We will cover differences in energy demands by sector, time and population classes. We will also begin to explore why these differences are important within energy models. Lecture 8 will take you through the basics for modelling energy demand in MUSE, the different options available to do so, and some specific examples
 
 # Learning objectives
 
