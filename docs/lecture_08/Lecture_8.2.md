@@ -1,32 +1,57 @@
 ---
-title: Mini-Lecture 8.2 -- Disaggregation of regional data
+title: Mini-Lecture 8.2 -- Energy demands in modelling
 keywords:
--   Disaggregation
--   Regions
+-   Energy demands
+-   Scenario analysis
 authors:
 -   Alexander J. M. Kell
 ---
 
-This mini-lecture introduces the concept of disaggregation of regions in further detail.
+Mini-lecture 8.2 outlines the general requirements for defining energy demands and how modelling different scenarios can help assess potential future energy demand. 
 
 # Learning objectives
 
-- When to disaggregate regional data in MUSE and energy systems models
+- Understand how to define energy demands
+- Understand why we need scenario analysis
 
+# Introduction
 
-# Disaggregation
+Within modelling we can break up the previously defined energy demands by sector. Electricity comes from the power sector and can be used to fulfil demand from each of the final service sectors. For example, the residential, commercial or industrial sector.
 
-Disaggregation of regions can often be a good way of gaining a deeper understanding of the interactions between regions. For example, if you have a lot of technoeconomic data on the locations of supply and demand, then it may make sense to disaggregate regions. This will also allow the modeller to understand where there may be issues within a specific region or country. 
+These sectors can have different electricity demands and needs and which can evolve over time as was seen in the last mini-lecture. We will now explore how these energy demands can be defined.
 
-An interesting example of this would be for the Southeast Asia region. Laos has a good amount of hydropower availability, whereas Thailand has more solar and wind resources. If we modelled the Southeast Asia region as a single region in MUSE, we would lose information on the potential for trade between these two countries. 
+## Defining energy demands
 
-It is also interesting to see energy flows between regions within a country, similar to the Southeast Asian example. For example, if a country has a large demand centre in the south of the country, but large energy resources in the north, it could be interesting to disaggregate this country into those two nodes.
+When defining an energy demand for energy systems models, it is important to identify the following:
 
-Similar to the previous mini-lecture, this disaggregation is largely dependent upon your requirements and the data available to you. There is no one solution for all areas, or even for the same area and different case studies. For example, one case study may only require the modelling of a country as a single region. Another case study, however, may require the modelling of that same country by many regions. It all depends on the question you are trying to answer and the data available to you. It must be noted, that a more disaggregated case study will take longer to run in MUSE.
+- The energy carrier which the demand arises for. For example, electricity, gasoline for transportation or biomass for cooking.
+- The sector the demand arises from. For example, residential (urban and/or rural, off- or on-grid), industrial or commercial.
+- The average variability of the demand within a year. This is usually expressed using average demand profiles, which are explained in more detail later in this lecture.
+- The current and expected future annual average demand.
+
+However, it is very difficult to predict future demand, and there will always be uncertainty in our predictions. Due to this it is important to model different scenarios.
+
+## Defining our own energy demand
+
+As has just been seen, when we want to define our own energy demand, we need to identify a number of different features. Let's say, for example, that we want to define the demand for electricity in urban homes. To do this, we need to define:
+
+- The energy carrier for which the demand arises for. In this case it is electricity.
+- The sector the demand arises from. In this example it is the residential sector, or the urban residential sector if you would like to be more specific.
+- The average variability of the demand over the year. In this example we can look at daily and yearly electricity demand profiles for a residential urban area. This will tell us how the demand varies on a daily and seasonal scale. 
+- Current and predicted future demand. For this, we can look at an energy balance (covered in more detail later) to get data for the current and historical residential electricity demand. We can use these data as a baseline, and we could combine it with an estimate of population growth to create a future projection for the demand.
+
+## Scenario analysis
+
+Within energy systems modelling, we must explore different possibilities of what could happen in the future. This is known as scenario analysis. We do this as the future is uncertain, particularly over the long-term horizon. We therefore might want to consider multiple scenarios to assess how demand could vary in the future. 
+
+For example, for different scenarios, key predictors of energy demand, such as population growth, economic development and energy policy can be varied across the scenarios. This would mean that each scenario has a different energy demand projection. 
+
+Since we can not be certain of the scenario which will be the best predictor of the future, it is useful to model several scenarios and consider the implications of each of them to give useful insights for policymaking. This allows policy makers to assess which of the different policies and mixes suit their needs based upon likelihoods and risk tolerances.
 
 # Summary
 
-In this mini-lecture we explored reasons for disaggregating a case study. We discovered that disaggregation (and aggregation) of regions depends largely on the data available to you and the questions you want to answer for your case study. However, we found out that the greater the disaggregation, the more detail the model may reveal, but the longer the model will take to run.
+Mini-lecture 8.2 provided an overview of energy demands, how we can define them and the details which make them up. We also explored how we can perform scenario analysis with energy demands, to understand what could happen in the future.
 
 
- 
+
+

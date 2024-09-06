@@ -1,33 +1,34 @@
 ---
-title: Mini-Lecture 7.4 -- Agent parameters
+title: Mini-Lecture 7.4 -- Timeslicing and climate policy
 keywords:
--   Agent parameters
--   MUSE
+-   Climate policy
+-   Timeslicing
 authors:
 -   Alexander J. M. Kell
 ---
 
-This mini-lecture explores all the major parameters that can define agents within MUSE.
+This mini-lecture explores the relevance of timeslicing to climate policy. We will explore how different timeslicing can affect modelling results, why it is important to consider realistic timeslicing and how these can affect policy decisions.
 
 # Learning objectives
 
-- Understand the different agent parameters and their role within MUSE
+- Understand the impact of timeslicing on modelling outputs
+- Learn how timeslicing can affect policy decisions
 
-# Overview agent parameters
+# Timeslicing and policy
 
-Within MUSE each agent can have their own objectives. MUSE is flexible enough to allow for up to 3 objectives, which can be summed together at various weightings. To input these objectives into MUSE one would use the `Objective1`, `Objective2` and/or `Objective3` parameters and select an objective such as `comfort`, `lifetime_levelized_cost_of_energy` or `fixed_costs`.
+Timeslicing is a core component of an energy systems model as we have previously discussed. If one were to use an inappropriate number of timeslices in an energy systems model, it is likely that this would have major implications on the model outputs. 
 
-Then we would select the weight of each of the objectives using the `ObjData1`, `ObjData2`, `ObjData3` inputs. For example, if we had 3 objectives, we could make the objective of `Objective1` dominant by setting `ObjData1` to 0.5. This would mean it would make up 50% of the final objective.
+Let's look at an example: if we were to model solar panels with an average capacity factor for the entire time horizon of the model this would assume that the solar panels can be used at night and could displace other technologies, such as gas turbines. However, in reality, solar panels contribute to the grid during the day and produce nothing at night. Therefore, we need some sort of flexibility in the system to ramp up after the sun sets. This needs to be modelled explicitly within MUSE, so to allow gas (or other technologies) to fill this gap in supply. 
 
-We can edit the `SearchRule` to reduce the space of technologies that those agents are likely to consider. For example, we could fill this with `same_fuels`, or `same_enduse`.
+If we take this conclusion further, it is possible to see scenarios where the intermittency of solar and wind are not modelled, and therefore we observe scenarios with a majority in solar or wind. With current technologies this is not possible, and this therefore underscores the importance of timeslicing. 
 
-The rest of the parameters include the parameters discussed in the previous lecture:
-
-- `MaturityThreshold`
-- `Budget`
+If we do not use accurate timeslicing then the model outputs can skew resulting policy, and so due care must be taken for sourcing data from different geographies.
 
 # Summary
 
-In this mini-lecture we discovered the main parameters that are used by agents within MUSE. For a full breakdown of the parameters please refer to the MUSE documentation that can be found online.
+In this lecture we have looked into the implications of different timeslicing decisions made when creating an energy systems model. We learnt that if we do not get this right, the investments made could be skewed and unrealistic. 
+
+
+
 
 
