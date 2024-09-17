@@ -1,5 +1,5 @@
 ---
-title: Mini-Lecture 9.3 -- Communicating research
+title: Mini-Lecture 9.1 -- Communicating research
 keywords:
 - Science communication
 - Visualisation

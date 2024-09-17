@@ -1,5 +1,5 @@
 ---
-title: Mini-Lecture 9.4 -- Oral presentations
+title: Mini-Lecture 9.2 -- Oral presentations
 keywords:
 -
 authors:
