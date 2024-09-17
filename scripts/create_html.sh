@@ -21,7 +21,7 @@ for filename in $lecture/*.md; do
         echo "# Bibliography" >> $MD_TMP
         pandoc --mathjax --standalone --css $PAN --css $CSL --citeproc $MD_TMP --bibliography $BIBFILE -o $OUTPUT/$MD_NAME.html  --csl $CITESTYLE
     else
-        pandoc --mathjax --standalone --css $PAN --css $CSL $MD_TMP -o $OUTPUT/$BNAME.html
+        pandoc --mathjax --standalone --css $PAN --css $CSL $MD_TMP -o $OUTPUT/$MD_NAME.html
     fi
     if test -d "$OUTPUT/assets"; then
         rm -r $OUTPUT/assets/*
