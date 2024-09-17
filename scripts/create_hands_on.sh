@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Prepare build directory
-output_dir="../_build"
+output_dir="_build"
 mkdir -p "$output_dir"
 
 # Run notebooks and convert to HTML
-for tutorial in ../MUSE_OS/docs/user-guide/*.ipynb; do
+for tutorial in MUSE_OS/docs/user-guide/*.ipynb; do
     jupyter nbconvert --to html --execute "$tutorial" --output-dir="$output_dir"    
 done;
 

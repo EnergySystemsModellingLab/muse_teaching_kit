@@ -1,20 +1,27 @@
 #!/bin/bash
+
+# Prepare build directory
+output_dir="_build"
+mkdir -p "$output_dir"
+
 for lecture in docs/lecture_*; do
 for filename in $lecture/*.md; do
     echo Converting "$filename"
-
+    
     MD_NAME=$(basename "$filename" .md)
     DIR_NAME=$lecture
     BIBFILE=$DIR_NAME/bibliography.bib
-    OUTPUT=_build/$(basename $lecture)
+    OUTPUT=$output_dir/$(basename $lecture)
+    mkdir -p $OUTPUT
 
+    # CSS styles
     CSL=https://climatecompatiblegrowth.github.io/style/csl-style.css
     PAN=https://climatecompatiblegrowth.github.io/style/pandoc.css
     CITESTYLE=https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-author-date.csl
 
+    # Convert Markdown to HTML
     MD_TMP=$MD_NAME.tmp.md
     cat $filename > $MD_TMP
-
     if test -f "$BIBFILE"; then
         # Render citations and write bibliography to HTML
         echo "" >> $MD_TMP
@@ -23,6 +30,8 @@ for filename in $lecture/*.md; do
     else
         pandoc --mathjax --standalone --css $PAN --css $CSL $MD_TMP -o $OUTPUT/$MD_NAME.html
     fi
+    
+    # Copy assets
     if test -d "$OUTPUT/assets"; then
         rm -r $OUTPUT/assets/*
     fi
@@ -31,4 +40,3 @@ for filename in $lecture/*.md; do
     rm $MD_TMP
 done;
 done;
-# Clean up
