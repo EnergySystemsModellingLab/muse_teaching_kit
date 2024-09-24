@@ -15,13 +15,13 @@ attribution.  Please use the following citation:
 
 ## Setup
 
-Generating the course files requires Python, and the rependencies listed in the file `requirements.txt`. To create a suitable Python environment, run:
+Generating the course files requires Python, and the dependencies listed in the file `requirements.txt`. To create a suitable Python environment, run:
 
         python -m venv .venv
         source .venv/bin/activate
         python -m pip install -r requirements.txt
 
-The latest version of the course vas generated using Python version 3.12, and MUSE version 1.2.0rc4.
+The latest version of the course was generated using Python version 3.12, and MUSE version x.x.x.
 
 You must also have [pandoc](https://pandoc.org/) installed on your machine.
 
@@ -32,7 +32,7 @@ You must also have [pandoc](https://pandoc.org/) installed on your machine.
         bash scripts/create_hands_on.sh
         bash scripts/create_lectures.sh
 
-2. To create a SCORM package for each of the lecture blocks, run the deployment script::
+2. To create a SCORM package for each of the lecture blocks, run the deployment script:
 
         bash scripts/deploy.sh
 

@@ -21,7 +21,7 @@ This mini-lecture will provide an overview of how the course is structured.
 
 # Introduction and structure of the course
 
-This course is made up of 9 lectures and 9 hands-on exercises. Each of the lectures are made up of four related mini-lectures. Whilst the lectures will give you a background to energy modelling, you will also learn how to practically build a case study using the MUSE model.
+This course is made up of 9 lectures and 9 hands-on exercises. Whilst the lectures will give you a background to energy modelling, you will also learn how to practically build a case study using the MUSE model.
 
 To build up a good understanding of MUSE, you will be required to understand why we use energy systems modelling and the main features that make up a good energy systems model. You will learn of the trade-offs between different decisions, such as increasing data granularity versus overall model run time.
 
@@ -51,4 +51,4 @@ The accompanying hands-on exercises are:
 8. Adding a service demand
 9. Adding a service demand by correlation
 
-As you can see, through the hands-on exercises you will pick up the key skills needed to design an energy systems model with MUSE.
+Through these hands-on exercises, you will pick up the key skills needed to design your own energy systems models with MUSE.

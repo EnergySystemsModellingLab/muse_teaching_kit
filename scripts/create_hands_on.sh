@@ -1,22 +1,44 @@
 #!/bin/bash
 
+convert_notebook() {
+    # Run notebook, convert to HTML and return path to the output file
+    local notebook=$1
+    jupyter nbconvert --to html --execute "$notebook" --output-dir="$output_dir"
+    local output_file="${output_dir}/$(basename "${notebook%.*}.html")"
+    echo "$output_file"
+}
+
+update_links() {
+    # Update relative links in HTML file
+    local html_file=$1
+    local base_url=$2
+    sed -i '' -E "s|href=\"([^\"]*).rst\"|href=\"$base_url\1.html\"|g" "$html_file"
+}
+
 # Prepare build directory
 output_dir="_build"
 mkdir -p "$output_dir"
 
-# Run notebooks and convert to HTML
-for tutorial in MUSE_OS/docs/user-guide/*.ipynb; do
-    jupyter nbconvert --to html --execute "$tutorial" --output-dir="$output_dir"    
-done;
+# Hands-on 1
+ho1="docs/hands_on_1.md"
+pandoc --standalone $ho1 -o $output_dir/hands_on_1.html
 
-# Update relative links in HTML files
-base_url="https://muse-os.readthedocs.io/en/latest/user-guide/" 
-find "$output_dir" -name '*.html' | while read -r html_file; do
-    sed -i '' -E "s|href=\"([^\"]*).rst\"|href=\"$base_url\1.html\"|g" "$html_file"
+# Hands-on 2
+notebook="MUSE_OS/docs/running-muse-example.ipynb"
+html_file=$(convert_notebook $notebook)
+update_links $html_file "https://muse-os.readthedocs.io/en/latest/"
+
+# Hands-on 3-9
+notebooks=(MUSE_OS/docs/user-guide/*.ipynb)
+for notebook in "${notebooks[@]}"; do
+    html_file=$(convert_notebook "$notebook")
+    update_links $html_file "https://muse-os.readthedocs.io/en/latest/user-guide/"
 done
 
 # Specify tutorial order
 order=(
+    "hands_on_1"
+    "running-muse-example"
     "add-solar"
     "add-agent"
     "add-region"
