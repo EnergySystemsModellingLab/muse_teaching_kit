@@ -1,21 +1,19 @@
 # MUSE: Teaching Kit
 
-This repository contains the teaching material developed by Imperial College London
-for the course "MUSE: Agent-based energy systems modelling" developed under the
-Climate Compatible Growth project.
+This repository contains the teaching material developed by Imperial College London for the course "MUSE: Agent-based energy systems modelling" developed under the Climate Compatible Growth project.
 
-The course is published on [Open Learn Create](fill-here)
-and is free to learners.
+The course is published on [Open Learn Create](https://www.open.edu/openlearncreate/course/view.php?id=11717) and is free to learners.
 
 The course material is licensed under a [Creative Commons BY 4.0 License](https://creativecommons.org/licenses/by/4.0).
-This license allows you to use, remix and publish the course material as long as you give correct
-attribution.  Please use the following citation:
+This license allows you to use, remix and publish the course material as long as you give correct attribution.  
+Please use the following citation:
 
     Alexander J. M. Kell, Sara Giarola, Adam Hawkes. (2022, August 6). ClimateCompatibleGrowth/muse_teaching_kit: Initial release of lecture blocks. Zenodo. https://doi.org/10.5281/zenodo.5166742
 
 ## Setup
 
-Generating the course files requires Python, and the dependencies listed in the file `requirements.txt`. To create a suitable Python environment, run:
+Generating the course files requires Python, and the dependencies listed in the file `requirements.txt`.
+To create a suitable Python environment, run:
 
         python -m venv .venv
         source .venv/bin/activate
