@@ -3,12 +3,12 @@
 convert_notebook() {
     # Run notebook, convert to HTML and return path to the output file
     local notebook=$1
-    jupyter nbconvert --to html --execute --ExecutePreprocessor.kernel_name=muse_kernel "$notebook" --output-dir="$output_dir"
+    jupyter nbconvert --to html --execute --ExecutePreprocessor.kernel_name=muse_kernel --template classic "$notebook" --output-dir="$output_dir"
     local output_file="${output_dir}/$(basename "${notebook%.*}.html")"
     echo "$output_file"
 }
 
-update_links() {
+update_relative_links() {
     # Update relative links in HTML file
     local html_file=$1
     local base_url=$2
@@ -20,24 +20,24 @@ output_dir="_build"
 mkdir -p "$output_dir"
 
 # Hands-on 1
-ho1="docs/hands_on_1.md"
-pandoc --standalone $ho1 -o $output_dir/hands_on_1.html
+notebook="docs/installation.ipynb"
+html_file=$(convert_notebook $notebook)
 
 # Hands-on 2
 notebook="MUSE_OS/docs/running-muse-example.ipynb"
 html_file=$(convert_notebook $notebook)
-update_links $html_file "https://muse-os.readthedocs.io/en/latest/"
+update_relative_links $html_file "https://muse-os.readthedocs.io/en/latest/"
 
 # Hands-on 3-9
 notebooks=(MUSE_OS/docs/user-guide/*.ipynb)
 for notebook in "${notebooks[@]}"; do
     html_file=$(convert_notebook "$notebook")
-    update_links $html_file "https://muse-os.readthedocs.io/en/latest/user-guide/"
+    update_relative_links $html_file "https://muse-os.readthedocs.io/en/latest/user-guide/"
 done
 
 # Specify tutorial order
 order=(
-    "hands_on_1"
+    "installation"
     "running-muse-example"
     "add-solar"
     "add-agent"
@@ -48,11 +48,13 @@ order=(
     "add-gdp-correlation-demand"
 )
 
-# Move HTML files to corresponding folders
+# Rename files
 for i in "${!order[@]}"; do
     file="${order[$i]}"
     number=$((i + 1))
     new_name="hands_on_$number"
-    mkdir -p "$output_dir/$folder_name"
     mv -f "$output_dir/$file.html" "$output_dir/$new_name.html"
+
+    # Modify title
+    sed -i '' "s/\(<h1[^>]*>\)\([^<]*\)/\1Hands-on exercise ${number}: \2/" "$output_dir/$new_name.html"
 done
