@@ -1,4 +1,4 @@
-muse_os==1.2.0rc4
+muse_os==1.2.1rc1
 matplotlib
 seaborn
 setuptools

@@ -21,12 +21,12 @@ mkdir -p "$output_dir"
 
 # Hands-on 1
 notebook="docs/installation.ipynb"
-html_file=$(convert_notebook $notebook)
+convert_notebook $notebook
 
 # Hands-on 2
-notebook="MUSE_OS/docs/running-muse-example.ipynb"
-html_file=$(convert_notebook $notebook)
-update_relative_links $html_file "https://muse-os.readthedocs.io/en/latest/"
+notebook="docs/running-muse-example.ipynb"
+(cd docs && rm -rf Results && muse --model default)
+convert_notebook $notebook
 
 # Hands-on 3-9
 notebooks=(MUSE_OS/docs/user-guide/*.ipynb)
