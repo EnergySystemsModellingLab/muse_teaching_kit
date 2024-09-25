@@ -20,6 +20,7 @@ Generating the course files requires Python, and the dependencies listed in the 
         python -m venv .venv
         source .venv/bin/activate
         python -m pip install -r requirements.txt
+        python -m ipykernel install --name=muse_kernel
 
 The latest version of the course was generated using Python version 3.12, and MUSE version x.x.x.
 

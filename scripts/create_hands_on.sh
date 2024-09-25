@@ -3,7 +3,7 @@
 convert_notebook() {
     # Run notebook, convert to HTML and return path to the output file
     local notebook=$1
-    jupyter nbconvert --to html --execute "$notebook" --output-dir="$output_dir"
+    jupyter nbconvert --to html --execute --ExecutePreprocessor.kernel_name=muse_kernel "$notebook" --output-dir="$output_dir"
     local output_file="${output_dir}/$(basename "${notebook%.*}.html")"
     echo "$output_file"
 }
@@ -52,7 +52,7 @@ order=(
 for i in "${!order[@]}"; do
     file="${order[$i]}"
     number=$((i + 1))
-    folder_name="hands_on_$number"
+    new_name="hands_on_$number"
     mkdir -p "$output_dir/$folder_name"
-    mv -f "$output_dir/$file.html" "$output_dir/$folder_name/$folder_name.html"
+    mv -f "$output_dir/$file.html" "$output_dir/$new_name.html"
 done
