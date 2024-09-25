@@ -9,3 +9,5 @@ _deploy/
 
 .venv/
 venv/
+
+.ipynb_checkpoints/
