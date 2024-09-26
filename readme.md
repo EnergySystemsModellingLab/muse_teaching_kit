@@ -20,7 +20,7 @@ To create a suitable Python environment, run:
         python -m pip install -r requirements.txt
         python -m ipykernel install --name=muse_kernel
 
-The latest version of the course was generated using Python version 3.12, and MUSE version x.x.x.
+The latest version of the course was generated using Python version 3.12, and MUSE version 1.2.1.
 
 You must also have [pandoc](https://pandoc.org/) installed on your machine.
 
