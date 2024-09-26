@@ -1,34 +1,57 @@
 ---
-title: Mini-Lecture 5.3 -- Agents by sector
+title: Mini-Lecture 5.3 -- Energy demand in MUSE
 keywords:
-- Sectors
-- Agent differentiation
-- Key agent parameters
+-   Energy demand
+-   MUSE
 authors:
 -   Alexander J. M. Kell
 ---
 
-In this mini-lecture we will cover how agents and their characteristics can differ between sectors. We will also investigate the similarities between agents and sectors and consider the key parameters that make up agents.
+## Short description
 
-# Learning objectives
+This mini-lecture provides an insight into how to model service demand within MUSE. There are two possible methods to model service demand in MUSE, from user input and by correlation. In this mini-lecture we will learn what the difference is between these.
 
-- Understand the differences between agents of different sectors
-- Understand the key parameters that differentiate agents
+## Learning objectives
 
-# Agent parameters
+- Understand how to input exogenous service demand
+- Understand what service demand by correlation is
 
-Different sectors may mean having agents with different characteristics. For instance, within the residential sector socioeconomic data can be used to characterise the agents. We could use wealth to characterise our agents in different geographic locations. For example we could place a constraint on the `Budget` parameter for residential users, and split these agents into different proportions. For example, we could prohibit 70% of residential users from spending more than a certain amount on heating which could affect their technology choice. The other 30% of users would form an agent that was not constricted in this way, and thus their choices may end up being different in the model.
+# Lecture content
 
-Another way we could classify residential agents is through the `Maturity` parameter. This would limit investments in novel technologies until the specified technology had a certain market share. This could be informed by the innovation adoption lifecycle, as shown by Figure 5.3.1. Where, for example, innovators make up 2.5% of the population but have no `Maturity` constraints. As we work our way up the curve from innovators to laggards, this `Maturity` constraint increases.
+## Service Demand
 
-![](assets/Figure_5.3.1.png){width=100%}
+A service demand is a term used to describe the consumption of energy by human activity. This could be, for instance, energy for lighting or cooking in the residential sector, personal vehicles in the transportation sector or machine usage in the industrial sector. The service demand drives the entire energy system, and it influences the total amount of energy used, the location of use and the types of fuels used in the energy supply system. It also includes the characteristics of the end-use technologies that consume energy.
 
-**Figure 5.3.1:** Innovation adoption lifecycle
+## Exogenous service demand
 
-# Sectors
+Within MUSE we must set the energy demand exogenously. That means that the model does not calculate how much the service demand is. Effectively, this means that the user must make an assumption on how much electricity is consumed in, for example, the residential sector for a particular region in the model.
 
-In this mini-lecture we have focused on the residential sector and seen the way we can characterise agents. Although these characteristics may not directly translate to the power sector, in some cases investors in the power sector can have similar characteristics. For instance, some companies are larger, and are more willing to invest their capital, reflecting a larger `Budget` parameter. Others may be less willing to invest in new technologies. The differing objectives of agents will often be the reason behind differences with other agents. For instance, some agents may only want to minimise their costs, whereas others may want to reduce their capital expenditure. It is easy to change these characteristics within MUSE to create diverse energy scenarios.
+We can change this per scenario, but these values will not change during a simulation run, even if the price for all fuels increases significantly, for instance. We are able to define the exogenous service demand by year, sector, region and timeslice.
 
-# Summary
+## Service demand by correlation
 
-In this mini-lecture we covered the differences between agents and the different parameters that can be used to inform these differences. We saw how the `Maturity` constraint maps to the innovation adoption lifecycle and how the `Budget` parameter can be informed by socioeconomic characteristics. These parameters lead to a large amount of possible scenarios that can be tested and run.
+In the previous section we learnt about the exogenous service demand. That is, we can explicitly specify what the demand would be per year, sector, region and timeslice. However, it may be the case that we do not know what the electricity demand is per year, especially in the future. We may instead conclude that our electricity demand is a function of the GDP and population of a particular region, as previously discussed.
+
+To accommodate such a scenario, MUSE enables us to choose a regression function that estimates service demands from GDP and population projections, which may be more predictable or have more accessible data in your case. A regression function is simply a mathematical model which fits a linear model to your data to predict what may happen in the future.
+
+## Sources for energy demand data
+
+We can get publicly available energy balance data and/or demand projections from the following sources:
+
+- International Energy Agency
+- International Renewable Energy Agency
+- United Nations Statistics
+- Asia-Pacific Economic Cooperation
+
+Energy balances tell us the amount that each energy commodity is used in a country or region in a given year. This is usually broken down by sector.
+
+## Summary
+
+In this mini-lecture we introduced service demands, and the way we can input these into MUSE. The two ways we can input service demands are:
+
+- Exogenous service demand
+- Service demand by correlation
+
+We also learned where we can get energy data from for various countries.
+
+In the hands-on we will see how we can actually do this within MUSE.

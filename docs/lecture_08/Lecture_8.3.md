@@ -1,57 +1,45 @@
 ---
-title: Mini-Lecture 8.3 -- Energy demand in MUSE
+title: Mini-Lecture 8.3 - Different energy demands by timeslice
 keywords:
--   Energy demand
--   MUSE
+- Energy demands
+- Timeslice
+- Energy modelling
 authors:
 -   Alexander J. M. Kell
 ---
 
-## Short description
+This mini-lecture will continue exploring the importance of timeslices in energy modelling; however, it will have a particular focus on energy demands, and how these can change by timeslice and over the years.
 
-Following mini-lecture 8.2, this mini-lecture provides an insight into how to model service demand within MUSE. There are two possible methods to model service demand in MUSE, from user input and by correlation. In this mini-lecture we will learn what the difference is between these.
+In the previous lecture we explored energy demands and timeslices. In this lecture we will have a brief recap of this, and explore how energy demand can be represented within MUSE.
 
-## Learning objectives
+# Learning objectives
 
-- Understand how to input exogenous service demand
-- Understand what service demand by correlation is
+- Understand how energy demand can change by timeslice
+- Learn how energy demand is represented in MUSE
 
-# Lecture content
+# Energy demand
 
-## Service Demand
+Energy demand can come in various forms. For instance, the demand we model can be for heating or cooling in the residential sector. It is the case that these demands have different characteristics. For instance, they may have different magnitudes and different technologies which serve these demands as well as they may be able to run at different times.
 
-A service demand is a term used to describe the consumption of energy by human activity. This could be, for instance, energy for lighting or cooking in the residential sector, personal vehicles in the transportation sector or machine usage in the industrial sector. The service demand drives the entire energy system, and it influences the total amount of energy used, the location of use and the types of fuels used in the energy supply system. It also includes the characteristics of the end-use technologies that consume energy.
+Within MUSE, similarly to the supply sectors, we can model this time varying capability with timeslices. For instance, if we have 4 representative days which refer to the different seasons, we can model the high heating demand in winter and cooling demand in summer. On top of this we can vary these demands by time of day.
 
-## Exogenous service demand
+To do this, we must edit the demand in the `preset/Residential2050Consumption.csv` sector. An example of which is shown in Figure 8.3.1.
 
-Within MUSE we must set the energy demand exogenously. That means that the model does not calculate how much the service demand is. Effectively, this means that the user must make an assumption on how much electricity is consumed in, for example, the residential sector for a particular region in the model.
+|RegionName|Timeslice|electricity|gas|heat|CO2f|wind|
+|-|-|-|-|-|-|-|
+|R1|1|0|0|3|0|0|
+|R1|2|0|0|4.5|0|0|
+|R1|3|0|0|3|0|0|
+|R1|4|0|0|4.5|0|0|
+|R1|5|0|0|9|0|0|
+|R1|6|0|0|6|0|0|
 
-We can change this per scenario, but these values will not change during a simulation run, even if the price for all fuels increases significantly, for instance. We are able to define the exogenous service demand by year, sector, region and timeslice.
+**Figure 8.3.1:** Example input for the preset sector.
 
-## Service demand by correlation
+In this small example we see that there is only a demand for `heat` in the residential sector. However, this demand changes per timeslice (which are listed in the leftmost column). For instance, there is low demand for heat in timeslice 1 and a high demand for heat in timeslice 5. These timeslices refer to a single representative day, and therefore timeslice 5 has the highest demand for heat as it is in the late-evening, when people generally come home from work and turn on their radiators.
 
-In the previous section we learnt about the exogenous service demand. That is, we can explicitly specify what the demand would be per year, sector, region and timeslice. However, it may be the case that we do not know what the electricity demand is per year, especially in the future. We may instead conclude that our electricity demand is a function of the GDP and population of a particular region, as previously discussed.
+In your models you can use datasets to disaggregate the demand into different types, or you can aggregate demand to include all gas or electricity utilised in the residential sector. This is largely dependent on the data available and the complexity of the model you would like.
 
-To accommodate such a scenario, MUSE enables us to choose a regression function that estimates service demands from GDP and population projections, which may be more predictable or have more accessible data in your case. A regression function is simply a mathematical model which fits a linear model to your data to predict what may happen in the future.
+# Summary
 
-## Sources for energy demand data
-
-We can get publicly available energy balance data and/or demand projections from the following sources:
-
-- International Energy Agency
-- International Renewable Energy Agency
-- United Nations Statistics
-- Asia-Pacific Economic Cooperation
-
-Energy balances tell us the amount that each energy commodity is used in a country or region in a given year. This is usually broken down by sector.
-
-## Summary
-
-In this mini-lecture we introduced service demands, and the way we can input these into MUSE. The two ways we can input service demands are:
-
-- Exogenous service demand
-- Service demand by correlation
-
-We also learned where we can get energy data from for various countries.
-
-In the hands-on we will see how we can actually do this within MUSE.
+In this mini-lecture, we explored the importance of timeslicing for modelling demand in energy models. We also covered how this can be done within MUSE using the preset sector.

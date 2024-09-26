@@ -1,53 +1,34 @@
 ---
-title: Mini-Lecture 8.2 -- Energy demands in modelling
+title: Mini-Lecture 8.2 - Technologies by timeslice
 keywords:
--   Energy demands
--   Scenario analysis
+- Energy technologies
+- Energy modelling
+- Timeslices
 authors:
 -   Alexander J. M. Kell
 ---
 
-Mini-lecture 8.2 outlines the general requirements for defining energy demands and how modelling different scenarios can help assess potential future energy demand.
+In this mini-lecture we describe how different technologies can have different characteristics by timeslices.
 
 # Learning objectives
 
-- Understand how to define energy demands
-- Understand why we need scenario analysis
+- Understand the different characteristics of technologies by timeslice
+- Understand how to characterise technologies by timeslice
 
 # Introduction
 
-Within modelling we can break up the previously defined energy demands by sector. Electricity comes from the power sector and can be used to fulfil demand from each of the final service sectors. For example, the residential, commercial or industrial sector.
+In the previous lecture we discovered the importance of timeslices. In this mini-lecture we will learn about how different technologies have different characteristics when it comes to timeslices, and how this can be modelled within MUSE.
 
-These sectors can have different electricity demands and needs and which can evolve over time as was seen in the last mini-lecture. We will now explore how these energy demands can be defined.
+# Technologies by timeslices
 
-## Defining energy demands
+Different technologies and supply sectors have different characteristics when it comes to timeslices. For instance, solar photovoltaics do not produce any energy when it is dark (for instance, at night) and produce less in the winter. Wind, on the other hand, has a completely different profile and is largely dependent on geography. Therefore, it would make sense to provide a maximum output of the technologies at different times. For instance, it would be useful if the model limited solar output at night time in the form of a maximum utilization factor. Where utilization factor is the ratio of average amount of energy output to total possible output of an energy technology if it were to run 100% of time.
 
-When defining an energy demand for energy systems models, it is important to identify the following:
+However, it can be very difficult to turn off some technologies, such as a nuclear power plant. Nuclear power plants are expensive to turn on and can be unsafe if constantly varying their power. Also, their marginal cost, or the cost to produce 1MWh of electricity excluding capital costs, is usually much lower than other power plants such as gas or coal plants. It, therefore, makes sense that we place a minimum service factor, or minimum output allowed, on nuclear, to ensure their output does not fall below a certain level.
 
-- The energy carrier which the demand arises for. For example, electricity, gasoline for transportation or biomass for cooking.
-- The sector the demand arises from. For example, residential (urban and/or rural, off- or on-grid), industrial or commercial.
-- The average variability of the demand within a year. This is usually expressed using average demand profiles, which are explained in more detail later in this lecture.
-- The current and expected future annual average demand.
+Other technologies, however, such as gas power plants, can be turned on and off readily; therefore we can simply leave an average utilization factor for all the timeslices.
 
-However, it is very difficult to predict future demand, and there will always be uncertainty in our predictions. Due to this it is important to model different scenarios.
-
-## Defining our own energy demand
-
-As has just been seen, when we want to define our own energy demand, we need to identify a number of different features. Let's say, for example, that we want to define the demand for electricity in urban homes. To do this, we need to define:
-
-- The energy carrier for which the demand arises for. In this case it is electricity.
-- The sector the demand arises from. In this example it is the residential sector, or the urban residential sector if you would like to be more specific.
-- The average variability of the demand over the year. In this example we can look at daily and yearly electricity demand profiles for a residential urban area. This will tell us how the demand varies on a daily and seasonal scale.
-- Current and predicted future demand. For this, we can look at an energy balance (covered in more detail later) to get data for the current and historical residential electricity demand. We can use these data as a baseline, and we could combine it with an estimate of population growth to create a future projection for the demand.
-
-## Scenario analysis
-
-Within energy systems modelling, we must explore different possibilities of what could happen in the future. This is known as scenario analysis. We do this as the future is uncertain, particularly over the long-term horizon. We therefore might want to consider multiple scenarios to assess how demand could vary in the future.
-
-For example, for different scenarios, key predictors of energy demand, such as population growth, economic development and energy policy can be varied across the scenarios. This would mean that each scenario has a different energy demand projection.
-
-Since we can not be certain of the scenario which will be the best predictor of the future, it is useful to model several scenarios and consider the implications of each of them to give useful insights for policymaking. This allows policy makers to assess which of the different policies and mixes suit their needs based upon likelihoods and risk tolerances.
+All of these features exist in MUSE, and during this lecture's hands-on, we will show you how to do this within MUSE.
 
 # Summary
 
-Mini-lecture 8.2 provided an overview of energy demands, how we can define them and the details which make them up. We also explored how we can perform scenario analysis with energy demands, to understand what could happen in the future.
+In this mini-lecture we have explored the importance of characterising technologies not just by their economic data, but also by their physical characteristics. We discovered that different technologies have different outputs at different times, such as solar and wind. We also found out that nuclear power, for instance, must output a certain level to remain within a safety range.

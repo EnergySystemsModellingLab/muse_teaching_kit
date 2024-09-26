@@ -1,28 +1,35 @@
 ---
-title: Mini-Lecture 6.2 -- Disaggregation of regional data
+title: Mini-Lecture 6.2 -- How to relate agent representations to the real world
 keywords:
--   Disaggregation
--   Regions
+- Agent-based modelling
+- Characterisation
 authors:
 -   Alexander J. M. Kell
 ---
 
-This mini-lecture introduces the concept of disaggregation of regions in further detail.
+In this mini-lecture we will introduce some methods to translate socioeconomic data into MUSE with a quantitative approach.
 
 # Learning objectives
 
-- When to disaggregate regional data in MUSE and energy systems models
+- Discuss surveys and socioeconomic data and how these can relate to MUSE
+- Discover ways that surveys can be used in quantitative modelling
 
-# Disaggregation
+# Qualitative representation in agent-based models
 
-Disaggregation of regions can often be a good way of gaining a deeper understanding of the interactions between regions. For example, if you have a lot of technoeconomic data on the locations of supply and demand, then it may make sense to disaggregate regions. This will also allow the modeller to understand where there may be issues within a specific region or country.
+Through the use of qualitative data, such as using qualitative surveys, it is possible to gain greater insight into the different characteristics of consumers or investors. One example of how this can be done was by Moya et al. (2020). In this paper the authors explore fuel-switching investment in the long-term energy transitions of India's industry sector. They inform the modelled agents through a questionnaire that was carried out to inform MUSE.
 
-An interesting example of this would be for the Southeast Asia region. Laos has a good amount of hydropower availability, whereas Thailand has more solar and wind resources. If we modelled the Southeast Asia region as a single region in MUSE, we would lose information on the potential for trade between these two countries.
+Some of the types of questions asked in the questionnaire to industrial companies are listed below:
 
-It is also interesting to see energy flows between regions within a country, similar to the Southeast Asian example. For example, if a country has a large demand centre in the south of the country, but large energy resources in the north, it could be interesting to disaggregate this country into those two nodes.
+- Geographical location
+- Financial details
+- Investment plans
+- Type of fuels used
+- Willingness to switch fuels
 
-Similar to the previous mini-lecture, this disaggregation is largely dependent upon your requirements and the data available to you. There is no one solution for all areas, or even for the same area and different case studies. For example, one case study may only require the modelling of a country as a single region. Another case study, however, may require the modelling of that same country by many regions. It all depends on the question you are trying to answer and the data available to you. It must be noted, that a more disaggregated case study will take longer to run in MUSE.
+Once these data have been collected, they can be used to find similar groups of investors and to start characterising the agents. For instance, if from the data it is clear that geographical location is an important consideration, the decision could be made to group companies by geographical region and form an agent on this basis. If the more important consideration is the investment plans, then a group can be made there.
+
+This approach is a more than efficient method of better understanding the characteristics of agents of a system, and it can help to inform a better modelling process. The work by Moya et al. [@Moya2020] finds that the results represent the unique heterogeneity of fuel-switching industrial investors with distinct investment goals and limited foresight on costs. In other words, the survey results have an impact on the outcome of the energy system over the long-term.
 
 # Summary
 
-In this mini-lecture we explored reasons for disaggregating a case study. We discovered that disaggregation (and aggregation) of regions depends largely on the data available to you and the questions you want to answer for your case study. However, we found out that the greater the disaggregation, the more detail the model may reveal, but the longer the model will take to run.
+In this mini-lecture we explored how surveys can be used to inform agents within MUSE. We also discovered how these results can affect the modelling outcomes of energy systems.

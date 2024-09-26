@@ -1,26 +1,92 @@
 ---
-title: Mini-Lecture 5.1 -- Agents in energy systems models
+title: Mini-Lecture 5.1 -- Energy demands in energy systems modelling
 keywords:
--   Agent-based model
+-   Energy demand
+-   Energy systems models
 authors:
 -   Alexander J. M. Kell
 ---
 
-In this mini-lecture we will describe the importance of agents within MUSE and also within an energy systems modelling context.
+This mini-lecture provides an overview of energy demands within an energy system. We will cover differences in energy demands by sector, time and population classes. We will also begin to explore why these differences are important within energy models. The remaining mini-lectures will take you through the basics for modelling energy demand in MUSE, the different options available to do so, and some specific examples
 
 # Learning objectives
 
-- Understand why agents are important in an energy modelling context
-- Understand how we can characterise these agents within MUSE
+- Learn what energy demands are in an energy modelling context
+- Understand how demands can change based on different variables
 
-# Agents overview
+# Introduction
 
-Within real-life energy systems there are many different objectives that investors or consumers have. These objectives may differ by sector, by investor type or by proportions of the population. For instance, a certain percentage of the population may be willing to be spend more money on heating their homes than others.
+Everyone needs energy for many different purposes. The form in which this energy should be delivered is dependent on the specific application. These demands for energy come from all sectors of society such as:
 
-It is straightforward to specify these objectives and characteristics within MUSE. For instance, you may want to split a population based upon their geospatial and economic characteristics. This could be done by, for example, splitting a population into rural and urban categories. That would provide us with two groups. However, it is possible to go further, and we may want to split the rural and urban groups into different socioeconomic demographics, such as disposable income.
+- The residential sector (rural and urban)
+  - Cooking
+  - Heating
+  - Cooling
+  - Lighting
+  - Appliances
+- Industry
+  - Chemical processes
+  - Steam production
+  - Heating
+- Commerce
+  - Lighting
+  - Heating
+  - Cooling buildings
+  - Keeping products at low temperatures
+- Transport
+  - Cars
+  - Trucks
+  - Buses
+  - Aviation
+  - Shipping
+  - Trains
+- Agriculture
+  - Tractors
+  - Machinery
+  - Pumping water
 
-Say, for example, we only split the population into rural and urban. We can specify these groups as two agents within MUSE. Once we have specified the two agents, we would have to give them characteristics which differentiate them from the each other and define the proportion of the population that they make up. It must be noted, at this stage, that we do not need to have a separate agent for each individual or entity. It is perfectly fine to group and aggregate similar individuals or agents.
+## Variations in daily energy demand
+
+These energy demands can vary on hourly, daily, weekly and monthly timescales. This mainly reflects the schedule of consumers' activities. For example, on a monthly timescale more cooling will be used in summer and more heating in winter. However, these energy demands can also vary by sector, as shown by Figure 5.1.1.
+
+![](assets/Figure_5.1.1.png){width=100%}
+
+**Figure 5.1.1:** Variations of energy demand by sector in a hypothetical example [@Taliotis2018].
+
+Figure 5.1.1 shows us that the magnitude of demand varies by sector, with agricultural demand significantly lower than residential and commercial demand, in this example. The reason that the commercial and residential sectors consume more is because their activities are more energy intensive or they are simply larger.
+
+We can also see that the daily profile of demand varies by sector. For example, in Figure 5.1.1 we can see that there is a clear evening peak in residential demand, whereas agricultural and industrial demand remains flat throughout the day. This is because agricultural and industrial demands are consistent throughout the day. This is likely because the industrial and agricultural sector operate constantly, whereas energy use in homes peaks in the evening when consumers use more electricity for cooking, lighting and appliances when they return from work or other business.
+
+## Sector specific demands
+
+The differences between sectors means that it can sometimes be important to model demands separately by each sector. This feature allows the models to consider the specific characteristics of each demand.
+
+Within each of these sectors, the energy demand varies over time and across different types of consumers. For example, within the residential sector, demands can differ between rural and urban households, as shown in Figure 5.1.2. This can also be true between grid-connected and off-grid areas. Energy planners must ensure that energy demand is always met for all types of consumers. Therefore, it is important that the key characteristics of different demands are represented in energy models.
+
+![](assets/Figure_5.1.2.png){width=100%}
+
+**Figure 5.1.2:** Variations of energy demand for the residential sector by population types [@Olaniyan2018]
+
+## Long-term variations in energy demands
+
+A major challenge in energy planning is that energy demands can change over time. This could be due to population growth or the creation of new industries. Figure 5.1.3 displays historical variations in energy demands. It is likely that these demands are correlated to changes in society. For example, increases in energy demand likely reflect increased industrial activity. For energy planning, we must also think about how energy demands are likely to change in the future.
+
+We can often forecast energy demand, such as with future projections  as shown in Figure 5.1.3. These forecasts can be created using estimates of the key influencers of energy demand, such as population growth and economic activity. Future projections are often based on how energy demands have changed historically.
+
+![](assets/Figure_5.1.3.png){width=100%}
+
+**Figure 5.1.3:** Long-term energy consumption by source
+
+## Capacity expansion planning
+
+One of the key purposes of MUSE is for capacity expansion. Figure 5.1.4 displays this key issue which MUSE can address. Essentially, if total demand increases (green line) and existing system capacities are retired (blue line), how can we invest to meet the energy capacity needed to supply demand (red line)?
+
+![](assets/Figure_5.1.4.png){width=100%}
+
+**Figure 5.1.4:** Capacity expansion [@Taliotis2018]
+
+You may notice that the red line is higher than the green line at all points. This is due to losses due to lower generating efficiencies. The gap between the red and blue lines demonstrates the required capacity expansion over time. MUSE enables us to plan such a capacity expansion whilst considering technical, economic and environmental constraints.
 
 # Summary
 
-In this mini-lecture we understood the concept of agents and how they relate to an energy modelling context. We briefly understood how we can translate these concepts into MUSE. Urban populations might have greater energy needs or rural populations may not have access to the same energy sources. Giving the model a bit more detail will allow you to make sure that the model is both more accurate, and that its projections take into account different parts of society. In the hands-on we will learn how to add a new agent.
+In this mini-lecture we covered the differences between energy demands in different population types, sectors and timescales. We learnt why it is important to model these differences in demand in energy systems models. We also explored how energy systems models can be used to meet a changing demand profile in the future.

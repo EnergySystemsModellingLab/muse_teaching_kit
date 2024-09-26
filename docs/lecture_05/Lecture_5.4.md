@@ -1,31 +1,61 @@
 ---
-title: Mini-Lecture 5.4 -- Agent parameters
+title: "Mini-Lecture 5.4 -- Demand examples and units"
 keywords:
--   Agent parameters
--   MUSE
+-   Infrastructure performance
 authors:
 -   Alexander J. M. Kell
 ---
 
-This mini-lecture explores all the major parameters that can define agents within MUSE.
+# Short description
+
+This mini-lecture explains how we can use timeslices to approximate the real-world demand profile. We will look into the difference between power and energy. Finally, we will learn how to convert units to ensure we are consistent within MUSE.
 
 # Learning objectives
 
-- Understand the different agent parameters and their role within MUSE
+- Understand how timeslices can be used in the context of demand
+- Understand the difference between power and energy
+- Know the units to use within MUSE and how to convert these
 
-# Overview agent parameters
+# Demand profile
 
-Within MUSE each agent can have their own objectives. MUSE is flexible enough to allow for up to 3 objectives, which can be summed together at various weightings. To input these objectives into MUSE one would use the `Objective1`, `Objective2` and/or `Objective3` parameters and select an objective such as `comfort`, `lifetime_levelized_cost_of_energy` or `fixed_costs`.
+Figure 5.1.5 shown an example demand profile for electricity that could be used in MUSE. In this demand profile there are 96 bars: one for each of the timeslices used in MUSE. These timeslices are split into 16 different sections – seasonal and into day and night. This is because there are four different seasons, which are split into day and night (twice). The demand profile is used to represent the proportion of demand occurring in each timeslice.
 
-Then we would select the weight of each of the objectives using the `ObjData1`, `ObjData2`, `ObjData3` inputs. For example, if we had 3 objectives, we could make the objective of `Objective1` dominant by setting `ObjData1` to 0.5. This would mean it would make up 50% of the final objective.
+![](assets/Figure_5.1.5.png){width=100%}
 
-We can edit the `SearchRule` to reduce the space of technologies that those agents are likely to consider. For example, we could fill this with `same_fuels`, or `same_enduse`.
+**Figure 5.4.1:** Example demand profile for MUSE
 
-The rest of the parameters include the parameters discussed in the previous lecture:
+The chart shows us that electricity demand, in this example, is highest during the day in winter, while it is lowest during the night in spring. However, it is important to note that this is a simplification: in reality demand varies in the season and with each hour of the day. This simplification means that we model one representative day for each season, and we assume equal demand within days and nights of those seasons.
 
-- `MaturityThreshold`
-- `Budget`
+Whilst this is a simplification, it allows us to consider the variation in demand across seasons and days without having an incredibly complex model structure. This reduces the amount of time required to run a full model relative to having timeslices for each hour and day of the year, as well as reducing the data input requirements.
+
+## Units
+
+We must ensure that during our data input process we are consistent with our units. Usually we will use the petajoules unit as this is the unit for energy for different sectors. If you were just modelling the power sector, you could use megawatt hours.
+
+## Power vs. Energy
+
+When using energy modelling tools it is important to remember the difference between power and energy. Sometimes these terms are used interchangeably. However, there is an important difference between the two:
+
+- Energy is the total amount of work done or the total capacity for doing work
+- Power is the rate at which this energy is supplied or used.
+
+Therefore, energy and power have different units. For example, energy is often measured in Joules, while power is often measured in Joules per Second (or Watts).
+
+For example, providing the weight stays the same, lifting a weight requires the exact same amount of energy no matter how quickly we lift it. However, if we lift the weight more quickly, the power has increased. We used the same amount of energy, but over a shorter amount of time.
+
+## Units for demand
+
+It is important that we convert our data from different sources to petajoules (PJ) when we include it in MUSE.
+
+Here are some example conversion factors:
+
+- 1 Petajoule (PJ) = 1000 Terajoules (TJ)
+- 1 Petajoule (PJ) = 1,000,000 Gigajoules (GJ)
+- 3.6 Petajoules (PJ) = 1 Terawatt hour (TWh)
+- 0.0036 Petajoules (PJ) = 1 Gigawatt hour (GWh)
+
+We must ensure that we are consistent with the units we use within MUSE.
 
 # Summary
 
-In this mini-lecture we discovered the main parameters that are used by agents within MUSE. For a full breakdown of the parameters please refer to the MUSE documentation that can be found online.
+In this lecture we have learnt the difference between power and energy. We have also learnt how to use timeslicing to speed up our model and reduce complexity. Finally, we learnt that we must use consistent units.

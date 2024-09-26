@@ -1,34 +1,28 @@
 ---
-title: Mini-Lecture 7.2 - Technologies by timeslice
+title: Mini-Lecture 7.2 -- Disaggregation of regional data
 keywords:
-- Energy technologies
-- Energy modelling
-- Timeslices
+-   Disaggregation
+-   Regions
 authors:
 -   Alexander J. M. Kell
 ---
 
-In this mini-lecture we describe how different technologies can have different characteristics by timeslices.
+This mini-lecture introduces the concept of disaggregation of regions in further detail.
 
 # Learning objectives
 
-- Understand the different characteristics of technologies by timeslice
-- Understand how to characterise technologies by timeslice
+- When to disaggregate regional data in MUSE and energy systems models
 
-# Introduction
+# Disaggregation
 
-In the previous lecture we discovered the importance of timeslices. In this mini-lecture we will learn about how different technologies have different characteristics when it comes to timeslices, and how this can be modelled within MUSE.
+Disaggregation of regions can often be a good way of gaining a deeper understanding of the interactions between regions. For example, if you have a lot of technoeconomic data on the locations of supply and demand, then it may make sense to disaggregate regions. This will also allow the modeller to understand where there may be issues within a specific region or country.
 
-# Technologies by timeslices
+An interesting example of this would be for the Southeast Asia region. Laos has a good amount of hydropower availability, whereas Thailand has more solar and wind resources. If we modelled the Southeast Asia region as a single region in MUSE, we would lose information on the potential for trade between these two countries.
 
-Different technologies and supply sectors have different characteristics when it comes to timeslices. For instance, solar photovoltaics do not produce any energy when it is dark (for instance, at night) and produce less in the winter. Wind, on the other hand, has a completely different profile and is largely dependent on geography. Therefore, it would make sense to provide a maximum output of the technologies at different times. For instance, it would be useful if the model limited solar output at night time in the form of a maximum utilization factor. Where utilization factor is the ratio of average amount of energy output to total possible output of an energy technology if it were to run 100% of time.
+It is also interesting to see energy flows between regions within a country, similar to the Southeast Asian example. For example, if a country has a large demand centre in the south of the country, but large energy resources in the north, it could be interesting to disaggregate this country into those two nodes.
 
-However, it can be very difficult to turn off some technologies, such as a nuclear power plant. Nuclear power plants are expensive to turn on and can be unsafe if constantly varying their power. Also, their marginal cost, or the cost to produce 1MWh of electricity excluding capital costs, is usually much lower than other power plants such as gas or coal plants. It, therefore, makes sense that we place a minimum service factor, or minimum output allowed, on nuclear, to ensure their output does not fall below a certain level.
-
-Other technologies, however, such as gas power plants, can be turned on and off readily; therefore we can simply leave an average utilization factor for all the timeslices.
-
-All of these features exist in MUSE, and during this lecture's hands-on, we will show you how to do this within MUSE.
+Similar to the previous mini-lecture, this disaggregation is largely dependent upon your requirements and the data available to you. There is no one solution for all areas, or even for the same area and different case studies. For example, one case study may only require the modelling of a country as a single region. Another case study, however, may require the modelling of that same country by many regions. It all depends on the question you are trying to answer and the data available to you. It must be noted, that a more disaggregated case study will take longer to run in MUSE.
 
 # Summary
 
-In this mini-lecture we have explored the importance of characterising technologies not just by their economic data, but also by their physical characteristics. We discovered that different technologies have different outputs at different times, such as solar and wind. We also found out that nuclear power, for instance, must output a certain level to remain within a safety range.
+In this mini-lecture we explored reasons for disaggregating a case study. We discovered that disaggregation (and aggregation) of regions depends largely on the data available to you and the questions you want to answer for your case study. However, we found out that the greater the disaggregation, the more detail the model may reveal, but the longer the model will take to run.

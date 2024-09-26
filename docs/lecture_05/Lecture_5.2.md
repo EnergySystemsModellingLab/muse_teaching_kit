@@ -1,35 +1,53 @@
 ---
-title: Mini-Lecture 5.2 -- How to relate agent representations to the real world
+title: Mini-Lecture 5.2 -- Energy demands in modelling
 keywords:
-- Agent-based modelling
-- Characterisation
+-   Energy demands
+-   Scenario analysis
 authors:
 -   Alexander J. M. Kell
 ---
 
-In this mini-lecture we will introduce some methods to translate socioeconomic data into MUSE with a quantitative approach.
+This mini-lecture outlines the general requirements for defining energy demands and how modelling different scenarios can help assess potential future energy demand.
 
 # Learning objectives
 
-- Discuss surveys and socioeconomic data and how these can relate to MUSE
-- Discover ways that surveys can be used in quantitative modelling
+- Understand how to define energy demands
+- Understand why we need scenario analysis
 
-# Qualitative representation in agent-based models
+# Introduction
 
-Through the use of qualitative data, such as using qualitative surveys, it is possible to gain greater insight into the different characteristics of consumers or investors. One example of how this can be done was by Moya et al. (2020). In this paper the authors explore fuel-switching investment in the long-term energy transitions of India's industry sector. They inform the modelled agents through a questionnaire that was carried out to inform MUSE.
+Within modelling we can break up the previously defined energy demands by sector. Electricity comes from the power sector and can be used to fulfil demand from each of the final service sectors. For example, the residential, commercial or industrial sector.
 
-Some of the types of questions asked in the questionnaire to industrial companies are listed below:
+These sectors can have different electricity demands and needs and which can evolve over time as was seen in the last mini-lecture. We will now explore how these energy demands can be defined.
 
-- Geographical location
-- Financial details
-- Investment plans
-- Type of fuels used
-- Willingness to switch fuels
+## Defining energy demands
 
-Once these data have been collected, they can be used to find similar groups of investors and to start characterising the agents. For instance, if from the data it is clear that geographical location is an important consideration, the decision could be made to group companies by geographical region and form an agent on this basis. If the more important consideration is the investment plans, then a group can be made there.
+When defining an energy demand for energy systems models, it is important to identify the following:
 
-This approach is a more than efficient method of better understanding the characteristics of agents of a system, and it can help to inform a better modelling process. The work by Moya et al. [@Moya2020] finds that the results represent the unique heterogeneity of fuel-switching industrial investors with distinct investment goals and limited foresight on costs. In other words, the survey results have an impact on the outcome of the energy system over the long-term.
+- The energy carrier which the demand arises for. For example, electricity, gasoline for transportation or biomass for cooking.
+- The sector the demand arises from. For example, residential (urban and/or rural, off- or on-grid), industrial or commercial.
+- The average variability of the demand within a year. This is usually expressed using average demand profiles, which are explained in more detail later in this lecture.
+- The current and expected future annual average demand.
+
+However, it is very difficult to predict future demand, and there will always be uncertainty in our predictions. Due to this it is important to model different scenarios.
+
+## Defining our own energy demand
+
+As has just been seen, when we want to define our own energy demand, we need to identify a number of different features. Let's say, for example, that we want to define the demand for electricity in urban homes. To do this, we need to define:
+
+- The energy carrier for which the demand arises for. In this case it is electricity.
+- The sector the demand arises from. In this example it is the residential sector, or the urban residential sector if you would like to be more specific.
+- The average variability of the demand over the year. In this example we can look at daily and yearly electricity demand profiles for a residential urban area. This will tell us how the demand varies on a daily and seasonal scale.
+- Current and predicted future demand. For this, we can look at an energy balance (covered in more detail later) to get data for the current and historical residential electricity demand. We can use these data as a baseline, and we could combine it with an estimate of population growth to create a future projection for the demand.
+
+## Scenario analysis
+
+Within energy systems modelling, we must explore different possibilities of what could happen in the future. This is known as scenario analysis. We do this as the future is uncertain, particularly over the long-term horizon. We therefore might want to consider multiple scenarios to assess how demand could vary in the future.
+
+For example, for different scenarios, key predictors of energy demand, such as population growth, economic development and energy policy can be varied across the scenarios. This would mean that each scenario has a different energy demand projection.
+
+Since we can not be certain of the scenario which will be the best predictor of the future, it is useful to model several scenarios and consider the implications of each of them to give useful insights for policymaking. This allows policy makers to assess which of the different policies and mixes suit their needs based upon likelihoods and risk tolerances.
 
 # Summary
 
-In this mini-lecture we explored how surveys can be used to inform agents within MUSE. We also discovered how these results can affect the modelling outcomes of energy systems.
+This mini-lecture provided an overview of energy demands, how we can define them and the details which make them up. We also explored how we can perform scenario analysis with energy demands, to understand what could happen in the future.
