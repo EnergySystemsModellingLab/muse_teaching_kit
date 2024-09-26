@@ -47,12 +47,12 @@ order=(
     "installation"
     "running-muse-example"
     "add-solar"
+    "additional-service-demand"
+    "add-gdp-correlation-demand"
     "add-agent"
     "add-region"
     "modify-timing-data"
     "min-max-timeslice-constraints"
-    "additional-service-demand"
-    "add-gdp-correlation-demand"
 )
 
 # Rename files
