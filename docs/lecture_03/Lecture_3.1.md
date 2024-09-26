@@ -33,7 +33,7 @@ It is possible to model these different options in MUSE, which allows us to gain
 
 ## Residential sector in MUSE
 
-Within MUSE we can model different technology options. For instance, if we are to model an electric stove and a biomass stove we would have different inputs (CommIn.csv file). However, we would have the same output (CommOut.csv file) of cooking demand. We can also model an increase in efficiency of a technology by lowering the value in the CommIn.csv file. It is possible to change the efficiency over time using interpolation or a flat-forward extension as explained in mini-lecture 5.4. We can also consider the costs of investing in more energy efficient appliances by increasing the cost of these high efficiency appliances relative to the low efficiency appliances. By doing this, we can understand where and when investments in energy efficiency might be economic.
+Within MUSE we can model different technology options. For instance, if we are to model an electric stove and a biomass stove we would have different inputs (CommIn.csv file). However, we would have the same output (CommOut.csv file) of cooking demand. We can also model an increase in efficiency of a technology by lowering the value in the CommIn.csv file. It is possible to change the efficiency over time using interpolation or a flat-forward extension as explained in mini-lecture 4.4. We can also consider the costs of investing in more energy efficient appliances by increasing the cost of these high efficiency appliances relative to the low efficiency appliances. By doing this, we can understand where and when investments in energy efficiency might be economic.
 
 # Summary
 

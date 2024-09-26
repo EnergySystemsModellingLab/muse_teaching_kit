@@ -27,11 +27,11 @@ Then there are annual costs, which are split into variable and fixed costs. Ther
 
 **Figure 4.2.1:** Cost types [@Taliotis2018]
 
-In MUSE, these are defined in the `cap_par`, `cap_exp`, `fix_par`, `fix_exp`, `var_par`, and `var_exp` variables where:
+In MUSE, these are defined by the `cap_par`, `cap_exp`, `fix_par`, `fix_exp`, `var_par`, and `var_exp` variables where:
 
--- `cap_par` is the capital costs, and `cap_exp` is the exponential component of this. Effectively, the `cap_exp` defines the reduction in cost due to economies of scale as the investment into this technology and its capacity increases. This should be a number between 0 and 1.
--- `fix_par` is the fixed costs, and `fix_exp` is the exponential component similar to the exponential component in `cap_exp`.
--- `var_par` is the fixed costs, and `var_exp` is the exponential component.
+- `cap_par` is the capital costs, and `cap_exp` is the exponential component of this. Effectively, the `cap_exp` defines the reduction in cost due to economies of scale as the investment into this technology and its capacity increases. This should be a number between 0 and 1.
+- `fix_par` is the fixed costs, and `fix_exp` is the exponential component similar to the exponential component in `cap_exp`.
+- `var_par` is the fixed costs, and `var_exp` is the exponential component.
 
 The exponential component can be chosen from relevant data, but can often by difficult to find. In that case it is okay to use a number such as 1 or 0.95 as a rough indication.
 

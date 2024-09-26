@@ -37,7 +37,7 @@ The overall lecture structure is presented below:
 8. Energy demands
 9. Communicating research
 
-First, you will have an overview of energy systems modelling. Then we will introduce you to the agent-based model, MUSE. The next lectures detail the key components that make up MUSE. Some of these, such as energy demands and timeslices are common to all energy systems models, and some are unique to MUSE's agent-based modelling type, such as regions.
+First, you will have an overview of energy systems modelling. Then we will introduce you to the agent-based model MUSE. The next lectures detail the key components that make up MUSE. Some of these, such as energy demands and timeslices are common to all energy systems models, and some are unique to MUSE's agent-based modelling type, such as regions.
 
 The accompanying hands-on exercises are:
 

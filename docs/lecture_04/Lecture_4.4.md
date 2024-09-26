@@ -29,13 +29,23 @@ It must be noted, however, that MUSE does not allow a user to just update a sing
 
 The figure below shows a snippet of the technodata file for the residential sector. We can see that we have data parametrising the technologies in 2020.
 
-![](assets/Figure_4.4.1.png){width=100%}
+|ProcessName|RegionName|Time|cap_par|cap_exp|…|
+|-|-|-|-|-|-|
+|Unit|-|Year|MUS$2010/PJ_a|-|…|
+|gasboiler|R1|2020|3.8|1|…|
+|heatpump|R1|2020|8.866667|1|…|
 
 **Figure 4.4.1:** Technodata for residential sector
 
 Let's say that we want to update the capital costs (`cap_par`) for heat pumps in 2040, but do not want to update the prices for gasboilers. This is how we do it:
 
-![](assets/Figure_4.4.2.png){width=100%}
+|ProcessName|RegionName|Time|cap_par|cap_exp|…|
+|-|-|-|-|-|-|
+|Unit|-|Year|MUS$2010/PJ_a|-|…|
+|gasboiler|R1|2020|3.8|1|…|
+|heatpump|R1|2020|8.866667|1|…|
+|gasboiler|R1|2040|3.8|1|…|
+|heatpump|R1|2040|5|1|…|
 
 **Figure 4.4.2:** Updated technodata for residential sector
 

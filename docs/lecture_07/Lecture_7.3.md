@@ -25,11 +25,18 @@ Within MUSE, similarly to the supply sectors, we can model this time varying cap
 
 To do this, we must edit the demand in the `preset/Residential2050Consumption.csv` sector. An example of which is shown in Figure 7.3.1.
 
-![](assets/Figure_7.1.1.png){width=100%}
+|RegionName|Timeslice|electricity|gas|heat|CO2f|wind|
+|-|-|-|-|-|-|-|
+|R1|1|0|0|3|0|0|
+|R1|2|0|0|4.5|0|0|
+|R1|3|0|0|3|0|0|
+|R1|4|0|0|4.5|0|0|
+|R1|5|0|0|9|0|0|
+|R1|6|0|0|6|0|0|
 
 **Figure 7.3.1:** Example input for the preset sector.
 
-In this small example we see that there is only a demand for `heat` in the residential sector. However, this demand changes per timeslice (which are listed in the leftmost column). For instance, there is low demand for heat in timeslice 0 and a high demand for heat in timeslice 4. These timeslices refer to a single representative day, and therefore timeslice 4 has the highest demand for heat as it is in the late-evening, when people generally come home from work and turn on their radiators.
+In this small example we see that there is only a demand for `heat` in the residential sector. However, this demand changes per timeslice (which are listed in the leftmost column). For instance, there is low demand for heat in timeslice 1 and a high demand for heat in timeslice 5. These timeslices refer to a single representative day, and therefore timeslice 5 has the highest demand for heat as it is in the late-evening, when people generally come home from work and turn on their radiators.
 
 In your models you can use datasets to disaggregate the demand into different types, or you can aggregate demand to include all gas or electricity utilised in the residential sector. This is largely dependent on the data available and the complexity of the model you would like.
 

@@ -29,7 +29,11 @@ Within MUSE there are two files which one should change to edit these parameters
 
 In this example we will look at the residential sectors `CommIn.csv` and `CommOut.csv` files. An example `CommIn.csv` file can be seen in the figure below:
 
-![](assets/Figure_4.3.1.png){width=100%}
+|ProcessName|RegionName|Time|electricity|gas|heat|CO2f|wind|
+|-----------|----------|----|-----------|---|----|----|----|
+|Unit|-|Year|PJ/PJ|PJ/PJ|PJ/PJ|kt/PJ|PJ/PJ|
+|gasboiler|R1|2020|0|1.67|0|0|0|
+|heatpump|R1|2020|0.4|0|0|0|0|
 
 **Figure 4.3.1:** CommIn file for the residential sector
 
@@ -37,7 +41,11 @@ Here we see two technologies: `gasboiler` and `heatpump`. They are both in regio
 
 However, it is important to note that these figures are meaningless without the `CommOut.csv` file. We need to know how much energy does the 1.16 PJ of energy produce in the `gasboiler`? As can be seen in the figure below showing an example `CommOut.csv` file, it is convention to select an output of 1. That way we only have to vary the `CommIn.csv` to change the efficiencies consistently.
 
-![](assets/Figure_4.3.2.png){width=100%}
+|ProcessName|RegionName|Time|electricity|gas|heat|CO2f|wind|
+|-----------|----------|----|-----------|---|----|----|----|
+|Unit|-|Year|PJ/PJ|PJ/PJ|PJ/PJ|kt/PJ|PJ/PJ|
+|gasboiler|R1|2020|0|0|1|64.71|0|
+|heatpump|R1|2020|0|0|1|0|0|
 
 **Figure 4.3.1:** CommOut file for the residential sector
 

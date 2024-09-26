@@ -28,7 +28,7 @@ Some of the types of questions asked in the questionnaire to industrial companie
 
 Once these data have been collected, they can be used to find similar groups of investors and to start characterising the agents. For instance, if from the data it is clear that geographical location is an important consideration, the decision could be made to group companies by geographical region and form an agent on this basis. If the more important consideration is the investment plans, then a group can be made there.
 
-This approach is a more than efficient method of better understanding the characteristics of agents of a system, and it can help to inform a better modelling process. The work by Moya et al. ([@Moya2020]) finds that the results represent the unique heterogeneity of fuel-switching industrial investors with distinct investment goals and limited foresight on costs. In other words, the survey results have an impact on the outcome of the energy system over the long-term.
+This approach is a more than efficient method of better understanding the characteristics of agents of a system, and it can help to inform a better modelling process. The work by Moya et al. [@Moya2020] finds that the results represent the unique heterogeneity of fuel-switching industrial investors with distinct investment goals and limited foresight on costs. In other words, the survey results have an impact on the outcome of the energy system over the long-term.
 
 # Summary
 

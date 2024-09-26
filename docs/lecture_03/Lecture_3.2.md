@@ -30,7 +30,7 @@ It is possible to model the different technologies in MUSE, and observe competit
 
 ## Emissions
 
-The transport sector was estimated to be responsible for around 16% of global emissions in 2016 [@owidco2andothergreenhousegasemissions]. Thus, scenarios consistent with meeting global climate targets require transport sector emissions to decline rapidly. Therefore a rapid move towards sustainable technologies, such as electric vehicles is required. It is true, however, that some of the modes of transport are difficult to decarbonise. For example, it is difficult to decarbonise shipping and aviation technologies. This is because the energy density of lithium ion batteries and other technologies are lower than oil-based products. It is worth mentioning, however, that decarbonising transport is only useful if the energy sector increases its low-carbon electricity sources to supply the transport sector.
+The transport sector was estimated to be responsible for around 16% of global emissions in 2016 [@owidco2andothergreenhousegasemissions]. Thus, scenarios consistent with meeting global climate targets require transport sector emissions to decline rapidly. Therefore a rapid move towards sustainable technologies, such as electric vehicles is required. It is true, however, that some modes of transport are difficult to decarbonise. For example, it is difficult to decarbonise shipping and aviation technologies. This is because the energy density of lithium ion batteries and other technologies are lower than oil-based products. It is worth mentioning, however, that decarbonising transport is only useful if the energy sector increases its low-carbon electricity sources to supply the transport sector.
 
 ## Transport sector in MUSE
 
