@@ -1,34 +1,56 @@
 ---
-title: Mini-Lecture 4.4 -- Timeslicing and climate policy
+title: Mini-Lecture 4.4 -- Interpolation and future years
 keywords:
--   Climate policy
--   Timeslicing
+-   Interpolation
+-   Energy technologies
 authors:
 -   Alexander J. M. Kell
 ---
 
-This mini-lecture explores the relevance of timeslicing to climate policy. We will explore how different timeslicing can affect modelling results, why it is important to consider realistic timeslicing and how these can affect policy decisions.
+MUSE is flexible in its approach. It requires inputs for at least the base year, but does not necessarily need more than that to project forward. In this mini-lecture we will cover how MUSE deals with missing data and how to model future years
 
 # Learning objectives
 
-- Understand the impact of timeslicing on modelling outputs
-- Learn how timeslicing can affect policy decisions
+- Learn how to model costs in multiple years
+- Understand how MUSE deals with missing data
+- Understand interpolation
 
-# Timeslicing and policy
+# Introduction
 
-Timeslicing is a core component of an energy systems model as we have previously discussed. If one were to use an inappropriate number of timeslices in an energy systems model, it is likely that this would have major implications on the model outputs. 
+Within the input sheets you may have noticed the `Time` column. In the default example this is set to 2020. However, what happens beyond these years if we do not specify a cost, for example? Also, what happens in 2030 if we only specify a cost in 2020 and 2040?
 
-Let's look at an example: if we were to model solar panels with an average capacity factor for the entire time horizon of the model this would assume that the solar panels can be used at night and could displace other technologies, such as gas turbines. However, in reality, solar panels contribute to the grid during the day and produce nothing at night. Therefore, we need some sort of flexibility in the system to ramp up after the sun sets. This needs to be modelled explicitly within MUSE, so to allow gas (or other technologies) to fill this gap in supply. 
+Within MUSE, we make some assumptions. We assume that if there are no costs input into a model beyond a certain year, that the costs remain the same. This is known as a flat-forward extension. If, for example, we input costs in 2020 and 2040, we will interpolate the values in between these years linearly.
 
-If we take this conclusion further, it is possible to see scenarios where the intermittency of solar and wind are not modelled, and therefore we observe scenarios with a majority in solar or wind. With current technologies this is not possible, and this therefore underscores the importance of timeslicing. 
+An example of this is, say that the capital costs for a gas boiler is set to be 4 for a gas boiler in 2020 and 2 in 2040. We have not explicitly defined 2025, 2030 or 2035. Based on linear interpolation, MUSE will assume a value of 2.5 for 2025, 3 for 2030 (halfway between the year 2020 and 2040) and 3.5 for 2035.
 
-If we do not use accurate timeslicing then the model outputs can skew resulting policy, and so due care must be taken for sourcing data from different geographies.
+It must be noted, however, that MUSE does not allow a user to just update a single technology. For instance, if we want to specify the technology costs in 2035 for a coal power plant, we must also define the technology costs for every other technology in 2035 – although this cost need not be changed from the original value. We also do not need to define every year, however, as interpolation and a flat-forward extension can still be used.
+
+## Practical example
+
+The figure below shows a snippet of the technodata file for the residential sector. We can see that we have data parametrising the technologies in 2020.
+
+|ProcessName|RegionName|Time|cap_par|cap_exp|…|
+|-|-|-|-|-|-|
+|Unit|-|Year|MUS$2010/PJ_a|-|…|
+|gasboiler|R1|2020|3.8|1|…|
+|heatpump|R1|2020|8.866667|1|…|
+
+**Figure 4.4.1:** Technodata for residential sector
+
+Let's say that we want to update the capital costs (`cap_par`) for heat pumps in 2040, but do not want to update the prices for gasboilers. This is how we do it:
+
+|ProcessName|RegionName|Time|cap_par|cap_exp|…|
+|-|-|-|-|-|-|
+|Unit|-|Year|MUS$2010/PJ_a|-|…|
+|gasboiler|R1|2020|3.8|1|…|
+|heatpump|R1|2020|8.866667|1|…|
+|gasboiler|R1|2040|3.8|1|…|
+|heatpump|R1|2040|5|1|…|
+
+**Figure 4.4.2:** Updated technodata for residential sector
+
+Notice that we need separate rows for both `heatpump` and `gasboiler` even though we are only making a change in the `heatpump` capital cost. If we do not do this we will encounter an error. In between 2020 and 2040 we will get interpolation.
 
 # Summary
 
-In this lecture we have looked into the implications of different timeslicing decisions made when creating an energy systems model. We learnt that if we do not get this right, the investments made could be skewed and unrealistic. 
-
-
-
-
-
+In this mini-lecture we learned how to update costs in the time domain, and the assumptions MUSE makes if we do not give costs for every year. Namely, flat-forward extension and interpolation. We also learnt how to practically input these values in MUSE with the `Technodata.csv` file.

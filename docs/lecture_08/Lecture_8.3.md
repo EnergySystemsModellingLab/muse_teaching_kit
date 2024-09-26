@@ -1,40 +1,45 @@
 ---
-title: Mini-Lecture 8.3 -- Communicating research
+title: Mini-Lecture 8.3 - Different energy demands by timeslice
 keywords:
-- Science communication
-- Visualisation
+- Energy demands
+- Timeslice
+- Energy modelling
 authors:
-- Alexander J. M. Kell
+-   Alexander J. M. Kell
 ---
 
-In this mini-lecture, we will explore the different ways that research can be communicated effectively. 
+This mini-lecture will continue exploring the importance of timeslices in energy modelling; however, it will have a particular focus on energy demands, and how these can change by timeslice and over the years.
+
+In the previous lecture we explored energy demands and timeslices. In this lecture we will have a brief recap of this, and explore how energy demand can be represented within MUSE.
 
 # Learning objectives
 
-- Understand how to communicate the results of your research to influence policy development
+- Understand how energy demand can change by timeslice
+- Learn how energy demand is represented in MUSE
 
-# Effective communication of research
+# Energy demand
 
-Throughout this course, we have explored the useful insights and analysis that can be provided by energy systems models. We have also explored the types of results that can lead to changes in the planning of energy systems, for example by taking a more holistic approach to investment planning.
+Energy demand can come in various forms. For instance, the demand we model can be for heating or cooling in the residential sector. It is the case that these demands have different characteristics. For instance, they may have different magnitudes and different technologies which serve these demands as well as they may be able to run at different times.
 
-However, it is important that these results are communicated effectively to ensure that decision makers can fully understand the implications of these results. Effective communication also allows the methodology of the study to be better understood, which allows for the positives and limitations of the model to be explored.
+Within MUSE, similarly to the supply sectors, we can model this time varying capability with timeslices. For instance, if we have 4 representative days which refer to the different seasons, we can model the high heating demand in winter and cooling demand in summer. On top of this we can vary these demands by time of day.
 
-## Presenting figures
+To do this, we must edit the demand in the `preset/Residential2050Consumption.csv` sector. An example of which is shown in Figure 8.3.1.
 
-It is crucial to present figures in an understandable way. Figures are often the first thing that the audience will look at and try to understand. Figures can be used to convey the key results from your study in an impactful way. There are therefore some things that should be considered.
+|RegionName|Timeslice|electricity|gas|heat|CO2f|wind|
+|-|-|-|-|-|-|-|
+|R1|1|0|0|3|0|0|
+|R1|2|0|0|4.5|0|0|
+|R1|3|0|0|3|0|0|
+|R1|4|0|0|4.5|0|0|
+|R1|5|0|0|9|0|0|
+|R1|6|0|0|6|0|0|
 
-The first of these is to design the figure with the target audience in mind. For example, if the audience is made of non-specialists, it may be sensible to ensure figures focus on the message without lots of technical jargon. For any audience, it is important that they understand the content of the figure, and so it is important to always include a figure caption, a legend (explaining colour coding and any symbols) and axis titles where appropriate. Finally, the colours chosen can have a large impact and so the colours should be chosen carefully with sufficient distinction between the colours.
+**Figure 8.3.1:** Example input for the preset sector.
 
-## Common mistakes
+In this small example we see that there is only a demand for `heat` in the residential sector. However, this demand changes per timeslice (which are listed in the leftmost column). For instance, there is low demand for heat in timeslice 1 and a high demand for heat in timeslice 5. These timeslices refer to a single representative day, and therefore timeslice 5 has the highest demand for heat as it is in the late-evening, when people generally come home from work and turn on their radiators.
 
-This section focuses on the commonly made mistakes when presenting figures in research. It can often be the case that figures are too confusing and contain too much data. This can often result in the message of the figure being unclear. It may be the case that by confusing your audience you reduce the impact of your research findings. Therefore, it is advisable to make figures as simple as possible to ensure that they are understandable.
-
-Other common mistakes include:
-- The use of inappropriate axis for graphs which can distort results
-- Lack of figure captions, axis titles, labels or legends
-
+In your models you can use datasets to disaggregate the demand into different types, or you can aggregate demand to include all gas or electricity utilised in the residential sector. This is largely dependent on the data available and the complexity of the model you would like.
 
 # Summary
 
-In this mini-lecture we explored the different ways that we can communicate our research for maximum impact and ways to make figures understandable to our target audience.
- 
+In this mini-lecture, we explored the importance of timeslicing for modelling demand in energy models. We also covered how this can be done within MUSE using the preset sector.

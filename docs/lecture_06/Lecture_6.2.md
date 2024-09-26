@@ -1,57 +1,35 @@
 ---
-title: Mini-Lecture 6.2 -- The transport sector in MUSE
+title: Mini-Lecture 6.2 -- How to relate agent representations to the real world
 keywords:
--   Transport sector
--   Energy modelling
+- Agent-based modelling
+- Characterisation
 authors:
 -   Alexander J. M. Kell
 ---
 
-This mini-lecture introduces the transport sector. We will explore the different demands and technologies within the transport sector and how we can model them within MUSE.
+In this mini-lecture we will introduce some methods to translate socioeconomic data into MUSE with a quantitative approach.
 
 # Learning objectives
 
-- The main characteristics of the transport sector
-- How these can be modelled within MUSE
+- Discuss surveys and socioeconomic data and how these can relate to MUSE
+- Discover ways that surveys can be used in quantitative modelling
 
-# Overview of the transport sector and its demands
+# Qualitative representation in agent-based models
 
-The transport sector is vital in the modern age. In the last few decades, the use of transport has increased significantly. This is as more people gain access to vehicles and develop lifestyles which rely on transport.
+Through the use of qualitative data, such as using qualitative surveys, it is possible to gain greater insight into the different characteristics of consumers or investors. One example of how this can be done was by Moya et al. (2020). In this paper the authors explore fuel-switching investment in the long-term energy transitions of India's industry sector. They inform the modelled agents through a questionnaire that was carried out to inform MUSE.
 
-Figure 6.2.1 shows different modes of transport. As can be seen, road transport is the most used transport mode. We can also see that over 90% of fuel used in the EU transport sector is petroleum based. This is similar across the world. However, this creates challenges due to the unsustainability of fossil fuels. 
+Some of the types of questions asked in the questionnaire to industrial companies are listed below:
 
-![](assets/Figure_6.2.1.jpg){width=100%}
+- Geographical location
+- Financial details
+- Investment plans
+- Type of fuels used
+- Willingness to switch fuels
 
-**Figure 6.2.1:** Transport modes and fuel share in the EU [@en13020432].
+Once these data have been collected, they can be used to find similar groups of investors and to start characterising the agents. For instance, if from the data it is clear that geographical location is an important consideration, the decision could be made to group companies by geographical region and form an agent on this basis. If the more important consideration is the investment plans, then a group can be made there.
 
-Due to the unsustainability of fossil fuels, other solutions have been taken up with support from governments around the world. For example, cars, motorbikes and buses can be fuelled by electricity. Electric vehicles have seen large reductions in cost and improvements in performance. Electric vehicles could play an important role in overcoming the sector's challenges. 
-
-It is possible to model the different technologies in MUSE, and observe competition between technologies based upon their technoeconomic parameters.
-
-## Emissions
-
-The transport sector was estimated to be responsible for around 16% of global emissions in 2016 [@owidco2andothergreenhousegasemissions]. Thus, scenarios consistent with meeting global climate targets require transport sector emissions to decline rapidly. Therefore a rapid move towards sustainable technologies, such as electric vehicles is required. It is true, however, that some of the modes of transport are difficult to decarbonise. For example, it is difficult to decarbonise shipping and aviation technologies. This is because the energy density of lithium ion batteries and other technologies are lower than oil-based products. It is worth mentioning, however, that decarbonising transport is only useful if the energy sector increases its low-carbon electricity sources to supply the transport sector. 
-
-## Transport sector in MUSE
-
-Similar to the residential sector, we can define different technologies for the transport sector using technoeconomic parameters. For example, we can split road transport into three categories: 
-
-- Cars
-- Motorcycles
-- Buses
-
-We can then split these three categories into their propulsion system. For instance:
-
-- Electric vehicles
-- Conventional vehicles
-
-We can source road transport data from national energy balances such as from the IEA, and divide this between cars, motorcycles and buses based on the split of transport by mode in the country. 
-
-We can then run a MUSE model with the different parameters and see the effect of these different parameters on agent investment decisions. These parameters could be fuel prices, technology costs or performance parameters. We can also run the model with a carbon limit, which places a tax on carbon emissions, allowing us to work out how to pick a desirable policy depending on what we are trying to achieve.
+This approach is a more than efficient method of better understanding the characteristics of agents of a system, and it can help to inform a better modelling process. The work by Moya et al. [@Moya2020] finds that the results represent the unique heterogeneity of fuel-switching industrial investors with distinct investment goals and limited foresight on costs. In other words, the survey results have an impact on the outcome of the energy system over the long-term.
 
 # Summary
 
-In this mini-lecture we have considered the transport sector and how we can model this within MUSE. We discussed the emissions of the transport sector, and how different technologies can be used to reduce these emissions. 
-
-
-
+In this mini-lecture we explored how surveys can be used to inform agents within MUSE. We also discovered how these results can affect the modelling outcomes of energy systems.

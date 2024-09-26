@@ -1,0 +1,3 @@
+[submodule "MUSE_OS"]
+	path = MUSE_OS
+	url = https://github.com/EnergySystemsModellingLab/MUSE_OS.git

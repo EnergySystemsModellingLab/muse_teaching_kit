@@ -1,95 +1,40 @@
 ---
-title: Mini-Lecture 3.1 -- Energy demands in energy systems modelling
+title: Mini-Lecture 3.1 –- Residential Sectors in MUSE
 keywords:
--   Energy demand
--   Energy systems models
+-   Residential sector
+-   Sectors in MUSE
 authors:
 -   Alexander J. M. Kell
 ---
 
-To begin lecture 3, this mini-lecture provides an overview of energy demands within an energy system. We will cover differences in energy demands by sector, time and population classes. We will also begin to explore why these differences are important within energy models. Lecture 3 will take you through the basics for modelling energy demand in MUSE, the different options available to do so, and some specific examples
+This mini-lecture introduces the concept of the residential sector
 
 # Learning objectives
 
-- Learn what energy demands are in an energy modelling context
-- Understand how demands can change based on different variables
+- Understand the role of the residential sector, its technologies and the main energy and societal challenges
 
-# Introduction
+# Overview of the residential sector and its demands?
 
-Everyone needs energy for many different purposes. The form in which this energy should be delivered is dependent on the specific application. These demands for energy come from all sectors of society such as:
-
-- The residential sector (rural and urban) 
-    - Cooking
-    - Heating
-    - Cooling
-    - Lighting
-    - Appliances
-- Industry
-    - Chemical processes
-    - Steam production
-    - Heating
-- Commerce
-    - Lighting
-    - Heating
-    - Cooling buildings
-    - Keeping products at low temperatures
-- Transport
-    - Cars
-    - Trucks
-    - Buses
-    - Aviation
-    - Shipping
-    - Trains
-- Agriculture
-    - Tractors
-    - Machinery
-    - Pumping water
-
-## Variations in daily energy demand
-
-These energy demands can vary on hourly, daily, weekly and monthly timescales. This mainly reflects the schedule of consumers' activities. For example, on a monthly timescale more cooling will be used in summer and more heating in winter. However, these energy demands can also vary by sector, as shown by Figure 3.1.1.
+Energy is used for many different reasons in the residential sector, as shown by Figure 3.1.1. This image shows the share of residential energy by service demand. We can see that energy is used for many different purposes, from heating and cooking to cleaning and ironing. This split of energy demand will vary across different countries. Figure 3.1.1 shows residential energy demand in Italy, which will differ to countries in Asia, for instance. This is largely dependent on different climates, levels of development and lifestyles.
 
 ![](assets/Figure_3.1.1.png){width=100%}
 
-**Figure 3.1.1:** Variations of energy demand by sector in a hypothetical example [@Taliotis2018].
+**Figure 3.1.1:** Residential sector in Italy and the different demands [@en12112055]. (Note: DHW refers to Domestic Hot Water).
 
-Figure 3.1.1 shows us that the magnitude of demand varies by sector, with agricultural demand significantly lower than residential and commercial demand, in this example. The reason that the commercial and residential sectors consume more is because their activities are more energy intensive or they are simply larger.
+The total magnitude of energy demand varies by country as a total value, but also as energy demand per capita. This is strongly dependent on the level of electricity access and availability of other fuels in the country. Residential activities can use different forms of energy. For example, cooking can be met by burning biomass, oil products, natural gas or electricity. The fuels used vary by country.
 
-We can also see that the daily profile of demand varies by sector. For example, in Figure 3.1.1 we can see that there is a clear evening peak in residential demand, whereas agricultural and industrial demand remains flat throughout the day. This is because agricultural and industrial demands are consistent throughout the day. This is likely because the industrial and agricultural sector operate constantly, whereas energy use in homes peaks in the evening when consumers use more electricity for cooking, lighting and appliances when they return from work or other business.
+## Residential sector technologies
 
-## Sector specific demands
+Some of the key residential technologies include lamps, cooking stoves, heating and air conditioning systems, as well as other electrical appliances. Some of these technologies can only use one fuel, such as electrical appliances and air conditioning which rely on electricity.
 
-The differences between sectors means that it can sometimes be important to model demands separately by each sector. This feature allows the models to consider the specific characteristics of each demand. 
+However, in other cases multiple different fuels can be used for the same purpose. For example, heating. Heating can be met by burning biomass, natural gas, oil or electricity, for instance. These technologies have differing performance parameters. For example, electric stoves are usually much more efficient than biomass stoves. Different technological options also have different impacts on the environment and on human health. For example, the emissions from biomass can have detrimental impacts on human health, whereas electric stoves do not have emissions in the home.
 
-Within each of these sectors, the energy demand varies over time and across different types of consumers. For example, within the residential sector, demands can differ between rural and urban households, as shown in Figure 3.1.2. This can also be true between grid-connected and off-grid areas. Energy planners must ensure that energy demand is always met for all types of consumers. Therefore, it is important that the key characteristics of different demands are represented in energy models.
+It is possible to model these different options in MUSE, which allows us to gain insights into their environmental and cost implications. Modelling can allow us to model the entire system as a whole, understand the trade-offs between certain technologies and make decisions on which policies to implement.
 
-![](assets/Figure_3.1.2.png){width=100%}
+## Residential sector in MUSE
 
-**Figure 3.1.2:** Variations of energy demand for the residential sector by population types [@Olaniyan2018]
-
-
-## Long-term variations in energy demands
-
-A major challenge in energy planning is that energy demands can change over time. This could be due to population growth or the creation of new industries. Figure 3.1.3 displays historical variations in energy demands. It is likely that these demands are correlated to changes in society. For example, increases in energy demand likely reflect increased industrial activity. For energy planning, we must also think about how energy demands are likely to change in the future. 
-
-We can often forecast energy demand, such as with future projections  as shown in Figure 3.1.3. These forecasts can be created using estimates of the key influencers of energy demand, such as population growth and economic activity. Future projections are often based on how energy demands have changed historically. 
-
-![](assets/Figure_3.1.3.png){width=100%}
-
-**Figure 3.1.3:** Long-term energy consumption by source
-
-
-## Capacity expansion planning
-
-One of the key purposes of MUSE is for capacity expansion. Figure 3.1.4 displays this key issue which MUSE can address. Essentially, if total demand increases (green line) and existing system capacities are retired (blue line), how can we invest to meet the energy capacity needed to supply demand (red line)? 
-
-![](assets/Figure_3.1.4.png){width=100%}
-
-**Figure 3.1.4:** Capacity expansion [@Taliotis2018]
-
-You may notice that the red line is higher than the green line at all points. This is due to losses due to lower generating efficiencies. The gap between the red and blue lines demonstrates the required capacity expansion over time. MUSE enables us to plan such a capacity expansion whilst considering technical, economic and environmental constraints.
-
+Within MUSE we can model different technology options. For instance, if we are to model an electric stove and a biomass stove we would have different inputs (CommIn.csv file). However, we would have the same output (CommOut.csv file) of cooking demand. We can also model an increase in efficiency of a technology by lowering the value in the CommIn.csv file. It is possible to change the efficiency over time using interpolation or a flat-forward extension as explained in mini-lecture 4.4. We can also consider the costs of investing in more energy efficient appliances by increasing the cost of these high efficiency appliances relative to the low efficiency appliances. By doing this, we can understand where and when investments in energy efficiency might be economic.
 
 # Summary
 
-In this mini-lecture we covered the differences between energy demands in different population types, sectors and timescales. We learnt why it is important to model these differences in demand in energy systems models. We also explored how energy systems models can be used to meet a changing demand profile in the future. 
+In this lecture we have explored the residential sector. We considered the different demands that can reside within the residential sector and the different technologies that can be used to meet these demands. We also learnt of the difference in demands between countries and how we can model different technologies within MUSE.

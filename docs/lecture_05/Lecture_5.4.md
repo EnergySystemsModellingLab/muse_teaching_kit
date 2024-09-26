@@ -1,52 +1,61 @@
 ---
-title: Mini-Lecture 5.4 -- Interpolation and future years
+title: "Mini-Lecture 5.4 -- Demand examples and units"
 keywords:
--   Interpolation
--   Energy technologies
+-   Infrastructure performance
 authors:
 -   Alexander J. M. Kell
 ---
 
-MUSE is flexible in its approach. It requires inputs for at least the base year, but does not necessarily need more than that to project forward. In this mini-lecture we will cover how MUSE deals with missing data and how to model future years
+# Short description
 
+This mini-lecture explains how we can use timeslices to approximate the real-world demand profile. We will look into the difference between power and energy. Finally, we will learn how to convert units to ensure we are consistent within MUSE.
 
 # Learning objectives
 
-- Learn how to model costs in multiple years
-- Understand how MUSE deals with missing data
-- Understand interpolation
+- Understand how timeslices can be used in the context of demand
+- Understand the difference between power and energy
+- Know the units to use within MUSE and how to convert these
 
-# Introduction
+# Demand profile
 
-Within the input sheets you may have noticed the `Time` column. In the default example this is set to 2020. However, what happens beyond these years if we do not specify a cost, for example? Also, what happens in 2030 if we only specify a cost in 2020 and 2040?
+Figure 5.1.5 shown an example demand profile for electricity that could be used in MUSE. In this demand profile there are 96 bars: one for each of the timeslices used in MUSE. These timeslices are split into 16 different sections – seasonal and into day and night. This is because there are four different seasons, which are split into day and night (twice). The demand profile is used to represent the proportion of demand occurring in each timeslice.
 
-Within MUSE, we make some assumptions. We assume that if there are no costs input into a model beyond a certain year, that the costs remain the same. This is known as a flat-forward extension. If, for example, we input costs in 2020 and 2040, we will interpolate the values in between these years linearly.
+![](assets/Figure_5.1.5.png){width=100%}
 
-An example of this is, say that the capital costs for a gas boiler is set to be 4 for a gas boiler in 2020 and 2 in 2040. We have not explicitly defined 2025, 2030 or 2035. Based on linear interpolation, MUSE will assume a value of 2.5 for 2025, 3 for 2030 (halfway between the year 2020 and 2040) and 3.5 for 2035. 
+**Figure 5.4.1:** Example demand profile for MUSE
 
-It must be noted, however, that MUSE does not allow a user to just update a single technology. For instance, if we want to specify the technology costs in 2035 for a coal power plant, we must also define the technology costs for every other technology in 2035 – although this cost need not be changed from the original value. We also do not need to define every year, however, as interpolation and a flat-forward extension can still be used.
+The chart shows us that electricity demand, in this example, is highest during the day in winter, while it is lowest during the night in spring. However, it is important to note that this is a simplification: in reality demand varies in the season and with each hour of the day. This simplification means that we model one representative day for each season, and we assume equal demand within days and nights of those seasons.
 
-## Practical example
+Whilst this is a simplification, it allows us to consider the variation in demand across seasons and days without having an incredibly complex model structure. This reduces the amount of time required to run a full model relative to having timeslices for each hour and day of the year, as well as reducing the data input requirements.
 
-The figure below shows a snippet of the technodata file for the residential sector. We can see that we have data parametrising the technologies in 2020.
+## Units
 
-![](assets/Figure_5.4.1.png){width=100%}
+We must ensure that during our data input process we are consistent with our units. Usually we will use the petajoules unit as this is the unit for energy for different sectors. If you were just modelling the power sector, you could use megawatt hours.
 
-**Figure 5.4.1:** Technodata for residential sector
+## Power vs. Energy
 
-Let's say that we want to update the capital costs (`cap_par`) for heat pumps in 2040, but do not want to update the prices for gasboilers. This is how we do it:
+When using energy modelling tools it is important to remember the difference between power and energy. Sometimes these terms are used interchangeably. However, there is an important difference between the two:
 
-![](assets/Figure_5.4.2.png){width=100%}
+- Energy is the total amount of work done or the total capacity for doing work
+- Power is the rate at which this energy is supplied or used.
 
-**Figure 5.4.2:** Updated technodata for residential sector
+Therefore, energy and power have different units. For example, energy is often measured in Joules, while power is often measured in Joules per Second (or Watts).
 
-Notice that we need separate rows for both `heatpump` and `gasboiler` even though we are only making a change in the `heatpump` capital cost. If we do not do this we will encounter an error. In between 2020 and 2040 we will get interpolation.
+For example, providing the weight stays the same, lifting a weight requires the exact same amount of energy no matter how quickly we lift it. However, if we lift the weight more quickly, the power has increased. We used the same amount of energy, but over a shorter amount of time.
 
+## Units for demand
+
+It is important that we convert our data from different sources to petajoules (PJ) when we include it in MUSE.
+
+Here are some example conversion factors:
+
+- 1 Petajoule (PJ) = 1000 Terajoules (TJ)
+- 1 Petajoule (PJ) = 1,000,000 Gigajoules (GJ)
+- 3.6 Petajoules (PJ) = 1 Terawatt hour (TWh)
+- 0.0036 Petajoules (PJ) = 1 Gigawatt hour (GWh)
+
+We must ensure that we are consistent with the units we use within MUSE.
 
 # Summary
 
-In this mini-lecture we learned how to update costs in the time domain, and the assumptions MUSE makes if we do not give costs for every year. Namely, flat-forward extension and interpolation. We also learnt how to practically input these values in MUSE with the `Technodata.csv` file.
-
-
-
-
+In this lecture we have learnt the difference between power and energy. We have also learnt how to use timeslicing to speed up our model and reduce complexity. Finally, we learnt that we must use consistent units.

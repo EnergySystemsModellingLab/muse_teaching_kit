@@ -1,37 +1,62 @@
 ---
-title: Mini-Lecture 4.2 - Technologies by timeslice
+title: Mini-Lecture 4.2 -- Technoeconomic characteristics
 keywords:
-- Energy technologies
-- Energy modelling
-- Timeslices
+- Technoeconomic data
+- Parametrisation
+
 authors:
 -   Alexander J. M. Kell
 ---
 
-In this mini-lecture we describe how different technologies can have different characteristics by timeslices.
+This mini-lecture will describe the techno-economic data that defines technologies in MUSE. These technoeconomics are fundamental to the functioning of a good MUSE model. Most technologies can be characterised by their efficiencies,  technoeconomics and inputs and outputs. This is because the technologies must be competitive against each other in an economic sense.
 
 # Learning objectives
 
-- Understand the different characteristics of technologies by timeslice
-- Understand how to characterise technologies by timeslice
+- Understand the main technoeconomic parameters
+- Understand how these parameters can impact investment decisions
 
-# Introduction
+# Technology costs
 
-In the previous lecture we discovered the importance of timeslices. In this mini-lecture we will learn about how different technologies have different characteristics when it comes to timeslices, and how this can be modelled within MUSE. 
+In this mini-lecture we will describe the different techno-economic parameters that MUSE defines, primarily in the `Technoeconomic.csv` file found in the different sector folders.
 
+Figure 4.2.1 displays the different cost types as defined in MUSE. The total costs are largely split into capital costs and annual costs. Capital costs, as shown by the figure, are the costs of depreciation, return on investment and other one-time fixed charges. This can include the initial costs of the technology such as construction.
 
-# Technologies by timeslices
+Then there are annual costs, which are split into variable and fixed costs. There is a distinction between these two types of costs, where fixed costs depend on the capacity of the power plant, whereas variable costs depend on the amount of energy output in a year. For instance, if a power plant does not output any electricity, it will not have to pay for fuel. However, it will still have to pay for salaries to look after the plant.
 
-Different technologies and supply sectors have different characteristics when it comes to timeslices. For instance, solar photovoltaics do not produce any energy when it is dark (for instance, at night) and produce less in the winter. Wind, on the other hand, has a completely different profile and is largely dependent on geography. Therefore, it would make sense to provide a maximum output of the technologies at different times. For instance, it would be useful if the model limited solar output at night time in the form of a maximum utilization factor. Where utilization factor is the ratio of average amount of energy output to total possible output of an energy technology if it were to run 100% of time.
+![](assets/Figure_4.2.1.png){width=100%}
 
-However, it can be very difficult to turn off some technologies, such as a nuclear power plant. Nuclear power plants are expensive to turn on and can be unsafe if constantly varying their power. Also, their marginal cost, or the cost to produce 1MWh of electricity excluding capital costs, is usually much lower than other power plants such as gas or coal plants. It, therefore, makes sense that we place a minimum service factor, or minimum output allowed, on nuclear, to ensure their output does not fall below a certain level.
+**Figure 4.2.1:** Cost types [@Taliotis2018]
 
-Other technologies, however, such as gas power plants, can be turned on and off readily; therefore we can simply leave an average utilization factor for all the timeslices. 
+In MUSE, these are defined by the `cap_par`, `cap_exp`, `fix_par`, `fix_exp`, `var_par`, and `var_exp` variables where:
 
-All of these features exist in MUSE, and during this lecture's hands-on, we will show you how to do this within MUSE.
+- `cap_par` is the capital costs, and `cap_exp` is the exponential component of this. Effectively, the `cap_exp` defines the reduction in cost due to economies of scale as the investment into this technology and its capacity increases. This should be a number between 0 and 1.
+- `fix_par` is the fixed costs, and `fix_exp` is the exponential component similar to the exponential component in `cap_exp`.
+- `var_par` is the fixed costs, and `var_exp` is the exponential component.
+
+The exponential component can be chosen from relevant data, but can often by difficult to find. In that case it is okay to use a number such as 1 or 0.95 as a rough indication.
+
+## Growth constraints
+
+As previously mentioned, it is important to place realistic constraints on the growth of technologies. For instance, there is only so much resource or land potential for renewable energy resources, such as offshore wind. If a country or region does not have any access to land offshore, the limit for offshore wind should be zero. On top of this, it may not be possible to grow and install technologies faster than a certain rate. For instance, there may not be enough resources, such as steel and labour, to double the capacity of wind in a certain country.
+
+The parameters which set these can be found in the `Technodata.csv` file and are called:
+
+- `MaxCapacityGrowth`
+- `MaxCapacityAddition`
+- `TotalCapacityLimit`
+
+## Other technoeconomic parameters
+
+Other technoeconomic parameters include the lifetime of a technology, scaling size and interest rate. A technology may become much more attractive if we are able to use it for a longer amount of time. For instance, the economics of nuclear power plants can be very sensitive to the length of time they can be used for due to their high capital costs. It is therefore important that we have good data on the lifetime of the plant. This is set by the `TechnicalLife` parameter.
+
+The scaling size defines how small a single unit can be. For instance, a single nuclear power plant outputs a lot more energy than a single solar photovoltaic panel. This detail can be set by the `ScalingSize` parameter.
+
+The interest rate is the parameter which defines the discount rate. For instance, a technology may have a 2% return on investment, which may seem good. But it could also be possible to put the money required to build a technology into a high interest savings account and have a 4% investment. Thus the 2% return would actually reflect a loss relative to the rate of interest. This opportunity cost is the interest rate defined in the `InterestRate` parameter.
+
+## Inputs and outputs
+
+Finally, there are the input and output parameters. For a gas power plant, the input is gas and the end use is electricity. This can be set in the `Fuel` and `EndUse` parameters respectively.
 
 # Summary
 
-In this mini-lecture we have explored the importance of characterising technologies not just by their economic data, but also by their physical characteristics. We discovered that different technologies have different outputs at different times, such as solar and wind. We also found out that nuclear power, for instance, must output a certain level to remain within a safety range.
-
-
+ In this mini-lecture we have discovered the main components which make up the Technodata sheet. We discovered the importance of properly defining the costs, lifetime and other characteristics which have a large impact on the final investment decisions.

@@ -1,39 +1,56 @@
 ---
-title: Mini-Lecture 4.3 - Different energy demands by timeslice
+title: Mini-Lecture 4.3 -- Input and output commodities
 keywords:
-- Energy demands
-- Timeslice
-- Energy modelling
+- Technology efficiency
+- Input commodities
+- Output commodities
 authors:
 -   Alexander J. M. Kell
 ---
 
-This mini-lecture will continue exploring the importance of timeslices in energy modelling; however, it will have a particular focus on energy demands, and how these can change by timeslice and over the years.
-
-In the previous lecture we explored energy demands and timeslices. In this lecture we will have a brief recap of this, and explore how energy demand can be represented within MUSE.
+In this mini-lecture we will learn about the input and output commodities within MUSE. Specifically we will learn what the `CommIn.csv` and `CommOut.csv` files do and how these relate to the energy system.
 
 # Learning objectives
 
--   Understand how energy demand can change by timeslice
--   Learn how energy demand is represented in MUSE
+- To learn the importance of input and output commodities
+- To learn how we can modify these commodities in MUSE
 
-# Energy demand
+# Introducing commodities
 
-Energy demand can come in various forms. For instance, the demand we model can be for heating or cooling in the residential sector. It is the case that these demands have different characteristics. For instance, they may have different magnitudes and different technologies which serve these demands as well as they may be able to run at different times.
+Input commodities are the commodities consumed by each technology. This could be coal for a coal power plant, uranium for a nuclear power plant or electricity for an electric heater. This is dependent on the technology, and some technologies can have multiple inputs.
 
-Within MUSE, similarly to the supply sectors, we can model this time varying capability with timeslices. For instance, if we have 4 representative days which refer to the different seasons, we can model the high heating demand in winter and cooling demand in summer. On top of this we can vary these demands by time of day.
+Output commodities are similar, but are the outputs of technologies. For example the output of any power plant will be electricity, and for heaters the output will be heat. Again, this is dependent on the technology, and some technologies can have multiple outputs such as combined heat and power plants.
 
-To do this, we must edit the demand in the `preset/Residential2050Consumption.csv` sector. An example of which is shown in Figure 4.3.1.
+The ratio between these two parameters is very important in MUSE and in energy modelling in general. This is because it defines the efficiency of the technology. For instance, if a coal power plant requires 1 PJ of energy stored in coal to output 0.8 PJ of electricity, the coal power plant has an efficiency of 0.8. The higher the efficiency the more economical the power plant is and the more competitive it will be when compared to different technologies.
 
-![](assets/Figure_4.1.1.png){width=100%}
+## Editing the CommIn and CommOut files
 
-**Figure 4.3.1:** Example input for the preset sector.
+Within MUSE there are two files which one should change to edit these parameters: the `CommIn.csv` and `CommOut.csv` files. These files are found within the sector folders of the case study. For instance, in the `power/CommIn.csv` or `gas/CommOut.csv` directories.
 
-In this small example we see that there is only a demand for `heat` in the residential sector. However, this demand changes per timeslice (which are listed in the leftmost column). For instance, there is low demand for heat in timeslice 0 and a high demand for heat in timeslice 4. These timeslices refer to a single representative day, and therefore timeslice 4 has the highest demand for heat as it is in the late-evening, when people generally come home from work and turn on their radiators.
+In this example we will look at the residential sectors `CommIn.csv` and `CommOut.csv` files. An example `CommIn.csv` file can be seen in the figure below:
 
-In your models you can use datasets to disaggregate the demand into different types, or you can aggregate demand to include all gas or electricity utilised in the residential sector. This is largely dependent on the data available and the complexity of the model you would like.
+|ProcessName|RegionName|Time|electricity|gas|heat|CO2f|wind|
+|-----------|----------|----|-----------|---|----|----|----|
+|Unit|-|Year|PJ/PJ|PJ/PJ|PJ/PJ|kt/PJ|PJ/PJ|
+|gasboiler|R1|2020|0|1.67|0|0|0|
+|heatpump|R1|2020|0.4|0|0|0|0|
+
+**Figure 4.3.1:** CommIn file for the residential sector
+
+Here we see two technologies: `gasboiler` and `heatpump`. They are both in region R1 and we are specifying the characteristics for the year 2020. The `gasboiler` only requires gas, but requires 1.16 PJ, whereas the `heatpump` requires only 0.4 PJ to produce some energy.
+
+However, it is important to note that these figures are meaningless without the `CommOut.csv` file. We need to know how much energy does the 1.16 PJ of energy produce in the `gasboiler`? As can be seen in the figure below showing an example `CommOut.csv` file, it is convention to select an output of 1. That way we only have to vary the `CommIn.csv` to change the efficiencies consistently.
+
+|ProcessName|RegionName|Time|electricity|gas|heat|CO2f|wind|
+|-----------|----------|----|-----------|---|----|----|----|
+|Unit|-|Year|PJ/PJ|PJ/PJ|PJ/PJ|kt/PJ|PJ/PJ|
+|gasboiler|R1|2020|0|0|1|64.71|0|
+|heatpump|R1|2020|0|0|1|0|0|
+
+**Figure 4.3.1:** CommOut file for the residential sector
+
+Therefore, we can now conclude that the `heatpump` is much more efficient than the `gasboiler` as only 0.4 PJ are required to output 1 PJ of heat. If we divide 1 by 0.4, we get the efficiency of the `heatpump`, where 1/0.4= 2.5. Notice that the `gasboiler` also outputs carbon dioxide. It is important to take these emissions into account to have a complete understanding of the energy system. MUSE calculates these emissions endogenously.
 
 # Summary
 
-In this mini-lecture, we explored the importance of timeslicing for modelling demand in energy models. We also covered how this can be done within MUSE using the preset sector.
-
+This mini-lecture has explored the input and output commodities in MUSE. We have learnt that the `CommIn.csv` and `CommOut.csv` files relate to efficiencies when brought together in a ratio.

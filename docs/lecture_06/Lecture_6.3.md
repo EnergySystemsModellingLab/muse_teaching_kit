@@ -1,47 +1,34 @@
 ---
-title: Mini-Lecture 6.3 -- The industrial and commercial sectors
+title: Mini-Lecture 6.3 -- Agents by sector
 keywords:
--   Industrial sector
--   Commercial sectors
--   MUSE modelling
+- Sectors
+- Agent differentiation
+- Key agent parameters
 authors:
 -   Alexander J. M. Kell
 ---
 
-This mini-lecture reflects on 
+In this mini-lecture we will cover how agents and their characteristics can differ between sectors. We will also investigate the similarities between agents and sectors and consider the key parameters that make up agents.
 
 # Learning objectives
 
-- The main characteristics of the industrial and commercial sectors
-- How these can be modelled within MUSE
+- Understand the differences between agents of different sectors
+- Understand the key parameters that differentiate agents
 
-# Overview of the industrial and commercial sectors
+# Agent parameters
 
-Next, we will explore the industrial and commercial sectors and their respective energy demands. Figure 6.3.1. shows the energy consumption for different sectors, including industrial, by OECD (generally high-income countries) and non-OECD countries (generally low- and middle-income countries). It is evident that the industrial sector is responsible for a large share of energy consumption across the world. The industrial sector is forecast to rise in non-OECD countries significantly. We must also consider this growing expected demand in the modelling process and during policy design. 
+Different sectors may mean having agents with different characteristics. For instance, within the residential sector socioeconomic data can be used to characterise the agents. We could use wealth to characterise our agents in different geographic locations. For example we could place a constraint on the `Budget` parameter for residential users, and split these agents into different proportions. For example, we could prohibit 70% of residential users from spending more than a certain amount on heating which could affect their technology choice. The other 30% of users would form an agent that was not constricted in this way, and thus their choices may end up being different in the model.
+
+Another way we could classify residential agents is through the `Maturity` parameter. This would limit investments in novel technologies until the specified technology had a certain market share. This could be informed by the innovation adoption lifecycle, as shown by Figure 6.3.1. Where, for example, innovators make up 2.5% of the population but have no `Maturity` constraints. As we work our way up the curve from innovators to laggards, this `Maturity` constraint increases.
 
 ![](assets/Figure_6.3.1.png){width=100%}
 
-**Figure 6.3.1:** Energy consumption by sector, OECD and non-OECD [@world1020007].
+**Figure 6.3.1:** Innovation adoption lifecycle
 
-Energy is used in industry for a number of different purposes. For instance, heating and cooling, running machinery and chemical processes. These processes use a large variety of fuels and depend on the purpose, location and the technoeconomics. 
+# Sectors
 
-The commercial sector has a lower energy demand when compared to the industrial sector. This is because commercial processes, typically, are less energy intense and on smaller scales. This demand is often lighting, heating and to run office equipment and appliances.
-
-## Industrial and commercial technologies
-
-Commercial activities use many different technologies which require energy inputs. For example, office electronics, lighting and heating systems. Many of these technologies use electricity. However, for some demands natural gas is used, for example for heating commercial buildings.
-
-The industrial sector uses a wide range of technologies. This includes heavy machinery, boilers, heating and air conditioning. Again, a wide variety of fuels can be used for this. However, there exist a number of processes, such as steel manufacturing which requires very high temperatures. This is usually only done by burning fossil fuels, as it can be difficult to reach these high temperatures with electricity. 
-
-## Modelling industrial and commercial sectors in MUSE
-
-Similarly to the residential and transport sectors, we can use an energy balance [@iea_world_energy_balance] to estimate industry demands -- for instance, for industry heating demands. There are different technologies available for industrial heating. These can be grouped in a way that makes sense for your case study. However, as an example we can group these into high heat and low heat, which are modelled as separate demands. This is because generating very high temperatures requires different technologies and processes to generating low heat. 
-
-Again, we can group the technologies by their input fuel, such as biomass, coal, oil products or electricity with the `CommIn.csv` file. Through modelling with MUSE we can understand the emissions and economics of different technologies. 
-
-In addition, the commercial sector will have a different demand load profile to the residential sector. This is because, typically, the demand will follow office times for the specific region, whereas the residential sector will follow the inverse of the office schedule.
+In this mini-lecture we have focused on the residential sector and seen the way we can characterise agents. Although these characteristics may not directly translate to the power sector, in some cases investors in the power sector can have similar characteristics. For instance, some companies are larger, and are more willing to invest their capital, reflecting a larger `Budget` parameter. Others may be less willing to invest in new technologies. The differing objectives of agents will often be the reason behind differences with other agents. For instance, some agents may only want to minimise their costs, whereas others may want to reduce their capital expenditure. It is easy to change these characteristics within MUSE to create diverse energy scenarios.
 
 # Summary
 
-In this mini-lecture we explored the industrial and commercial sectors. We learnt the difference between these two sectors in terms of demand and the different types of technologies used in these sectors. We saw that demand for the industrial sector is expected to rise significantly in non-OECD countries. Finally, we learnt how we can model different technologies in MUSE.  
-
+In this mini-lecture we covered the differences between agents and the different parameters that can be used to inform these differences. We saw how the `Maturity` constraint maps to the innovation adoption lifecycle and how the `Budget` parameter can be informed by socioeconomic characteristics. These parameters lead to a large amount of possible scenarios that can be tested and run.

@@ -1,66 +1,53 @@
 ---
-title: Mini-Lecture 5.2 -- Technoeconomic characteristics
+title: Mini-Lecture 5.2 -- Energy demands in modelling
 keywords:
-- Technoeconomic data
-- Parametrisation
-
+-   Energy demands
+-   Scenario analysis
 authors:
 -   Alexander J. M. Kell
 ---
 
-This mini-lecture will describe the techno-economic data that defines technologies in MUSE. These technoeconomics are fundamental to the functioning of a good MUSE model. Most technologies can be characterised by their efficiencies,  technoeconomics and inputs and outputs. This is because the technologies must be competitive against each other in an economic sense.
+This mini-lecture outlines the general requirements for defining energy demands and how modelling different scenarios can help assess potential future energy demand.
 
 # Learning objectives
 
-- Understand the main technoeconomic parameters
-- Understand how these parameters can impact investment decisions
+- Understand how to define energy demands
+- Understand why we need scenario analysis
 
-# Technology costs
+# Introduction
 
-In this mini-lecture we will describe the different techno-economic parameters that MUSE defines, primarily in the `Technoeconomic.csv` file found in the different sector folders.
+Within modelling we can break up the previously defined energy demands by sector. Electricity comes from the power sector and can be used to fulfil demand from each of the final service sectors. For example, the residential, commercial or industrial sector.
 
-Figure 5.2.1 displays the different cost types as defined in MUSE. The total costs are largely split into capital costs and annual costs. Capital costs, as shown by the figure, are the costs of depreciation, return on investment and other one-time fixed charges. This can include the initial costs of the technology such as construction.
+These sectors can have different electricity demands and needs and which can evolve over time as was seen in the last mini-lecture. We will now explore how these energy demands can be defined.
 
-Then there are annual costs, which are split into variable and fixed costs. There is a distinction between these two types of costs, where fixed costs depend on the capacity of the power plant, whereas variable costs depend on the amount of energy output in a year. For instance, if a power plant does not output any electricity, it will not have to pay for fuel. However, it will still have to pay for salaries to look after the plant.
+## Defining energy demands
 
-![](assets/Figure_5.2.1.png){width=100%}
+When defining an energy demand for energy systems models, it is important to identify the following:
 
-**Figure 5.2.1:** Cost types [@Taliotis2018]
+- The energy carrier which the demand arises for. For example, electricity, gasoline for transportation or biomass for cooking.
+- The sector the demand arises from. For example, residential (urban and/or rural, off- or on-grid), industrial or commercial.
+- The average variability of the demand within a year. This is usually expressed using average demand profiles, which are explained in more detail later in this lecture.
+- The current and expected future annual average demand.
 
-In MUSE, these are defined in the `cap_par`, `cap_exp`, `fix_par`, `fix_exp`, `var_par`, and `var_exp` variables where: 
+However, it is very difficult to predict future demand, and there will always be uncertainty in our predictions. Due to this it is important to model different scenarios.
 
--- `cap_par` is the capital costs, and `cap_exp` is the exponential component of this. Effectively, the `cap_exp` defines the reduction in cost due to economies of scale as the investment into this technology and its capacity increases. This should be a number between 0 and 1.
--- `fix_par` is the fixed costs, and `fix_exp` is the exponential component similar to the exponential component in `cap_exp`.
--- `var_par` is the fixed costs, and `var_exp` is the exponential component.
+## Defining our own energy demand
 
-The exponential component can be chosen from relevant data, but can often by difficult to find. In that case it is okay to use a number such as 1 or 0.95 as a rough indication.
+As has just been seen, when we want to define our own energy demand, we need to identify a number of different features. Let's say, for example, that we want to define the demand for electricity in urban homes. To do this, we need to define:
 
-## Growth constraints
+- The energy carrier for which the demand arises for. In this case it is electricity.
+- The sector the demand arises from. In this example it is the residential sector, or the urban residential sector if you would like to be more specific.
+- The average variability of the demand over the year. In this example we can look at daily and yearly electricity demand profiles for a residential urban area. This will tell us how the demand varies on a daily and seasonal scale.
+- Current and predicted future demand. For this, we can look at an energy balance (covered in more detail later) to get data for the current and historical residential electricity demand. We can use these data as a baseline, and we could combine it with an estimate of population growth to create a future projection for the demand.
 
-As previously mentioned, it is important to place realistic constraints on the growth of technologies. For instance, there is only so much resource or land potential for renewable energy resources, such as offshore wind. If a country or region does not have any access to land offshore, the limit for offshore wind should be zero. On top of this, it may not be possible to grow and install technologies faster than a certain rate. For instance, there may not be enough resources, such as steel and labour, to double the capacity of wind in a certain country.
+## Scenario analysis
 
-The parameters which set these can be found in the `Technodata.csv` file and are called:
+Within energy systems modelling, we must explore different possibilities of what could happen in the future. This is known as scenario analysis. We do this as the future is uncertain, particularly over the long-term horizon. We therefore might want to consider multiple scenarios to assess how demand could vary in the future.
 
-- `MaxCapacityGrowth`
-- `MaxCapacityAddition`
-- `TotalCapacityLimit`
+For example, for different scenarios, key predictors of energy demand, such as population growth, economic development and energy policy can be varied across the scenarios. This would mean that each scenario has a different energy demand projection.
 
-## Other technoeconomic parameters
-
-Other technoeconomic parameters include the lifetime of a technology, scaling size and interest rate. A technology may become much more attractive if we are able to use it for a longer amount of time. For instance, the economics of nuclear power plants can be very sensitive to the length of time they can be used for due to their high capital costs. It is therefore important that we have good data on the lifetime of the plant. This is set by the `TechnicalLife` parameter.
-
-The scaling size defines how small a single unit can be. For instance, a single nuclear power plant outputs a lot more energy than a single solar photovoltaic panel. This detail can be set by the `ScalingSize` parameter.
-
-The interest rate is the parameter which defines the discount rate. For instance, a technology may have a 2% return on investment, which may seem good. But it could also be possible to put the money required to build a technology into a high interest savings account and have a 4% investment. Thus the 2% return would actually reflect a loss relative to the rate of interest. This opportunity cost is the interest rate defined in the `InterestRate` parameter.
-
-## Inputs and outputs
-
-Finally, there are the input and output parameters. For a gas power plant, the input is gas and the end use is electricity. This can be set in the `Fuel` and `EndUse` parameters respectively.
-
-
+Since we can not be certain of the scenario which will be the best predictor of the future, it is useful to model several scenarios and consider the implications of each of them to give useful insights for policymaking. This allows policy makers to assess which of the different policies and mixes suit their needs based upon likelihoods and risk tolerances.
 
 # Summary
 
- In this mini-lecture we have discovered the main components which make up the Technodata sheet. We discovered the importance of properly defining the costs, lifetime and other characteristics which have a large impact on the final investment decisions.
-
- 
+This mini-lecture provided an overview of energy demands, how we can define them and the details which make them up. We also explored how we can perform scenario analysis with energy demands, to understand what could happen in the future.

@@ -1,0 +1,6 @@
+muse_os==1.2.1rc1
+matplotlib
+seaborn
+setuptools
+ipykernel
+git+https://github.com/ClimateCompatibleGrowth/scorm_package.git

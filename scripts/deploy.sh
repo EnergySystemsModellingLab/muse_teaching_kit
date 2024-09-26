@@ -1,3 +1,6 @@
+deploy_dir="_deploy"
+mkdir -p "$deploy_dir"
+
 rm -r _deploy/*
 for lecture in _build/lecture_*; do
 

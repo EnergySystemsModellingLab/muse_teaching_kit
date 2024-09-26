@@ -1,71 +1,92 @@
 ---
-title: Mini-Lecture 5.1 -- Energy technologies
+title: Mini-Lecture 5.1 -- Energy demands in energy systems modelling
 keywords:
--   Energy technologies
--   Technoeconomic data
+-   Energy demand
+-   Energy systems models
 authors:
 -   Alexander J. M. Kell
 ---
 
-This lecture will introduce the various technologies and how we can represent them within MUSE. We will also learn about the supply chains in which these technologies exist. Finally, we will learn about the key characteristics of the different technologies in the context of MUSE. 
+This mini-lecture provides an overview of energy demands within an energy system. We will cover differences in energy demands by sector, time and population classes. We will also begin to explore why these differences are important within energy models. The remaining mini-lectures will take you through the basics for modelling energy demand in MUSE, the different options available to do so, and some specific examples
 
 # Learning objectives
 
-- Understand the concepts of technologies and supply chains
-
-- Learn how to represent technologies in MUSE
-
-- Understand the key characteristics of technologies
+- Learn what energy demands are in an energy modelling context
+- Understand how demands can change based on different variables
 
 # Introduction
 
-A technology in MUSE represents a process, or a group of processes, that:
+Everyone needs energy for many different purposes. The form in which this energy should be delivered is dependent on the specific application. These demands for energy come from all sectors of society such as:
 
-- Converts energy from one form into another. For example, the conversion of crude oil to oil products, oil products to electricity or electricity to heat.
-- Transfers, transmits or distributes a form of energy, for example electricity transmission technologies.
-- Supplies or produces a form of energy, for example oil imports or extraction, or a hydropower plant generating electricity.
+- The residential sector (rural and urban)
+  - Cooking
+  - Heating
+  - Cooling
+  - Lighting
+  - Appliances
+- Industry
+  - Chemical processes
+  - Steam production
+  - Heating
+- Commerce
+  - Lighting
+  - Heating
+  - Cooling buildings
+  - Keeping products at low temperatures
+- Transport
+  - Cars
+  - Trucks
+  - Buses
+  - Aviation
+  - Shipping
+  - Trains
+- Agriculture
+  - Tractors
+  - Machinery
+  - Pumping water
 
-## Technology examples
+## Variations in daily energy demand
 
-Now we will discuss specific technologies and their role in the energy system.
-
-Within the energy system there exists natural gas for the generation of electricity. However, we have to represent a technology which extracts natural gas in the system. We can call this technology "gas extraction", which outputs natural gas. This technology does not have any input fuel as it is a primary energy supply technology.
-
-A coal power plant, on the other hand, has an input of coal and an output commodity of electricity. This technology is an energy conversion technology and converts the energy in coal to electricity. 
-
-Similarly, an oil power plant converts the energy in oil to electricity. It therefore has an input fuel of oil and an output commodity of electricity. 
-
-It must be noted that some technologies can have more than one input or output fuel, such as a refinery with oil as the input fuel, producing both gasoline and heavy fuel oil as output fuels.
-
-## Parameters that define technologies
-
-There are three main groups of parameters that are used to define technologies. These can be seen in Figure 5.1.1 below. These include input commodities, which refer to the fuel supply to the technology. For instance, what is the input fuel, what is the price of this, and what is the availability? Crucially, it can also contain the greenhouse gas emissions associated with the fuel.
-
-Secondly, there is techno-economic and environmental characteristics of technologies. These include technology costs, efficiency, lifetime and availability. 
-
-Finally, we need to define each technology's output commodity. This is the commodity which it produces, such as electricity from solar PV. Important data on output commodities includes their demand, impacts and when it is needed.
+These energy demands can vary on hourly, daily, weekly and monthly timescales. This mainly reflects the schedule of consumers' activities. For example, on a monthly timescale more cooling will be used in summer and more heating in winter. However, these energy demands can also vary by sector, as shown by Figure 5.1.1.
 
 ![](assets/Figure_5.1.1.png){width=100%}
 
-**Figure 5.1.1:** Technology definitions by example parameters [@Taliotis2018]
+**Figure 5.1.1:** Variations of energy demand by sector in a hypothetical example [@Taliotis2018].
 
+Figure 5.1.1 shows us that the magnitude of demand varies by sector, with agricultural demand significantly lower than residential and commercial demand, in this example. The reason that the commercial and residential sectors consume more is because their activities are more energy intensive or they are simply larger.
 
-## Representing technologies in MUSE
+We can also see that the daily profile of demand varies by sector. For example, in Figure 5.1.1 we can see that there is a clear evening peak in residential demand, whereas agricultural and industrial demand remains flat throughout the day. This is because agricultural and industrial demands are consistent throughout the day. This is likely because the industrial and agricultural sector operate constantly, whereas energy use in homes peaks in the evening when consumers use more electricity for cooking, lighting and appliances when they return from work or other business.
 
-Since models are abstractions of reality, we can define technologies at different levels of abstraction depending on the nature of our energy model. Within MUSE, for instance, a single technology can represent a single power plant, or a group of similar power plants (for example, a technology could represent all coal power plants in a region if they had similar characteristics). The information provided can create a model with more or less granular data based upon the requirements of the user. It must be noted, that with increased granularity, an increase in computation time will be observed. 
+## Sector specific demands
 
-It is possible within MUSE to represent all power plants as a single technology. This is appropriate when technologies do not change significantly between power plants or extraction plants.
+The differences between sectors means that it can sometimes be important to model demands separately by each sector. This feature allows the models to consider the specific characteristics of each demand.
 
-## Key characteristics of technologies
+Within each of these sectors, the energy demand varies over time and across different types of consumers. For example, within the residential sector, demands can differ between rural and urban households, as shown in Figure 5.1.2. This can also be true between grid-connected and off-grid areas. Energy planners must ensure that energy demand is always met for all types of consumers. Therefore, it is important that the key characteristics of different demands are represented in energy models.
 
-There are a number of different important technology characteristics that should be considered in capacity expansion planning. MUSE allows for several of these characteristics to be included. Such as:
+![](assets/Figure_5.1.2.png){width=100%}
 
-- Variation in the availability, efficiency and costs of a technology over short and long timescales. For example, it may be the case that solar power reduces in costs over the next 30 years. If this happens, we would like to model this process and see the long-term effect on the market.
-- MUSE can consider the limits on production by technology and capacity constraints. For example, there may only be a certain amount of hydro resources in a particular country, based on the number of rivers etc. It is important that MUSE takes this into account to ensure that the results are aligned to the reality in a region or country.
-- Finally, the emissions associated with technologies can be captured. For example, we may want to reduce the carbon dioxide emissions of an entire system. This would allow us to compare scenarios and enable us to understand how we can reduce these emissions to reduce the impact of climate change. MUSE is also able to impose a limit on emissions through a constraint.
+**Figure 5.1.2:** Variations of energy demand for the residential sector by population types [@Olaniyan2018]
 
+## Long-term variations in energy demands
+
+A major challenge in energy planning is that energy demands can change over time. This could be due to population growth or the creation of new industries. Figure 5.1.3 displays historical variations in energy demands. It is likely that these demands are correlated to changes in society. For example, increases in energy demand likely reflect increased industrial activity. For energy planning, we must also think about how energy demands are likely to change in the future.
+
+We can often forecast energy demand, such as with future projections  as shown in Figure 5.1.3. These forecasts can be created using estimates of the key influencers of energy demand, such as population growth and economic activity. Future projections are often based on how energy demands have changed historically.
+
+![](assets/Figure_5.1.3.png){width=100%}
+
+**Figure 5.1.3:** Long-term energy consumption by source
+
+## Capacity expansion planning
+
+One of the key purposes of MUSE is for capacity expansion. Figure 5.1.4 displays this key issue which MUSE can address. Essentially, if total demand increases (green line) and existing system capacities are retired (blue line), how can we invest to meet the energy capacity needed to supply demand (red line)?
+
+![](assets/Figure_5.1.4.png){width=100%}
+
+**Figure 5.1.4:** Capacity expansion [@Taliotis2018]
+
+You may notice that the red line is higher than the green line at all points. This is due to losses due to lower generating efficiencies. The gap between the red and blue lines demonstrates the required capacity expansion over time. MUSE enables us to plan such a capacity expansion whilst considering technical, economic and environmental constraints.
 
 # Summary
 
-In this mini-lecture we have learned the importance of technologies within MUSE. We learnt that a technology can refer to a single power plant, to all coal power plants, for example. This is largely based on the requirements of individual case studies. We also learnt that technologies can also be processes, such as the extraction of natural gas. All of these different technologies come together to build an entire energy system, which MUSE is able to model.
-
+In this mini-lecture we covered the differences between energy demands in different population types, sectors and timescales. We learnt why it is important to model these differences in demand in energy systems models. We also explored how energy systems models can be used to meet a changing demand profile in the future.

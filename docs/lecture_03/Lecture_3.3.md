@@ -1,62 +1,46 @@
 ---
-title: Mini-Lecture 3.3 -- Energy demand in MUSE
+title: Mini-Lecture 3.3 -- The industrial and commercial sectors
 keywords:
--   Energy demand
--   MUSE
+-   Industrial sector
+-   Commercial sectors
+-   MUSE modelling
 authors:
 -   Alexander J. M. Kell
 ---
 
-## Short description
+This mini-lecture reflects on
 
-Following mini-lecture 3.2, this mini-lecture provides an insight into how to model service demand within MUSE. There are two possible methods to model service demand in MUSE, from user input and by correlation. In this mini-lecture we will learn what the difference is between these.
+# Learning objectives
 
-## Learning objectives
+- The main characteristics of the industrial and commercial sectors
+- How these can be modelled within MUSE
 
-- Understand how to input exogenous service demand
-- Understand what service demand by correlation is
+# Overview of the industrial and commercial sectors
 
-# Lecture content
+Next, we will explore the industrial and commercial sectors and their respective energy demands. Figure 3.3.1. shows the energy consumption for different sectors, including industrial, by OECD (generally high-income countries) and non-OECD countries (generally low- and middle-income countries). It is evident that the industrial sector is responsible for a large share of energy consumption across the world. The industrial sector is forecast to rise in non-OECD countries significantly. We must also consider this growing expected demand in the modelling process and during policy design.
 
-## Service Demand
+![](assets/Figure_3.3.1.png){width=100%}
 
-A service demand is a term used to describe the consumption of energy by human activity. This could be, for instance, energy for lighting or cooking in the residential sector, personal vehicles in the transportation sector or machine usage in the industrial sector. The service demand drives the entire energy system, and it influences the total amount of energy used, the location of use and the types of fuels used in the energy supply system. It also includes the characteristics of the end-use technologies that consume energy. 
+**Figure 3.3.1:** Energy consumption by sector, OECD and non-OECD [@world1020007].
 
-## Exogenous service demand
+Energy is used in industry for a number of different purposes. For instance, heating and cooling, running machinery and chemical processes. These processes use a large variety of fuels and depend on the purpose, location and the technoeconomics.
 
-Within MUSE we must set the energy demand exogenously. That means that the model does not calculate how much the service demand is. Effectively, this means that the user must make an assumption on how much electricity is consumed in, for example, the residential sector for a particular region in the model.
+The commercial sector has a lower energy demand when compared to the industrial sector. This is because commercial processes, typically, are less energy intense and on smaller scales. This demand is often lighting, heating and to run office equipment and appliances.
 
-We can change this per scenario, but these values will not change during a simulation run, even if the price for all fuels increases significantly, for instance. We are able to define the exogenous service demand by year, sector, region and timeslice.
+## Industrial and commercial technologies
 
-## Service demand by correlation. 
+Commercial activities use many different technologies which require energy inputs. For example, office electronics, lighting and heating systems. Many of these technologies use electricity. However, for some demands natural gas is used, for example for heating commercial buildings.
 
-In the previous section we learnt about the exogenous service demand. That is, we can explicitly specify what the demand would be per year, sector, region and timeslice. However, it may be the case that we do not know what the electricity demand is per year, especially in the future. We may instead conclude that our electricity demand is a function of the GDP and population of a particular region, as previously discussed. 
+The industrial sector uses a wide range of technologies. This includes heavy machinery, boilers, heating and air conditioning. Again, a wide variety of fuels can be used for this. However, there exist a number of processes, such as steel manufacturing which requires very high temperatures. This is usually only done by burning fossil fuels, as it can be difficult to reach these high temperatures with electricity.
 
-To accommodate such a scenario, MUSE enables us to choose a regression function that estimates service demands from GDP and population projections, which may be more predictable or have more accessible data in your case. A regression function is simply a mathematical model which fits a linear model to your data to predict what may happen in the future.
+## Modelling industrial and commercial sectors in MUSE
 
-## Sources for energy demand data
+Similarly to the residential and transport sectors, we can use an energy balance [@iea_world_energy_balance] to estimate industry demands -- for instance, for industry heating demands. There are different technologies available for industrial heating. These can be grouped in a way that makes sense for your case study. However, as an example we can group these into high heat and low heat, which are modelled as separate demands. This is because generating very high temperatures requires different technologies and processes to generating low heat.
 
-We can get publicly available energy balance data and/or demand projections from the following sources:
+Again, we can group the technologies by their input fuel, such as biomass, coal, oil products or electricity with the `CommIn.csv` file. Through modelling with MUSE we can understand the emissions and economics of different technologies.
 
-- International Energy Agency
-- International Renewable Energy Agency
-- United Nations Statistics
-- Asia-Pacific Economic Cooperation
+In addition, the commercial sector will have a different demand load profile to the residential sector. This is because, typically, the demand will follow office times for the specific region, whereas the residential sector will follow the inverse of the office schedule.
 
-Energy balances tell us the amount that each energy commodity is used in a country or region in a given year. This is usually broken down by sector. 
+# Summary
 
-
-## Summary
-
-In this mini-lecture we introduced service demands, and the way we can input these into MUSE. The two ways we can input service demands are:
-- Exogenous service demand
-- Service demand by correlation
-
-We also learned where we can get energy data from for various countries.
-
-In the hands-on we will see how we can actually do this within MUSE.
-
-
-
- 
-
+In this mini-lecture we explored the industrial and commercial sectors. We learnt the difference between these two sectors in terms of demand and the different types of technologies used in these sectors. We saw that demand for the industrial sector is expected to rise significantly in non-OECD countries. Finally, we learnt how we can model different technologies in MUSE.

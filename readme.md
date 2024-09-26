@@ -1,32 +1,41 @@
 # MUSE: Teaching Kit
 
-This repository contains the teaching material developed by Imperial College London
-for the course "MUSE: Agent-based energy systems modelling" developed under the
-Climate Compatible Growth project.
+This repository contains the teaching material developed by Imperial College London for the course "MUSE: Agent-based energy systems modelling" developed under the Climate Compatible Growth project.
 
-The course is published on [Open Learn Create](fill-here)
-and is free to learners.
+The course is published on [Open Learn Create](https://www.open.edu/openlearncreate/course/view.php?id=11717) and is free to learners.
 
 The course material is licensed under a [Creative Commons BY 4.0 License](https://creativecommons.org/licenses/by/4.0).
-This license allows you to use, remix and publish the course material as long as you give correct
-attribution.  Please use the following citation:
+This license allows you to use, remix and publish the course material as long as you give correct attribution.  
+Please use the following citation:
 
     Alexander J. M. Kell, Sara Giarola, Adam Hawkes. (2022, August 6). ClimateCompatibleGrowth/muse_teaching_kit: Initial release of lecture blocks. Zenodo. https://doi.org/10.5281/zenodo.5166742
 
-## Creating the teaching material
+## Setup
 
-The teaching material is rendered to HTML using a bash script.
-A key dependency is [pandoc](https://pandoc.org/), which is used to convert the markdown lecture block files into HTML.
+Generating the course files requires Python, and the dependencies listed in the file `requirements.txt`.
+To create a suitable Python environment, run:
+
+        python -m venv .venv
+        source .venv/bin/activate
+        python -m pip install -r requirements.txt
+        python -m ipykernel install --name=muse_kernel
+
+The latest version of the course was generated using Python version 3.12, and MUSE version 1.2.1.
+
+You must also have [pandoc](https://pandoc.org/) installed on your machine.
+
+## Creating the teaching material
 
 1. To generate the HTML files in the `_build` folder, run:
 
-        bash scripts/create_html.sh
+        bash scripts/create_hands_on.sh
+        bash scripts/create_lectures.sh
 
-2. To create a SCORM package for each of the lecture blocks, you'll need the Python package [scorm_package](https://github.com/ClimateCompatibleGrowth/scorm_package). Then run the deployment script::
+2. To create a SCORM package for each of the lecture blocks, run the deployment script:
 
         bash scripts/deploy.sh
 
-    This creates a zip archive for each lecture e.g. for `lecture17` from the material in folder `lecture_17`.
+    This creates a zip archive for each lecture e.g. for `lecture4` from the material in folder `lecture_4`.
     Each zip files contains the following special files for a SCORM package:
 
         adlcp_rootv1p2.xsd

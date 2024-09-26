@@ -1,51 +1,57 @@
 ---
-title: Mini-Lecture 5.3 -- Input and output commodities
+title: Mini-Lecture 5.3 -- Energy demand in MUSE
 keywords:
-- Technology efficiency
-- Input commodities
-- Output commodities
+-   Energy demand
+-   MUSE
 authors:
 -   Alexander J. M. Kell
 ---
 
-In this mini-lecture we will learn about the input and output commodities within MUSE. Specifically we will learn what the `CommIn.csv` and `CommOut.csv` files do and how these relate to the energy system.
+## Short description
 
-# Learning objectives
+This mini-lecture provides an insight into how to model service demand within MUSE. There are two possible methods to model service demand in MUSE, from user input and by correlation. In this mini-lecture we will learn what the difference is between these.
 
--   To learn the importance of input and output commodities
--   To learn how we can modify these commodities in MUSE
+## Learning objectives
 
-# Introducing commodities
+- Understand how to input exogenous service demand
+- Understand what service demand by correlation is
 
-Input commodities are the commodities consumed by each technology. This could be coal for a coal power plant, uranium for a nuclear power plant or electricity for an electric heater. This is dependent on the technology, and some technologies can have multiple inputs.
+# Lecture content
 
-Output commodities are similar, but are the outputs of technologies. For example the output of any power plant will be electricity, and for heaters the output will be heat. Again, this is dependent on the technology, and some technologies can have multiple outputs such as combined heat and power plants.
+## Service Demand
 
-The ratio between these two parameters is very important in MUSE and in energy modelling in general. This is because it defines the efficiency of the technology. For instance, if a coal power plant requires 1 PJ of energy stored in coal to output 0.8 PJ of electricity, the coal power plant has an efficiency of 0.8. The higher the efficiency the more economical the power plant is and the more competitive it will be when compared to different technologies.
+A service demand is a term used to describe the consumption of energy by human activity. This could be, for instance, energy for lighting or cooking in the residential sector, personal vehicles in the transportation sector or machine usage in the industrial sector. The service demand drives the entire energy system, and it influences the total amount of energy used, the location of use and the types of fuels used in the energy supply system. It also includes the characteristics of the end-use technologies that consume energy.
 
-## Editing the CommIn and CommOut files
+## Exogenous service demand
 
-Within MUSE there are two files which one should change to edit these parameters: the `CommIn.csv` and `CommOut.csv` files. These files are found within the sector folders of the case study. For instance, in the `power/CommIn.csv` or `gas/CommOut.csv` directories.
+Within MUSE we must set the energy demand exogenously. That means that the model does not calculate how much the service demand is. Effectively, this means that the user must make an assumption on how much electricity is consumed in, for example, the residential sector for a particular region in the model.
 
-In this example we will look at the residential sectors `CommIn.csv` and `CommOut.csv` files. An example `CommIn.csv` file can be seen in the figure below:
+We can change this per scenario, but these values will not change during a simulation run, even if the price for all fuels increases significantly, for instance. We are able to define the exogenous service demand by year, sector, region and timeslice.
 
-![](assets/Figure_5.3.1.png){width=100%}
+## Service demand by correlation
 
-**Figure 5.3.1:** CommIn file for the residential sector
+In the previous section we learnt about the exogenous service demand. That is, we can explicitly specify what the demand would be per year, sector, region and timeslice. However, it may be the case that we do not know what the electricity demand is per year, especially in the future. We may instead conclude that our electricity demand is a function of the GDP and population of a particular region, as previously discussed.
 
-Here we see two technologies: `gasboiler` and `heatpump`. They are both in region R1 and we are specifying the characteristics for the year 2020. The `gasboiler` only requires gas, but requires 1.16 PJ, whereas the `heatpump` requires only 0.4 PJ to produce some energy. 
+To accommodate such a scenario, MUSE enables us to choose a regression function that estimates service demands from GDP and population projections, which may be more predictable or have more accessible data in your case. A regression function is simply a mathematical model which fits a linear model to your data to predict what may happen in the future.
 
-However, it is important to note that these figures are meaningless without the `CommOut.csv` file. We need to know how much energy does the 1.16 PJ of energy produce in the `gasboiler`? As can be seen in the figure below showing an example `CommOut.csv` file, it is convention to select an output of 1. That way we only have to vary the `CommIn.csv` to change the efficiencies consistently.
+## Sources for energy demand data
 
-![](assets/Figure_5.3.2.png){width=100%}
+We can get publicly available energy balance data and/or demand projections from the following sources:
 
-**Figure 5.3.1:** CommOut file for the residential sector
+- International Energy Agency
+- International Renewable Energy Agency
+- United Nations Statistics
+- Asia-Pacific Economic Cooperation
 
-Therefore, we can now conclude that the `heatpump` is much more efficient than the `gasboiler` as only 0.4 PJ are required to output 1 PJ of heat. If we divide 1 by 0.4, we get the efficiency of the `heatpump`, where 1/0.4= 2.5. Notice that the `gasboiler` also outputs carbon dioxide. It is important to take these emissions into account to have a complete understanding of the energy system. MUSE calculates these emissions endogenously.
+Energy balances tell us the amount that each energy commodity is used in a country or region in a given year. This is usually broken down by sector.
 
+## Summary
 
+In this mini-lecture we introduced service demands, and the way we can input these into MUSE. The two ways we can input service demands are:
 
-# Summary
+- Exogenous service demand
+- Service demand by correlation
 
-This mini-lecture has explored the input and output commodities in MUSE. We have learnt that the `CommIn.csv` and `CommOut.csv` files relate to efficiencies when brought together in a ratio.
- 
+We also learned where we can get energy data from for various countries.
+
+In the hands-on we will see how we can actually do this within MUSE.

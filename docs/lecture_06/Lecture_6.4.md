@@ -1,36 +1,31 @@
 ---
-title: Mini-Lecture 6.4 -- Sector coupling
+title: Mini-Lecture 6.4 -- Agent parameters
 keywords:
--   Preset sectors
--   Service demand
+-   Agent parameters
+-   MUSE
 authors:
 -   Alexander J. M. Kell
 ---
 
-In this mini-lecture we will investigate the role of electrification in different sectors, as well as find out what sector coupling is. 
+This mini-lecture explores all the major parameters that can define agents within MUSE.
 
 # Learning objectives
 
-- Understand the importance of sector electrification
-- Understand the need for sector coupling
+- Understand the different agent parameters and their role within MUSE
 
-# Sector electrification
+# Overview agent parameters
 
-Electrification is becoming increasingly important in all sectors of the economy in order to achieve decarbonisation goals. As we saw earlier, electrification can be used to decarbonise the residential, transport, industrial and commercial sectors. However, some sectors are likely to be easier to electrify than other sectors. We have seen rapid progress with electric vehicles in parts of the transport sector, but sectors such as shipping and steel, which are harder to decarbonise, still have a way to go. 
+Within MUSE each agent can have their own objectives. MUSE is flexible enough to allow for up to 3 objectives, which can be summed together at various weightings. To input these objectives into MUSE one would use the `Objective1`, `Objective2` and/or `Objective3` parameters and select an objective such as `comfort`, `lifetime_levelized_cost_of_energy` or `fixed_costs`.
 
-However, different options exist for the decarbonisation of steel, for example. This can be done by retrofitting blast furnaces and adding carbon capture and storage (CCS) or scaling up hydrogen-based direct reduced iron. However, this will require innovation and further research on the key technologies, such as CCS.
+Then we would select the weight of each of the objectives using the `ObjData1`, `ObjData2`, `ObjData3` inputs. For example, if we had 3 objectives, we could make the objective of `Objective1` dominant by setting `ObjData1` to 0.5. This would mean it would make up 50% of the final objective.
 
-## Sector coupling
+We can edit the `SearchRule` to reduce the space of technologies that those agents are likely to consider. For example, we could fill this with `same_fuels`, or `same_enduse`.
 
-We have seen that we must decarbonise to meet global climate targets. However, this is not a straightforward process. A large reason for this is the inflexibility of intermittent renewable resources such as solar and wind technologies. One method of mitigating this variability and inflexibility is through sector coupling. Sector coupling is where we connect energy demands and processes across differing sectors and increase the efficiency and flexibility of energy use. This would allows us to use renewable energy for all sectors.
+The rest of the parameters include the parameters discussed in the previous lecture:
 
-One way this could be achieved is through power to gas conversion. When there is a high supply of renewable power, excess electricity could be used to produce hydrogen and methane. This would allow us to store this energy for later use across multiple sectors. This would enable sectors that are difficult to electrify to be based on renewable energy. 
-
-It is possible to model this sector coupling process within MUSE and to understand the tipping points which would make sector coupling possible. This could be based on the price and capacity of renewable energy, as well as the price of generating hydrogen or methane compared to the incumbent technologies.
+- `MaturityThreshold`
+- `Budget`
 
 # Summary
 
-In this lecture we have covered the importance of electrifying different sectors to reduce carbon emissions and meet some of the Sustainable Development Goals. We have also learnt of the importance of sector coupling to address hard to decarbonise sectors. 
-
-
-
+In this mini-lecture we discovered the main parameters that are used by agents within MUSE. For a full breakdown of the parameters please refer to the MUSE documentation that can be found online.

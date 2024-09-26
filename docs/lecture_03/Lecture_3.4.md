@@ -1,69 +1,33 @@
 ---
-title: "Mini-Lecture 3.4 -- Demand examples and units"
+title: Mini-Lecture 3.4 -- Sector coupling
 keywords:
--   Infrastructure performance
+-   Preset sectors
+-   Service demand
 authors:
 -   Alexander J. M. Kell
 ---
 
-# Short description
-
-Mini-lecture 3.4 explains how we can use timeslices to approximate the real-world demand profile. We will look into the difference between power and energy. Finally, we will learn how to convert units to ensure we are consistent within MUSE. 
+In this mini-lecture we will investigate the role of electrification in different sectors, as well as find out what sector coupling is.
 
 # Learning objectives
 
-- Understand how timeslices can be used in the context of demand
-- Understand the difference between power and energy
-- Know the units to use within MUSE and how to convert these
+- Understand the importance of sector electrification
+- Understand the need for sector coupling
 
-# Demand profile
+# Sector electrification
 
-Figure 3.1.5 shown an example demand profile for electricity that could be used in MUSE. In this demand profile there are 96 bars: one for each of the timeslices used in MUSE. These timeslices are split into 16 different sections – seasonal and into day and night. This is because there are four different seasons, which are split into day and night (twice). The demand profile is used to represent the proportion of demand occurring in each timeslice. 
+Electrification is becoming increasingly important in all sectors of the economy in order to achieve decarbonisation goals. As we saw earlier, electrification can be used to decarbonise the residential, transport, industrial and commercial sectors. However, some sectors are likely to be easier to electrify than other sectors. We have seen rapid progress with electric vehicles in parts of the transport sector, but sectors such as shipping and steel, which are harder to decarbonise, still have a way to go.
 
-![](assets/Figure_3.1.5.png){width=100%}
+However, different options exist for the decarbonisation of steel, for example. This can be done by retrofitting blast furnaces and adding carbon capture and storage (CCS) or scaling up hydrogen-based direct reduced iron. However, this will require innovation and further research on the key technologies, such as CCS.
 
-**Figure 3.4.1:** Example demand profile for MUSE
+## Sector coupling
 
-The chart shows us that electricity demand, in this example, is highest during the day in winter, while it is lowest during the night in spring. However, it is important to note that this is a simplification: in reality demand varies in the season and with each hour of the day. This simplification means that we model one representative day for each season, and we assume equal demand within days and nights of those seasons. 
+We have seen that we must decarbonise to meet global climate targets. However, this is not a straightforward process. A large reason for this is the inflexibility of intermittent renewable resources such as solar and wind technologies. One method of mitigating this variability and inflexibility is through sector coupling. Sector coupling is where we connect energy demands and processes across differing sectors and increase the efficiency and flexibility of energy use. This would allows us to use renewable energy for all sectors.
 
-Whilst this is a simplification, it allows us to consider the variation in demand across seasons and days without having an incredibly complex model structure. This reduces the amount of time required to run a full model relative to having timeslices for each hour and day of the year, as well as reducing the data input requirements.
+One way this could be achieved is through power to gas conversion. When there is a high supply of renewable power, excess electricity could be used to produce hydrogen and methane. This would allow us to store this energy for later use across multiple sectors. This would enable sectors that are difficult to electrify to be based on renewable energy.
 
-## Units
-
-We must ensure that during our data input process we are consistent with our units. Usually we will use the petajoules unit as this is the unit for energy for different sectors. If you were just modelling the power sector, you could use megawatt hours. 
-
-## Power vs. Energy
-
-When using energy modelling tools it is important to remember the difference between power and energy. Sometimes these terms are used interchangeably. However, there is an important difference between the two:
-
-- Energy is the total amount of work done or the total capacity for doing work
-- Power is the rate at which this energy is supplied or used. 
-
-Therefore, energy and power have different units. For example, energy is often measured in Joules, while power is often measured in Joules per Second (or Watts). 
-
-For example, providing the weight stays the same, lifting a weight requires the exact same amount of energy no matter how quickly we lift it. However, if we lift the weight more quickly, the power has increased. We used the same amount of energy, but over a shorter amount of time. 
-
-## Units for demand
-
-It is important that we convert our data from different sources to petajoules (PJ) when we include it in MUSE. 
-
-Here are some example conversion factors:
-
-- 1 Petajoule (PJ) = 1000 Terajoules (TJ)
-- 1 Petajoule (PJ) = 1,000,000 Gigajoules (GJ)
-- 3.6 Petajoules (PJ) = 1 Terawatt hour (TWh)
-- 0.0036 Petajoules (PJ) = 1 Gigawatt hour (GWh)
-
-We must ensure that we are consistent with the units we use within MUSE.
+It is possible to model this sector coupling process within MUSE and to understand the tipping points which would make sector coupling possible. This could be based on the price and capacity of renewable energy, as well as the price of generating hydrogen or methane compared to the incumbent technologies.
 
 # Summary
 
-In this lecture we have learnt the difference between power and energy. We have also learnt how to use timeslicing to speed up our model and reduce complexity. Finally, we learnt that we must use consistent units.
-
-
-
-
-
-
-
-
+In this lecture we have covered the importance of electrifying different sectors to reduce carbon emissions and meet some of the Sustainable Development Goals. We have also learnt of the importance of sector coupling to address hard to decarbonise sectors.

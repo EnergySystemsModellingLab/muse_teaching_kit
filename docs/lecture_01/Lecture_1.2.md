@@ -1,5 +1,5 @@
 ---
-title: Mini-Lecture 1.2 -- Sustainable Development Goals and the global climate agenda. 
+title: Mini-Lecture 1.2 -- Sustainable Development Goals and the global climate agenda.
 keywords:
 -   Sustainable development
 -   Sustainable Development Goals (SDGs)
@@ -14,15 +14,15 @@ This mini-lecture will provide a background to sustainable development, the glob
 
 ## Learning objectives
 
--   Learn the importance of sustainable development and how it frames
+- Learn the importance of sustainable development and how it frames
     the major global development agendas
--   Identify the general principles of the Sustainable Development Goals
+- Identify the general principles of the Sustainable Development Goals
 
 # Lecture content
 
 ## Introduction
 
-The Sustainable Development Goals (SDGs) are a set of universal goals for every country. The SDGs are focused on ending poverty, improving quality of life and protecting the environment. These goals were agreed on in 2015, with 2030 set as the target year for their achievement. The Sustainable Development Goals aim to tackle multiple issues. Some of the goals are based around poverty, environmental protection, climate action, justice and more. The SDGs can be seen in Figure 1.2.1. These goals are designed to be thought of together, rather than in isolation. There are, therefore, many links between different goals. 
+The Sustainable Development Goals (SDGs) are a set of universal goals for every country. The SDGs are focused on ending poverty, improving quality of life and protecting the environment. These goals were agreed on in 2015, with 2030 set as the target year for their achievement. The Sustainable Development Goals aim to tackle multiple issues. Some of the goals are based around poverty, environmental protection, climate action, justice and more. The SDGs can be seen in Figure 1.2.1. These goals are designed to be thought of together, rather than in isolation. There are, therefore, many links between different goals.
 
 ![](assets/Fig_1.2.1.png){width=100%}
 
@@ -42,13 +42,13 @@ Sustainable Development Goal 7 (SDG7) specifically focuses on the energy sector.
 
 ## Progress on SDG7: Access to Electricity and Clean Cooking
 
-According to the tracking SDG7 report, there has been progress in improving access to both electricity and clean cooking in recent years. This report states that electricity access increased from 83% in 2010 to 90% in 2018, whilst clean cooking increased from 56% to 63%. The report finds, however, that the current rates of progress are insufficient to meet the targets set by SDG7 by 2030. There are also key regions where progress has been substantially slower. For example, the population without access to electricity is concentrated in Sub-Saharan Africa -- with an overall access rate of 47%. 
+According to the tracking SDG7 report, there has been progress in improving access to both electricity and clean cooking in recent years. This report states that electricity access increased from 83% in 2010 to 90% in 2018, whilst clean cooking increased from 56% to 63%. The report finds, however, that the current rates of progress are insufficient to meet the targets set by SDG7 by 2030. There are also key regions where progress has been substantially slower. For example, the population without access to electricity is concentrated in Sub-Saharan Africa -- with an overall access rate of 47%.
 
 There are several ways in which energy modelling can be used to aid with these goals. For instance, geospatial electrification modelling can be used to assess which access solutions are the most economical for different regions or sub-regions. This also includes capacity expansion planning to assess how supply can be increased whilst minimising economic and environmental impacts.
 
 ## Progress on SDG7: Renewable Energy and Energy Efficiency
 
-The graph below shows the share of electricity, heat and transport demands met by renewables (such as solar, wind, hydro and geothermal energy) globally. We can see that there has been some progress in increasing the share of renewables in the electricity and transport sectors as well as in the heat sector when traditional biomass use is excluded. According to the SDG7 Tracking Report, the share of renewable energy in Total Final Energy Consumption reached 17.3% in 2017, up from 16.3% in 2010. 
+The graph below shows the share of electricity, heat and transport demands met by renewables (such as solar, wind, hydro and geothermal energy) globally. We can see that there has been some progress in increasing the share of renewables in the electricity and transport sectors as well as in the heat sector when traditional biomass use is excluded. According to the SDG7 Tracking Report, the share of renewable energy in Total Final Energy Consumption reached 17.3% in 2017, up from 16.3% in 2010.
 
 The electricity sector has observed the most progress. This is largely due to the growth in solar photovoltaic (PV) and wind energy. However, more progress is required to achieve SDG7, with most scenarios requiring the decarbonisation of end-use sectors: for example, the electrification of transport and heat, sectors which have observed relatively slow progress.
 
@@ -57,14 +57,13 @@ The electricity sector has observed the most progress. This is largely due to th
 **Figure 1.2.4:** Renewable energy and energy efficiency progress
 [@UnitedNations2015]
 
+For energy efficiency, global reductions in primary energy intensity have slowed in recent years. Where energy intensity is the quantity of energy required per unit output or activity, so that using less energy to produce a product reduces the intensity. This is despite progress still being greater than in the period before 2010. The SDG7 Tracking Report analysis shows that the transport sector has seen an increase in energy intensity improvement since 2010, while other sectors have seen a decrease. Differences between regions are observed, with Sub-Saharan Africa having the highest energy intensity and Latin America and the Caribbean having the lowest.
 
-For energy efficiency, global reductions in primary energy intensity have slowed in recent years. Where energy intensity is the quantity of energy required per unit output or activity, so that using less energy to produce a product reduces the intensity. This is despite progress still being greater than in the period before 2010. The SDG7 Tracking Report analysis shows that the transport sector has seen an increase in energy intensity improvement since 2010, while other sectors have seen a decrease. Differences between regions are observed, with Sub-Saharan Africa having the highest energy intensity and Latin America and the Caribbean having the lowest. 
-
-If the SDG7 target of doubling the rate of global improvement in energy efficiency by 2030 is to be met, energy efficiency measures must be prioritised in policy making and investment planning. 
+If the SDG7 target of doubling the rate of global improvement in energy efficiency by 2030 is to be met, energy efficiency measures must be prioritised in policy making and investment planning.
 
 ## Links between SDGs
 
-The SDGs are highly interlinked, with synergies and trade-offs between these targets. It is important that these interactions are understood so that policymakers can make plans to maximise synergies and minimise trade-offs. Modelling can help in the making of informed decisions by providing a better understanding of these interactions. This is because models can be used to develop cross-sectoral scenarios and can help project the impacts of decisions. 
+The SDGs are highly interlinked, with synergies and trade-offs between these targets. It is important that these interactions are understood so that policymakers can make plans to maximise synergies and minimise trade-offs. Modelling can help in the making of informed decisions by providing a better understanding of these interactions. This is because models can be used to develop cross-sectoral scenarios and can help project the impacts of decisions.
 
 As an example, let us explore the links between the energy system and the SDG targets. One study [@nerini2018mapping] found that at least 113 of the 169 SDG targets require changes in energy systems. Examples of this include targets in SDG13, which focus on climate change action. This requires decarbonisation of the energy system. In addition SDG1, which focuses on ending poverty, requires improved energy infrastructure to increase modern energy access. Nerini et al. (2018) highlight that we cannot think in silos and must use integrated planning approaches with a long-term perspective. Energy modelling tools are a key enabler of such approaches.
 
