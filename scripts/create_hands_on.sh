@@ -38,8 +38,8 @@ convert_notebook $notebook
 notebooks=(MUSE_OS/docs/user-guide/*.ipynb)
 for notebook in "${notebooks[@]}"; do
     html_file=$(convert_notebook "$notebook")
-    update_relative_links $html_file "https://muse-os.readthedocs.io/en/v1.2.1/user-guide/"
-    update_github_links $html_file "v1.2.1"
+    update_relative_links $html_file "https://muse-os.readthedocs.io/en/v1.3.2/user-guide/"
+    update_github_links $html_file "v1.3.2"
 done
 
 # Specify tutorial order
