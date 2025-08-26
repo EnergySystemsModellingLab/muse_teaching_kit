@@ -12,13 +12,13 @@ update_relative_links() {
     # Update relative links in HTML file
     local html_file=$1
     local base_url=$2
-    sed -i '' -E "s|href=\"([^\"]*).rst\"|href=\"$base_url\1.html\"|g" "$html_file"
+    sed -i -E "s|href=\"([^\"]*).rst\"|href=\"$base_url\1.html\"|g" "$html_file"
 }
 
 update_github_links() {
     local html_file=$1
     local new_tag=$2
-    sed -i '' 's|\(https://github.com/EnergySystemsModellingLab/MUSE_OS/blob/\)[^/]*|\1'"$new_tag"'|g' "$html_file"
+    sed -i 's|\(https://github.com/EnergySystemsModellingLab/MUSE_OS/blob/\)[^/]*|\1'"$new_tag"'|g' "$html_file"
 }
 
 # Prepare build directory
@@ -63,5 +63,5 @@ for i in "${!order[@]}"; do
     mv -f "$output_dir/$file.html" "$output_dir/$new_name.html"
 
     # Modify title
-    sed -i '' "s/\(<h1[^>]*>\)\([^<]*\)/\1Hands-on exercise ${number}: \2/" "$output_dir/$new_name.html"
+    sed -i "s/\(<h1[^>]*>\)\([^<]*\)/\1Hands-on exercise ${number}: \2/" "$output_dir/$new_name.html"
 done

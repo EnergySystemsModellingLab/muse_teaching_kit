@@ -11,3 +11,5 @@ _deploy/
 venv/
 
 .ipynb_checkpoints/
+
+*.log

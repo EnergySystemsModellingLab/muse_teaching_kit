@@ -1,0 +1,11 @@
+services:
+  deploy:
+    build: .
+    volumes:
+      - .:/app
+    command: >
+      bash -c "
+        bash scripts/create_hands_on.sh &&
+        bash scripts/create_lectures.sh &&
+        bash scripts/deploy.sh
+      "

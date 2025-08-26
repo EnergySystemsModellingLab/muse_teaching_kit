@@ -5,10 +5,12 @@ This repository contains the teaching material developed by Imperial College Lon
 The course is published on [Open Learn Create](https://www.open.edu/openlearncreate/course/view.php?id=11717) and is free to learners.
 
 The course material is licensed under a [Creative Commons BY 4.0 License](https://creativecommons.org/licenses/by/4.0).
-This license allows you to use, remix and publish the course material as long as you give correct attribution.  
+This license allows you to use, remix and publish the course material as long as you give correct attribution.
 Please use the following citation:
 
     Alexander J. M. Kell, Sara Giarola, Adam Hawkes. (2022, August 6). ClimateCompatibleGrowth/muse_teaching_kit: Initial release of lecture blocks. Zenodo. https://doi.org/10.5281/zenodo.5166742
+
+# Instructions
 
 ## Setup
 
@@ -35,7 +37,7 @@ You must also have [pandoc](https://pandoc.org/) installed on your machine.
 
         bash scripts/deploy.sh
 
-    This creates a zip archive for each lecture e.g. for `lecture4` from the material in folder `lecture_4`.
+    This creates a `_deploy` folder containing a zip archive for each lecture (e.g. for `lecture4` from the material in folder `lecture_4`).
     Each zip files contains the following special files for a SCORM package:
 
         adlcp_rootv1p2.xsd
@@ -44,6 +46,14 @@ You must also have [pandoc](https://pandoc.org/) installed on your machine.
         imsmanifest.xml
         imsmd_rootv1p2p1.xsd
         res  # This contains the lecture blocks and assets (image files)
+
+## Using a Docker container
+
+Alternatively, you can build the environment and run the scripts inside a Docker container by running
+
+        docker-compose up --build
+
+This should create a `_deploy` folder as above containing all the necessary zip files.
 
 # Common formatting issues
 

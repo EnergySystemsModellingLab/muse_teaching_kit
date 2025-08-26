@@ -3,4 +3,6 @@ matplotlib
 seaborn
 setuptools
 ipykernel
+nbconvert
+pre-commit
 git+https://github.com/ClimateCompatibleGrowth/scorm_package.git
