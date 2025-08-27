@@ -14,12 +14,12 @@ Please use the following citation:
 
 ## Setup
 
-Generating the course files requires Python, and the dependencies listed in the file `requirements.txt`.
+Generating the course files requires Python, and the dependencies listed in the file `requirements.in`.
 To create a suitable Python environment, run:
 
         python -m venv .venv
         source .venv/bin/activate
-        python -m pip install -r requirements.txt
+        python -m pip install -r requirements.in
         python -m ipykernel install --name=muse_kernel
 
 The latest version of the course was generated using Python version 3.12, and MUSE version 1.5.1.
@@ -53,7 +53,7 @@ Alternatively, you can build the environment and run the scripts inside a Docker
 
         docker-compose up --build
 
-This should create a `_deploy` folder as above containing all the necessary zip files.
+This should create a `_deploy` folder as above containing all the necessary zip files. This will also output a `requirements.txt` file showing the versions of packages used for this build.
 
 # Common formatting issues
 

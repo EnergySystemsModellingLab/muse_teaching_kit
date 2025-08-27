@@ -5,6 +5,7 @@ services:
       - .:/app
     command: >
       bash -c "
+        pip freeze > requirements.txt &&
         bash scripts/create_hands_on.sh &&
         bash scripts/create_lectures.sh &&
         bash scripts/deploy.sh

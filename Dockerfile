@@ -6,11 +6,11 @@ RUN apt-get update && apt-get install -y pandoc git dos2unix
 # Set working directory
 WORKDIR /app
 
-# Copy requirements first for better caching
-COPY requirements.txt .
+# Copy requirements file
+COPY requirements.in .
 
 # Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.in
 
 # Install the kernel
 RUN python -m ipykernel install --name=muse_kernel
