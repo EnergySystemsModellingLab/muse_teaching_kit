@@ -7,7 +7,7 @@ mkdir -p "$output_dir"
 for lecture in docs/lecture_*; do
 for filename in $lecture/*.md; do
     echo Converting "$filename"
-    
+
     MD_NAME=$(basename "$filename" .md)
     DIR_NAME=$lecture
     BIBFILE=$DIR_NAME/bibliography.bib
@@ -30,7 +30,7 @@ for filename in $lecture/*.md; do
     else
         pandoc --mathjax --standalone --css $PAN --css $CSL $MD_TMP -o $OUTPUT/$MD_NAME.html
     fi
-    
+
     # Copy assets
     if test -d "$OUTPUT/assets"; then
         rm -r $OUTPUT/assets/*
